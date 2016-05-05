@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Escape</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+
+	<!-- Latest compiled and minified CSS (Bootstrap) -->	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- Latest compiled and minified JavaScript (Bootstrap)-->	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+	<script src="scripts/levels.js"></script>
+	<script src="scripts/personGen.js"></script>
+
+	<link rel="stylesheet" href="styles/base.css">
+
+</head>
+<body>
+
+<!--<div class="container-fluid">
+		<div class="row">
+			<div id="container">
+	-->			<canvas id="canvas"></canvas>
+		<!--	</div>
+
+		</div>
+	</div>
+-->
+
+	
+</body>
+</html>
+
+<script>
+
+	// Variables
+	var
+	canvas,
+	ctx,
+	width,
+	height;
+
+	canvas = document.getElementById("canvas")
+	ctx = canvas.getContext("2d");
+/*
+	width = window.innerWidth;
+	height = window.innerHeight;
+	if (width >= 500) {
+		width = 480;
+		height = 300;
+		canvas.style.border = "1px solid #000";
+	}
+	
+	canvas.width = width;
+	canvas.height = height;
+	*/
+	
+	canvas.width = $(window).width();
+	canvas.height = $(window).height();
+	
+	$(window).resize(function() {
+		canvas.width = $(window).width();
+		canvas.height = $(window).height();
+	
+	});
+	
+	// Create the canvas
+
+	//Background image
+	var bgReady = false;
+	var bgImage = new Image();
+	bgImage.onload = function () {
+		//background is safe to load...
+		bgReady = true;
+	};
+	bgImage.src = "images/background.png";
+	
+	// Draw everything
+	var render = function () {
+		if (bgReady) {
+			
+			ctx.drawImage(bgImage, 0, 0);
+			
+		}
+	};
+
+// The main game loop
+	var main = function () {
+	
+	
+	
+		var now = Date.now();
+		var delta = now - then;
+
+		render();
+
+		then = now;
+
+		// Request to do this again ASAP
+		requestAnimationFrame(main);
+
+
+
+	};
+	// Cross-browser support for requestAnimationFrame
+	var w = window;
+	requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
+	var then = Date.now();
+	main();
+
+	
+
+
+	//The array of people
+	var person = genPeople(lineSize);
+
+
+//debugging
+	console.log("Line size: " + lineSize);
+	for (i = 0; i < person.length; i++){
+    	console.log("Person " + i + " Item Matrix: " + person[0].shoes + " " + person[0].shirt + " " + person[0].pants + " " + person[0].item1 + " " + person[0].item2 + " " + person[0].hat);
+	}
+
+
+
+
+
+
+</script>
