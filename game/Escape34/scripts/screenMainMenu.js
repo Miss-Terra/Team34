@@ -2,7 +2,6 @@ function loadMainMenu() {
 	
    // Judy: main menu background image		
    bgImage.src = "images/mainMenu.jpg";
-   //buttonImage.src = "images/button.png";  
    playButtonImage.src = "images/playButton.png";
    scoreboardButtonImage.src = "images/scoreboardButton.png";
    creditsButtonImage.src = "images/creditsButton.png";

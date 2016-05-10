@@ -31,6 +31,13 @@
 		
 	//----------------Buttons Image----------------
 		// Judy: add more buttons
+		var mainMenuButtonImage = new Image();
+		var mainMenuButtonReady = false;
+		mainMenuButtonImage.onload = function () {
+			//button image is safe to load...
+			mainMenuButtonReady = true;
+		};
+		
 		var playButtonImage = new Image();
 		var playButtonReady = false;
 		playButtonImage.onload = function () {
@@ -127,8 +134,7 @@ function clearLoadedImages(){
 	playButtonReady = false;
 	scoreboardButtonReady = false;
 	creditsButtonReady = false;
-	
-	
+	mainMenuButtonReady = false;
 }
 
 
@@ -193,7 +199,8 @@ function graphicsStatus(){
 		// Check state 0 img status
 		if (bgReady && playButtonReady 
 					&& scoreboardButtonReady
-					&& creditsButtonReady){
+					&& creditsButtonReady
+					&& mainMenuButtonReady){
 			return true;
 		}else{
 			return false;
