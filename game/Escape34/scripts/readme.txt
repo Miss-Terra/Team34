@@ -16,7 +16,11 @@ personGen.js
 drawLine.js
 - defines how the people are visually arranged on the screen.
 
+victoryConditions.js
+- Defines some global variables for win/losses and also may define victory conditions or functions. Scoring might take place here.
 
+levelFinish.js
+- When a level ends... Display the screen to show whether a user won or lost. Also generate the necessary functions that should happen.
 
 
 

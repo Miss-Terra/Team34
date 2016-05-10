@@ -15,11 +15,17 @@
 
 		var lineManImage = new Image();
 		var lineManReady = false;
-		bgImage.onload = function () {
-			//background is safe to load...
+		lineManImage.onload = function () {
+			//Stickman is safe to load...
 			lineManReady = true;
 		};
 
+		var buttonImage = new Image();
+		var buttonReady = false;
+		buttonImage.onload = function () {
+			//button image is safe to load...
+			buttonReady = true;
+		};
 
 
 
@@ -45,6 +51,10 @@ function reloadGraphics(){
 		bgImage.src = "images/background.png";
 		lineManImage.src = "images/lineMan.png";
 	}
+	//2 is finish level screen
+	if (state == 2){
+		levelFinishBackgroundImg();
+	}
 }
 
 //This fuction sets all the status of all images to false.
@@ -52,6 +62,7 @@ function reloadGraphics(){
 function clearLoadedImages(){
 	bgReady = false;
 	lineManReady = false;
+	buttonReady = false;
 }
 
 
@@ -65,19 +76,36 @@ function renderGraphics(){
 		if (state == 0){
 
 		}
-		//Gameplay
+		//Gameplay Screen
 		if (state == 1){
+			//draw background
 			ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);	
+			//Draw the line of people.
 			drawLine(lineManImage);
+		}
+		//Finish Level Screen
+		if (state == 2){	
+			//Draw background & buttons
+			drawFinishLevel();
 		}
 	}
 }
 
 
-//This fuction checks whether images have been loaded yet.
+//This fuction checks whether ALL images have been loaded yet.
+//Some states may have more than 1 image to load.
+//bgReady is likely the most common image between all states.
 function graphicsStatus(){
 
-	if (state == 1){
+	if (state == 1) {
+		//Did these images load yet?
+		if (bgReady && lineManReady){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	if (state == 2) {
 		//check state 1 img status
 		if (bgReady){
 			return true;
