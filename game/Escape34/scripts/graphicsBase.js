@@ -59,7 +59,8 @@ function reloadGraphics(){
 
 	//0 is main menu
 	if (state == 0){
-		
+		//screenMainMenu.js
+		loadMainMenu();
 	}
 		//1 is gameplay.
 	if (state == 1){
@@ -109,7 +110,8 @@ function renderGraphics(){
 	if (graphicsStatus){
 		//Main Menu
 		if (state == 0){
-
+			//screenMainMenu.js
+			drawMainMenu();
 		}
 		//Gameplay Screen
 		if (state == 1){
@@ -155,6 +157,14 @@ function renderGraphics(){
 //bgReady is likely the most common image between all states.
 function graphicsStatus(){
 
+	if (state == 0) {
+		//Did these images load yet?
+		if (bgReady){
+			return true;
+		}else{
+			return false;
+		}
+	}
 	if (state == 1) {
 		//Did these images load yet?
 		if (bgReady && lineManReady){
