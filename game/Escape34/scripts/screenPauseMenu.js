@@ -1,24 +1,48 @@
-//function drawBackgroundImg(){
-////		bgImage.src = "images/???.png";
-//}
-
-function drawPauseMenu(){
-	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
+function loadPauseMenu() {
 	
-//	var buttonWidth = canvas.width / 6;
-//	var buttonHeight = canvas.height / 10;	
-//	var	buttonY = canvas.height - (buttonHeight * 2);
-//	//Button x positions
-//	var restartX = (canvas.width / 2) - (buttonWidth / 2);
-//	var menuX = (restartX / 2) - (buttonWidth / 2);
-//	var nextX = restartX + (restartX / 2) + (buttonWidth / 2);
+   // Judy: pause menu background image		
+   bgImage.src = "images/pausescreen.png";
+   buttonImage.src = "images/button.png";       
+}
 
-//	ctx.drawImage(buttonImage, restartX, buttonY, buttonWidth, buttonHeight);
-//	uiObjects[0] = new uiObject(restartX, buttonY, buttonWidth, buttonHeight, 
-//			function (){
-//				console.log("restart");
-//				setState(1);
-//				console.log("Level: " + currentLevel)
-//			});
+function drawPauseMenu() {
+    ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
+    var buttonWidth = canvas.width / 6;
+	var buttonHeight = canvas.height / 10;	
+	var	buttonY = canvas.height - (buttonHeight * 2);
+	//Button x positions
+	var restartX = (canvas.width / 2) - (buttonWidth / 2);
+	var resumeX = (restartX / 2) - (buttonWidth / 2);            //menuX = resumeX
+	var menuX = restartX + (restartX / 2) + (buttonWidth / 2); //nextX = menuX
+
+    // middle button
+	ctx.drawImage(buttonImage, restartX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[0] = new uiObject(restartX, buttonY, buttonWidth, buttonHeight, 
+			function (){
+				console.log("restart");
+                //Judy: will update State value when create confirm window
+				setState(1);
+				console.log("Level: " + currentLevel)
+			});
+	
+    // left button
+	ctx.drawImage(buttonImage, resumeX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[1] = new uiObject(resumeX, buttonY, buttonWidth, buttonHeight, 
+			function (){
+				console.log("resume");
+                //Judy: will update State value when we have resume function
+				setState(1);
+				console.log("Level: " + currentLevel)
+			});
+
+	
+    // right button
+	ctx.drawImage(buttonImage, menuX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[2] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight,
+			function () {
+				console.log("menu");
+				setState(0);
+				console.log("Level: " + currentLevel)
+			});
 }
