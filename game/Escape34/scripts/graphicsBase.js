@@ -59,7 +59,8 @@ function reloadGraphics(){
 
 	//0 is main menu
 	if (state == 0){
-		
+		//screenMainMenu.js
+		loadMainMenu();
 	}
 		//1 is gameplay.
 	if (state == 1){
@@ -73,7 +74,8 @@ function reloadGraphics(){
 	}
 		//3 is pause menu screen
 	if (state == 3){
-			//screenPauseMenu.js
+		//screenPauseMenu.js
+		loadPauseMenu();
 	}
 		//4 is scoreboard screen
 	if (state == 4){
@@ -108,7 +110,8 @@ function renderGraphics(){
 	if (graphicsStatus){
 		//Main Menu
 		if (state == 0){
-
+			//screenMainMenu.js
+			drawMainMenu();
 		}
 		//Gameplay Screen
 		if (state == 1){
@@ -129,7 +132,8 @@ function renderGraphics(){
 	
 			//3 is pause menu screen
 		if (state == 3){
-				//screenPauseMenu.js
+			//screenPauseMenu.js
+			drawPauseMenu();
 		}
 			//4 is scoreboard screen
 		if (state == 4){
@@ -155,6 +159,14 @@ function renderGraphics(){
 //bgReady is likely the most common image between all states.
 function graphicsStatus(){
 
+	if (state == 0) {
+		//Did these images load yet?
+		if (bgReady){
+			return true;
+		}else{
+			return false;
+		}
+	}
 	if (state == 1) {
 		//Did these images load yet?
 		if (bgReady && lineManReady){
@@ -165,6 +177,14 @@ function graphicsStatus(){
 	}
 	if (state == 2) {
 		//check state 1 img status
+		if (bgReady){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	if (state == 3) {
+		//check state 3 img status
 		if (bgReady){
 			return true;
 		}else{
