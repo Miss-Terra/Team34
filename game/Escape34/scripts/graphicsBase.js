@@ -73,7 +73,8 @@ function reloadGraphics(){
 	}
 		//3 is pause menu screen
 	if (state == 3){
-			//screenPauseMenu.js
+		//screenPauseMenu.js
+		loadPauseMenu();
 	}
 		//4 is scoreboard screen
 	if (state == 4){
@@ -127,7 +128,8 @@ function renderGraphics(){
 	
 			//3 is pause menu screen
 		if (state == 3){
-				//screenPauseMenu.js
+			//screenPauseMenu.js
+			drawPauseMenu();
 		}
 			//4 is scoreboard screen
 		if (state == 4){
@@ -163,6 +165,14 @@ function graphicsStatus(){
 	}
 	if (state == 2) {
 		//check state 1 img status
+		if (bgReady){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	if (state == 3) {
+		//check state 3 img status
 		if (bgReady){
 			return true;
 		}else{
