@@ -1,7 +1,7 @@
 function loadPauseMenu() {
 	
    // Judy: pause menu background image		
-   bgImage.src = "images/pausescreen.png";
+   bgImage.src = "images/pauseScreen.png";
    buttonImage.src = "images/button.png";       
 }
 
@@ -13,8 +13,8 @@ function drawPauseMenu() {
 	var	buttonY = canvas.height - (buttonHeight * 2);
 	//Button x positions
 	var restartX = (canvas.width / 2) - (buttonWidth / 2);
-	var resumeX = (restartX / 2) - (buttonWidth / 2);            //menuX = resumeX
-	var menuX = restartX + (restartX / 2) + (buttonWidth / 2); //nextX = menuX
+	var resumeX = (restartX / 2) - (buttonWidth / 2);            
+	var menuX = restartX + (restartX / 2) + (buttonWidth / 2); 
 
     // middle button
 	ctx.drawImage(buttonImage, restartX, buttonY, buttonWidth, buttonHeight);
