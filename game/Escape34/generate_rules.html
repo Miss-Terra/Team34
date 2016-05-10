@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+		<title>Generate Rules</title>
+	</head>
+
+	<body>
+		<h1>Generate Rules</h1>
+		<p id="demo">Click Generate to start</p>
+		<button type="button" onclick="myFunction()">Generate</button>
+		
+		<script>
+		
+			var level = 0;
+			var person = 1;
+			var color, color1, color2;
+			var item, item1, item2;
+			var status;
+			var rule;
+		
+			function myFunction() {
+			
+				status = "Level: " + level + " " + "Person: " + person + "<br /><br />";
+			
+				if (level < 5) {
+					var colors = ["Red", "Yellow", "Green", "Blue"];
+					var items = ["shirt", "pants", "shoes"];
+						
+					var color = colors[Math.floor(Math.random() * colors.length)];
+					var item = items[Math.floor(Math.random() * items.length)];
+					
+					rule = color + " " + item;
+				}
+				else if (level < 10) {
+					var colors = ["Red", "Yellow", "Green", "Blue", "White", "Black"];
+					var items = ["hat", "shirt", "pants", "shoes", "bag"];
+						
+					var color = colors[Math.floor(Math.random() * colors.length)];
+					var item = items[Math.floor(Math.random() * items.length)];
+					
+					rule = color + " " + item;
+				}
+				else if (level < 15) {
+					var colors = ["Red", "Orange", "Yellow", "Green", "Blue", "White", "Black", "Brown"];
+					var items = ["hat", "shirt", "t-shirt", "pants", "shorts", "shoes", "bag"];
+					var statement = ["AND", "OR"];
+					
+					var color1 = colors[Math.floor(Math.random() * colors.length)];
+					var item1 = items[Math.floor(Math.random() * items.length)];
+					
+					var color2 = colors[Math.floor(Math.random() * colors.length)];
+					while (color2 == color1)
+						color2 = items[Math.floor(Math.random() * items.length)];
+						
+					var item2 = items[Math.floor(Math.random() * items.length)];
+					while (item2 == item1)
+						item2 = items[Math.floor(Math.random() * items.length)];
+					var logic = statement[Math.floor(Math.random() * statement.length)];
+					
+					rule = color1 + " " + item1 + " " + logic + " " + color2 + " " + item2;
+				}
+				else {
+					var colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "White", "Black", "Brown", "Gray"];
+					var items = ["hat", "glasses", "shirt", "t-shirt", "pants", "shorts", "shoes", "bag", "beard"];
+					var statement = ["AND", "OR"];
+					
+					var color1 = colors[Math.floor(Math.random() * colors.length)];
+					var item1 = items[Math.floor(Math.random() * items.length)];
+					
+					var color2 = colors[Math.floor(Math.random() * colors.length)];
+					while (color2 == color1)
+						color2 = items[Math.floor(Math.random() * items.length)];
+						
+					var item2 = items[Math.floor(Math.random() * items.length)];
+					while (item2 == item1)
+						item2 = items[Math.floor(Math.random() * items.length)];
+					var logic = statement[Math.floor(Math.random() * statement.length)];
+					
+					rule = color1 + " " + item1 + " " + logic + " " + color2 + " " + item2;
+				}
+
+				/* colour + type */
+				document.getElementById("demo").innerHTML = status + rule;
+				
+				person++;
+				if (person > 5) {
+					level++;
+					person = 1;
+				}
+			}
+		</script>
+	</body>
+	
+</html>
