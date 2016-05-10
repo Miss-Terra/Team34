@@ -33,6 +33,20 @@
 
 
 
+//State 0 == Main menu;
+//State 1 == Gameplay screen
+//State 2 == Result screen
+//State 3 == Pause menu screen
+//State 4 == Score screen
+//State 5 == Credits screen
+//State 6 == Extra screen
+//	<script src="scripts/screenMainMenu.js"></script> 
+//	<script src="scripts/screenGame.js"></script>
+//	<script src="scripts/screenResult.js"></script>
+//	<script src="scripts/screenPauseMenu.js"></script>
+//	<script src="scripts/screenScoreboard.js"></script>
+//	<script src="scripts/screenCredits.js"></script>
+//	<script src="scripts/screenEgg.js"></script>
 
 
 function reloadGraphics(){
@@ -47,16 +61,34 @@ function reloadGraphics(){
 	if (state == 0){
 		
 	}
-	//1 is gameplay.
+		//1 is gameplay.
 	if (state == 1){
 		bgImage.src = "images/background.png";
 		lineManImage.src = "images/lineMan.png";
 	}
-	//2 is finish level screen
+		//2 is result screen
 	if (state == 2){
-        //levelFinishBackgroundImg() is in levelFinish.js file
+        //levelFinishBackgroundImg() is in screenResult.js file
 		levelFinishBackgroundImg();
 	}
+		//3 is pause menu screen
+	if (state == 3){
+			//screenPauseMenu.js
+	}
+		//4 is scoreboard screen
+	if (state == 4){
+			//screenScoreboard.js
+	}
+		//5 is credits screen
+	if (state == 5){
+			//screenCredits.js
+	}
+		//6 easter egg screen
+	if (state == 6){
+			//screenEgg.js
+	}
+
+
 }
 
 //This fuction sets all the status of all images to false.
@@ -69,8 +101,8 @@ function clearLoadedImages(){
 
 
 //-------------Most important function here!!!!!------------
-//This fuction is the fuction that draws loaded images.
-//The main method will constantly run this funtion to update graphics.
+//This function is the function that draws loaded images.
+//The main method will constantly run this function to update graphics.
 function renderGraphics(){
 
 	if (graphicsStatus){
@@ -86,14 +118,34 @@ function renderGraphics(){
             //drawLine() is in drawLine.js file
 			drawLine(lineManImage);
 		}
-		//Finish Level Screen
+		//Result Screen
 		if (state == 2){	
 			//Draw background & buttons
             //drawFinishLevel() is in levelFinish.js file
-			drawFinishLevel();
+			drawResult();
 		}
+	
+			//3 is pause menu screen
+		if (state == 3){
+				//screenPauseMenu.js
+		}
+			//4 is scoreboard screen
+		if (state == 4){
+				//screenScoreboard.js
+		}
+			//5 is credits screen
+		if (state == 5){
+				//screenCredits.js
+		}
+			//6 easter egg screen
+		if (state == 6){
+				//screenEgg.js
+		}
+
 	}
-}
+	
+	
+}//end renderGraphics()
 
 
 //This fuction checks whether ALL images have been loaded yet.

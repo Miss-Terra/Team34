@@ -19,8 +19,20 @@ drawLine.js
 globals.js
 - Defines some global variables here. Scoring might take place here.
 
-levelFinish.js
+screenCredits.js
+
+screenEgg.js
+
+screenGame.js
+
+screenMainMenu.js
+
+screenPauseMenu.js
+
+screenResult.js
 - When a level ends... Display the screen to show whether a user won or lost. Also generate the necessary functions that should happen.
+
+screenScoreboard.js
 
 uiObjects.js
 - The best code ever!

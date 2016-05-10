@@ -8,7 +8,7 @@ function levelFinishBackgroundImg(){
 	buttonImage.src = "images/button.png";
 }
 
-function drawFinishLevel(){
+function drawResult(){
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
 
