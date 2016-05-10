@@ -14,8 +14,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
-	<script src="scripts/levels.js"></script>
-	<script src="scripts/personGen.js"></script>
+
 
 	<link rel="stylesheet" href="styles/base.css">
 
@@ -36,68 +35,37 @@
 </body>
 </html>
 
+
+
+
+	   <!--Preload / Order is important-->
+	<script src="scripts/canvas.js"></script>
+	<script src="scripts/gameState.js"></script>
+	<script src="scripts/levels.js"></script>
+	<script src="scripts/graphicsBase.js"></script>
+
+
+			<!--Other Scripts-->
+	<script src="scripts/personGen.js"></script>
+	<script src="scripts/drawLine.js"></script>
+
+
 <script>
 
-	// Variables
-	var
-	canvas,
-	ctx,
-	width,
-	height;
 
-	canvas = document.getElementById("canvas")
-	ctx = canvas.getContext("2d");
-/*
-	width = window.innerWidth;
-	height = window.innerHeight;
-	if (width >= 500) {
-		width = 480;
-		height = 300;
-		canvas.style.border = "1px solid #000";
-	}
-	
-	canvas.width = width;
-	canvas.height = height;
-	*/
-	
-	canvas.width = $(window).width();
-	canvas.height = $(window).height();
-	
-	$(window).resize(function() {
-		canvas.width = $(window).width();
-		canvas.height = $(window).height();
-	
-	});
-	
-	// Create the canvas
+	setState(1);
 
-	//Background image
-	var bgReady = false;
-	var bgImage = new Image();
-	bgImage.onload = function () {
-		//background is safe to load...
-		bgReady = true;
-	};
-	bgImage.src = "images/background.png";
-	
-	// Draw everything
-	var render = function () {
-		if (bgReady) {
-			
-			ctx.drawImage(bgImage, 0, 0);
-			
-		}
-	};
+
 
 // The main game loop
 	var main = function () {
 	
-	
-	
+		//To help us with time.
 		var now = Date.now();
 		var delta = now - then;
 
-		render();
+		//Update and render graphics.
+		renderGraphics();
 
 		then = now;
 
@@ -107,6 +75,7 @@
 
 
 	};
+	//I don't know what this does... But I hear it helps...
 	// Cross-browser support for requestAnimationFrame
 	var w = window;
 	requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
@@ -116,10 +85,15 @@
 	
 
 
+
+
+
+
+
+
+//Stuff from personGen.js and levels.js
 	//The array of people
 	var person = genPeople(lineSize);
-
-
 //debugging
 	console.log("Line size: " + lineSize);
 	for (i = 0; i < person.length; i++){

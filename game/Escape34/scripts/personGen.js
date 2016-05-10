@@ -1,3 +1,6 @@
+//This file generates the list of people and assigns clothing numbers.
+//For the graphical side of things... Check out drawLine.js
+
 
 //Generate a list of people
 function genPeople(n){
@@ -34,8 +37,4 @@ function genPerson(){
 	};
 	person.setItems();
 	return person;
-}
-
-function genItems(){
-	return 2;
 }

@@ -1,0 +1,89 @@
+// This file displays the graphics on the canvas.
+//Note, the canvas is constructed in canvas.js.
+//Here we load backgrounds & art based on the level/state
+
+//--------------------Image Variables--------------------
+
+		//Define background image variable.
+		//When loaded, bgReady becomes true.
+		var bgImage = new Image();
+		var bgReady = false;
+		bgImage.onload = function () {
+			//background is safe to load...
+			bgReady = true;
+		};
+
+		var lineManImage = new Image();
+		var lineManReady = false;
+		bgImage.onload = function () {
+			//background is safe to load...
+			lineManReady = true;
+		};
+
+
+
+
+//-----------------Graphics Functions--------------------
+
+
+
+
+
+function reloadGraphics(){
+	
+	//Removes all art. Byebye!
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	//defaults everything back to false.
+	clearLoadedImages();
+
+	//0 is main menu
+	if (state == 0){
+		
+	}
+	//1 is gameplay.
+	if (state == 1){
+		bgImage.src = "images/background.png";
+		lineManImage.src = "images/lineMan.png";
+	}
+}
+
+//This fuction sets all the status of all images to false.
+//It's an extention of the reloadGraphics() function.
+function clearLoadedImages(){
+	bgReady = false;
+	lineManReady = false;
+}
+
+
+//-------------Most important function here!!!!!------------
+//This fuction is the fuction that draws loaded images.
+//The main method will constantly run this funtion to update graphics.
+function renderGraphics(){
+
+	if (graphicsStatus){
+		//Main Menu
+		if (state == 0){
+
+		}
+		//Gameplay
+		if (state == 1){
+			ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);	
+			drawLine(lineManImage);
+		}
+	}
+}
+
+
+//This fuction checks whether images have been loaded yet.
+function graphicsStatus(){
+
+	if (state == 1){
+		//check state 1 img status
+		if (bgReady){
+			return true;
+		}else{
+			return false;
+		}
+	}
+}
+
