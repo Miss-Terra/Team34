@@ -54,6 +54,7 @@ function reloadGraphics(){
 	}
 	//2 is finish level screen
 	if (state == 2){
+        //levelFinishBackgroundImg() is in levelFinish.js file
 		levelFinishBackgroundImg();
 	}
 }
@@ -82,11 +83,13 @@ function renderGraphics(){
 			//draw background
 			ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);	
 			//Draw the line of people.
+            //drawLine() is in drawLine.js file
 			drawLine(lineManImage);
 		}
 		//Finish Level Screen
 		if (state == 2){	
 			//Draw background & buttons
+            //drawFinishLevel() is in levelFinish.js file
 			drawFinishLevel();
 		}
 	}
