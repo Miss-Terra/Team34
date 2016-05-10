@@ -26,8 +26,33 @@
 			//button image is safe to load...
 			buttonReady = true;
 		};
+		
+		
+		
+	//----------------Test----------------------------
+		// Judy: add more buttons
+		var playButtonImage = new Image();
+		var playButtonReady = false;
+		playButtonImage.onload = function () {
+			//button image is safe to load...
+			playButtonReady = true;
+		};
+		
+		var scoreboardButtonImage = new Image();
+		var scoreboardButtonReady = false;
+		scoreboardButtonImage.onload = function () {
+			//button image is safe to load...
+			scoreboardButtonReady = true;
+		};
+		
+		var creditsButtonImage = new Image();
+		var creditsButtonReady = false;
+		creditsButtonImage.onload = function () {
+			//button image is safe to load...
+			creditsButtonReady = true;
+		};
 
-
+//----------------Test----------------------------
 
 //-----------------Graphics Functions--------------------
 
@@ -59,11 +84,12 @@ function reloadGraphics(){
 
 	//0 is main menu
 	if (state == 0){
-		
+		//screenMainMenu.js
+		loadMainMenu();
 	}
 		//1 is gameplay.
 	if (state == 1){
-		bgImage.src = "images/background.png";
+ 		drawBackgroundImg();
 		lineManImage.src = "images/lineMan.png";
 	}
 		//2 is result screen
@@ -73,7 +99,8 @@ function reloadGraphics(){
 	}
 		//3 is pause menu screen
 	if (state == 3){
-			//screenPauseMenu.js
+		//screenPauseMenu.js
+		loadPauseMenu();
 	}
 		//4 is scoreboard screen
 	if (state == 4){
@@ -108,12 +135,15 @@ function renderGraphics(){
 	if (graphicsStatus){
 		//Main Menu
 		if (state == 0){
-
+			//screenMainMenu.js
+			drawMainMenu();
 		}
 		//Gameplay Screen
 		if (state == 1){
 			//draw background
 			ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);	
+
+			drawGame();
 			//Draw the line of people.
             //drawLine() is in drawLine.js file
 			drawLine(lineManImage);
@@ -127,7 +157,8 @@ function renderGraphics(){
 	
 			//3 is pause menu screen
 		if (state == 3){
-				//screenPauseMenu.js
+			//screenPauseMenu.js
+			drawPauseMenu();
 		}
 			//4 is scoreboard screen
 		if (state == 4){
@@ -153,6 +184,14 @@ function renderGraphics(){
 //bgReady is likely the most common image between all states.
 function graphicsStatus(){
 
+	if (state == 0) {
+		//Did these images load yet?
+		if (bgReady){
+			return true;
+		}else{
+			return false;
+		}
+	}
 	if (state == 1) {
 		//Did these images load yet?
 		if (bgReady && lineManReady){
@@ -163,6 +202,14 @@ function graphicsStatus(){
 	}
 	if (state == 2) {
 		//check state 1 img status
+		if (bgReady){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	if (state == 3) {
+		//check state 3 img status
 		if (bgReady){
 			return true;
 		}else{
