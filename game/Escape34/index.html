@@ -58,7 +58,7 @@
 
 
 // The main game loop
-	var main = function () {
+	function main() {
 	
 		//To help us with time.
 		var now = Date.now();
@@ -71,15 +71,14 @@
 
 		// Request to do this again ASAP
 		requestAnimationFrame(main);
-
-
-
 	};
 	//I don't know what this does... But I hear it helps...
 	// Cross-browser support for requestAnimationFrame
 	var w = window;
 	requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
 	var then = Date.now();
+
+	//Run the main function.
 	main();
 
 	
