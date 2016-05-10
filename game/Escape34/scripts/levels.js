@@ -70,6 +70,6 @@ function setItemVariety(){
 }
 
 function nextLevel(){
-	level++;
+	currentLevel++;
 	setSettings();
 }

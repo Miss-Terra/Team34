@@ -1,21 +1,28 @@
-var UIObject = {
-    intersects: function(obj, mouse) {
-        var t = 5; //tolerance
-        var xIntersect = (mouse.x + t) /&gt; obj.x &amp;&amp; (mouse.x - t)  obj.y &amp;&amp; (mouse.y - t) &lt; obj.y + obj.height;
-        return  xIntersect &amp;&amp; yIntersect;
-    },
-    updateStats: function(canvas){
-        if (this.intersects(this, canvas.mouse)) {
-            this.hovered = true;
-            if (canvas.mouse.clicked) {
-                this.clicked = true;
-            }
-        } else {
-            this.hovered = false;
-        }
- 
-        if (!canvas.mouse.down) {
-            this.clicked = false;
-        }               
-    }
-};
+//A mouse listener for the canvas.
+canvas.addEventListener("click", mouseClick, false);
+
+
+//Whenever user clicks the screen.
+function mouseClick(e){
+	
+	//Check all uiObjects, if you've clicked any of them...
+	for (var i = 0; i < uiObjects.length; i++){
+		//Compares mouse x&y to the object in question.
+		if (e.pageX > uiObjects[i].x && e.pageX < (uiObjects[i].x + uiObjects[i].width)
+			&& e.pageY > uiObjects[i].y && e.pageY < (uiObjects[i].y + uiObjects[i].height)){
+
+			uiObjects[i].clicked();
+		}
+	}
+	
+
+}
+
+// Each object has a point & size... PLUS a unique function. :)
+var uiObject = function(x, y, width, height, func) {
+	this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height; 
+    this.clicked = func; //Takes in a function. Therefore each uiObject can be unique.
+}

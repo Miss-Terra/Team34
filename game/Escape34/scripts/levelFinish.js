@@ -22,7 +22,32 @@ function drawFinishLevel(){
 	var nextX = restartX + (restartX / 2) + (buttonWidth / 2);
 
 	ctx.drawImage(buttonImage, restartX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[0] = new uiObject(restartX, buttonY, buttonWidth, buttonHeight, 
+			function (){
+				console.log("restart");
+				setState(1);
+				console.log("Level: " + currentLevel)
+			});
+	
 	ctx.drawImage(buttonImage, menuX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[1] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight, 
+			function (){
+				console.log("menu");
+				setState(0);
+				console.log("Level: " + currentLevel)
+			});
+
+	
+
 	ctx.drawImage(buttonImage, nextX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[2] = new uiObject(nextX, buttonY, buttonWidth, buttonHeight, 
+			function (){
+				console.log("next");
+				nextLevel();
+				setState(1);
+				console.log("Level: " + currentLevel)
+			});
+	
+
 
 }

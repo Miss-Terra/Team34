@@ -37,6 +37,7 @@
 
 function reloadGraphics(){
 	
+	
 	//Removes all art. Byebye!
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	//defaults everything back to false.
