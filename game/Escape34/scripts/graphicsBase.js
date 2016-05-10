@@ -89,7 +89,7 @@ function reloadGraphics(){
 	}
 		//1 is gameplay.
 	if (state == 1){
-		bgImage.src = "images/background.png";
+ 		drawBackgroundImg();
 		lineManImage.src = "images/lineMan.png";
 	}
 		//2 is result screen
@@ -142,6 +142,8 @@ function renderGraphics(){
 		if (state == 1){
 			//draw background
 			ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);	
+
+			drawGame();
 			//Draw the line of people.
             //drawLine() is in drawLine.js file
 			drawLine(lineManImage);
