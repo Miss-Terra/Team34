@@ -40,13 +40,23 @@ function drawFinishLevel(){
 	
 
 	ctx.drawImage(buttonImage, nextX, buttonY, buttonWidth, buttonHeight);
-	uiObjects[2] = new uiObject(nextX, buttonY, buttonWidth, buttonHeight, 
-			function (){
-				console.log("next");
-				nextLevel();
-				setState(1);
-				console.log("Level: " + currentLevel)
-			});
+	if (levelVictory){
+		uiObjects[2] = new uiObject(nextX, buttonY, buttonWidth, buttonHeight, 
+				function (){
+					console.log("next");
+					nextLevel();
+					setState(1);
+					console.log("Level: " + currentLevel)
+				});
+	}else{ // if player lost
+		uiObjects[2] = new uiObject(nextX, buttonY, buttonWidth, buttonHeight, 
+				function (){
+					console.log("Submit Score function here...");
+					nextLevel();
+					setState(1);
+					console.log("Level: " + currentLevel)
+				});
+	}
 	
 
 
