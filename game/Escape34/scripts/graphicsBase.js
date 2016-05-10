@@ -69,7 +69,7 @@ function reloadGraphics(){
 		//2 is result screen
 	if (state == 2){
         //levelFinishBackgroundImg() is in screenResult.js file
-		levelFinishBackgroundImg();
+		levelResultBackgroundImg()
 	}
 		//3 is pause menu screen
 	if (state == 3){

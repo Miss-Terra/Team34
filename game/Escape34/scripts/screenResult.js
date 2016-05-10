@@ -1,4 +1,4 @@
-function levelFinishBackgroundImg(){
+function levelResultBackgroundImg(){
 
 	if (levelVictory){
 		bgImage.src = "images/levelvictory.png";
