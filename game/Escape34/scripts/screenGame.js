@@ -1,24 +1,22 @@
-//function drawBackgroundImg(){
-////		bgImage.src = "images/???.png";
-//}
+function drawBackgroundImg(){
+		bgImage.src = "images/backgframe_480.jpg";
+  	buttonImage.src = "images/button.png";
+}
 
 function drawGame(){
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 	
-//	var buttonWidth = canvas.width / 6;
-//	var buttonHeight = canvas.height / 10;	
-//	var	buttonY = canvas.height - (buttonHeight * 2);
-//	//Button x positions
-//	var restartX = (canvas.width / 2) - (buttonWidth / 2);
-//	var menuX = (restartX / 2) - (buttonWidth / 2);
-//	var nextX = restartX + (restartX / 2) + (buttonWidth / 2);
+	var buttonWidth = canvas.width / 6;
+	var buttonHeight = canvas.height / 10;	
+	var	buttonY = (buttonHeight / 2);
+	//Button x positions
+  var menuX = (buttonWidth / 2) - (buttonWidth / 2);
 
-//	ctx.drawImage(buttonImage, restartX, buttonY, buttonWidth, buttonHeight);
-//	uiObjects[0] = new uiObject(restartX, buttonY, buttonWidth, buttonHeight, 
-//			function (){
-//				console.log("restart");
-//				setState(1);
-//				console.log("Level: " + currentLevel)
-//			});
-
+	ctx.drawImage(buttonImage, menuX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[0] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight, 
+			function (){
+				console.log("Pause Menu");
+				setState(3);
+				console.log("Level: " + currentLevel)
+			});
 }
