@@ -2,7 +2,10 @@ function loadMainMenu() {
 	
    // Judy: main menu background image		
    bgImage.src = "images/mainMenu.jpg";
-   buttonImage.src = "images/button.png";       
+   //buttonImage.src = "images/button.png";  
+   playButtonImage.src = "images/playButton.png";
+   scoreboardButtonImage.src = "images/scoreboardButton.png";
+   creditsButtonImage.src = "images/creditsButton.png";
 }
 
 function drawMainMenu(){
@@ -18,7 +21,7 @@ function drawMainMenu(){
 	var CreditsX = scoreboardX + (scoreboardX / 2) + (buttonWidth / 2); 
 
     // middle button
-	ctx.drawImage(buttonImage, scoreboardX, buttonY, buttonWidth, buttonHeight);
+	ctx.drawImage(scoreboardButtonImage, scoreboardX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(scoreboardX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("scoreboard");
@@ -26,7 +29,7 @@ function drawMainMenu(){
 			});
 	
     // left button
-	ctx.drawImage(buttonImage, restartX, buttonY, buttonWidth, buttonHeight);
+	ctx.drawImage(playButtonImage, restartX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[1] = new uiObject(restartX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("restart");
@@ -36,7 +39,7 @@ function drawMainMenu(){
 
 	
     // right button
-	ctx.drawImage(buttonImage, CreditsX, buttonY, buttonWidth, buttonHeight);
+	ctx.drawImage(creditsButtonImage, CreditsX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[2] = new uiObject(CreditsX, buttonY, buttonWidth, buttonHeight,
 			function () {
 				console.log("credits");

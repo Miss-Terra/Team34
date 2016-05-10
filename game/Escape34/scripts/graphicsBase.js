@@ -26,8 +26,33 @@
 			//button image is safe to load...
 			buttonReady = true;
 		};
+		
+		
+		
+	//----------------Test----------------------------
+		// Judy: add more buttons
+		var playButtonImage = new Image();
+		var playButtonReady = false;
+		playButtonImage.onload = function () {
+			//button image is safe to load...
+			playButtonReady = true;
+		};
+		
+		var scoreboardButtonImage = new Image();
+		var scoreboardButtonReady = false;
+		scoreboardButtonImage.onload = function () {
+			//button image is safe to load...
+			scoreboardButtonReady = true;
+		};
+		
+		var creditsButtonImage = new Image();
+		var creditsButtonReady = false;
+		creditsButtonImage.onload = function () {
+			//button image is safe to load...
+			creditsButtonReady = true;
+		};
 
-
+//----------------Test----------------------------
 
 //-----------------Graphics Functions--------------------
 
