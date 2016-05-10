@@ -2,10 +2,13 @@ function levelResultBackgroundImg(){
 
 	if (levelVictory){
 		bgImage.src = "images/levelvictory.png";
+		buttonImage.src = "images/nextLevelButton.png";
 	}else{
 		bgImage.src = "images/gameover.png";
+		buttonImage.src = "images/submitButton.png";
 	}
-	buttonImage.src = "images/button.png";
+	buttonImage.src = "images/restartButton.png";
+	buttonImage.src = "images/resumeButton.png";
 }
 
 function drawResult(){
@@ -40,6 +43,7 @@ function drawResult(){
 	
 
 	ctx.drawImage(buttonImage, nextX, buttonY, buttonWidth, buttonHeight);
+	ctx.fill
 	if (levelVictory){
 		uiObjects[2] = new uiObject(nextX, buttonY, buttonWidth, buttonHeight, 
 				function (){
