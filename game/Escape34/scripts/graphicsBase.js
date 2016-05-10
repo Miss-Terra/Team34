@@ -29,7 +29,7 @@
 		
 		
 		
-	//----------------Test----------------------------
+	//----------------Buttons Image----------------
 		// Judy: add more buttons
 		var playButtonImage = new Image();
 		var playButtonReady = false;
@@ -52,7 +52,7 @@
 			creditsButtonReady = true;
 		};
 
-//----------------Test----------------------------
+	//----------------Buttons Image----------------
 
 //-----------------Graphics Functions--------------------
 
@@ -124,6 +124,11 @@ function clearLoadedImages(){
 	bgReady = false;
 	lineManReady = false;
 	buttonReady = false;
+	playButtonReady = false;
+	scoreboardButtonReady = false;
+	creditsButtonReady = false;
+	
+	
 }
 
 
@@ -185,8 +190,10 @@ function renderGraphics(){
 function graphicsStatus(){
 
 	if (state == 0) {
-		//Did these images load yet?
-		if (bgReady){
+		// Check state 0 img status
+		if (bgReady && playButtonReady 
+					&& scoreboardButtonReady
+					&& creditsButtonReady){
 			return true;
 		}else{
 			return false;
