@@ -123,6 +123,7 @@ function reloadGraphics(){
 		//4 is scoreboard screen
 	if (state == 4){
 			//screenScoreboard.js
+		loadScoreboard();
 	}
 		//5 is credits screen
 	if (state == 5){
@@ -187,6 +188,7 @@ function renderGraphics(){
 			//4 is scoreboard screen
 		if (state == 4){
 				//screenScoreboard.js
+			drawScoreboard();
 		}
 			//5 is credits screen
 		if (state == 5){
@@ -242,6 +244,15 @@ function graphicsStatus(){
 		if (bgReady && mainMenuButtonImage
 					&& restartButtonImage
 					&& resumeButtonImage){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	if (state == 4) {
+		//check state 4 img status
+		if (bgReady && mainMenuButtonImage
+					&& creditsButtonReady){
 			return true;
 		}else{
 			return false;
