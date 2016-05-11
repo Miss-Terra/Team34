@@ -12,63 +12,19 @@ var join;
 
 function drawRule() {
 
-	ctx.fillStyle = "#FFFFFF";
-	if (level <= 10) { // draws a square for a rule
-		ctx.fillRect(canvas.width/2, 0, 75, 75);
-				
-		ctx.moveTo(canvas.width/2, 0);
-		ctx.lineTo(canvas.width/2 + 75, 0);
-		ctx.stroke();
-		ctx.moveTo(canvas.width/2, 75);
-		ctx.lineTo(canvas.width/2 + 75, 75);
-		ctx.stroke();
-		ctx.moveTo(canvas.width/2, 0);
-		ctx.lineTo(canvas.width/2, 75);
-		ctx.stroke();
-		ctx.moveTo(canvas.width/2 + 75, 0);
-		ctx.lineTo(canvas.width/2 + 75, 75);
-		ctx.stroke();
-				
-		generateRule();	
-	}
-	else { // draws three squares for two rules and an operation
-		ctx.fillRect(canvas.width/2, 0, 225, 75);
-				
-		ctx.moveTo(canvas.width/2, 0);
-		ctx.lineTo(canvas.width/2 + 225, 0);
-		ctx.stroke();
-		ctx.moveTo(canvas.width/2, 75);
-		ctx.lineTo(canvas.width/2 + 225, 75);
-		ctx.stroke();
-		ctx.moveTo(canvas.width/2, 0);
-		ctx.lineTo(canvas.width/2, 75);
-		ctx.stroke();
-		ctx.moveTo(canvas.width/2 + 75, 0);
-		ctx.lineTo(canvas.width/2 + 75, 75);
-		ctx.stroke();
-		ctx.moveTo(canvas.width/2 + 150, 0);
-		ctx.lineTo(canvas.width/2 + 150, 75);
-		ctx.stroke();
-		ctx.moveTo(canvas.width/2 + 225, 0);
-		ctx.lineTo(canvas.width/2 + 225, 75);
-		ctx.stroke();
-		
-		generateRule();
-	}
-	
+	// display rule in top box
 	ctx.font = "30px Arial";
 	ctx.fillStyle = "black";
 	ctx.textAlign = "center";
-	ctx.fillText(rule, canvas.width/2, 50); 
-}
 	
+	ctx.fillText(rule, canvas.width/2, 50);
+}	
 
 function generateRule() {			
-			
-	//rule = "Level " + level + ", Person " + person + "<br />";
+
 	rule = "";
 
-	if (level <= 5) {
+	if (currentLevel <= 5) {
 		// color matrix 
 		colors = [ "red", "yellow", "green", "blue" ];
 		// item matrix 
@@ -93,7 +49,7 @@ function generateRule() {
 		color[5] = colors[Math.floor(Math.random() * colors.length)];
 		item[5] = items[5][Math.floor(Math.random() * items[5].length)];
 	}
-	else if (level <= 10) {
+	else if (currentLevel <= 10) {
 		colors = [ "red", "yellow", "green", "blue", "black", "white" ];
 		items = [ [ "none", "hats" ],
 				  [ "shirt", "t-shirt" ],
@@ -115,7 +71,7 @@ function generateRule() {
 		color[5] = colors[Math.floor(Math.random() * colors.length)];
 		item[5] = items[5][Math.floor(Math.random() * items[5].length)];
 	}
-	else if (level <= 15) {
+	else if (currentLevel <= 15) {
 		colors = [ "red", "yellow", "green", "blue", "black", "white", "brown", "gray" ];
 		items = [ [ "none", "hats", "sunglasses" ],
 				  [ "shirt", "t-shirt", "sleeveless" ],
@@ -139,7 +95,7 @@ function generateRule() {
 	}
 				
 	// rule consists of two items for level > 10 
-	if (level <= 10) {
+	if (currentLevel <= 10) {
 		randomRule1 = Math.floor(Math.random() * 6);
 				
 		while (item[randomRule1] == "none") {
@@ -162,16 +118,4 @@ function generateRule() {
 		rule += color[randomRule1] + " " + item[randomRule1] + " " + operators[join] + " " +
 				color[randomRule2] + " " + item[randomRule2];
 	}
-
-	// document.getElementById("demo").innerHTML = rule;
-				
-	
-	
-	// assuming each level has 5 people 
-	/*person++;
-	if (person > 5) {
-		level++;
-		person = 1;
-	}*/
-
 }
