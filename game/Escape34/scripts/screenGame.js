@@ -1,6 +1,7 @@
 function drawBackgroundImg(){
 		bgImage.src = "images/backgframe_480.jpg";
   	buttonImage.src = "images/button.png";
+  	initGameSetting(); //The setting required for gameplay. (run once)
 }
 
 function drawGame(){
@@ -19,4 +20,8 @@ function drawGame(){
 				setState(3);
 				console.log("Level: " + currentLevel)
 			});
+}
+
+function initGameSetting(){
+	startLevelTimer();
 }

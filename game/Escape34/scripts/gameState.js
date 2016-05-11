@@ -15,6 +15,9 @@ function setState(n){
 	if (state != n){
 		//Erases all UIobjects (buttons & clickable stuff)
 		uiObjects = [];
+		//All state changes should ensure the timer has stopped.
+		if (state == 1){stopTimer();}
+		
 		state = n;
         //reloadGraphics() is in graphicsBase.js file
 		reloadGraphics();

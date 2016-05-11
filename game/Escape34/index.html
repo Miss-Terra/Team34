@@ -41,6 +41,8 @@
 	<script src="scripts/graphicsBase.js"></script>
 	<script src="scripts/globals.js"></script>
 	<script src="scripts/uiObjects.js"></script>
+	<script src="scripts/timer.js"></script>
+
 
 
 
@@ -62,7 +64,7 @@
 <script>
 
 
-	setState(1);
+	setState(3);
 
 	levelVictory = true; // Assume victory for debugging ONLY
 	setState(2);
@@ -72,14 +74,9 @@
 // The main game loop
 	function main() {
 	
-		//To help us with time.
-		var now = Date.now();
-		var delta = now - then;
 
 		//Update and render graphics.
 		renderGraphics();
-
-		then = now;
 
 		// Request to do this again ASAP
 		requestAnimationFrame(main);
@@ -88,7 +85,6 @@
 	// Cross-browser support for requestAnimationFrame
 	var w = window;
 	requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
-	var then = Date.now();
 
 	//Run the main function.
 	main();
