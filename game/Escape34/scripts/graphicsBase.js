@@ -172,6 +172,7 @@ function renderGraphics(){
 			//Draw the line of people.
             //drawLine() is in drawLine.js file
 			drawLine(lineManImage);
+
 		}
 		//Result Screen
 		if (state == 2){	
