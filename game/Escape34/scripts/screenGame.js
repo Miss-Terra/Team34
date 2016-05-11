@@ -1,16 +1,16 @@
 function drawBackgroundImg(){
-		bgImage.src = "images/backgframe_480.jpg";
+	bgImage.src = "images/backgframe_480.jpg";
 //<<<<<<< HEAD
   	buttonImage.src = "images/button.png";
-  	initGameSetting(); //The setting required for gameplay. (run once)
 //=======
   	buttonImage.src = "images/gmenub1.png";
+  	lineManImage.src = "images/lineMan.png";
 //>>>>>>> 6b1deac05f70e8ef53ca0d4f671f6a3803f666d7
+	initGameSetting();
 }
 
 function drawGame(){
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
-	
 //	var buttonWidth = canvas.width / 6;
 //	var buttonHeight = canvas.height / 10;	
 	
@@ -27,5 +27,10 @@ function drawGame(){
 				setState(3);
 				console.log("Level: " + currentLevel)
 			});
+}
+
+//Settings that need to run during setup for gameplay. (runs once).
+function initGameSetting(){
+	startLevelTimer();
 }
 
