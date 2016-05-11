@@ -63,6 +63,12 @@
 			//button image is safe to load...
 			restartButtonReady = true;
 		};
+		var resumeButtonImage = new Image();
+		var resumeButtonReady = false;
+		resumeButtonImage.onload = function () {
+			//button image is safe to load...
+			resumeButtonReady = true;
+		};
 
 	//----------------Buttons Image----------------
 
@@ -141,6 +147,7 @@ function clearLoadedImages(){
 	creditsButtonReady = false;
 	mainMenuButtonReady = false;
 	restartButtonReady = false;
+	resumeButtonReady = false;
 }
 
 
@@ -232,7 +239,9 @@ function graphicsStatus(){
 	}
 	if (state == 3) {
 		//check state 3 img status
-		if (bgReady){
+		if (bgReady && mainMenuButtonImage
+					&& restartButtonImage
+					&& resumeButtonImage){
 			return true;
 		}else{
 			return false;
