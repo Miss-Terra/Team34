@@ -1,7 +1,7 @@
 
 var personSize = 50;
 var lineXStart = 50;
-var lineYStart = 50;
+var lineYStart = canvas.height - personSize;
 var lineSpacing = 50;
 
 
