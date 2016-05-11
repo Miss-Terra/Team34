@@ -2,8 +2,8 @@ function loadPauseMenu() {
 	
     // Judy: pause menu background image		
     bgImage.src = "images/pauseScreen.png"; 
-	buttonImage.src = "images/button.png";
-    playButtonImage.src = "images/playButton.png";  
+	resumeButtonImage.src = "images/resumeButton.png";
+    restartButtonImage.src = "images/restartButton.png";  
     mainMenuButtonImage.src = "images/mainMenuButton.png";   
 }
 
@@ -19,7 +19,7 @@ function drawPauseMenu() {
 	var menuX = restartX + (restartX / 2) + (buttonWidth / 2); 
 
     // middle button
-	ctx.drawImage(buttonImage, restartX, buttonY, buttonWidth, buttonHeight);
+	ctx.drawImage(restartButtonImage, restartX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(restartX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("restart");
@@ -29,7 +29,7 @@ function drawPauseMenu() {
 			});
 	
     // left button
-	ctx.drawImage(buttonImage, resumeX, buttonY, buttonWidth, buttonHeight);
+	ctx.drawImage(resumeButtonImage, resumeX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[1] = new uiObject(resumeX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("resume");

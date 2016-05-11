@@ -6,9 +6,11 @@ function levelResultBackgroundImg(){
 	}else{
 		bgImage.src = "images/gameover.png";
 		buttonImage.src = "images/submitButton.png";
+		
 	}
-	buttonImage.src = "images/restartButton.png";
-	buttonImage.src = "images/resumeButton.png";
+	mainMenuButtonImage.src = "images/mainMenuButton.png";
+	restartButtonImage.src = "images/restartButton.png";
+	
 }
 
 function drawResult(){
@@ -24,7 +26,7 @@ function drawResult(){
 	var menuX = (restartX / 2) - (buttonWidth / 2);
 	var nextX = restartX + (restartX / 2) + (buttonWidth / 2);
 
-	ctx.drawImage(buttonImage, restartX, buttonY, buttonWidth, buttonHeight);
+	ctx.drawImage(restartButtonImage, restartX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(restartX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("restart");
@@ -32,7 +34,7 @@ function drawResult(){
 				console.log("Level: " + currentLevel)
 			});
 	
-	ctx.drawImage(buttonImage, menuX, buttonY, buttonWidth, buttonHeight);
+	ctx.drawImage(mainMenuButtonImage, menuX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[1] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("menu");
@@ -42,9 +44,9 @@ function drawResult(){
 
 	
 
+	
 	ctx.drawImage(buttonImage, nextX, buttonY, buttonWidth, buttonHeight);
-	ctx.fill
-	if (levelVictory){
+	if (levelVictory){ //If player beat the level
 		uiObjects[2] = new uiObject(nextX, buttonY, buttonWidth, buttonHeight, 
 				function (){
 					console.log("next");

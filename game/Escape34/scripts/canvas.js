@@ -33,7 +33,6 @@
 			//Set the canvas width to your window width.
 			canvas.width = winWidth;
 			canvas.height = winHeight;
-			console.log("isMobile")
 		}else{ // if desktop
 			//Settings to fit he screen, while keeping ratio.
 				if (heightMin <= winHeight){
