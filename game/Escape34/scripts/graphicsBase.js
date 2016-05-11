@@ -28,7 +28,7 @@
 			//button image is safe to load...
 			buttonReady = true;
 		};
-		// Judy: add more buttons
+		
 		var mainMenuButtonImage = new Image();
 		var mainMenuButtonReady = false;
 		mainMenuButtonImage.onload = function () {
@@ -69,6 +69,8 @@
 			//button image is safe to load...
 			resumeButtonReady = true;
 		};
+		
+		
 
 	//----------------Buttons Image----------------
 
@@ -83,6 +85,7 @@
 //State 4 == Score screen
 //State 5 == Credits screen
 //State 6 == Extra screen
+//State 7 == Confirm screen
 //	<script src="scripts/screenMainMenu.js"></script> 
 //	<script src="scripts/screenGame.js"></script>
 //	<script src="scripts/screenResult.js"></script>
@@ -112,12 +115,12 @@ function reloadGraphics(){
 	}
 		//2 is result screen
 	if (state == 2){
-        //levelFinishBackgroundImg() is in screenResult.js file
+			//levelFinishBackgroundImg() is in screenResult.js file
 		levelResultBackgroundImg()
 	}
 		//3 is pause menu screen
 	if (state == 3){
-		//screenPauseMenu.js
+			//screenPauseMenu.js
 		loadPauseMenu();
 	}
 		//4 is scoreboard screen
@@ -131,6 +134,11 @@ function reloadGraphics(){
 		//6 easter egg screen
 	if (state == 6){
 			//screenEgg.js
+	}
+		//7 confirm screen
+	if (state == 7){
+		//screenPauseMenu.js
+		loadConfirmMenu();	
 	}
 
 
@@ -196,7 +204,11 @@ function renderGraphics(){
 		if (state == 6){
 				//screenEgg.js
 		}
-
+			//7 confirm screen
+		if (state == 7){
+		//screenPauseMenu.js
+		drawConfirmMenu();	
+		}
 	}
 	
 	
