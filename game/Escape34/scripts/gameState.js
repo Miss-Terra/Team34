@@ -21,5 +21,6 @@ function setState(n){
 	}else{
 		console.log("Game State already set.")
 	}
+	console.log("State --> " + state)
 }
 

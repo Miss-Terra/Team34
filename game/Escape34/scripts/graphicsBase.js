@@ -18,18 +18,16 @@
 		lineManImage.onload = function () {
 			//Stickman is safe to load...
 			lineManReady = true;
-		};
-
+		};		
+		
+	//----------------Buttons Image----------------
+		//Basic button
 		var buttonImage = new Image();
 		var buttonReady = false;
 		buttonImage.onload = function () {
 			//button image is safe to load...
 			buttonReady = true;
 		};
-		
-		
-		
-	//----------------Buttons Image----------------
 		// Judy: add more buttons
 		var mainMenuButtonImage = new Image();
 		var mainMenuButtonReady = false;
@@ -57,6 +55,13 @@
 		creditsButtonImage.onload = function () {
 			//button image is safe to load...
 			creditsButtonReady = true;
+		};
+
+		var restartButtonImage = new Image();
+		var restartButtonReady = false;
+		restartButtonImage.onload = function () {
+			//button image is safe to load...
+			restartButtonReady = true;
 		};
 
 	//----------------Buttons Image----------------
@@ -135,6 +140,7 @@ function clearLoadedImages(){
 	scoreboardButtonReady = false;
 	creditsButtonReady = false;
 	mainMenuButtonReady = false;
+	restartButtonReady = false;
 }
 
 
@@ -215,8 +221,10 @@ function graphicsStatus(){
 		}
 	}
 	if (state == 2) {
-		//check state 1 img status
-		if (bgReady){
+		//check state 2 img status
+		if (bgReady && restartButtonReady
+					&& nextLevelButtonImage
+					&& buttonImage){
 			return true;
 		}else{
 			return false;
