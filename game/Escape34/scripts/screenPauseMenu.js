@@ -24,6 +24,7 @@ function drawPauseMenu() {
 			function (){
 				console.log("restart");
                 //Judy: will update State value when create confirm window
+                levelTime = 0;
 				setState(1);
 				console.log("Level: " + currentLevel)
 			});
@@ -45,6 +46,8 @@ function drawPauseMenu() {
 			function () {
 				console.log("menu");
 				setState(0);
+				levelTime = 0;
+                finalTime = 0; 
 				console.log("Level: " + currentLevel)
 			});
 }
