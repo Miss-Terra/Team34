@@ -57,6 +57,7 @@ function drawResult(){
 					setState(1);
 					finalScore += levelScore;
 					levelScore = 0;
+					levelTime = 0;
 					console.log("Level: " + currentLevel)
 				});
 	}else{ // if player lost
