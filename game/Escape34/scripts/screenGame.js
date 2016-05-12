@@ -73,11 +73,13 @@ function drawGame(){
 	if (levelTime % 5 != 0)
 		drawRule();*/
 	
+	ctx.fillStyle = "#000000";
+	
 	if (rule != null)
 		drawRule();
 	
 	// button to generate rules
-	ctx.fillStyle = "#000000";
+	//ctx.fillStyle = "#000000";
 	ctx.fillText("Generate", canvas.width/2, 100);
 	
 	// button to skip level
