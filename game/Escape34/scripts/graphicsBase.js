@@ -130,7 +130,8 @@ function reloadGraphics(){
 	}
 		//5 is credits screen
 	if (state == 5){
-			//screenCredits.js
+		//screenCredits.js
+		loadCreditsMenu();
 	}
 		//6 easter egg screen
 	if (state == 6){
@@ -201,7 +202,8 @@ function renderGraphics(){
 		}
 			//5 is credits screen
 		if (state == 5){
-				//screenCredits.js
+			//screenCredits.js
+			drawCredits();
 		}
 			//6 easter egg screen
 		if (state == 6){
@@ -209,8 +211,8 @@ function renderGraphics(){
 		}
 			//7 confirm screen
 		if (state == 7){
-		//screenPauseMenu.js
-		drawConfirmMenu();	
+			//screenPauseMenu.js
+			drawConfirmMenu();	
 		}
 	}
 	

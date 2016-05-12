@@ -1,24 +1,29 @@
-//function drawBackgroundImg(){
-////		bgImage.src = "images/???.png";
-//}
+
+function loadCreditsMenu() {
+	
+    // credits menu background image		
+    bgImage.src = "images/creditsScreen.png";   
+    mainMenuButtonImage.src = "images/mainMenuButton.png";   
+}
+
+
 
 function drawCredits(){
-	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
-	
-//	var buttonWidth = canvas.width / 6;
-//	var buttonHeight = canvas.height / 10;	
-//	var	buttonY = canvas.height - (buttonHeight * 2);
-//	//Button x positions
-//	var restartX = (canvas.width / 2) - (buttonWidth / 2);
-//	var menuX = (restartX / 2) - (buttonWidth / 2);
-//	var nextX = restartX + (restartX / 2) + (buttonWidth / 2);
+    ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
-//	ctx.drawImage(buttonImage, restartX, buttonY, buttonWidth, buttonHeight);
-//	uiObjects[0] = new uiObject(restartX, buttonY, buttonWidth, buttonHeight, 
-//			function (){
-//				console.log("restart");
-//				setState(1);
-//				console.log("Level: " + currentLevel)
-//			});
+    var buttonWidth = canvas.width / 6;
+	var buttonHeight = canvas.height / 10;	
+	var	buttonY = canvas.height - (buttonHeight * 2);
+	//Button x positions
+	var menuX = (canvas.width / 2) - (buttonWidth / 2) + ((canvas.width / 2) - (buttonWidth / 2)) / 2 + (buttonWidth / 2);          
 
+    // right button
+	ctx.drawImage(mainMenuButtonImage, menuX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[0] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight, 
+			function (){
+				console.log("restart. go to confirm menu.");
+                levelTime = 0;
+				setState(0);
+				console.log("Level: " + currentLevel)
+			});
 }
