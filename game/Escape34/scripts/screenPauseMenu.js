@@ -24,7 +24,6 @@ function drawPauseMenu() {
 	uiObjects[0] = new uiObject(restartX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("restart. go to confirm menu.");
-                levelTime = 0;
 				setState(7);
 				console.log("Level: " + currentLevel)
 			});

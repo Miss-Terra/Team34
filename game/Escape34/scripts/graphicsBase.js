@@ -22,14 +22,43 @@
 		};		
 		
 	//----------------Buttons Image----------------
-		//Basic button
+
+		var generateButtonImage = new Image();
+		var buttonReady = false;
+		generateButtonImage.onload = function () {
+			//button image is safe to load...
+			buttonReady = true;
+		};
+		
+		var victoryButtonImage = new Image();
+		var buttonReady = false;
+		victoryButtonImage.onload = function () {
+			//button image is safe to load...
+			buttonReady = true;
+		};
+		
+		var addscoreButtonImage = new Image();
+		var buttonReady = false;
+		addscoreButtonImage.onload = function () {
+			//button image is safe to load...
+			buttonReady = true;
+		};
+	
+	
+	
+	
+	
+	
+	
+	
+		// Basic button
 		var buttonImage = new Image();
 		var buttonReady = false;
 		buttonImage.onload = function () {
 			//button image is safe to load...
 			buttonReady = true;
 		};
-		
+
 		var pauseButtonImage = new Image();
 		var pauseButtonReady = false;
 		pauseButtonImage.onload = function () {

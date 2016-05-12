@@ -53,6 +53,8 @@ function drawResult(){
 					console.log("next");
 					nextLevel();
 					setState(1);
+					finalScore += levelScore;
+					levelScore = 0;
 					console.log("Level: " + currentLevel)
 				});
 	}else{ // if player lost
