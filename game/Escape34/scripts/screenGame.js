@@ -1,3 +1,41 @@
+function drawPerson(x,y) {
+
+//	ctx.drawImage(person_man, x, y); //test drawing an image from array
+	
+}
+
+loadItems();
+
+function loadItems() {
+	var hatArray = new Array();
+	var shirtArray = new Array();
+	var pantArray = new Array();
+	var shoeArray = new Array();
+	var itemArray = new Array();
+
+	for (i=1; i<=NumberHats; i++) {
+		hatArray[i] = new Image();
+		hatArray[i].src = ("images/items/hat_" + i + ".png");
+	}
+	for (i=1; i<=NumberShirts; i++) {
+		shirtArray[i] = new Image();
+		shirtArray[i].src = ("images/items/shirt_" + i + ".png");
+	}
+	for (i=1; i<=NumberPants; i++) {
+		pantArray[i] = new Image();
+		pantArray[i].src = ("images/items/pant_" + i + ".png");
+	}
+	for (i=1; i<=NumberShoes; i++) {
+		shoeArray[i] = new Image();
+		shoeArray[i].src = ("images/items/shoe_" + i + ".png");
+	}
+	for (i=1; i<=NumberItems; i++) {
+		itemArray[i] = new Image();
+		itemArray[i].src = ("images/items/item_" + i + ".png");
+	}
+}
+
+
 function drawBackgroundImg(){
 	// images
 	bgImage.src = "images/backgframe_480.jpg";
@@ -32,6 +70,9 @@ function drawGame(){
 				setState(3);
 				console.log("Level: " + currentLevel)
 			});
+	
+	//ctx.drawImage(hatArray[1], 100, 100); //test drawing an image from array
+
 			
 	// button to generate rules
 	ctx.drawImage(generateButtonImage, canvas.width/2-75, 75, buttonWidth*2, buttonHeight);
