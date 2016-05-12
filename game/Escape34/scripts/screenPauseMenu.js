@@ -82,6 +82,7 @@ function drawConfirmMenu() {
 				setState(1);
                 levelTime = 0;
                 finalTime = 0; 
+				levelScore = 0;
 			});	
 	
     // left button
