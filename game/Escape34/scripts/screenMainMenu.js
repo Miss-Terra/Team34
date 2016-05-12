@@ -5,11 +5,15 @@ function loadMainMenu() {
    playButtonImage.src = "images/playButton.png";
    scoreboardButtonImage.src = "images/scoreboardButton.png";
    creditsButtonImage.src = "images/creditsButton.png";
+   menuAnimationImage.src = "images/lineMan.png";
 }
 
 function drawMainMenu(){
 
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
+
+	ctx.drawImage(menuAnimationImage, 0, canvas.height - (canvas.height / 6), canvas.width / 6, canvas.height / 6);
+
 
     var buttonWidth = canvas.width / 6;
 	var buttonHeight = canvas.height / 10;	
