@@ -4,6 +4,7 @@
 	var
 	canvas,
 	ctx,
+	canvasRatio = 3/4,
 	winWidth = $(window).width(),
 	winHeight = $(window).height();
 
@@ -25,8 +26,8 @@
 	function resizeCanvas(){
 		winWidth = $(window).width(),
 		winHeight = $(window).height();
-		var heightMin = winWidth * (3/4);
-		var widthMin = winHeight * (4/3);
+		var heightMin = winWidth * canvasRatio;
+		var widthMin = winHeight / canvasRatio;
 
 			//Check if device is mobile or not.
 		if (winWidth < 800 && winHeight < 550){

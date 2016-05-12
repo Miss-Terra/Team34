@@ -77,7 +77,6 @@ function drawGame(){
 		drawRule();
 	
 	// button to generate rules
-	ctx.font="20px Georgia";
 	ctx.fillStyle = "#000000";
 	ctx.fillText("Generate", canvas.width/2, 100);
 	
@@ -88,7 +87,6 @@ function drawGame(){
 	ctx.fillText("Add score", canvas.width/2, 250);
 	
 	// display level
-	ctx.font="30px Georgia";
 	ctx.fillStyle = "#000000";
 	var levelDisplay = "Level " + currentLevel;
 	ctx.fillText(levelDisplay, canvas.width-120, 50);
