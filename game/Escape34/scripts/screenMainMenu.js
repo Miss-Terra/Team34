@@ -33,6 +33,7 @@ function drawMainMenu(){
 			function (){
 				console.log("restart");
 				setState(1);
+				currentLevel = 1;
 				console.log("Level: " + currentLevel)
 			});
 

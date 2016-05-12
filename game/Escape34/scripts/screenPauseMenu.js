@@ -1,6 +1,7 @@
+//--------------------Pause Menu--------------------
 function loadPauseMenu() {
 	
-    // Judy: pause menu background image		
+    // Pause menu background image		
     bgImage.src = "images/pauseScreen.png"; 
 	resumeButtonImage.src = "images/resumeButton.png";
     restartButtonImage.src = "images/restartButton.png";  
@@ -22,10 +23,8 @@ function drawPauseMenu() {
 	ctx.drawImage(restartButtonImage, restartX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(restartX, buttonY, buttonWidth, buttonHeight, 
 			function (){
-				console.log("restart");
-                //Judy: will update State value when create confirm window
-                levelTime = 0;
-				setState(1);
+				console.log("restart. go to confirm menu.");
+				setState(7);
 				console.log("Level: " + currentLevel)
 			});
 	
@@ -47,7 +46,52 @@ function drawPauseMenu() {
 				console.log("menu");
 				setState(0);
 				levelTime = 0;
+                finalTime = 0;
+				levelScore = 0;
+				console.log("Level: " + currentLevel)
+			});
+}
+
+
+
+//--------------------Confirm Menu--------------------
+function loadConfirmMenu() {
+	
+    // Confirm menu background image		
+    bgImage.src = "images/confirmScreen.png"; 
+	resumeButtonImage.src = "images/noButton.png";
+    restartButtonImage.src = "images/yesButton.png";	
+}
+
+
+function drawConfirmMenu() {
+    ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
+
+    var buttonWidth = canvas.width / 6;
+	var buttonHeight = canvas.height / 10;	
+	var	buttonY = canvas.height - (buttonHeight * 2);
+	//Button x positions
+	var noX = (canvas.width / 2) - (buttonWidth / 2);
+	var yesX = (noX / 2) - (buttonWidth / 2);            
+
+
+    // middle button
+	ctx.drawImage(restartButtonImage, noX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[0] = new uiObject(noX, buttonY, buttonWidth, buttonHeight, 
+			function (){
+				console.log("Restart game");
+				setState(1);
+                levelTime = 0;
                 finalTime = 0; 
+				levelScore = 0;
+			});	
+	
+    // left button
+	ctx.drawImage(resumeButtonImage, yesX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[1] = new uiObject(yesX, buttonY, buttonWidth, buttonHeight, 
+			function (){
+				console.log("Do not restart. Go back to pause menu");
+				setState(3);
 				console.log("Level: " + currentLevel)
 			});
 }

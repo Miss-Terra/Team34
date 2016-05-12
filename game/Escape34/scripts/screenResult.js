@@ -32,6 +32,8 @@ function drawResult(){
 			function (){
 				console.log("restart");
 				setState(1);
+				levelScore = 0;
+				levelTime = 0;
 				console.log("Level: " + currentLevel)
 			});
 	
@@ -40,6 +42,8 @@ function drawResult(){
 			function (){
 				console.log("menu");
 				setState(0);
+				levelScore = 0;
+				levelTime = 0;
 				console.log("Level: " + currentLevel)
 			});
 
@@ -53,6 +57,9 @@ function drawResult(){
 					console.log("next");
 					nextLevel();
 					setState(1);
+					finalScore += levelScore;
+					levelScore = 0;
+					levelTime = 0;
 					console.log("Level: " + currentLevel)
 				});
 	}else{ // if player lost
