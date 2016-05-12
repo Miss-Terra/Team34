@@ -1,3 +1,4 @@
+
 // This file displays the graphics on the canvas.
 //Note, the canvas is constructed in canvas.js.
 //Here we load backgrounds & art based on the level/state
@@ -25,6 +26,13 @@
 		var buttonImage = new Image();
 		var buttonReady = false;
 		buttonImage.onload = function () {
+			//button image is safe to load...
+			buttonReady = true;
+		};
+		
+		var pauseButtonImage = new Image();
+		var pauseButtonReady = false;
+		pauseButtonImage.onload = function () {
 			//button image is safe to load...
 			buttonReady = true;
 		};
@@ -274,4 +282,3 @@ function graphicsStatus(){
 		}
 	}
 }
-
