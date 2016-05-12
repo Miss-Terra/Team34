@@ -46,7 +46,8 @@ function drawPauseMenu() {
 				console.log("menu");
 				setState(0);
 				levelTime = 0;
-                finalTime = 0; 
+                finalTime = 0;
+				levelScore = 0;
 				console.log("Level: " + currentLevel)
 			});
 }

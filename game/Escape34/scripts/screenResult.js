@@ -42,6 +42,8 @@ function drawResult(){
 			function (){
 				console.log("menu");
 				setState(0);
+				levelScore = 0;
+				levelTime = 0;
 				console.log("Level: " + currentLevel)
 			});
 
