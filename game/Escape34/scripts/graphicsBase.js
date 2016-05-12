@@ -21,6 +21,12 @@
 			lineManReady = true;
 		};		
 		
+		var menuAnimationImage = new Image();
+		var menuAnimationReady = false;
+		menuAnimationImage.onload = function () {
+			//Stickman is safe to load...
+			menuAnimationReady = true;
+		};	
 	//----------------Buttons Image----------------
 
 		var generateButtonImage = new Image();

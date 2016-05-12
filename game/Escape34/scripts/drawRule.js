@@ -13,10 +13,7 @@ var join;
 function drawRule() {
 
 	// display rule in top box
-	ctx.font = "30px Arial";
-	ctx.fillStyle = "black";
-	ctx.textAlign = "center";
-	
+
 	ctx.fillText(rule, canvas.width/2, 50);
 }	
 

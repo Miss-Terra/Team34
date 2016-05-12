@@ -5,11 +5,23 @@ function loadMainMenu() {
    playButtonImage.src = "images/playButton.png";
    scoreboardButtonImage.src = "images/scoreboardButton.png";
    creditsButtonImage.src = "images/creditsButton.png";
+   menuAnimationImage.src = "images/lineMan.png"; //Change  me for easter egg.
 }
 
 function drawMainMenu(){
 
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
+
+
+	var animationWidth = canvas.width / 6;
+	var animationHeight = canvas.height / 6;	
+	var	animationY = canvas.height - (canvas.height / 6);
+	ctx.drawImage(menuAnimationImage, 0, animationY, animationWidth, animationHeight);
+	uiObjects[3] = new uiObject(0, animationY, animationWidth, animationHeight, 
+			function (){
+				console.log("easter Egg!!!");
+				menuAnimationImage.src = "images/yesButton.png";
+			});
 
     var buttonWidth = canvas.width / 6;
 	var buttonHeight = canvas.height / 10;	

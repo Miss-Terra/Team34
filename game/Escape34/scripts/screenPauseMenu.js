@@ -50,6 +50,15 @@ function drawPauseMenu() {
 				levelScore = 0;
 				console.log("Level: " + currentLevel)
 			});
+			
+			
+	// display level
+	var levelDisplay = "Level: " + currentLevel;
+	ctx.fillText(levelDisplay, (canvas.width * 0.8), (canvas.height * 0.1));
+	
+	// display score
+	var scoreDisplay = "Score: " + levelScore;
+	ctx.fillText(scoreDisplay, (canvas.width * 0.8), (canvas.height * 0.15));
 }
 
 

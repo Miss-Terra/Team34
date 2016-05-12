@@ -10,8 +10,14 @@ var levelTime = 0;
 var finalTime = 0;
 
 
+
 var NumberHats=3;
 var NumberShirts=3;
 var NumberPants=3;
 var NumberShoes=3;
 var NumberItems=3;
+
+ctx.font = "1em Arial";
+ctx.fillStyle = "black";
+ctx.textAlign = "center";
+	

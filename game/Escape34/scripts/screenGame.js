@@ -114,12 +114,13 @@ function drawGame(){
 	if (levelTime % 5 != 0)
 		drawRule();*/
 	
+	ctx.fillStyle = "#000000";
+	
 	if (rule != null)
 		drawRule();
 	
 	// button to generate rules
-	ctx.font="20px Georgia";
-	ctx.fillStyle = "#000000";
+	//ctx.fillStyle = "#000000";
 	ctx.fillText("Generate", canvas.width/2, 100);
 	
 	// button to skip level
@@ -129,7 +130,6 @@ function drawGame(){
 	ctx.fillText("Add score", canvas.width/2, 250);
 	
 	// display level
-	ctx.font="30px Georgia";
 	ctx.fillStyle = "#000000";
 	var levelDisplay = "Level " + currentLevel;
 	ctx.fillText(levelDisplay, canvas.width-120, 50);
