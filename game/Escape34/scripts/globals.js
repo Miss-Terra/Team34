@@ -11,3 +11,7 @@ var finalTime = 0;
 
 
 
+ctx.font = "1em Arial";
+ctx.fillStyle = "black";
+ctx.textAlign = "center";
+	
