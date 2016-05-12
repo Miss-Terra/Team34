@@ -32,6 +32,8 @@ function drawResult(){
 			function (){
 				console.log("restart");
 				setState(1);
+				levelScore = 0;
+				levelTime = 0;
 				console.log("Level: " + currentLevel)
 			});
 	
