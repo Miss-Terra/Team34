@@ -71,8 +71,8 @@ function drawGame(){
 				console.log("Level: " + currentLevel)
 			});
 	
-	ctx.drawImage(hatArray[1], 100, 100); //test drawing an image from array
-	ctx.drawImage(person, 99, 99);
+	//ctx.drawImage(hatArray[1], 100, 100); //test drawing an image from array
+	//ctx.drawImage(person, 99, 99);
 
 			
 	// button to generate rules
