@@ -6,7 +6,7 @@ var finalScore = 0; //The overall score between levels.
 var levelVictory = false; //Defines when a user is victorious or not.
 var finalVictory = false; //Defines if the user won the game. (Only useful during the last level) (possibly useless)
 var uiObjects = []; // defines uiObjects... Things people can click
-var levelTime = 0;
+var levelTime = 3 * 60; // Set 3 minutes for each level
 var finalTime = 0;
 var personArray = [];
 

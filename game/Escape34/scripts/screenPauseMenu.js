@@ -32,7 +32,8 @@ function drawPauseMenu() {
 			function () {
 				console.log("menu");
 				setState(0);
-				levelTime = 0;
+				// initTimeSetting() in timer.js file
+				initTimeSetting();
                 finalTime = 0;
 				levelScore = 0;
 				console.log("Level: " + currentLevel)
@@ -82,7 +83,8 @@ function drawConfirmMenu() {
 			function (){
 				console.log("Restart game");
 				setState(1);
-                levelTime = 0;
+				// initTimeSetting() in timer.js file
+				initTimeSetting();
                 finalTime = 0; 
 				levelScore = 0;
 			});	

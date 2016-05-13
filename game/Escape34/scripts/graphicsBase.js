@@ -264,6 +264,7 @@ function renderGraphics(){
 		//Result Screen
 		if (state == 2){	
 			//Draw background & buttons
+			//drawResult() is in screenResult.js file
             //drawFinishLevel() is in levelFinish.js file
 			drawResult();
 		}
