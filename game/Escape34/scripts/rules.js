@@ -132,7 +132,6 @@ function loadRules() {
 	uiObjects[2] = new uiObject(canvas.width/2 - canvas.width/10, canvas.height/5, buttonWidth*2, buttonHeight, 
 			function (){
 				finalScore += levelScore;
-				levelScore = 0;
 				setState(2);
 			});
 			

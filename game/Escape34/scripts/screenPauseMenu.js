@@ -36,6 +36,7 @@ function drawPauseMenu() {
 				initTimeSetting();
                 finalTime = 0;
 				levelScore = 0;
+				rule = null;
 				console.log("Level: " + currentLevel)
 			});
 
@@ -87,6 +88,7 @@ function drawConfirmMenu() {
 				initTimeSetting();
                 finalTime = 0; 
 				levelScore = 0;
+				rule = null;
 			});	
 	
     // left button
