@@ -36,3 +36,13 @@ var uiObject = function(x, y, width, height, func) {
     this.height = height; 
     this.clicked = func; //Takes in a function. Therefore each uiObject can be unique.
 }
+
+// Each object has a point & size... PLUS a unique function. :)
+var uiObject = function(x, y, width, height, func, person) {
+	this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height; 
+    this.clicked = func; //Takes in a function. Therefore each uiObject can be unique.
+    this.person = person;
+}

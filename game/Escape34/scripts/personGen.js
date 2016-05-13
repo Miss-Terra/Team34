@@ -35,7 +35,17 @@ function genPerson(personImg){
 			this.pants = pantArray[2];
 			this.shoes = shoeArray[2];
 			this.image = personImg;
+		},
+
+		debugPerson: function() {
+			console.log("Hat: " + this.hat.src);
+			console.log("Shirt: " + this.shirt.src);
+			console.log("Item1: " + this.item1.src);
+			console.log("Item2: " + this.item2.src);
+			console.log("Pants: " + this.pants.src);
+			console.log("Shoes: " + this.shoes.src);
 		}
+
 	};
 	person.setItems();
 	return person;

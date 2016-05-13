@@ -20,16 +20,17 @@ function drawLine(personArray){
 			
 		}else{
 
-			ctx.drawImage(personArray[i].image, xPos, yPos, personWidth, personHeight);
+		ctx.drawImage(personArray[i].image, xPos, yPos, personWidth, personHeight);
 	 		uiPeople[i] = new uiObject(xPos, yPos, personWidth, personHeight, 
 			function (){
-				console.log("person clicked.");
-			});
+				console.log("Person: " + i + " clicked.");
+				this.person.debugPerson(); // runs console commands to display items.
+			}, personArray[i]);
 
 		//	xPos = xPos + personWidth/8;
 		yPos = yPos + personHeight/4;		
-
-			ctx.drawImage(personArray[i].shirt, xPos, yPos, personWidth, personHeight * 0.3); //test drawing an image from array
+		//draw shirt
+		ctx.drawImage(personArray[i].shirt, xPos, yPos, personWidth, personHeight * 0.3); //test drawing an image from array
 		//ctx.drawImage(hatArray[1], 100, 130); //test drawing an image from array
 
 		}
