@@ -3,7 +3,6 @@ function loadScoreboard() {
 
    bgImage.src = "images/levelvictory.png";
    mainMenuButtonImage.src = "images/mainMenuButton.png";
-   creditsButtonImage.src = "images/creditsButton.png";
 }
 
 function drawScoreboard(){
@@ -23,13 +22,4 @@ function drawScoreboard(){
 			setState(0);
 			console.log("Level: " + currentLevel)
 		});
-		
-	ctx.drawImage(creditsButtonImage, creditsX, buttonY, buttonWidth, buttonHeight);
-	uiObjects[1] = new uiObject(creditsX, buttonY, buttonWidth, buttonHeight, 
-		function (){
-			console.log("credits");
-			setState(5);
-			console.log("Level: " + currentLevel)
-		});
-
 }
