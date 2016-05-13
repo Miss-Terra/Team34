@@ -7,6 +7,8 @@ function loadGame(){
 	
 	// required buttons
  	pauseButtonImage.src = "images/gmenub1.png";
+	pauseButtonImage2 = new Image();
+ 	pauseButtonImage2.src = "images/gpauseButton.png";
 	
 	// test buttons
  	generateButtonImage.src = "images/button.png";
@@ -38,7 +40,7 @@ function addMenuButton() {
 	var buttonX = (buttonWidth *(3/16));  //
 	var	buttonY = (buttonHeight / 4); //6 px
 
-	ctx.drawImage(pauseButtonImage, buttonX, buttonY, buttonWidth, buttonHeight);
+	ctx.drawImage(pauseButtonImage2, buttonX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(buttonX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("Pause Menu");

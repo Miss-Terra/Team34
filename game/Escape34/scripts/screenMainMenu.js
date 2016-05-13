@@ -15,8 +15,12 @@ function loadMainMenu() {
 function drawMainMenu(){
 
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
+	
+	logowidth=canvas.width*3/10;
+	logoheight=canvas.height/4;
 
-	ctx.drawImage(menuLogo, canvas.width/2 -menuLogo.width/2, canvas.height/5);
+	ctx.drawImage(menuLogo, canvas.width/2-logowidth/2, canvas.height/5,
+							  logowidth, logoheight);
 
 	var animationWidth = canvas.width / 6;
 	var animationHeight = canvas.height / 6;	
