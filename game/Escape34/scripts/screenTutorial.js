@@ -3,7 +3,7 @@ function loadTutorialMenu() {
 	
     // credits menu background image		
     // bgImage.src = "";   
-    tutorialButtonImage.src = "images/tutorialButton.png";   
+    mainMenuButtonImage.src = "images/mainMenuButton.png";   
 }
 
 
@@ -18,7 +18,7 @@ function drawTutorial(){
 	var menuX = (canvas.width / 2) - (buttonWidth / 2) + ((canvas.width / 2) - (buttonWidth / 2)) / 2 + (buttonWidth / 2);          
 
     // right button
-	ctx.drawImage(tutorialButtonImage, menuX, buttonY, buttonWidth, buttonHeight);
+	ctx.drawImage(mainMenuButtonImage, menuX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("Go to main menu.");

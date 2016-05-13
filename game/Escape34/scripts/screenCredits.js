@@ -2,7 +2,7 @@
 function loadCreditsMenu() {
 	
     // credits menu background image		
-    bgImage.src = "images/creditsScreen.png";   
+    // bgImage.src = "";   
     mainMenuButtonImage.src = "images/mainMenuButton.png";   
 }
 
