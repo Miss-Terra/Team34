@@ -11,10 +11,8 @@ var operators;
 var join;
 
 function drawRule() {
-
 	// display rule in top box
-
-	ctx.fillText(rule, canvas.width/2, 50);
+	ctx.fillText(rule, canvas.width/2, canvas.height/20);
 }	
 
 function generateRule() {			
@@ -123,22 +121,24 @@ function loadRules() {
 	var buttonHeight = canvas.height/10;	
 
 	// button to generate rules
-	ctx.drawImage(generateButtonImage, canvas.width/2-75, 75, buttonWidth*2, buttonHeight);
-	uiObjects[1] = new uiObject(canvas.width/2-75, 75, buttonWidth*2, buttonHeight, 
+	ctx.drawImage(generateButtonImage, canvas.width/2 - canvas.width/10, canvas.height/10, buttonWidth*2, buttonHeight);
+	uiObjects[1] = new uiObject(canvas.width/2 - canvas.width/10, canvas.height/10, buttonWidth*2, buttonHeight, 
 			function (){
 				generateRule();
 			});
 			
 	// button to skip level (just for testing)
-	ctx.drawImage(victoryButtonImage, canvas.width/2-75, 150, buttonWidth*2, buttonHeight);
-	uiObjects[2] = new uiObject(canvas.width/2-75, 150, buttonWidth*2, buttonHeight, 
+	ctx.drawImage(victoryButtonImage, canvas.width/2 - canvas.width/10, canvas.height/5, buttonWidth*2, buttonHeight);
+	uiObjects[2] = new uiObject(canvas.width/2 - canvas.width/10, canvas.height/5, buttonWidth*2, buttonHeight, 
 			function (){
+				finalScore += levelScore;
+				levelScore = 0;
 				setState(2);
 			});
 			
 	// button to add scores (just for testing)
-	ctx.drawImage(addscoreButtonImage, canvas.width/2-75, 225, buttonWidth*2, buttonHeight);
-	uiObjects[3] = new uiObject(canvas.width/2-75, 225, buttonWidth*2, buttonHeight, 
+	ctx.drawImage(addscoreButtonImage, canvas.width/2 - canvas.width/10, canvas.height*3/10, buttonWidth*2, buttonHeight);
+	uiObjects[3] = new uiObject(canvas.width/2 - canvas.width/10, canvas.height*3/10, buttonWidth*2, buttonHeight, 
 			function (){
 				levelScore += 5;
 			});
@@ -147,21 +147,13 @@ function loadRules() {
 	// display rule box
 	if (currentLevel <= 10) {
 		ctx.fillStyle = "#33FFFF";
-		ctx.fillRect(canvas.width/2-75, 0, 150, 75);
+		ctx.fillRect(canvas.width/2 - canvas.width/10, 0, canvas.width/5, canvas.height/10);
 	}
 	else {
 		ctx.fillStyle = "#33FFFF";
-		ctx.fillRect(canvas.width/2-150, 0, 300, 75);
+		ctx.fillRect(canvas.width/2-canvas.width/5, 0, canvas.width*2/5, canvas.height/10);
 	}
-	
-	/*	
-	// display random rule every 5 seconds
-	if (levelTime % 5 == 0)
-		generateRule();
-			
-	if (levelTime % 5 != 0)
-		drawRule();*/
-	
+
 	ctx.fillStyle = "#000000";
 	
 	if (rule != null)

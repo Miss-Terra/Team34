@@ -19,7 +19,8 @@ var NumberPants=3;
 var NumberShoes=3;
 var NumberItems=3;
 
-ctx.font = "1em Arial";
+// does not work here
+/*ctx.font = "1em Arial";
 ctx.fillStyle = "black";
-ctx.textAlign = "center";
+ctx.textAlign = "center";*/
 	

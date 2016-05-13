@@ -35,30 +35,33 @@ function displayPaused() {
 //called in the gameScreen to display the level, time, score, etc
 function displayInLevel() {
 	
+	// must be place here, does not work in global
+	ctx.font = canvas.width/50 + "px Arial";
+	ctx.fillStyle = "black";
+	ctx.textAlign = "center";
 	
 	// button to generate rules
-	//ctx.fillStyle = "#000000";
-	ctx.fillText("Generate", canvas.width/2, 100);
+	ctx.fillText("Generate", canvas.width/2, canvas.height*3/20);
 	
 	// button to skip level
-	ctx.fillText("Skip level", canvas.width/2, 175);
+	ctx.fillText("Skip level", canvas.width/2, canvas.height/4);
 	
 	// button to add score 
-	ctx.fillText("Add score", canvas.width/2, 250);
+	ctx.fillText("Add score", canvas.width/2, canvas.height*7/20);
 	
 	// display level
 	ctx.fillStyle = "#000000";
 	var levelDisplay = "Level " + currentLevel;
-	ctx.fillText(levelDisplay, canvas.width-120, 50);
+	ctx.fillText(levelDisplay, canvas.width*9/10, canvas.height/10);
 	
 	// display score
 	var scoreDisplay = "Score: " + levelScore;
-	ctx.fillText(scoreDisplay, canvas.width-120, 100);
+	ctx.fillText(scoreDisplay, canvas.width*9/10, canvas.height*3/20);
 	
 	// display time in each level
 	var levelTimeSec = levelTime % 60;
 	var levelTimeMin = Math.floor(levelTime / 60);
 	var levelTimeDisplay = pad2(levelTimeMin) + " : " + pad2(levelTimeSec);
-	ctx.fillText(levelTimeDisplay, canvas.width-120, 150);
+	ctx.fillText(levelTimeDisplay, canvas.width*9/10, canvas.height/5);
 	
 }
