@@ -41,8 +41,9 @@ function drawLine(personArray){
 
 		ctx.drawImage(personArray[i].pants, xPos, yPos, personWidth * 0.73, personHeight * 0.3); //test drawing an image from array
 		
-		//ctx.drawImage(hatArray[1], 100, 130); //test drawing an image from array
-
+		yPos = yPos + personHeight * 0.77;
+		ctx.drawImage(personArray[i].shoes, xPos, yPos, personWidth * 0.73, personHeight * 0.3); //test drawing an image from array
+		
 		}
 	}
 }
