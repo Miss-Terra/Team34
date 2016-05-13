@@ -9,7 +9,7 @@ function loadMainMenu() {
    scoreboardButtonImage.src = "images/scoreboardButton.png";
    creditsButtonImage.src = "images/creditsButton.png";
    menuAnimationImage.src = "images/lineMan.png"; //Change  me for easter egg.
-	 menuLogo.src = "images/logoct1.png";
+	 menuLogo.src = "images/logoct2.png";
 }
 
 function drawMainMenu(){
