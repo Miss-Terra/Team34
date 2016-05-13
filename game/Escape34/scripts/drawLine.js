@@ -36,13 +36,18 @@ function drawLine(personArray){
 
 		ctx.drawImage(personArray[i].hat, xPos, yPos, personWidth, personHeight * 0.3); //test drawing an image from array
 		
+		var pantsYPos = yPos + personHeight * 0.77;
+		var pantsXPos = xPos + personWidth * 0.05;
 		yPos = yPos + personHeight * 0.77;
 		xPos = xPos + personWidth * 0.05;
-
-		ctx.drawImage(personArray[i].pants, xPos, yPos, personWidth * 0.90, personHeight * 0.4); //test drawing an image from array
+		yPos = yPos + personHeight * 0.35; //
+		xPos = xPos + personWidth * 0.1 // Four here
+		ctx.drawImage(personArray[i].shoes, xPos, yPos, personWidth * 0.80, personHeight * 0.15); //test drawing an image from array
 		
-	//	yPos = yPos + personHeight * 0.77;
-	//	ctx.drawImage(personArray[i].shoes, xPos, yPos, personWidth * 0.73, personHeight * 0.3); //test drawing an image from array
+
+
+		ctx.drawImage(personArray[i].pants, pantsXPos, pantsYPos, personWidth * 0.90, personHeight * 0.4); //test drawing an image from array
+		
 		
 		}
 	}
