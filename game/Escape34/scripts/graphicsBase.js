@@ -150,7 +150,7 @@
 //	<script src="scripts/screenScoreboard.js"></script>
 //	<script src="scripts/screenCredits.js"></script>
 //	<script src="scripts/screenEgg.js"></script>
-
+// no confirmation menu source file?
 
 function reloadGraphics(){
 	
@@ -203,7 +203,7 @@ function reloadGraphics(){
 
 }
 
-//This fuction sets all the status of all images to false.
+//This function sets all the status of all images to false.
 //It's an extention of the reloadGraphics() function.
 function clearLoadedImages(){
 	bgReady = false;
