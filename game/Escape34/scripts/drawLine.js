@@ -23,7 +23,7 @@ function drawLine(personArray){
 		ctx.drawImage(personArray[i].image, xPos, yPos, personWidth, personHeight);
 	 		uiPeople[i] = new uiObject(xPos, yPos, personWidth, personHeight, 
 			function (){
-				console.log("Person: " + i + " clicked.");
+				console.log("Person: " + this.person.number + " clicked.");
 				this.person.debugPerson(); // runs console commands to display items.
 			}, personArray[i]);
 
@@ -31,6 +31,11 @@ function drawLine(personArray){
 		yPos = yPos + personHeight/4;		
 		//draw shirt
 		ctx.drawImage(personArray[i].shirt, xPos, yPos, personWidth, personHeight * 0.3); //test drawing an image from array
+		
+		yPos = yPos - personHeight/2.1;
+
+		ctx.drawImage(personArray[i].hat, xPos, yPos, personWidth, personHeight * 0.3); //test drawing an image from array
+		
 		//ctx.drawImage(hatArray[1], 100, 130); //test drawing an image from array
 
 		}

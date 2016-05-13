@@ -8,13 +8,13 @@ function genPeople(n, personImg){
 	var person = [];
 
 	for (i = 0; i < n; i++){
-		person[i] = genPerson(personImg);
+		person[i] = genPerson(i, personImg);
 	}
 	return person;
 }
 
 //Create and return a person.
-function genPerson(personImg){
+function genPerson(num, personImg){
 	var person = {
 		hat: 0,
 		shirt: 0,
@@ -23,18 +23,22 @@ function genPerson(personImg){
 		pants: 0,
 		shoes: 0,
 		image: 0,
+		number: 0,
 
 		//This function assigns items to the person based on the item matrix.
 		//For example, 2 for hat might be a blue sillyhat.
 		//Or 2 for shirt could be a red t-shirt.
 		setItems: function() {
-			this.hat = hatArray[2];
-			this.shirt = shirtArray[2];
-			this.item1 = itemArray[2];
-			this.item2 = itemArray[2];
-			this.pants = pantArray[2];
-			this.shoes = shoeArray[2];
+			this.hat = hatArray[Math.floor((Math.random() * 3) + 1)];
+			this.shirt = shirtArray[Math.floor((Math.random() * 3) + 1)];
+			this.item1 = itemArray[Math.floor((Math.random() * 3) + 1)];
+			this.item2 = itemArray[Math.floor((Math.random() * 3) + 1)];
+			this.pants = pantArray[Math.floor((Math.random() * 3) + 1)];
+			this.shoes = shoeArray[Math.floor((Math.random() * 3) + 1)];
 			this.image = personImg;
+		},
+		setNumber: function(n){
+			this.number = n;
 		},
 
 		debugPerson: function() {
@@ -47,6 +51,8 @@ function genPerson(personImg){
 		}
 
 	};
+	person.setNumber(num);
 	person.setItems();
+	
 	return person;
 }
