@@ -1,17 +1,17 @@
 function drawPerson(x,y) {
 
-//	ctx.drawImage(person_man, x, y); //test drawing an image from array
+//	ctx.drawImage(person, x, y); //
 	
 }
-
-loadItems();
-
-function loadItems() {
 	var hatArray = new Array();
 	var shirtArray = new Array();
 	var pantArray = new Array();
 	var shoeArray = new Array();
 	var itemArray = new Array();
+
+
+//Loads items into appropriate arrays, based on Number(type) in globals.js
+function loadItems() {
 
 	for (i=1; i<=NumberHats; i++) {
 		hatArray[i] = new Image();
@@ -39,13 +39,13 @@ function loadItems() {
 function drawBackgroundImg(){
 	// images
 	bgImage.src = "images/backgframe_480.jpg";
-	lineManImage.src = "images/lineMan.png";
+	person.src = "images/person.png";
 	
 	// required buttons
-  	pauseButtonImage.src = "images/gmenub1.png";
+ 	pauseButtonImage.src = "images/gmenub1.png";
 	
 	// test buttons
-  	generateButtonImage.src = "images/button.png";
+ 	generateButtonImage.src = "images/button.png";
 	victoryButtonImage.src = "images/button.png";
 	addscoreButtonImage.src = "images/button.png";
   	
@@ -54,8 +54,8 @@ function drawBackgroundImg(){
 
 function drawGame(){
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
-//	var buttonWidth = canvas.width / 6;
-//	var buttonHeight = canvas.height / 10;	
+
+	loadItems();
 	
 	var buttonWidth = canvas.width/10;
 	var buttonHeight = canvas.height/10;	
@@ -71,7 +71,8 @@ function drawGame(){
 				console.log("Level: " + currentLevel)
 			});
 	
-	//ctx.drawImage(hatArray[1], 100, 100); //test drawing an image from array
+	ctx.drawImage(hatArray[1], 100, 100); //test drawing an image from array
+	ctx.drawImage(person, 99, 99);
 
 			
 	// button to generate rules

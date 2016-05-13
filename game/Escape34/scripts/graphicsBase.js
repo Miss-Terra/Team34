@@ -1,4 +1,3 @@
-
 // This file displays the graphics on the canvas.
 //Note, the canvas is constructed in canvas.js.
 //Here we load backgrounds & art based on the level/state
@@ -14,11 +13,11 @@
 			bgReady = true;
 		};
 
-		var lineManImage = new Image();
-		var lineManReady = false;
-		lineManImage.onload = function () {
+		var person = new Image();
+		var personReady = false;
+		person.onload = function () {
 			//Stickman is safe to load...
-			lineManReady = true;
+			personReady = true;
 		};		
 		
 		var menuAnimationImage = new Image();
@@ -143,6 +142,7 @@
 //State 5 == Credits screen
 //State 6 == Extra screen
 //State 7 == Confirm screen
+//State 8 == Item Select screen
 //	<script src="scripts/screenMainMenu.js"></script> 
 //	<script src="scripts/screenGame.js"></script>
 //	<script src="scripts/screenResult.js"></script>
@@ -168,7 +168,6 @@ function reloadGraphics(){
 		//1 is gameplay.
 	if (state == 1){
  		drawBackgroundImg();
-		lineManImage.src = "images/lineMan.png";
 	}
 		//2 is result screen
 	if (state == 2){
@@ -207,7 +206,7 @@ function reloadGraphics(){
 //It's an extention of the reloadGraphics() function.
 function clearLoadedImages(){
 	bgReady = false;
-	lineManReady = false;
+	personReady = false;
 	buttonReady = false;
 	playButtonReady = false;
 	scoreboardButtonReady = false;
@@ -236,8 +235,8 @@ function renderGraphics(){
 
 			drawGame();
 			//Draw the line of people.
-            //drawLine() is in drawLine.js file
-			drawLine(lineManImage);
+      //drawLine() is in drawLine.js file
+      //drawLine(person);
 
 		}
 		//Result Screen
@@ -295,7 +294,7 @@ function graphicsStatus(){
 	}
 	if (state == 1) {
 		//Did these images load yet?
-		if (bgReady && lineManReady){
+		if (bgReady && personReady){
 			return true;
 		}else{
 			return false;
