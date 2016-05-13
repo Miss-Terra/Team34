@@ -3,7 +3,7 @@
 
 function drawLine(personArray){
 
-	var personWidth = canvas.width/8;
+	var personWidth = canvas.width/16;
 	var personHeight = canvas.height/5.5;
 	var lineXStart = (personWidth / 4);
 	var lineYStart = canvas.height - personHeight - (personHeight / 4);

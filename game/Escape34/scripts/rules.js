@@ -121,26 +121,37 @@ function loadRules() {
 	var buttonHeight = canvas.height/10;	
 
 	// button to generate rules
-	ctx.drawImage(generateButtonImage, canvas.width/2 - canvas.width/10, canvas.height/10, buttonWidth*2, buttonHeight);
-	uiObjects[1] = new uiObject(canvas.width/2 - canvas.width/10, canvas.height/10, buttonWidth*2, buttonHeight, 
+	ctx.drawImage(generateButtonImage, canvas.width*8/10, canvas.height*2/10, buttonWidth*2, buttonHeight);
+	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*2/10, buttonWidth*2, buttonHeight, 
 			function (){
 				generateRule();
 			});
 			
 	// button to skip level (just for testing)
-	ctx.drawImage(victoryButtonImage, canvas.width/2 - canvas.width/10, canvas.height/5, buttonWidth*2, buttonHeight);
-	uiObjects[2] = new uiObject(canvas.width/2 - canvas.width/10, canvas.height/5, buttonWidth*2, buttonHeight, 
+	ctx.drawImage(victoryButtonImage, canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight);
+	uiObjects[2] = new uiObject(canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight, 
 			function (){
 				finalScore += levelScore;
 				setState(2);
 			});
 			
 	// button to add scores (just for testing)
-	ctx.drawImage(addscoreButtonImage, canvas.width/2 - canvas.width/10, canvas.height*3/10, buttonWidth*2, buttonHeight);
-	uiObjects[3] = new uiObject(canvas.width/2 - canvas.width/10, canvas.height*3/10, buttonWidth*2, buttonHeight, 
+	ctx.drawImage(addscoreButtonImage, canvas.width*8/10, canvas.height*4/10, buttonWidth*2, buttonHeight);
+	uiObjects[3] = new uiObject(canvas.width*8/10, canvas.height*4/10, buttonWidth*2, buttonHeight, 
 			function (){
 				levelScore += 5;
 			});
+	
+	
+	// button to generate rules
+	ctx.fillText("Generate", canvas.width*9/10, canvas.height*5/20);
+	
+	// button to skip level
+	ctx.fillText("Skip level", canvas.width*9/10, canvas.height*7/20);
+	
+	// button to add score 
+	ctx.fillText("Add score", canvas.width*9/10, canvas.height*9/20);
+	
 			
 			
 	// display rule box

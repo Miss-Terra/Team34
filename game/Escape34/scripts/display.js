@@ -40,14 +40,6 @@ function displayInLevel() {
 	ctx.fillStyle = "black";
 	ctx.textAlign = "center";
 	
-	// button to generate rules
-	ctx.fillText("Generate", canvas.width/2, canvas.height*3/20);
-	
-	// button to skip level
-	ctx.fillText("Skip level", canvas.width/2, canvas.height/4);
-	
-	// button to add score 
-	ctx.fillText("Add score", canvas.width/2, canvas.height*7/20);
 	
 	// display level
 	ctx.fillStyle = "#000000";
