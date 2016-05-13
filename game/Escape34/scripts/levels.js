@@ -1,7 +1,5 @@
 //The current level. (level 0 == tutorial)
 var currentLevel = 1;
-//How large the line is. (How many people are in it).
-var lineSize = 0;
 //How many item types are available for the current level.
 //If 1... Then perhaps only HATS are used.
 //If 2... Then only HATS and maybe SHOES are used.
@@ -18,6 +16,9 @@ var speed = 1.0;
 var MAXLEVEL = 34; 
 var MAXTYPES = 6; //Hat, shirt, pants, shoes, item1, item2
 
+//How large the line is. (How many people are in it).
+var lineSize = 0;
+var maxPeopleInLine = 5; // Only display this number of people at a time.
 
 setSettings();
 
@@ -30,7 +31,7 @@ function setSettings(){
 
 //This is how long the line is.
 function setLineSize(){
-	lineSize = 30;
+	lineSize = 5;
 }
 
 //Sets the number of item types allowed.

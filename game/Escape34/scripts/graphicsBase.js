@@ -255,9 +255,6 @@ function renderGraphics(){
 		}
 		//Gameplay Screen
 		if (state == 1){
-			//draw background
-			ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);	
-
 			drawGame();
 			//Draw the line of people.
       //drawLine() is in drawLine.js file

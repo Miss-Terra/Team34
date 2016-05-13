@@ -176,6 +176,7 @@ function pad2(number) {
 //Settings that need to run during setup for gameplay. (runs once).
 function initGameSetting(){
 	startLevelTimer();
+	personArray = genPeople(lineSize, dude);
 }
 
 

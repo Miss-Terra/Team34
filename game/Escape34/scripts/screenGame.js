@@ -19,14 +19,14 @@ function loadGame(){
 function drawGame(){
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
-	loadItems();
 	loadRules();
 	addMenuButton();
 	displayInLevel();
 	
-  	ctx.drawImage(dude, 100, 100);
-		ctx.drawImage(hatArray[1], 100, 130); //test drawing an image from array
 
+	drawLine(personArray);
+
+ 
 }
 
 //adds the pause menu button to the screen

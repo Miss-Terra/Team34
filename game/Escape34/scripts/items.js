@@ -28,3 +28,4 @@ function loadItems() {
 		itemArray[i].src = ("images/items/item_" + i + ".png");
 	}
 }
+loadItems();
