@@ -12,8 +12,13 @@ function startLevelTimer(){
 }
 	
 function levelTimeTick(){
-	levelTime--;
-	console.log(levelTime);
+	
+	if (levelTime > 0) {
+		levelTime--;
+		console.log(levelTime);
+	} else {
+		stopTimer;
+	}	
 }
 
 function stopTimer() { // to be called when you want to stop the timer

@@ -9,6 +9,8 @@ function loadMainMenu() {
 	 creditsButtonImage.src = "images/creditsButton.png";
 	 menuAnimationImage.src = "images/lineMan.png"; //Change  me for easter egg.
 	 menuLogo.src = "images/logoct2.png";
+	 easterEggclick = 0;
+
 }
 
 
@@ -24,8 +26,7 @@ function drawMainMenu(){
 
 	ctx.drawImage(menuLogo, canvas.width / 2- logowidth / 2, canvas.height / 5,
 							  logowidth, logoheight);
-
-							  
+	
 	//Easter Egg	
 	// Click on game logo and eat it
 	var animationWidth = logowidth;
@@ -37,14 +38,16 @@ function drawMainMenu(){
 
 				easterEggclick++;
 				
-				if(easterEggclick % 4 == 1)	{
-					menuLogo.src = "images/logoctBite1.png";
-				} else if(easterEggclick % 4 == 2) {
-					menuLogo.src = "images/logoctBite2.png";
-				} else if(easterEggclick % 4 == 3) {
-					menuLogo.src = "images/logoctBite3.png";					
-				} else
+				if(easterEggclick == 0)	{
 					menuLogo.src = "images/logoct2.png";
+				} else if(easterEggclick == 1) {
+					menuLogo.src = "images/logoctBite1.png";
+				} else if(easterEggclick == 2) {
+					menuLogo.src = "images/logoctBite2.png";	
+				} else if(easterEggclick == 3) {
+					menuLogo.src = "images/logoctBite3.png";		
+				} else
+					menuLogo.src = "images/logoctBite3.png";
 			});
 	// Keep original Easter Egg code in case use another animation in future
 	/**	
