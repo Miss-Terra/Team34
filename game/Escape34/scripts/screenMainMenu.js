@@ -48,6 +48,8 @@ function drawMainMenu(){
 				console.log("restart");
 				setState(1);
 				currentLevel = 1;
+				// initTimeSetting() in timer.js file
+				initTimeSetting();
 				console.log("Level: " + currentLevel)
 			});
 			
