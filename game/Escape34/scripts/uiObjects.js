@@ -14,6 +14,16 @@ function mouseClick(e){
 			uiObjects[i].clicked();
 		}
 	}
+	if (state == 1){
+		for (var i = 0; i < uiPeople.length; i++){
+			//Compares mouse x&y to the object in question.
+			if (e.pageX > uiPeople[i].x && e.pageX < (uiPeople[i].x + uiPeople[i].width)
+				&& e.pageY > uiPeople[i].y && e.pageY < (uiPeople[i].y + uiPeople[i].height)){
+
+				uiPeople[i].clicked();
+			}
+		}
+	}
 	
 
 }
