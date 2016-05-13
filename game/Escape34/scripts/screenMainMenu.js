@@ -1,27 +1,53 @@
 //State 0
 
 function loadMainMenu() {
-	
-   // Judy: main menu background image		
-   bgImage.src = "images/mainMenu.jpg";
-   playButtonImage.src = "images/playButton.png";
-   tutorialButtonImage.src = "images/tutorialButton.png";
-   scoreboardButtonImage.src = "images/scoreboardButton.png";
-   creditsButtonImage.src = "images/creditsButton.png";
-   menuAnimationImage.src = "images/lineMan.png"; //Change  me for easter egg.
+		
+	 bgImage.src = "images/mainMenu.jpg";
+	 playButtonImage.src = "images/playButton.png";
+	 tutorialButtonImage.src = "images/tutorialButton.png";
+	 scoreboardButtonImage.src = "images/scoreboardButton.png";
+	 creditsButtonImage.src = "images/creditsButton.png";
+	 menuAnimationImage.src = "images/lineMan.png"; //Change  me for easter egg.
 	 menuLogo.src = "images/logoct2.png";
 }
+
+
+var easterEggclick = 0;
 
 function drawMainMenu(){
 
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 	
-	logowidth=canvas.width*3/10;
-	logoheight=canvas.height/4;
+	//Logo
+	logowidth = canvas.width * 3 / 10;
+	logoheight = canvas.height / 4;
 
-	ctx.drawImage(menuLogo, canvas.width/2-logowidth/2, canvas.height/5,
+	ctx.drawImage(menuLogo, canvas.width / 2- logowidth / 2, canvas.height / 5,
 							  logowidth, logoheight);
 
+							  
+	//Easter Egg	
+	// Click on game logo and eat it
+	var animationWidth = logowidth;
+	var animationHeight = logoheight;	
+	var	animationY = canvas.height - (canvas.height / 6);
+	uiObjects[4] = new uiObject(canvas.width / 2- logowidth / 2, canvas.height / 5, animationWidth, animationHeight, 
+			function (){
+				console.log("easter Egg!!!");
+
+				easterEggclick++;
+				
+				if(easterEggclick % 4 == 1)	{
+					menuLogo.src = "images/logoctBite1.png";
+				} else if(easterEggclick % 4 == 2) {
+					menuLogo.src = "images/logoctBite2.png";
+				} else if(easterEggclick % 4 == 3) {
+					menuLogo.src = "images/logoctBite3.png";					
+				} else
+					menuLogo.src = "images/logoct2.png";
+			});
+	// Keep original Easter Egg code in case use another animation in future
+	/**	
 	var animationWidth = canvas.width / 6;
 	var animationHeight = canvas.height / 6;	
 	var	animationY = canvas.height - (canvas.height / 6);
@@ -29,9 +55,18 @@ function drawMainMenu(){
 	uiObjects[4] = new uiObject(0, animationY, animationWidth, animationHeight, 
 			function (){
 				console.log("easter Egg!!!");
-				menuAnimationImage.src = "images/yesButton.png";
+				
+				
+				
+				
+				//menuAnimationImage.src = "images/yesButton.png";
 			});
+	**/
 
+		
+		
+			
+	// Main menu buttons		
     var buttonWidth = canvas.width / 6;
 	var buttonHeight = canvas.height / 10;
 	var buttonX = (canvas.width / 4) - (buttonWidth / 4)  - (buttonWidth / 2); // Test Dan
