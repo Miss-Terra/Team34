@@ -37,6 +37,7 @@ function drawPauseMenu() {
                 finalTime = 0;
 				levelScore = 0;
 				rule = null;
+				finalScore = 0;
 				console.log("Level: " + currentLevel)
 			});
 
