@@ -2,8 +2,8 @@
 function loadCreditsMenu() {
 	
     // credits menu background image		
-    bgImage.src = "images/mainMenuButton.png";   
-    mainMenuButtonImage.src = "images/creditsScreen.png";   
+    bgImage.src = "images/creditsScreen.png";   
+    mainMenuButtonImage.src = "images/mainMenuButton.png";   
 }
 
 
