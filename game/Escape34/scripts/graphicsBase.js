@@ -85,6 +85,13 @@
 			playButtonReady = true;
 		};
 		
+		var tutorialButtonImage = new Image();
+		var tutorialButtonReady = false;
+		tutorialButtonImage.onload = function () {
+			//button image is safe to load...
+			tutorialButtonReady = true;
+		};
+		
 		var scoreboardButtonImage = new Image();
 		var scoreboardButtonReady = false;
 		scoreboardButtonImage.onload = function () {
@@ -143,6 +150,7 @@
 //State 6 == Extra screen
 //State 7 == Confirm screen
 //State 8 == Item Select screen
+//State 9 == Tutorial screen
 //	<script src="scripts/screenMainMenu.js"></script> 
 //	<script src="scripts/screenGame.js"></script>
 //	<script src="scripts/screenResult.js"></script>
@@ -150,6 +158,7 @@
 //	<script src="scripts/screenScoreboard.js"></script>
 //	<script src="scripts/screenCredits.js"></script>
 //	<script src="scripts/screenEgg.js"></script>
+//	<script src="scripts/screenTutorial.js"></script>
 // no confirmation menu source file?
 
 function reloadGraphics(){
@@ -171,17 +180,17 @@ function reloadGraphics(){
 	}
 		//2 is result screen
 	if (state == 2){
-			//levelFinishBackgroundImg() is in screenResult.js file
-		levelResultBackgroundImg()
+		//levelFinishBackgroundImg() is in screenResult.js file
+		levelResultBackgroundImg();
 	}
 		//3 is pause menu screen
 	if (state == 3){
-			//screenPauseMenu.js
+		//screenPauseMenu.js
 		loadPauseMenu();
 	}
 		//4 is scoreboard screen
 	if (state == 4){
-			//screenScoreboard.js
+		//screenScoreboard.js
 		loadScoreboard();
 	}
 		//5 is credits screen
@@ -199,6 +208,12 @@ function reloadGraphics(){
 		loadConfirmMenu();	
 	}
 
+	
+	
+	if (state == 9){
+		//screenTutorial.js
+		loadTutorialMenu();	
+	}
 
 }
 
@@ -269,6 +284,13 @@ function renderGraphics(){
 		if (state == 7){
 			//screenPauseMenu.js
 			drawConfirmMenu();	
+		}
+		
+		
+			//9 tutorial screen
+		if (state == 9){
+			//screenTutorial.js
+			drawTutorial();	
 		}
 	}
 	
