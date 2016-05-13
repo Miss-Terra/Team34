@@ -15,7 +15,6 @@ function levelTimeTick(){
 	
 	if (levelTime > 0) {
 		levelTime--;
-		console.log(levelTime);
 	} else {
 		stopTimer;
 	}	
