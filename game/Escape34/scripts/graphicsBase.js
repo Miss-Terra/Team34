@@ -13,11 +13,18 @@
 			bgReady = true;
 		};
 
-		var person = new Image();
+		var dude = new Image();
 		var personReady = false;
-		person.onload = function () {
+		dude.onload = function () {
 			//Stickman is safe to load...
 			personReady = true;
+		};		
+
+		var menuLogo = new Image();
+		var mlogoReady = false;
+		menuLogo.onload = function () {
+			//logo is safe to load...
+			mlogoReady = true;
 		};		
 		
 		var menuAnimationImage = new Image();
@@ -224,6 +231,7 @@ function reloadGraphics(){
 function clearLoadedImages(){
 	bgReady = false;
 	personReady = false;
+	mlogoReady = false;
 	buttonReady = false;
 	playButtonReady = false;
 	scoreboardButtonReady = false;
@@ -310,7 +318,8 @@ function graphicsStatus(){
 		if (bgReady && playButtonReady 
 					&& scoreboardButtonReady
 					&& creditsButtonReady
-					&& mainMenuButtonReady){
+					&& mainMenuButtonReady
+			    && mlogoReady){
 			return true;
 		}else{
 			return false;

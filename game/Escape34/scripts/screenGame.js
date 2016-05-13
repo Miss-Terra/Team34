@@ -3,7 +3,7 @@
 function loadGame(){
 	// images
 	bgImage.src = "images/backgframe_480.jpg";
-	person.src = "images/person.png";
+	dude.src = "images/person.png";
 	
 	// required buttons
  	pauseButtonImage.src = "images/gmenub1.png";
@@ -24,8 +24,9 @@ function drawGame(){
 	addMenuButton();
 	displayInLevel();
 	
-		ctx.drawImage(hatArray[1], 100, 100); //test drawing an image from array
-//	ctx.drawImage(person, 99, 99);
+  	ctx.drawImage(dude, 100, 100);
+		ctx.drawImage(hatArray[1], 100, 130); //test drawing an image from array
+
 }
 
 //adds the pause menu button to the screen

@@ -17,7 +17,8 @@ function loadResult(){
 function drawResult(){
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
-
+	
+		displayResult();
 	
 	var buttonWidth = canvas.width / 6;
 	var buttonHeight = canvas.height / 10;	
@@ -71,7 +72,6 @@ function drawResult(){
 					console.log("Level: " + currentLevel)
 				});
 	}
-	
 
 
 }

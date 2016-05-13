@@ -1,7 +1,33 @@
+
+function displayResult() {
+	
+	// display level
+	var levelDisplay = "Level: " + currentLevel;
+	ctx.fillText(levelDisplay, (canvas.width * 0.8), (canvas.height * 0.1));
+	
+	// display score
+	var scoreDisplay = "Score: " + levelScore;
+	ctx.fillText(scoreDisplay, (canvas.width * 0.8), (canvas.height * 0.15));
+
+	// display total score
+	var scoreDisplay = "Total Score: " + finalScore;
+	ctx.fillText(scoreDisplay, (canvas.width * 0.8), (canvas.height * 0.2));
+	
+	
+	
+}
+
 //called in the Pause menu to display the level, score etc
 function displayPaused() {
 	
 	
+	// display level
+	var levelDisplay = "Level: " + currentLevel;
+	ctx.fillText(levelDisplay, (canvas.width * 0.8), (canvas.height * 0.1));
+	
+	// display score
+	var scoreDisplay = "Score: " + levelScore;
+	ctx.fillText(scoreDisplay, (canvas.width * 0.8), (canvas.height * 0.15));
 	
 	
 }

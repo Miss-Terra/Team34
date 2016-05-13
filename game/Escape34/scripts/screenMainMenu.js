@@ -9,12 +9,14 @@ function loadMainMenu() {
    scoreboardButtonImage.src = "images/scoreboardButton.png";
    creditsButtonImage.src = "images/creditsButton.png";
    menuAnimationImage.src = "images/lineMan.png"; //Change  me for easter egg.
+	 menuLogo.src = "images/logoct1.png";
 }
 
 function drawMainMenu(){
 
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
+	ctx.drawImage(menuLogo, canvas.width/2 -menuLogo.width/2, canvas.height/5);
 
 	var animationWidth = canvas.width / 6;
 	var animationHeight = canvas.height / 6;	
