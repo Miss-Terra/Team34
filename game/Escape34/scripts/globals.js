@@ -8,6 +8,7 @@ var finalVictory = false; //Defines if the user won the game. (Only useful durin
 var uiObjects = []; // defines uiObjects... Things people can click
 var levelTime = 0;
 var finalTime = 0;
+var personArray = [];
 
 
 
