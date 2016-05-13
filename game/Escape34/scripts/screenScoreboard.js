@@ -1,3 +1,4 @@
+//State 4
 function loadScoreboard() {
 
    bgImage.src = "images/levelvictory.png";

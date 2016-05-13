@@ -1,4 +1,4 @@
-//--------------------Pause Menu--------------------
+// State 3--------------------Pause Menu--------------------
 function loadPauseMenu() {
   // Pause menu background image		
   bgImage.src = "images/pauseScreen.png"; 

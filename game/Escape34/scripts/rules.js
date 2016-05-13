@@ -116,3 +116,66 @@ function generateRule() {
 				color[randomRule2] + " " + item[randomRule2];
 	}
 }
+
+function loadRules() {
+		
+	var buttonWidth = canvas.width/10;
+	var buttonHeight = canvas.height/10;	
+
+	// button to generate rules
+	ctx.drawImage(generateButtonImage, canvas.width/2-75, 75, buttonWidth*2, buttonHeight);
+	uiObjects[1] = new uiObject(canvas.width/2-75, 75, buttonWidth*2, buttonHeight, 
+			function (){
+				generateRule();
+			});
+			
+	// button to skip level (just for testing)
+	ctx.drawImage(victoryButtonImage, canvas.width/2-75, 150, buttonWidth*2, buttonHeight);
+	uiObjects[2] = new uiObject(canvas.width/2-75, 150, buttonWidth*2, buttonHeight, 
+			function (){
+				setState(2);
+			});
+			
+	// button to add scores (just for testing)
+	ctx.drawImage(addscoreButtonImage, canvas.width/2-75, 225, buttonWidth*2, buttonHeight);
+	uiObjects[3] = new uiObject(canvas.width/2-75, 225, buttonWidth*2, buttonHeight, 
+			function (){
+				levelScore += 5;
+			});
+			
+			
+	// display rule box
+	if (currentLevel <= 10) {
+		ctx.fillStyle = "#33FFFF";
+		ctx.fillRect(canvas.width/2-75, 0, 150, 75);
+	}
+	else {
+		ctx.fillStyle = "#33FFFF";
+		ctx.fillRect(canvas.width/2-150, 0, 300, 75);
+	}
+	
+	/*	
+	// display random rule every 5 seconds
+	if (levelTime % 5 == 0)
+		generateRule();
+			
+	if (levelTime % 5 != 0)
+		drawRule();*/
+	
+	ctx.fillStyle = "#000000";
+	
+	if (rule != null)
+		drawRule();
+	
+}
+
+function pad2(number) {
+    return (number < 10 ? '0' : '') + number
+}
+
+//Settings that need to run during setup for gameplay. (runs once).
+function initGameSetting(){
+	startLevelTimer();
+}
+
+

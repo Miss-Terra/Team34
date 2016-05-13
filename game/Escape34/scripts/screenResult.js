@@ -1,5 +1,5 @@
-
-function levelResultBackgroundImg(){
+//State 2
+function loadResult(){
 
 	if (levelVictory){
 		bgImage.src = "images/levelvictory.png";

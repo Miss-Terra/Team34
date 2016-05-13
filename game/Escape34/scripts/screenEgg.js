@@ -1,3 +1,5 @@
+//State 6
+
 //function drawBackgroundImg(){
 ////		bgImage.src = "images/???.png";
 //}

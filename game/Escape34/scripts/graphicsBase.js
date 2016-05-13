@@ -176,12 +176,12 @@ function reloadGraphics(){
 	}
 		//1 is gameplay.
 	if (state == 1){
- 		drawBackgroundImg();
+ 		loadGame();
 	}
 		//2 is result screen
 	if (state == 2){
 		//levelFinishBackgroundImg() is in screenResult.js file
-		levelResultBackgroundImg();
+		loadResult();
 	}
 		//3 is pause menu screen
 	if (state == 3){
@@ -207,9 +207,11 @@ function reloadGraphics(){
 		//screenPauseMenu.js
 		loadConfirmMenu();	
 	}
-
-	
-	
+		//8 item select screen
+	if (state == 8){
+		//
+	}
+	  //tutorial level
 	if (state == 9){
 		//screenTutorial.js
 		loadTutorialMenu();	

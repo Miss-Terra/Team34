@@ -1,3 +1,5 @@
+//State 0
+
 function loadMainMenu() {
 	
    // Judy: main menu background image		
