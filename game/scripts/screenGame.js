@@ -25,7 +25,7 @@ function drawGame(){
 	loadRules();
 	addMenuButton();
 	displayInLevel();
-	drawLine(personArray);
+	drawLine();
  
 }
 

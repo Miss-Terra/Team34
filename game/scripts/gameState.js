@@ -16,18 +16,18 @@ var state = -1; // -1 is only used to define that no state has been issued yet.
 
 function setState(n){
 	if (state != n){
+
 		//Erases all UIobjects (buttons & clickable stuff)
 		uiObjects = [];
-
 		//All state changes should ensure the timer has stopped.
-		if (state == 1){stopTimer();}else{uiPeople = [];}
+		if (state == 1){stopAllTimers();}else{uiPeople = [];}
 		
 		state = n;
         //reloadGraphics() is in graphicsBase.js file
 		reloadGraphics();
 	}else{
-		console.log("Game State already set.")
+		console.log("Game State already set.");
 	}
-	console.log("State --> " + state)
+	console.log("State --> " + state);
 }
 

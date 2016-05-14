@@ -1,37 +1,51 @@
 
 
-
-function drawLine(personArray){
+//Draw the line of people.
+function drawLine(){
 
 	var personWidth = canvas.width/16;
 	var personHeight = canvas.height/5.5;
 
-	var lineXStart = (personWidth / 4);
-	var lineYStart = canvas.height - personHeight - (personHeight / 4);
+	var lineXStart = canvas.width * 0.85;
+	var lineYStart = canvas.height * 0.675;
 	var lineSpacing = personWidth + personWidth / 8 ;
 
 	//This displays the line of people and their clothes.
-	for (var i = 0; i < maxPeopleInLine; i++){
-		personArray[i].setSize(personWidth, personHeight); // assign size variables to each person.
-		personArray[i].setPosition(lineXStart + (i*(lineSpacing)), lineYStart); // assign x and y variables to each person.
+	//maxPeopleInLine is defined in levels.js
+	for (var i = 0; i < personArray.length; i++){
 
-		//Always within canvas x borders
-		if (personArray[i].x > canvas.width - personArray[i].width || personArray[i].x < 0){
-			
-		}else{
+		if (i <= maxPeopleInLine && personArray.length != 0){
+			personArray[i].setSize(personWidth, personHeight); // assign size variables to each person.
+			personArray[i].setPosition(lineXStart - (i*(lineSpacing)), lineYStart); // assign x and y variables to each person.
 
-			ctx.drawImage(personArray[i].image, personArray[i].x, personArray[i].y, personArray[i].width, personArray[i].height);
-			// Draws uiObjects for people.
-		 	uiPeople[i] = new uiObject(personArray[i].x, personArray[i].y, personArray[i].width, personArray[i].height, 
-				function (){
-					console.log("Person: " + this.person.number + " clicked.");
-					this.person.debugPerson(); // runs console commands to display items.
-				}, personArray[i]);
+			//Always within canvas x borders
+			if (personArray[i].x > canvas.width - personArray[i].width || personArray[i].x < 0){
+				
+			}else{
+
+				ctx.drawImage(personArray[i].image, personArray[i].x, personArray[i].y, personArray[i].width, personArray[i].height);
+				// Draws uiObjects for people.
+			 	uiPeople[i] = new uiObject(personArray[i].x, personArray[i].y, personArray[i].width, personArray[i].height, 
+					function (){
+						console.log("Person: " + this.person.number + " clicked.");
+						this.person.debugPerson(); // runs console commands to display items.					
+					}, personArray[i]);
 
 
-		 	//drawItems.js
-		 	//Draw the items for each person
-		 	drawItems(personArray[i]);
+			 	//drawItems.js
+			 	//Draw the items for person
+			 	drawItems(personArray[i]);
+			}
 		}
 	}
+}
+
+//Shift everyone forward in the line, 1 space.
+function shiftLine(){
+	var newArray = [];
+	uiPeople = [];
+	for (var i = 1; i < personArray.length; i++){
+		newArray[i-1] = personArray[i];
+	}
+	personArray = newArray;
 }

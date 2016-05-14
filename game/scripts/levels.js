@@ -17,21 +17,21 @@ var MAXLEVEL = 34;
 var MAXTYPES = 6; //Hat, shirt, pants, shoes, item1, item2
 
 //How large the line is. (How many people are in it).
-var lineSize = 0;
+var lineSize = 6;
 var maxPeopleInLine = 5; // Only display this number of people at a time.
 
 setSettings();
 
 //When loading a level... This sets up the difficulty & level settings.
 function setSettings(){
-	setLineSize();
 	setItemTypes();
 	setItemVariety();
 }
 
 //This is how long the line is.
-function setLineSize(){
-	lineSize = 5;
+//Unused right now.
+function setLineSize(n){
+	lineSize = n;
 }
 
 //Sets the number of item types allowed.
