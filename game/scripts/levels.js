@@ -17,8 +17,8 @@ var MAXLEVEL = 34;
 var MAXTYPES = 6; //Hat, shirt, pants, shoes, item1, item2
 
 //How large the line is. (How many people are in it).
-var lineSize = 6;
-var maxPeopleInLine = 5; // Only display this number of people at a time.
+var lineSize = 10;
+var maxPeopleInLine = 10; // Only display this number of people at a time.
 
 setSettings();
 

@@ -1,4 +1,5 @@
 //state 1
+//This displays the graphics for game and initiates the game settings
 
 function loadGame(){
 	// images

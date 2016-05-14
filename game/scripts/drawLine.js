@@ -14,7 +14,9 @@ function drawLine(){
 	//maxPeopleInLine is defined in levels.js
 	for (var i = 0; i < personArray.length; i++){
 
-		if (i <= maxPeopleInLine && personArray.length != 0){
+		//maxPeopleInLine in levels.js
+		//Make sure only a specific number people can show at one time.
+		if (i < maxPeopleInLine && personArray.length != 0){
 			personArray[i].setSize(personWidth, personHeight); // assign size variables to each person.
 			personArray[i].setPosition(lineXStart - (i*(lineSpacing)), lineYStart); // assign x and y variables to each person.
 
@@ -28,7 +30,8 @@ function drawLine(){
 			 	uiPeople[i] = new uiObject(personArray[i].x, personArray[i].y, personArray[i].width, personArray[i].height, 
 					function (){
 						console.log("Person: " + this.person.number + " clicked.");
-						this.person.debugPerson(); // runs console commands to display items.					
+						this.person.debugPerson(); // runs console commands to display items.	
+						setState(8);				
 					}, personArray[i]);
 
 
