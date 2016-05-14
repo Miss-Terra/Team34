@@ -9,7 +9,6 @@ function drawLine(personArray){
 	var lineYStart = canvas.height - personHeight - (personHeight / 4);
 	var lineSpacing = personWidth + personWidth / 8 ;
 
-	//This displays the line of people and their clothes.
 	for (var i = 0; i < maxPeopleInLine; i++){
 
 		var xPos = lineXStart + (i*(lineSpacing));
@@ -42,8 +41,7 @@ function drawLine(personArray){
 		yPos = yPos + personHeight * 0.77;
 		xPos = xPos + personWidth * 0.05;
 		yPos = yPos + personHeight * 0.35; //
-		xPos = xPos + personWidth * 0.1 // Disorganized lines here, because we rushed to code this... Will clean up later...
-		
+		xPos = xPos + personWidth * 0.1 // Four here
 		ctx.drawImage(personArray[i].shoes, xPos, yPos, personWidth * 0.80, personHeight * 0.15); //test drawing an image from array
 		
 
