@@ -24,6 +24,10 @@ function genPerson(num, personImg){
 		shoes: 0,
 		image: 0,
 		number: 0,
+		x: 0,
+		y: 0,
+		width: 0,
+		height: 0,
 
 		//This function assigns items to the person based on the item matrix.
 		//For example, 2 for hat might be a blue sillyhat.
@@ -48,6 +52,15 @@ function genPerson(num, personImg){
 			console.log("Item2: " + this.item2.src);
 			console.log("Pants: " + this.pants.src);
 			console.log("Shoes: " + this.shoes.src);
+		},
+
+		setSize: function(w, h){
+			this.width = w;
+			this.height = h;
+		},
+		setPosition: function(xPos, yPos){
+			this.x = xPos;
+			this.y = yPos;
 		}
 
 	};
