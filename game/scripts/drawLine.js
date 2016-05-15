@@ -1,7 +1,8 @@
 
-
+	
 //Draw the line of people.
 function drawLine(){
+
 
 	var personWidth = canvas.width/16;
 	var personHeight = canvas.height/5.5;
@@ -32,13 +33,14 @@ function drawLine(){
 						console.log("Person: " + this.person.number + " clicked.");
 						gamePaused = true; console.log(gamePaused); // unpause game
 						this.person.debugPerson(); // runs console commands to display items.	
+						selectionPerson = this.person; // Variable used in screenSelect.js
 						setState(8);				
 					}, personArray[i]);
 
 
 			 	//drawItems.js
 			 	//Draw the items for person
-			 	drawItems(personArray[i]);
+			 	drawItems(personArray[i], false);
 			}
 		}
 	}

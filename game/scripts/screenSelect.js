@@ -1,5 +1,5 @@
 //state 8
-
+var selectionPerson; // This variable is a person. It's defined in drawLine.js... Whenever a user clicks a person.
 function loadCharSelection(){
 
 	bgImage.src = "images/charSelection.png";
@@ -12,7 +12,7 @@ function loadCharSelection(){
 }
 
 function initSelectionSetting(){
-
+	
 }
 
 function drawCharSelection(){
@@ -57,19 +57,26 @@ function drawSelectMenuButtons(){
 
 function drawSelectionChar(){
 
-	var x = canvas.width * 0.5;
+	var x = canvas.width * 0.55;
 	var y = canvas.height * 0.25;
-	var width = (canvas.width * 0.5) - canvas.width * 0.1;
-	var height = (canvas.height * 0.9) - canvas.height * 0.25;
+	//var width = (canvas.width * 0.5) - canvas.width * 0.1;
+	//var height = (canvas.height * 0.9) - canvas.height * 0.25;
+	var width = (canvas.width/4) * 0.9; // Math looks weird here because I needed to keep the same raito as the person size in drawline.js
+	var height = (canvas.height/1.375) * 0.9; // Math looks weird here because I needed to keep the same raito as the person size in drawline.js
+
+	selectionPerson.setSize(width,height); // needed for drawItems
+	selectionPerson.setPosition(x,y); // needed for drawItems
 
 
-	ctx.drawImage(dude, x, y, width, height);
-				// Draws uiObjects for people.
-	/*uiPeople[i] = new uiObject(personArray[i].x, personArray[i].y, personArray[i].width, personArray[i].height, 
-		function (){
-			console.log("Person: " + this.person.number + " clicked.");
-			this.person.debugPerson(); // runs console commands to display items.	
-			setState(8);				
-		}, personArray[i]);
-	*/
+
+	ctx.drawImage(selectionPerson.image, selectionPerson.x, selectionPerson.y, selectionPerson.width, selectionPerson.height);
+	drawItems(selectionPerson, true);
+}
+		
+
+// (Calls the functions required to enable users to select the item.)	
+function drawItemSelection(x,y,w,h){
+	//create a box around each item.
+	ctx.rect(x, y, w, h);
+	ctx.stroke();
 }

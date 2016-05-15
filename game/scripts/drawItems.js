@@ -1,53 +1,70 @@
 //Draws all the items on the person.
-function drawItems(person){
+// selectable var is a boolean to determine if these clothes are selectable. (Item select screen).
+function drawItems(person, selectable){
 
-		drawShirt(person);
-		drawHat(person);
-		drawShoes(person);
-		drawPants(person);
+		drawShirt(person, selectable);
+		drawHat(person, selectable);
+		drawShoes(person, selectable);
+		drawPants(person, selectable);
 		
 }
 
 //Draw on the shirt
-function drawShirt(person){
+function drawShirt(person, selectable){
 
 	var x = person.x;	
 	var y = person.y + person.height/4;
 	var w = person.width;
 	var h = person.height * 0.3;
 
-	ctx.drawImage(person.shirt, x, y, w, h);		
+	ctx.drawImage(person.shirt, x, y, w, h);	
+
+	if (selectable){
+		drawItemSelection(x,y,w,h); //screenSelect.js (Calls the functions required to enable users to select the item.)
+	}	
 }
 
 //Draw on the hat
-function drawHat(person){
+function drawHat(person, selectable){
 
 	var x = person.x;	
 	var y = person.y - person.height/4.5;
 	var w = person.width;
 	var h = person.height * 0.3;
 
-	ctx.drawImage(person.hat, x, y, w, h);		
+	ctx.drawImage(person.hat, x, y, w, h);	
+	if (selectable){
+		drawItemSelection(x,y,w,h); //screenSelect.js (Calls the functions required to enable users to select the item.)
+	}	
 }
 
 //Draw on the pants
-function drawPants(person){
+function drawPants(person, selectable){
 
 	var x = person.x + person.width * 0.05; 	
 	var y = person.y + person.height/1.85;
 	var w = person.width * 0.9;
 	var h = person.height * 0.4;
 
-	ctx.drawImage(person.pants, x, y, w, h);		
+	ctx.drawImage(person.pants, x, y, w, h);	
+	if (selectable){
+		drawItemSelection(x,y,w,h); //screenSelect.js (Calls the functions required to enable users to select the item.)
+	}	
+
 }
 
 //Draw on the shoes
-function drawShoes(person){
+function drawShoes(person, selectable){
 
 	var x = person.x + person.width * 0.14; 	
 	var y = person.y + person.height * 0.9;
 	var w = person.width * 0.81;
 	var h = person.height * 0.1;
 
-	ctx.drawImage(person.shoes, x, y, w, h);		
+	ctx.drawImage(person.shoes, x, y, w, h);	
+	if (selectable){
+		drawItemSelection(x,y,w,h); //screenSelect.js (Calls the functions required to enable users to select the item.)
+	}	
+
+
 }
