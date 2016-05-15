@@ -4,8 +4,8 @@ function loadCharSelection(){
 
 	bgImage.src = "images/charSelection.png";
 	dude.src = "images/person.png";
-	resumeButtonImage.src = "images/noButton.png";
-    restartButtonImage.src = "images/yesButton.png";
+	resumeButtonImage.src = "images/yesButton.png";
+    restartButtonImage.src = "images/noButton.png";
 
 	initSelectionSetting();
 
