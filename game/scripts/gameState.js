@@ -19,12 +19,21 @@ function setState(n){
 
 		//Erases all UIobjects (buttons & clickable stuff)
 		uiObjects = [];
+
+
+		
+
 		//All state changes should ensure the timer has stopped.
-		if (state == 1){stopAllTimers();}else{uiPeople = [];}
+		if (state == 1){
+			stopAllTimers();
+		}else{ //If current state is not 1. 
+			uiPeople = []; //reset uiPeople.
+		}
 		
 		state = n;
         //reloadGraphics() is in graphicsBase.js file
 		reloadGraphics();
+		if (state == 1){gamePaused = false; console.log(gamePaused);}
 	}else{
 		console.log("Game State already set.");
 	}

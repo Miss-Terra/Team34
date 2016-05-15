@@ -30,6 +30,7 @@ function drawPauseMenu() {
 	ctx.drawImage(mainMenuButtonImage, buttonXleft, buttonY, buttonWidth, buttonHeight);
 	uiObjects[1] = new uiObject(buttonXleft, buttonY, buttonWidth, buttonHeight, 
 			function () {
+				gamePaused = false; console.log(gamePaused); // unpause game
 				console.log("menu");
 				setState(0);
 				// initTimeSetting() in timer.js file
@@ -83,6 +84,7 @@ function drawConfirmMenu() {
 	ctx.drawImage(restartButtonImage, noX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(noX, buttonY, buttonWidth, buttonHeight, 
 			function (){
+			gamePaused = false; console.log(gamePaused); // unpause game
 				console.log("Restart game");
 				setState(1);
 				// initTimeSetting() in timer.js file

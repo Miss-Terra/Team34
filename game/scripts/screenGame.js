@@ -42,6 +42,7 @@ function addMenuButton() {
 	uiObjects[0] = new uiObject(buttonX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("Pause Menu");
+				gamePaused = true; console.log(gamePaused); // pause game
 				setState(3);
 				console.log("Level: " + currentLevel)
 			});

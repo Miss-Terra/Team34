@@ -166,8 +166,9 @@ function loadRules() {
 
 	ctx.fillStyle = "#000000";
 	
-	if (rule != null)
+	if (rule != null){
 		drawRule();
+	}
 	
 }
 
@@ -178,8 +179,10 @@ function pad2(number) {
 //Settings that need to run during setup for gameplay. (runs once).
 function initGameSetting(){
 	startLevelTimer(); // timer.js
-	startLineTimer(5000); //timer.js
-	personArray = genPeople(lineSize, dude); // generate the personArray. (globals.js)
+	startLineTimer(); //timer.js 
+	if (gamePaused == false){
+		personArray = genPeople(lineSize, dude); // generate the personArray. (globals.js)
+	}
 }
 
 

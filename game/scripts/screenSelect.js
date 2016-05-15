@@ -47,6 +47,7 @@ function drawSelectMenuButtons(){
 	ctx.drawImage(resumeButtonImage, yesX, yesY, buttonWidth, buttonHeight);
 	uiObjects[1] = new uiObject(yesX, yesY, buttonWidth, buttonHeight, 
 			function (){
+				gamePaused = false; console.log(gamePaused); // unpause game
 				console.log("Nothing happened.")
 			});
 

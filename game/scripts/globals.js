@@ -10,6 +10,8 @@ var finalTime = 0;
 var uiObjects = []; // defines uiObjects... Things people can click
 var uiPeople = []; // Just like uiObjects... But ONLY for people in the line.
 var personArray = [];
+var gamePaused = false; // A variable used to check if the game is paused.
+
 
 
 

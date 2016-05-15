@@ -30,6 +30,7 @@ function drawLine(){
 			 	uiPeople[i] = new uiObject(personArray[i].x, personArray[i].y, personArray[i].width, personArray[i].height, 
 					function (){
 						console.log("Person: " + this.person.number + " clicked.");
+						gamePaused = true; console.log(gamePaused); // unpause game
 						this.person.debugPerson(); // runs console commands to display items.	
 						setState(8);				
 					}, personArray[i]);
