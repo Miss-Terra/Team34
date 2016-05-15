@@ -84,6 +84,7 @@ function reloadGraphics(){
 		//8 item select screen
 	if (state == 8){
 		//screenSelect.js
+		loadCharSelection();
 	}
 	  //tutorial level
 	if (state == 9){
@@ -106,6 +107,8 @@ function clearLoadedImages(){
 	mainMenuButtonReady = false;
 	restartButtonReady = false;
 	resumeButtonReady = false;
+	pauseButtonReady = false;
+	pauseButtonReady2 = false;
 }
 
 
@@ -161,6 +164,12 @@ function renderGraphics(){
 			drawConfirmMenu();	
 		}
 		
+			//8 confirm screen
+		if (state == 8){
+			//screenSelect.js
+			drawCharSelection();	
+		}
+		
 		
 			//9 tutorial screen
 		if (state == 9){
@@ -192,7 +201,9 @@ function graphicsStatus(){
 	}
 	if (state == 1) {
 		//Did these images load yet?
-		if (bgReady && personReady){
+		if (bgReady && personReady 
+					&& pauseButtonReady
+					&& pauseButtonReady2){
 			return true;
 		}else{
 			return false;
@@ -222,6 +233,17 @@ function graphicsStatus(){
 		//check state 4 img status
 		if (bgReady && mainMenuButtonImage
 					&& creditsButtonReady){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	if (state == 8) {
+		//check state 4 img status
+		if (bgReady && personReady
+					&& resumeButtonReady
+					&& restartButtonReady){
 			return true;
 		}else{
 			return false;

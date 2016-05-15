@@ -76,6 +76,13 @@
 		buttonReady = true;
 	};
 	
+	pauseButtonImage2 = new Image();
+	pauseButtonReady2 = false;
+	pauseButtonImage.onload = function () {
+		//button image is safe to load...
+		pauseButtonReady2 = true;
+	};
+
 	var mainMenuButtonImage = new Image();
 	var mainMenuButtonReady = false;
 	mainMenuButtonImage.onload = function () {

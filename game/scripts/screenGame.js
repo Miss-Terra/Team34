@@ -8,15 +8,15 @@ function loadGame(){
 	
 	// required buttons
  	pauseButtonImage.src = "images/gmenub1.png";
-	pauseButtonImage2 = new Image();
+	
  	pauseButtonImage2.src = "images/gpauseButton.png";
 	
-	// test buttons
+	// test buttons (debugging)
  	generateButtonImage.src = "images/button.png";
 	victoryButtonImage.src = "images/button.png";
 	addscoreButtonImage.src = "images/button.png";
   	
-	initGameSetting();
+	initGameSetting(); //rules.js
 }
 
 //Draw the background image, load level rules, buttons, display, lineup.
