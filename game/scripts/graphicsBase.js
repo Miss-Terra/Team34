@@ -109,6 +109,8 @@ function clearLoadedImages(){
 	resumeButtonReady = false;
 	pauseButtonReady = false;
 	pauseButtonReady2 = false;
+	borderReady = false;
+	borderReady2 = false;
 }
 
 
@@ -240,10 +242,12 @@ function graphicsStatus(){
 	}
 
 	if (state == 8) {
-		//check state 4 img status
+		//check state 8 img status
 		if (bgReady && personReady
 					&& resumeButtonReady
-					&& restartButtonReady){
+					&& restartButtonReady
+					&& borderReady
+					&& borderReady2){
 			return true;
 		}else{
 			return false;

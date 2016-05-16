@@ -31,6 +31,22 @@
 		//Stickman is safe to load...
 		menuAnimationReady = true;
 	};	
+
+	var borderImage = new Image();
+	var borderReady = false;
+	borderImage.onload = function () {
+		//Stickman is safe to load...
+		borderReady = true;
+	};	
+
+	var borderImage2 = new Image();
+	var borderReady2 = false;
+	borderImage2.onload = function () {
+		//Stickman is safe to load...
+		borderReady2 = true;
+	};	
+
+
 //----------------Buttons Image----------------
 
 	var generateButtonImage = new Image();
