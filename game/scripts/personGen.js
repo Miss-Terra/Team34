@@ -33,11 +33,11 @@ function genPerson(num, personImg){
 		//For example, 2 for hat might be a blue sillyhat.
 		//Or 2 for shirt could be a red t-shirt.
 		setItems: function() {
-			this.hat = hatArray[Math.floor((Math.random() * 3) + 1)];
-			this.shirt = shirtArray[Math.floor((Math.random() * 3) + 1)];
+			this.hat = hatArray[Math.floor((Math.random() * 5) + 1)];
+			this.shirt = shirtArray[Math.floor((Math.random() * 4) + 1)];
 			this.item1 = itemArray[Math.floor((Math.random() * 3) + 1)];
 			this.item2 = itemArray[Math.floor((Math.random() * 3) + 1)];
-			this.pants = pantArray[Math.floor((Math.random() * 3) + 1)];
+			this.pants = pantArray[Math.floor((Math.random() * 4) + 1)];
 			this.shoes = shoeArray[Math.floor((Math.random() * 3) + 1)];
 			this.image = personImg;
 		},

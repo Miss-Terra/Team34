@@ -15,9 +15,9 @@ var gamePaused = false; // A variable used to check if the game is paused.
 
 
 
-var NumberHats=3;
-var NumberShirts=3;
-var NumberPants=3;
+var NumberHats=5;
+var NumberShirts=4;
+var NumberPants=4;
 var NumberShoes=3;
 var NumberItems=3;
 
