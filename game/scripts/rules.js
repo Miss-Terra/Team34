@@ -170,6 +170,11 @@ function loadRules() {
 		drawRule();
 	}
 	
+	// When timer reaches zero, level ends
+	if (levelTime == 0) {
+		finalScore += levelScore;
+		setState(2);
+	}
 }
 
 function pad2(number) {
