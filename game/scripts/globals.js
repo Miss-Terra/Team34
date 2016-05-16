@@ -13,16 +13,13 @@ var personArray = [];
 var gamePaused = false; // A variable used to check if the game is paused.
 
 
-
-
+// number of items in the item matrix
 var NumberHats=5;
 var NumberShirts=4;
 var NumberPants=4;
 var NumberShoes=3;
 var NumberItems=3;
 
-// does not work here
-/*ctx.font = "1em Arial";
-ctx.fillStyle = "black";
-ctx.textAlign = "center";*/
+// high scores
+var highscores = [];
 	

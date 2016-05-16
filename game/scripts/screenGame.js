@@ -15,6 +15,7 @@ function loadGame(){
  	generateButtonImage.src = "images/button.png";
 	victoryButtonImage.src = "images/button.png";
 	addscoreButtonImage.src = "images/button.png";
+	addGameOverButtonImage.src = "images/button.png";
   	
 	initGameSetting(); //rules.js
 }

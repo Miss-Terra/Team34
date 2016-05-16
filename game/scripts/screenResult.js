@@ -74,8 +74,11 @@ function drawResult(){
 		uiObjects[2] = new uiObject(nextX, buttonY, buttonWidth, buttonHeight, 
 				function (){
 					console.log("Submit Score function here...");
-					nextLevel();
-					setState(1);
+					//nextLevel();
+					highscores.push(finalScore);
+					levelScore = 0;
+					finalScore = 0;
+					setState(4);
 					console.log("Level: " + currentLevel)
 				});
 	}

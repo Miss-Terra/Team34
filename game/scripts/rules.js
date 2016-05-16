@@ -141,6 +141,15 @@ function loadRules() {
 			function (){
 				levelScore += 5;
 			});
+			
+	// button to end game (just for testing)
+	ctx.drawImage(addGameOverButtonImage, canvas.width*8/10, canvas.height*5/10, buttonWidth*2, buttonHeight);
+	uiObjects[4] = new uiObject(canvas.width*8/10, canvas.height*5/10, buttonWidth*2, buttonHeight, 
+			function (){
+				finalScore += levelScore;
+				levelVictory = false;
+				setState(2);
+			});
 	
 	
 	// button to generate rules
@@ -152,6 +161,8 @@ function loadRules() {
 	// button to add score 
 	ctx.fillText("Add score", canvas.width*9/10, canvas.height*9/20);
 	
+	// button to end game
+	ctx.fillText("Game over", canvas.width*9/10, canvas.height*11/20);
 			
 			
 	// display rule box
