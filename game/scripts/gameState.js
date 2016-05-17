@@ -13,6 +13,7 @@ var state = -1; // -1 is only used to define that no state has been issued yet.
 //State 7 == Confirm screen
 //State 8 == Item Select screen
 //State 9 == Tutorial screen
+//State 10 == Score submission screen
 
 function setState(n){
 	if (state != n){

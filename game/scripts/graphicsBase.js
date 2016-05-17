@@ -23,6 +23,7 @@
 //State 7 == Confirm screen
 //State 8 == Item Select screen
 //State 9 == Tutorial screen
+//State 10 == Score submission screen
 //	<script src="scripts/screenMainMenu.js"></script> 
 //	<script src="scripts/screenGame.js"></script>
 //	<script src="scripts/screenResult.js"></script>
@@ -92,6 +93,11 @@ function reloadGraphics(){
 		//screenTutorial.js
 		loadTutorialMenu();	
 	}
+		//score submission screen
+	if (state == 10){
+		//screenScoreboard.js
+		loadScoreSubmission();	
+	}
 
 }
 
@@ -150,7 +156,7 @@ function renderGraphics(){
 		}
 			//4 is scoreboard screen
 		if (state == 4){
-				//screenScoreboard.js
+			//screenScoreboard.js
 			drawScoreboard();
 		}
 			//5 is credits screen
@@ -179,6 +185,12 @@ function renderGraphics(){
 		if (state == 9){
 			//screenTutorial.js
 			drawTutorial();	
+		}
+		
+			//10 score submission screen
+		if (state == 10){
+			//screenScoreboard.js
+			drawScoreSubmission();	
 		}
 	}
 	
@@ -250,6 +262,17 @@ function graphicsStatus(){
 					&& restartButtonReady
 					&& borderReady
 					&& borderReady2){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	if (state == 10) {
+		//check state 10 img status
+		if (bgReady && mainMenuButtonImage
+					&& scoreboardButtonReady
+					&& buttonImage){
 			return true;
 		}else{
 			return false;

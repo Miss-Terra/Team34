@@ -97,10 +97,10 @@ function drawResult(){
 					console.log("Submit Score function here...");
 					//nextLevel();
 					highscores.push(finalScore);
+					setState(10);
 					levelScore = 0;
 					finalScore = 0;
 					extraLevelScore = 0;
-					setState(4);
 					console.log("Level: " + currentLevel)
 				});
 	}
