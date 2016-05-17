@@ -212,6 +212,7 @@ function loadRules() {
 	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*2/10, buttonWidth*2, buttonHeight, 
 			function (){
 				generateRule();
+				personArray = genPeople(lineSize, dude);
 			});
 			
 	// button to skip level (just for testing)
