@@ -3,24 +3,89 @@ var level = 1;
 var person = 1;
 var colors;
 var items;
-var rule;
+//var rule;
+var rule = [];
 var color = [];
 var item = [];
 var randomRule1, randomRule2;
 var operators;
 var join;
 var extraLevelScore = 0;
+var ruleImage = new Image();
+var itemType;
 
 function drawRule() {
 	// display rule in top box
-	ctx.fillText(rule, canvas.width/2, canvas.height/20);
+	//ctx.fillText(rule, canvas.width/2, canvas.height/20);
+	
+	switch (rule[0]) {
+		case 1:
+			itemType = "itemf";
+			break;
+		case 2:
+			itemType = "hat";
+			break;
+		case 3:
+			itemType = "shirt";
+			break;
+		case 4:
+			itemType = "pant";
+			break;
+		case 5:
+			itemType = "shoe";
+			break;
+		case 6:
+			itemType = "itemb";
+			break;
+	}
+	
+	
+	ruleImage.src = "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png";
+	
+	if (ruleImage != null) {
+		ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, 0);
+	}
+
 }	
 
 function generateRule() {			
 
-	rule = "";
+	rule[0] = 0; // item location
+	rule[1] = 0; // item type
+	rule[2] = 0; // color
+	
+	// 1 = itemf
+	// 2 = hat
+	// 3 = shirt
+	// 4 = pant
+	// 5 = shoe
+	// 6 = itemb
+	rule[0] = Math.floor(Math.random() * 6);
+	
+	switch (rule[0]) {
+		case 1:
+			rule[1] = Math.floor(Math.random() * NumberItems) + 1;
+			break;
+		case 2:
+			rule[1] = Math.floor(Math.random() * NumberHats) + 1;
+			break;
+		case 3:
+			rule[1] = Math.floor(Math.random() * NumberShirts) + 1;
+			break;
+		case 4:
+			rule[1] = Math.floor(Math.random() * NumberPants) + 1;
+			break;
+		case 5:
+			rule[1] = Math.floor(Math.random() * NumberShoes) + 1;
+			break;
+		case 6:
+			rule[1] = Math.floor(Math.random() * NumberItems) + 1;
+			break;
+	}
+	
+	rule[2] = Math.floor(Math.random() * NumberColors) + 1;
 
-	if (currentLevel <= 5) {
+	/*if (currentLevel <= 5) {
 		// color matrix 
 		colors = [ "red", "yellow", "green", "blue" ];
 		// item matrix 
@@ -113,7 +178,7 @@ function generateRule() {
 					
 		rule += color[randomRule1] + " " + item[randomRule1] + " " + operators[join] + " " +
 				color[randomRule2] + " " + item[randomRule2];
-	}
+	}*/
 }
 
 function loadRules() {
@@ -172,17 +237,17 @@ function loadRules() {
 			
 	// display rule box
 	if (currentLevel <= 10) {
-		ctx.fillStyle = "#33FFFF";
+		ctx.fillStyle = "#FFFFFF";
 		ctx.fillRect(canvas.width/2 - canvas.width/10, 0, canvas.width/5, canvas.height/10);
 	}
 	else {
-		ctx.fillStyle = "#33FFFF";
+		ctx.fillStyle = "#FFFFFF";
 		ctx.fillRect(canvas.width/2-canvas.width/5, 0, canvas.width*2/5, canvas.height/10);
 	}
 
 	ctx.fillStyle = "#000000";
 	
-	if (rule != null){
+	if (rule[0] != 0){
 		drawRule();
 	}
 	

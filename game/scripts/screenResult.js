@@ -36,7 +36,8 @@ function drawResult(){
 				finalScore -= levelScore + extraLevelScore;
 				levelScore = 0;
 				extraLevelScore = 0;
-				rule = "?";
+				//rule = "?";
+				rule[0] = rule[1] = rule[2] = 0;
 				// initTimeSetting() in timer.js file
 				initTimeSetting();
 				console.log("Level: " + currentLevel)
@@ -50,7 +51,8 @@ function drawResult(){
 				levelScore = 0;
 				finalScore = 0;
 				extraLevelScore = 0;
-				rule = "?";
+				//rule = "?";
+				rule[0] = rule[1] = rule[2] = 0;
 				// initTimeSetting() in timer.js file
 				initTimeSetting();
 				console.log("Level: " + currentLevel)
@@ -68,7 +70,8 @@ function drawResult(){
 					setState(1);
 					levelScore = 0;
 					extraLevelScore = 0;
-					rule = "?";
+					//rule = "?";
+					rule[0] = rule[1] = rule[2] = 0;
 					// initTimeSetting() in timer.js file
 					initTimeSetting();
 					console.log("Level: " + currentLevel)
