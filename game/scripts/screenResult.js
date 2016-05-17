@@ -58,7 +58,7 @@ function drawResult(){
 
 	
 	ctx.drawImage(buttonImage, nextX, buttonY, buttonWidth, buttonHeight);
-	if (levelVictory){ //If player beat the level
+	if (levelVictory){ //If player beat the level	
 		uiObjects[2] = new uiObject(nextX, buttonY, buttonWidth, buttonHeight, 
 				function (){
 					console.log("next");
@@ -70,7 +70,25 @@ function drawResult(){
 					initTimeSetting();
 					console.log("Level: " + currentLevel)
 				});
-	}else{ // if player lost
+	} else { // if player lost
+	
+			// display rule box
+			if (currentLevel <= 10) {
+				ctx.fillStyle = "#33FFFF";
+				ctx.fillRect(canvas.width / 2 - canvas.width / 10, 10, canvas.width / 5, canvas.height / 10);
+			}
+			else {
+				ctx.fillStyle = "#33FFFF";
+				ctx.fillRect(canvas.width / 2 - canvas.width / 5, 10, canvas.width * 2 / 5, canvas.height / 10);
+			}
+			// display rule
+			ctx.fillStyle = "#000000";
+			ctx.fillText("Correct Rule:", canvas.width / 2, canvas.height / 10 - 30);			
+			if (rule != null){
+				ctx.fillText(rule, canvas.width / 2, canvas.height / 10);
+			}
+		
+		// display "submit" button
 		uiObjects[2] = new uiObject(nextX, buttonY, buttonWidth, buttonHeight, 
 				function (){
 					console.log("Submit Score function here...");
