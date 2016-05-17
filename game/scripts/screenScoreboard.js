@@ -119,6 +119,7 @@ function loadScoreSubmission() {
    buttonImage.src = "images/submitButton.png";
 }
 
+
 function drawScoreSubmission(){
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
  	
@@ -161,4 +162,23 @@ function drawScoreSubmission(){
 			setState(0);
 			console.log("Level: " + currentLevel)
 		});
+		
+	
+	// player name input textbox. Use external js library from James Simpson and GoldFire Studios, Inc.
+	// library/CanvasInput.js
+	// Judy: Still working on....
+	var input = new CanvasInput({
+		canvas: document.getElementById('canvas'),
+		x: canvas.width / 2,
+		y: canvas.height / 2,
+		fontSize: 18,
+		fontColor: 'black',
+		fontWeight: 'bold',
+		width: 200,
+		padding: 10,
+		borderWidth: 2,
+	});
+		input.focus();
+		// render();
+
 }
