@@ -33,12 +33,73 @@ function genPerson(num, personImg){
 		//For example, 2 for hat might be a blue sillyhat.
 		//Or 2 for shirt could be a red t-shirt.
 		setItems: function() {
-			this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
+		
+			//ruleImage.src = "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png";
+		
+			if (rule[0] == 1) {
+				this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
+				this.shirt = shirtArray[Math.floor((Math.random() * 12) + 1)];
+				this.item1 = itemfArray[NumberItems*(rule[2]-1) + rule[1]];
+				this.item2 = itembArray[Math.floor((Math.random() * 9) + 1)];
+				this.pants = pantArray[Math.floor((Math.random() * 12) + 1)];
+				this.shoes = shoeArray[Math.floor((Math.random() * 9) + 1)];
+			}
+			else if (rule[0] == 2) {
+				this.hat = hatArray[NumberHats*(rule[2]-1) + rule[1]];
+				this.shirt = shirtArray[Math.floor((Math.random() * 12) + 1)];
+				this.item1 = itemfArray[Math.floor((Math.random() * 9) + 1)];
+				this.item2 = itembArray[Math.floor((Math.random() * 9) + 1)];
+				this.pants = pantArray[Math.floor((Math.random() * 12) + 1)];
+				this.shoes = shoeArray[Math.floor((Math.random() * 9) + 1)];
+			}
+			else if (rule[0] == 3) {
+				this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
+				this.shirt = shirtArray[NumberShirts*(rule[2]-1) + rule[1]];
+				this.item1 = itemfArray[Math.floor((Math.random() * 9) + 1)];
+				this.item2 = itembArray[Math.floor((Math.random() * 9) + 1)];
+				this.pants = pantArray[Math.floor((Math.random() * 12) + 1)];
+				this.shoes = shoeArray[Math.floor((Math.random() * 9) + 1)];
+			}
+			else if (rule[0] == 4) {
+				this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
+				this.shirt = shirtArray[Math.floor((Math.random() * 12) + 1)];
+				this.item1 = itemfArray[Math.floor((Math.random() * 9) + 1)];
+				this.item2 = itembArray[Math.floor((Math.random() * 9) + 1)];
+				this.pants = pantArray[NumberPants*(rule[2]-1) + rule[1]];
+				this.shoes = shoeArray[Math.floor((Math.random() * 9) + 1)];
+			}
+			else if (rule[0] == 5) {
+				this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
+				this.shirt = shirtArray[Math.floor((Math.random() * 12) + 1)];
+				this.item1 = itemfArray[Math.floor((Math.random() * 9) + 1)];
+				this.item2 = itembArray[Math.floor((Math.random() * 9) + 1)];
+				this.pants = pantArray[Math.floor((Math.random() * 12) + 1)];
+				this.shoes = shoeArray[NumberShoes*(rule[2]-1) + rule[1]];
+			}
+			else if (rule[0] == 6) {
+				this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
+				this.shirt = shirtArray[Math.floor((Math.random() * 12) + 1)];
+				this.item1 = itemfArray[Math.floor((Math.random() * 9) + 1)];
+				this.item2 = itembArray[NumberItems*(rule[2]-1) + rule[1]];
+				this.pants = pantArray[Math.floor((Math.random() * 12) + 1)];
+				this.shoes = shoeArray[Math.floor((Math.random() * 9) + 1)];
+			}
+			else {
+				this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
+				this.shirt = shirtArray[Math.floor((Math.random() * 12) + 1)];
+				this.item1 = itemfArray[Math.floor((Math.random() * 9) + 1)];
+				this.item2 = itembArray[Math.floor((Math.random() * 9) + 1)];
+				this.pants = pantArray[Math.floor((Math.random() * 12) + 1)];
+				this.shoes = shoeArray[Math.floor((Math.random() * 9) + 1)];
+			}
+		
+		
+			/*this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
 			this.shirt = shirtArray[Math.floor((Math.random() * 12) + 1)];
 			this.item1 = itemfArray[Math.floor((Math.random() * 9) + 1)];
 			this.item2 = itembArray[Math.floor((Math.random() * 9) + 1)];
 			this.pants = pantArray[Math.floor((Math.random() * 12) + 1)];
-			this.shoes = shoeArray[Math.floor((Math.random() * 9) + 1)];
+			this.shoes = shoeArray[Math.floor((Math.random() * 9) + 1)];*/
 
 //			this.hat = hatArray[Math.floor((Math.random() * 5) + 1)];
 //			this.shirt = shirtArray[Math.floor((Math.random() * 4) + 1)];

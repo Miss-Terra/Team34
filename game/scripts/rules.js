@@ -60,30 +60,30 @@ function generateRule() {
 	// 4 = pant
 	// 5 = shoe
 	// 6 = itemb
-	rule[0] = Math.floor(Math.random() * 6);
+	rule[0] = Math.floor(Math.random() * 6 + 1);
 	
 	switch (rule[0]) {
 		case 1:
-			rule[1] = Math.floor(Math.random() * NumberItems) + 1;
+			rule[1] = Math.floor(Math.random() * NumberItems + 1);
 			break;
 		case 2:
-			rule[1] = Math.floor(Math.random() * NumberHats) + 1;
+			rule[1] = Math.floor(Math.random() * NumberHats + 1);
 			break;
 		case 3:
-			rule[1] = Math.floor(Math.random() * NumberShirts) + 1;
+			rule[1] = Math.floor(Math.random() * NumberShirts + 1);
 			break;
 		case 4:
-			rule[1] = Math.floor(Math.random() * NumberPants) + 1;
+			rule[1] = Math.floor(Math.random() * NumberPants + 1);
 			break;
 		case 5:
-			rule[1] = Math.floor(Math.random() * NumberShoes) + 1;
+			rule[1] = Math.floor(Math.random() * NumberShoes + 1);
 			break;
 		case 6:
-			rule[1] = Math.floor(Math.random() * NumberItems) + 1;
+			rule[1] = Math.floor(Math.random() * NumberItems + 1);
 			break;
 	}
 	
-	rule[2] = Math.floor(Math.random() * NumberColors) + 1;
+	rule[2] = Math.floor(Math.random() * NumberColors + 1);
 
 	/*if (currentLevel <= 5) {
 		// color matrix 
@@ -191,6 +191,7 @@ function loadRules() {
 	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*2/10, buttonWidth*2, buttonHeight, 
 			function (){
 				generateRule();
+				personArray = genPeople(lineSize, dude);
 			});
 			
 	// button to skip level (just for testing)
