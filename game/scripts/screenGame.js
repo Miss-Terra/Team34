@@ -24,10 +24,10 @@ function loadGame(){
 function drawGame(){
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
-	loadRules();
+	loadRules();  //rules.js
 	addMenuButton();
-	displayInLevel();
-	drawLine();
+	displayInLevel();  //display.js
+	drawLine();  //drawLine.js
  
 }
 

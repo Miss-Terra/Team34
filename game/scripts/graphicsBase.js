@@ -50,6 +50,7 @@ function reloadGraphics(){
 	}
 		//1 is gameplay.
 	if (state == 1){
+		//screenGame.js
  		loadGame();
 	}
 		//2 is result screen
@@ -127,6 +128,7 @@ function renderGraphics(){
 		}
 		//Gameplay Screen
 		if (state == 1){
+			//screenGame.js
 			drawGame();
 			//Draw the line of people.
       //drawLine() is in drawLine.js file

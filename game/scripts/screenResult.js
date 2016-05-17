@@ -33,8 +33,9 @@ function drawResult(){
 			function (){
 				console.log("restart");
 				setState(1);
-				finalScore -= levelScore;
+				finalScore -= levelScore + extraLevelScore;
 				levelScore = 0;
+				extraLevelScore = 0;
 				rule = "?";
 				// initTimeSetting() in timer.js file
 				initTimeSetting();
@@ -48,6 +49,7 @@ function drawResult(){
 				setState(0);
 				levelScore = 0;
 				finalScore = 0;
+				extraLevelScore = 0;
 				rule = "?";
 				// initTimeSetting() in timer.js file
 				initTimeSetting();
@@ -65,6 +67,7 @@ function drawResult(){
 					nextLevel();
 					setState(1);
 					levelScore = 0;
+					extraLevelScore = 0;
 					rule = "?";
 					// initTimeSetting() in timer.js file
 					initTimeSetting();
@@ -96,6 +99,7 @@ function drawResult(){
 					highscores.push(finalScore);
 					levelScore = 0;
 					finalScore = 0;
+					extraLevelScore = 0;
 					setState(4);
 					console.log("Level: " + currentLevel)
 				});

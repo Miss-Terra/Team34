@@ -9,6 +9,7 @@ var item = [];
 var randomRule1, randomRule2;
 var operators;
 var join;
+var extraLevelScore = 0;
 
 function drawRule() {
 	// display rule in top box
@@ -131,7 +132,10 @@ function loadRules() {
 	ctx.drawImage(victoryButtonImage, canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight);
 	uiObjects[2] = new uiObject(canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight, 
 			function (){
-				finalScore += levelScore;
+				// Score rule: pass level n in t seconds get ((100 * n) + (180 - t)) points 
+				levelScore = levelTime + currentLevel * 100;
+				// Set original "levelScore" to extraLevelScore for testing purpose
+				finalScore += levelScore + extraLevelScore;				
 				levelVictory = true;
 				setState(2);
 			});
@@ -140,14 +144,14 @@ function loadRules() {
 	ctx.drawImage(addscoreButtonImage, canvas.width*8/10, canvas.height*4/10, buttonWidth*2, buttonHeight);
 	uiObjects[3] = new uiObject(canvas.width*8/10, canvas.height*4/10, buttonWidth*2, buttonHeight, 
 			function (){
-				levelScore += 5;
+				extraLevelScore += 5;
 			});
 			
 	// button to end game (just for testing)
 	ctx.drawImage(addGameOverButtonImage, canvas.width*8/10, canvas.height*5/10, buttonWidth*2, buttonHeight);
 	uiObjects[4] = new uiObject(canvas.width*8/10, canvas.height*5/10, buttonWidth*2, buttonHeight, 
 			function (){
-				finalScore += levelScore;
+				finalScore += levelScore + extraLevelScore;
 				levelVictory = false;
 				setState(2);
 			});
