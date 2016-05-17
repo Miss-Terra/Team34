@@ -43,7 +43,28 @@ function drawRule() {
 	ruleImage.src = "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png";
 	
 	if (ruleImage != null) {
-		ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, 0);
+		
+		switch (rule[0]) {
+			case 1:
+				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, -canvas.height/10);
+				break;
+			case 2:
+				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, canvas.height/40);
+				break;
+			case 3:
+				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, -canvas.height/20);
+				break;
+			case 4:
+				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, -canvas.height/10);
+				break;
+			case 5:
+				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, -canvas.height*3/20);
+				break;
+			case 6:
+				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, -canvas.height/10);
+				break;
+		}
+
 	}
 
 }	
