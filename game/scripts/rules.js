@@ -198,7 +198,7 @@ function loadRules() {
 	uiObjects[2] = new uiObject(canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight, 
 			function (){
 				// Score rule: pass level n in t seconds get ((100 * n) + (180 - t)) points 
-				levelScore = levelTime + currentLevel * 100;
+				levelScore = levelTime + 100;
 				// Set original "levelScore" to extraLevelScore for testing purpose
 				finalScore += levelScore + extraLevelScore;				
 				levelVictory = true;
