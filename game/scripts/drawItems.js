@@ -12,11 +12,16 @@ function drawItems(person, selectable){
 //Draw on the shirt
 function drawShirt(person, selectable){
 
-	var x = person.x;	
-	var y = person.y + person.height/4;
-	var w = person.width;
-	var h = person.height * 0.3;
+//	var x = person.x;	
+//	var y = person.y + person.height/4;
+//	var w = person.width;
+//	var h = person.height * 0.3;
 
+	var x = person.x;	
+	var y = person.y;
+	var w = person.width;
+	var h = person.height;
+	
 	ctx.drawImage(person.shirt, x, y, w, h);	
 
 	if (selectable){
@@ -27,11 +32,16 @@ function drawShirt(person, selectable){
 //Draw on the hat
 function drawHat(person, selectable){
 
-	var x = person.x;	
-	var y = person.y - person.height/4.5;
-	var w = person.width;
-	var h = person.height * 0.3;
+//	var x = person.x;	
+//	var y = person.y - person.height/4.5;
+//	var w = person.width;
+//	var h = person.height * 0.3;
 
+	var x = person.x;	
+	var y = person.y;
+	var w = person.width;
+	var h = person.height;
+	
 	ctx.drawImage(person.hat, x, y, w, h);	
 
 	//Bellow only used during item selection
@@ -43,10 +53,16 @@ function drawHat(person, selectable){
 //Draw on the pants
 function drawPants(person, selectable){
 
-	var x = person.x + person.width * 0.05; 	
-	var y = person.y + person.height/1.85;
-	var w = person.width * 0.9;
-	var h = person.height * 0.4;
+//	var x = person.x + person.width * 0.05; 	
+//	var y = person.y + person.height/1.85;
+//	var w = person.width * 0.9;
+//	var h = person.height * 0.4;
+	
+	var x = person.x;	
+	var y = person.y;
+	var w = person.width;
+	var h = person.height;
+	
 	ctx.drawImage(person.pants, x, y, w, h);
 
 	//Bellow only used during item selection
@@ -61,10 +77,16 @@ function drawPants(person, selectable){
 //Draw on the shoes
 function drawShoes(person, selectable){
 
-	var x = person.x + person.width * 0.14; 	
-	var y = person.y + person.height * 0.9;
-	var w = person.width * 0.81;
-	var h = person.height * 0.1;
+//	var x = person.x + person.width * 0.14; 	
+//	var y = person.y + person.height * 0.9;
+//	var w = person.width * 0.81;
+//	var h = person.height * 0.1;
+	
+	var x = person.x;	
+	var y = person.y;
+	var w = person.width;
+	var h = person.height;
+	
 	ctx.drawImage(person.shoes, x, y, w, h);	
 
 	//Bellow only used during item selection
