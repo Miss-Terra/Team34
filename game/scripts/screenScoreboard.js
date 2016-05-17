@@ -167,6 +167,7 @@ function drawScoreSubmission(){
 	// player name input textbox. Use external js library from James Simpson and GoldFire Studios, Inc.
 	// library/CanvasInput.js
 	// Judy: Still working on....
+	/*
 	var input = new CanvasInput({
 		canvas: document.getElementById('canvas'),
 		x: canvas.width / 2,
@@ -178,7 +179,7 @@ function drawScoreSubmission(){
 		padding: 10,
 		borderWidth: 2,
 	});
-		input.focus();
+		//input.focus();
 		// render();
-
+	*/
 }
