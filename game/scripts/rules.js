@@ -226,17 +226,20 @@ function loadRules() {
 				levelVictory = true;
 				setState(2);
 			});
-			
+		
+	// Remove add score button.		
 	// button to add scores (just for testing)
+	/*
 	ctx.drawImage(addscoreButtonImage, canvas.width*8/10, canvas.height*4/10, buttonWidth*2, buttonHeight);
 	uiObjects[2] = new uiObject(canvas.width*8/10, canvas.height*4/10, buttonWidth*2, buttonHeight, 
 			function (){
 				extraLevelScore += 5;
 			});
+	*/
 			
 	// button to end game (just for testing)
 	ctx.drawImage(addGameOverButtonImage, canvas.width*8/10, canvas.height*5/10, buttonWidth*2, buttonHeight);
-	uiObjects[3] = new uiObject(canvas.width*8/10, canvas.height*5/10, buttonWidth*2, buttonHeight, 
+	uiObjects[2] = new uiObject(canvas.width*8/10, canvas.height*5/10, buttonWidth*2, buttonHeight, 
 			function (){
 				finalScore += levelScore + extraLevelScore;
 				levelVictory = false;
@@ -250,8 +253,9 @@ function loadRules() {
 	// button to skip level
 	ctx.fillText("Skip level", canvas.width*9/10, canvas.height*7/20);
 	
+	// Remove add score button.
 	// button to add score 
-	ctx.fillText("Add score", canvas.width*9/10, canvas.height*9/20);
+	// ctx.fillText("Add score", canvas.width*9/10, canvas.height*9/20);
 	
 	// button to end game
 	ctx.fillText("Game over", canvas.width*9/10, canvas.height*11/20);

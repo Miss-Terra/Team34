@@ -26,7 +26,7 @@ function displayPaused() {
 	ctx.fillText(levelDisplay, (canvas.width * 0.8), (canvas.height * 0.1));
 	
 	// display score
-	var scoreDisplay = "Score: " + levelScore;
+	var scoreDisplay = "Score: " + finalScore;
 	ctx.fillText(scoreDisplay, (canvas.width * 0.8), (canvas.height * 0.15));
 	
 	
@@ -47,7 +47,7 @@ function displayInLevel() {
 	ctx.fillText(levelDisplay, canvas.width*9/10, canvas.height/10);
 	
 	// display score
-	var scoreDisplay = "Score: " + extraLevelScore;
+	var scoreDisplay = "Score: " + finalScore;
 	ctx.fillText(scoreDisplay, canvas.width*9/10, canvas.height*3/20);
 	
 	// display time in each level
