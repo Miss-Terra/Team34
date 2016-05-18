@@ -84,14 +84,12 @@ function drawMainMenu(){
 	uiObjects[0] = new uiObject(buttonX, restartY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("restart");
-				setState(1);
 				currentLevel = 1;
-				// rule = "?";
-				rule[0] = rule[1] = rule[2] = 0;
 				// initTimeSetting() in timer.js file
 				initTimeSetting();
 				generateRule();
-				console.log("Level: " + currentLevel)
+				setState(1);
+				console.log("Level: " + currentLevel);
 			});
 			
     // top-middle button

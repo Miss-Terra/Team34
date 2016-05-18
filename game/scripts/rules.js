@@ -248,7 +248,7 @@ function loadRules() {
 	
 	
 	// button to generate rules
-	ctx.fillText("Generate", canvas.width*9/10, canvas.height*5/20);
+	//ctx.fillText("Generate", canvas.width*9/10, canvas.height*5/20);
 	
 	// button to skip level
 	ctx.fillText("Skip level", canvas.width*9/10, canvas.height*7/20);
@@ -271,11 +271,9 @@ function loadRules() {
 		ctx.fillRect(canvas.width/2-canvas.width/5, 0, canvas.width*2/5, canvas.height/10);
 	}
 
-	ctx.fillStyle = "#000000";
+	drawRule();
 	
-	if (rule[0] != 0){
-		drawRule();
-	}
+	ctx.fillStyle = "#000000";
 	
 	// When timer reaches zero, level ends
 	if (levelTime == 0) {
