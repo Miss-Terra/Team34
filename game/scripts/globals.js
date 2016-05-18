@@ -20,6 +20,5 @@ var NumberPants=4;
 var NumberShoes=3;
 var NumberItems=3;
 
-// high scores
-var highscores = [];
+
 	
