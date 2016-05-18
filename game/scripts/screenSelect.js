@@ -29,7 +29,7 @@ function initSelectionSetting(){
 	pantsSelected = false;
 	shoesSelected = false;
 	itemfSelected = false;
-  itembSelected = false;
+	itembSelected = false;
 }
 
 function drawCharSelection(){
@@ -65,18 +65,27 @@ function drawSelectMenuButtons(){
 				gamePaused = false; console.log(gamePaused); // unpause game
 				console.log("Nothing happened.")
 				setState(1);
+				
+				// Assign item selected by player to itemSelectedByPlayer
 				if (hatSelected == true){
-					itemSelectedByPlayer = selectionPerson.hat // Assign item selected by player to itemSelectedByPlayer
-					console.log("Test PlayerSelection");
-				/*
+					itemSelectedByPlayer = selectionPerson.hat 
+					console.log("PlayerSelection: hat");
 				} else if (shirtSelected == true){
-					//itemSelectedByPlayer = selectionPerson.shirt // Assign item selected by player to itemSelectedByPlayer
+					itemSelectedByPlayer = selectionPerson.shirt 
+					console.log("PlayerSelection: shirt");
 				} else if (pantsSelected == true){
-					//itemSelectedByPlayer = selectionPerson.pants // Assign item selected by player to itemSelectedByPlayer
+					itemSelectedByPlayer = selectionPerson.pants 
+					console.log("PlayerSelection: pants");
 				} else if (shoesSelected == true){
-					//itemSelectedByPlayer = selectionPerson.shoes // Assign item selected by player to itemSelectedByPlayer
+					itemSelectedByPlayer = selectionPerson.shoes 
+					console.log("PlayerSelection: shoes");
+				} else if (itemfSelected == true){
+					itemSelectedByPlayer = selectionPerson.itemf 
+					console.log("PlayerSelection: itemFront");
+				} else if (itembSelected == true){
+					itemSelectedByPlayer = selectionPerson.itemb 
+					console.log("PlayerSelection: itemBack");					
 				};
-				*/
 				
 				//Judy Test: check if player selected the correct item
 				/*
@@ -87,8 +96,7 @@ function drawSelectMenuButtons(){
 				else {
 					setState(4); // Game over sreen
 				*/
-				}
-				
+								
 			});
 
 }
