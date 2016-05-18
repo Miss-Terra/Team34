@@ -5,6 +5,8 @@ var hatSelected = false;
 var shirtSelected = false;
 var pantsSelected = false;
 var shoesSelected = false;
+var itemfSelected = false;
+var itembSelected = false;
 
 function loadCharSelection(){
 
@@ -24,6 +26,8 @@ function initSelectionSetting(){
 	shirtSelected = false;
 	pantsSelected = false;
 	shoesSelected = false;
+	itemfSelected = false;
+  itembSelected = false;
 }
 
 function drawCharSelection(){
@@ -37,7 +41,7 @@ function drawCharSelection(){
 
 function drawSelectMenuButtons(){
 
-    var buttonWidth = canvas.width / 6;
+  var buttonWidth = canvas.width / 6;
 	var buttonHeight = canvas.height / 10;	
 	var	noY = canvas.height * 0.8;
 	var	yesY = canvas.height * 0.2;
@@ -72,7 +76,7 @@ function drawSelectionChar(){
 	var y = canvas.height * 0.25;
 	//var width = (canvas.width * 0.5) - canvas.width * 0.1;
 	//var height = (canvas.height * 0.9) - canvas.height * 0.25;
-	var width = (canvas.width/4) * 0.9; // Math looks weird here because I needed to keep the same raito as the person size in drawline.js
+	var width = (canvas.width/4) * 0.9; // Math looks weird here because I needed to keep the same ratio as the person size in drawline.js
 	var height = (canvas.height/1.375) * 0.9; // Math looks weird here because I needed to keep the same raito as the person size in drawline.js
 
 	selectionPerson.setSize(width,height); // needed for drawItems
@@ -139,6 +143,32 @@ function drawItemSelection(x,y,w,h,id){
 					shoesSelected = false; // shoes selected
 				}else{shoesSelected = true;}
 				console.log("shoes selected.")
+		});
+	}
+	
+		if (id == "itemFront"){
+		if (itemfSelected == true){
+			img = borderImage; // selected
+		}
+		uiObjects[6] = new uiObject(x, y, w, h, 
+			function (){
+				if (itemfSelected){
+					itemfSelected = false; // Hat selected
+				}else{itemfSelected = true;}
+				console.log("front item selected.")
+		});
+	}
+	
+		if (id == "itemBack"){
+		if (itembSelected == true){
+			img = borderImage; // selected
+		}
+		uiObjects[7] = new uiObject(x, y, w, h, 
+			function (){
+				if (itembSelected){
+					itembSelected = false; // Hat selected
+				}else{itembSelected = true;}
+				console.log("back item selected.")
 		});
 	}
 

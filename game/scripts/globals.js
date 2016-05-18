@@ -20,6 +20,3 @@ var NumberPants=4;
 var NumberShoes=3;
 var NumberItems=3;
 var NumberColors=3;
-
-
-	
