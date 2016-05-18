@@ -38,6 +38,7 @@ function drawResult(){
 				// initTimeSetting() in timer.js file
 				initTimeSetting();
 				generateRule();
+				itemSelectedByPlayer = null;
 				setState(1);
 				console.log("Level: " + currentLevel)
 			});
@@ -69,6 +70,7 @@ function drawResult(){
 					// initTimeSetting() in timer.js file
 					initTimeSetting();
 					generateRule();
+					itemSelectedByPlayer = null;
 					setState(1);
 					console.log("Level: " + currentLevel)
 				});

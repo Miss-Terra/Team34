@@ -91,6 +91,7 @@ function drawConfirmMenu() {
 				levelScore = 0;
 				extraLevelScore = 0;
 				generateRule();
+				itemSelectedByPlayer = null;
 				setState(1);
 			});	
 	
