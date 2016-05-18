@@ -15,10 +15,29 @@ var ruleImage = new Image();
 var itemType;
 
 function drawRule() {
-	// display rule in top box
+	// display selected item in top box
 	//ctx.fillText(rule, canvas.width/2, canvas.height/20);
+
+	if (itemSelectedByPlayer == selectionPerson.itemf) {
+		ctx.drawImage(selectionPerson.itemf, canvas.width/2 - canvas.width/10, -canvas.height/10);
+	}
+	else if (itemSelectedByPlayer == selectionPerson.hat) {
+		ctx.drawImage(selectionPerson.hat, canvas.width/2 - canvas.width/10, canvas.height/40);
+	}
+	else if (itemSelectedByPlayer == selectionPerson.shirt) {
+		ctx.drawImage(selectionPerson.shirt, canvas.width/2 - canvas.width/10, -canvas.height/20);
+	}
+	else if (itemSelectedByPlayer == selectionPerson.pants) {
+		ctx.drawImage(selectionPerson.pants, canvas.width/2 - canvas.width/10, -canvas.height/10);
+	}
+	else if (itemSelectedByPlayer == selectionPerson.shoes) {
+		ctx.drawImage(selectionPerson.shoes, canvas.width/2 - canvas.width/10, -canvas.height*3/20);
+	}
+	else if (itemSelectedByPlayer == selectionPerson.itemb) {
+		ctx.drawImage(selectionPerson.itemb, canvas.width/2 - canvas.width/10, -canvas.height/10);
+	}
 	
-	switch (rule[0]) {
+	/*switch (rule[0]) {
 		case 1:
 			itemType = "itemf";
 			break;
@@ -65,7 +84,7 @@ function drawRule() {
 				break;
 		}
 
-	}
+	}*/
 
 }	
 
@@ -261,19 +280,15 @@ function loadRules() {
 	ctx.fillText("Game over", canvas.width*9/10, canvas.height*11/20);
 			
 			
-	// display rule box
-	if (currentLevel <= 10) {
-		ctx.fillStyle = "#FFFFFF";
-		ctx.fillRect(canvas.width/2 - canvas.width/10, 0, canvas.width/5, canvas.height/10);
-	}
-	else {
-		ctx.fillStyle = "#FFFFFF";
-		ctx.fillRect(canvas.width/2-canvas.width/5, 0, canvas.width*2/5, canvas.height/10);
-	}
+	// display item selected box
+	ctx.fillStyle = "#FFFFFF";
+	ctx.fillRect(canvas.width/2 - canvas.width/10, 0, canvas.width/5, canvas.height/10);
 
-	drawRule();
+	if (itemSelectedByPlayer != null)
+		drawRule();
 	
 	ctx.fillStyle = "#000000";
+	ctx.fillText("Selected", canvas.width/2, canvas.height/30);
 	
 	// When timer reaches zero, level ends
 	if (levelTime == 0) {
