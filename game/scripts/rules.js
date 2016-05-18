@@ -14,10 +14,7 @@ var extraLevelScore = 0;
 var ruleImage = new Image();
 var itemType;
 
-function drawRule() {
-	// display selected item in top box
-	//ctx.fillText(rule, canvas.width/2, canvas.height/20);
-
+function drawSelected() {
 	if (itemSelectedByPlayer == selectionPerson.itemf) {
 		ctx.drawImage(selectionPerson.itemf, canvas.width/2 - canvas.width/10, -canvas.height/10);
 	}
@@ -36,8 +33,13 @@ function drawRule() {
 	else if (itemSelectedByPlayer == selectionPerson.itemb) {
 		ctx.drawImage(selectionPerson.itemb, canvas.width/2 - canvas.width/10, -canvas.height/10);
 	}
-	
-	/*switch (rule[0]) {
+}
+
+function drawRule() {
+	// display selected item in top box
+	//ctx.fillText(rule, canvas.width/2, canvas.height/20);
+
+	switch (rule[0]) {
 		case 1:
 			itemType = "itemf";
 			break;
@@ -84,7 +86,7 @@ function drawRule() {
 				break;
 		}
 
-	}*/
+	}
 
 }	
 
@@ -285,7 +287,7 @@ function loadRules() {
 	ctx.fillRect(canvas.width/2 - canvas.width/10, 0, canvas.width/5, canvas.height/10);
 
 	if (itemSelectedByPlayer != null)
-		drawRule();
+		drawSelected();
 	
 	ctx.fillStyle = "#000000";
 	ctx.fillText("Selected", canvas.width/2, canvas.height/30);
