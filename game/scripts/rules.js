@@ -208,16 +208,16 @@ function loadRules() {
 	var buttonHeight = canvas.height/10;	
 
 	// button to generate rules
-	ctx.drawImage(generateButtonImage, canvas.width*8/10, canvas.height*2/10, buttonWidth*2, buttonHeight);
+	/*ctx.drawImage(generateButtonImage, canvas.width*8/10, canvas.height*2/10, buttonWidth*2, buttonHeight);
 	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*2/10, buttonWidth*2, buttonHeight, 
 			function (){
 				generateRule();
 				personArray = genPeople(lineSize, dude);
-			});
+			});*/
 			
 	// button to skip level (just for testing)
 	ctx.drawImage(victoryButtonImage, canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight);
-	uiObjects[2] = new uiObject(canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight, 
+	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight, 
 			function (){
 				// Score rule: pass level n in t seconds get ((100 * n) + (180 - t)) points 
 				levelScore = levelTime + 100;
@@ -226,17 +226,20 @@ function loadRules() {
 				levelVictory = true;
 				setState(2);
 			});
-			
+		
+	// Remove add score button.		
 	// button to add scores (just for testing)
+	/*
 	ctx.drawImage(addscoreButtonImage, canvas.width*8/10, canvas.height*4/10, buttonWidth*2, buttonHeight);
-	uiObjects[3] = new uiObject(canvas.width*8/10, canvas.height*4/10, buttonWidth*2, buttonHeight, 
+	uiObjects[2] = new uiObject(canvas.width*8/10, canvas.height*4/10, buttonWidth*2, buttonHeight, 
 			function (){
 				extraLevelScore += 5;
 			});
+	*/
 			
 	// button to end game (just for testing)
 	ctx.drawImage(addGameOverButtonImage, canvas.width*8/10, canvas.height*5/10, buttonWidth*2, buttonHeight);
-	uiObjects[4] = new uiObject(canvas.width*8/10, canvas.height*5/10, buttonWidth*2, buttonHeight, 
+	uiObjects[2] = new uiObject(canvas.width*8/10, canvas.height*5/10, buttonWidth*2, buttonHeight, 
 			function (){
 				finalScore += levelScore + extraLevelScore;
 				levelVictory = false;
@@ -245,13 +248,14 @@ function loadRules() {
 	
 	
 	// button to generate rules
-	ctx.fillText("Generate", canvas.width*9/10, canvas.height*5/20);
+	//ctx.fillText("Generate", canvas.width*9/10, canvas.height*5/20);
 	
 	// button to skip level
 	ctx.fillText("Skip level", canvas.width*9/10, canvas.height*7/20);
 	
+	// Remove add score button.
 	// button to add score 
-	ctx.fillText("Add score", canvas.width*9/10, canvas.height*9/20);
+	// ctx.fillText("Add score", canvas.width*9/10, canvas.height*9/20);
 	
 	// button to end game
 	ctx.fillText("Game over", canvas.width*9/10, canvas.height*11/20);
@@ -267,11 +271,9 @@ function loadRules() {
 		ctx.fillRect(canvas.width/2-canvas.width/5, 0, canvas.width*2/5, canvas.height/10);
 	}
 
-	ctx.fillStyle = "#000000";
+	drawRule();
 	
-	if (rule[0] != 0){
-		drawRule();
-	}
+	ctx.fillStyle = "#000000";
 	
 	// When timer reaches zero, level ends
 	if (levelTime == 0) {

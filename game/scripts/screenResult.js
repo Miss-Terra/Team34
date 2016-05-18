@@ -32,14 +32,13 @@ function drawResult(){
 	uiObjects[0] = new uiObject(restartX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("restart");
-				setState(1);
 				finalScore -= levelScore + extraLevelScore;
 				levelScore = 0;
 				extraLevelScore = 0;
-				//rule = "?";
-				rule[0] = rule[1] = rule[2] = 0;
 				// initTimeSetting() in timer.js file
 				initTimeSetting();
+				generateRule();
+				setState(1);
 				console.log("Level: " + currentLevel)
 			});
 	
@@ -51,8 +50,6 @@ function drawResult(){
 				levelScore = 0;
 				finalScore = 0;
 				extraLevelScore = 0;
-				//rule = "?";
-				rule[0] = rule[1] = rule[2] = 0;
 				// initTimeSetting() in timer.js file
 				initTimeSetting();
 				console.log("Level: " + currentLevel)
@@ -67,13 +64,12 @@ function drawResult(){
 				function (){
 					console.log("next");
 					nextLevel();
-					setState(1);
 					levelScore = 0;
 					extraLevelScore = 0;
-					//rule = "?";
-					rule[0] = rule[1] = rule[2] = 0;
 					// initTimeSetting() in timer.js file
 					initTimeSetting();
+					generateRule();
+					setState(1);
 					console.log("Level: " + currentLevel)
 				});
 	} else { // if player lost
@@ -81,7 +77,7 @@ function drawResult(){
 			// display rule box
 			if (currentLevel <= 10) {
 				ctx.fillStyle = "#33FFFF";
-				ctx.fillRect(canvas.width / 2 - canvas.width / 10, 10, canvas.width / 5, canvas.height / 10);
+				ctx.fillRect(canvas.width / 2 - canvas.width / 10, 10, canvas.width / 5, canvas.height / 5);
 			}
 			else {
 				ctx.fillStyle = "#33FFFF";
@@ -89,10 +85,8 @@ function drawResult(){
 			}
 			// display rule
 			ctx.fillStyle = "#000000";
-			ctx.fillText("Correct Rule:", canvas.width / 2, canvas.height / 10 - 30);			
-			if (rule != null){
-				ctx.fillText(rule, canvas.width / 2, canvas.height / 10);
-			}
+			ctx.fillText("Correct Rule:", canvas.width / 2, canvas.height / 10 - 30);
+			drawRule();	
 		
 		// display "submit" button
 		uiObjects[2] = new uiObject(nextX, buttonY, buttonWidth, buttonHeight, 

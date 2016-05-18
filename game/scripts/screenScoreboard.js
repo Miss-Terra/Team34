@@ -182,11 +182,7 @@ function drawLeaderboardArray(array, xPos){
 
 
 
-
-
-
-
-
+	
 //State 10 Score Submission Screen
 function loadScoreSubmission() {
 
@@ -194,10 +190,16 @@ function loadScoreSubmission() {
    mainMenuButtonImage.src = "images/mainMenuButton.png";
    scoreboardButtonImage.src = "images/scoreboardButton.png";
    buttonImage.src = "images/submitButton.png";
+   
+
+	
 }
 
 
+	
+	
 function drawScoreSubmission(){
+	
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
  	
 	var buttonWidth = canvas.width / 6;
@@ -239,24 +241,37 @@ function drawScoreSubmission(){
 			setState(0);
 			console.log("Level: " + currentLevel)
 		});
-		
-	
-	// player name input textbox. Use external js library from James Simpson and GoldFire Studios, Inc.
-	// library/CanvasInput.js
-	// Judy: Still working on....
-	/*
-	var input = new CanvasInput({
-		canvas: document.getElementById('canvas'),
-		x: canvas.width / 2,
-		y: canvas.height / 2,
-		fontSize: 18,
-		fontColor: 'black',
-		fontWeight: 'bold',
-		width: 200,
-		padding: 10,
-		borderWidth: 2,
-	});
-		//input.focus();
-		// render();
-	*/
+			
 }
+
+
+// player name input textbox. Use external js library from James Simpson and GoldFire Studios, Inc.
+// library/CanvasInput.js
+// Judy: Still working on....
+function drawInputField() {
+	
+		   	var inputField = new CanvasInput({
+					canvas: document.getElementById('canvas'),
+					x: canvas.width / 2,
+					y: canvas.height / 2,
+					fontSize: 18,
+					fontColor: 'black',
+					fontWeight: 'bold',
+					width: 200,
+					padding: 10,
+					borderWidth: 2,
+			});
+	
+			inputField.focus();
+			console.log("inputField");
+}
+
+/*
+function inputField() {
+	
+	var inputField = document.createElement('input');
+	inputField.setAttribute("type", "text");
+	inputField.setAttribute("size", "100");
+	document.body.appendChild(inputField);
+}
+*/
