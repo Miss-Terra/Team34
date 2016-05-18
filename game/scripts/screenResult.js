@@ -40,6 +40,7 @@ function drawResult(){
 				rule[0] = rule[1] = rule[2] = 0;
 				// initTimeSetting() in timer.js file
 				initTimeSetting();
+				generateRule();
 				console.log("Level: " + currentLevel)
 			});
 	
@@ -74,6 +75,7 @@ function drawResult(){
 					rule[0] = rule[1] = rule[2] = 0;
 					// initTimeSetting() in timer.js file
 					initTimeSetting();
+					generateRule();
 					console.log("Level: " + currentLevel)
 				});
 	} else { // if player lost
