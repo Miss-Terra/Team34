@@ -208,12 +208,12 @@ function loadRules() {
 	var buttonHeight = canvas.height/10;	
 
 	// button to generate rules
-	ctx.drawImage(generateButtonImage, canvas.width*8/10, canvas.height*2/10, buttonWidth*2, buttonHeight);
+	/*ctx.drawImage(generateButtonImage, canvas.width*8/10, canvas.height*2/10, buttonWidth*2, buttonHeight);
 	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*2/10, buttonWidth*2, buttonHeight, 
 			function (){
 				generateRule();
 				personArray = genPeople(lineSize, dude);
-			});
+			});*/
 			
 	// button to skip level (just for testing)
 	ctx.drawImage(victoryButtonImage, canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight);

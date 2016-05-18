@@ -53,7 +53,6 @@ function drawPauseMenu() {
                 //Judy: will update State value when we have resume function
 				setState(1);
 				console.log("Level: " + currentLevel)
-
 			});
 			
 			displayPaused();
@@ -96,6 +95,7 @@ function drawConfirmMenu() {
 				extraLevelScore = 0;
 				//rule = "?";
 				rule[0] = rule[1] = rule[2] = 0;
+				generateRule();
 			});	
 	
     // left button
