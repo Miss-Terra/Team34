@@ -83,7 +83,7 @@ function drawResult(){
 			// display rule box
 			if (currentLevel <= 10) {
 				ctx.fillStyle = "#33FFFF";
-				ctx.fillRect(canvas.width / 2 - canvas.width / 10, 10, canvas.width / 5, canvas.height / 10);
+				ctx.fillRect(canvas.width / 2 - canvas.width / 10, 10, canvas.width / 5, canvas.height / 5);
 			}
 			else {
 				ctx.fillStyle = "#33FFFF";
@@ -91,9 +91,10 @@ function drawResult(){
 			}
 			// display rule
 			ctx.fillStyle = "#000000";
-			ctx.fillText("Correct Rule:", canvas.width / 2, canvas.height / 10 - 30);			
+			ctx.fillText("Correct Rule:", canvas.width / 2, canvas.height / 10 - 20);			
 			if (rule != null){
-				ctx.fillText(rule, canvas.width / 2, canvas.height / 10);
+				//ctx.fillText(rule, canvas.width / 2, canvas.height / 10);
+				drawRule();
 			}
 		
 		// display "submit" button
