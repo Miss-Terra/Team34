@@ -43,7 +43,28 @@ function drawRule() {
 	ruleImage.src = "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png";
 	
 	if (ruleImage != null) {
-		ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, 0);
+		
+		switch (rule[0]) {
+			case 1:
+				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, -canvas.height/10);
+				break;
+			case 2:
+				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, canvas.height/40);
+				break;
+			case 3:
+				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, -canvas.height/20);
+				break;
+			case 4:
+				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, -canvas.height/10);
+				break;
+			case 5:
+				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, -canvas.height*3/20);
+				break;
+			case 6:
+				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, -canvas.height/10);
+				break;
+		}
+
 	}
 
 }	
@@ -60,30 +81,30 @@ function generateRule() {
 	// 4 = pant
 	// 5 = shoe
 	// 6 = itemb
-	rule[0] = Math.floor(Math.random() * 6);
+	rule[0] = Math.floor(Math.random() * 6 + 1);
 	
 	switch (rule[0]) {
 		case 1:
-			rule[1] = Math.floor(Math.random() * NumberItems) + 1;
+			rule[1] = Math.floor(Math.random() * NumberItems + 1);
 			break;
 		case 2:
-			rule[1] = Math.floor(Math.random() * NumberHats) + 1;
+			rule[1] = Math.floor(Math.random() * NumberHats + 1);
 			break;
 		case 3:
-			rule[1] = Math.floor(Math.random() * NumberShirts) + 1;
+			rule[1] = Math.floor(Math.random() * NumberShirts + 1);
 			break;
 		case 4:
-			rule[1] = Math.floor(Math.random() * NumberPants) + 1;
+			rule[1] = Math.floor(Math.random() * NumberPants + 1);
 			break;
 		case 5:
-			rule[1] = Math.floor(Math.random() * NumberShoes) + 1;
+			rule[1] = Math.floor(Math.random() * NumberShoes + 1);
 			break;
 		case 6:
-			rule[1] = Math.floor(Math.random() * NumberItems) + 1;
+			rule[1] = Math.floor(Math.random() * NumberItems + 1);
 			break;
 	}
 	
-	rule[2] = Math.floor(Math.random() * NumberColors) + 1;
+	rule[2] = Math.floor(Math.random() * NumberColors + 1);
 
 	/*if (currentLevel <= 5) {
 		// color matrix 
@@ -191,6 +212,7 @@ function loadRules() {
 	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*2/10, buttonWidth*2, buttonHeight, 
 			function (){
 				generateRule();
+				personArray = genPeople(lineSize, dude);
 			});
 			
 	// button to skip level (just for testing)

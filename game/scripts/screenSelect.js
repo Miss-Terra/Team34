@@ -1,5 +1,7 @@
 //state 8
 var selectionPerson; // This variable is a person. It's defined in drawLine.js... Whenever a user clicks a person.
+var itemSelectedByPlayer; // Item seleted by player
+
 
 var hatSelected = false;
 var shirtSelected = false;
@@ -30,8 +32,6 @@ function drawCharSelection(){
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 	drawSelectMenuButtons();
 	drawSelectionChar();
-
-
 }
 
 
@@ -60,6 +60,31 @@ function drawSelectMenuButtons(){
 			function (){
 				gamePaused = false; console.log(gamePaused); // unpause game
 				console.log("Nothing happened.")
+				setState(1);
+				if (hatSelected == true){
+					itemSelectedByPlayer = selectionPerson.hat // Assign item selected by player to itemSelectedByPlayer
+					console.log("Test PlayerSelection");
+				/*
+				} else if (shirtSelected == true){
+					//itemSelectedByPlayer = selectionPerson.shirt // Assign item selected by player to itemSelectedByPlayer
+				} else if (pantsSelected == true){
+					//itemSelectedByPlayer = selectionPerson.pants // Assign item selected by player to itemSelectedByPlayer
+				} else if (shoesSelected == true){
+					//itemSelectedByPlayer = selectionPerson.shoes // Assign item selected by player to itemSelectedByPlayer
+				};
+				*/
+				
+				//Judy Test: check if player selected the correct item
+				/*
+				if (itemSelectedByPlayer.src.indexOf(ruleImage.src)!= -1)
+				{
+					setState(2); // Skip level screen
+				}
+				else {
+					setState(4); // Game over sreen
+				*/
+				}
+				
 			});
 
 }
@@ -98,7 +123,7 @@ function drawItemSelection(x,y,w,h,id){
 			function (){
 				if (hatSelected){
 					hatSelected = false; // Hat selected
-				}else{hatSelected = true;}
+				} else {hatSelected = true;}
 				console.log("hat selected.")
 		});
 	}
@@ -118,7 +143,7 @@ function drawItemSelection(x,y,w,h,id){
 
 	if (id == "pants"){
 		if (pantsSelected == true){
-			img = borderImage; // selected
+			img = borderImage; // selected		
 		}
 		uiObjects[4] = new uiObject(x, y, w, h, 
 			function (){
@@ -131,7 +156,7 @@ function drawItemSelection(x,y,w,h,id){
 
 	if (id == "shoes"){
 		if (shoesSelected == true){
-			img = borderImage; // selected
+			img = borderImage; // selected		
 		}
 		uiObjects[5] = new uiObject(x, y, w, h, 
 			function (){
