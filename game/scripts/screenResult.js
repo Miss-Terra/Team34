@@ -99,7 +99,6 @@ function drawResult(){
 				function (){
 					console.log("Submit Score function here...");
 					//nextLevel();
-					highscores.push(finalScore);
 					setState(10);
 					levelScore = 0;
 					finalScore = 0;
