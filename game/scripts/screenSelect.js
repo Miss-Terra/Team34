@@ -121,7 +121,7 @@ function drawSelectionChar(){
 	selectionPerson.setSize(width,height); // needed for drawItems
 	selectionPerson.setPosition(x,y); // needed for drawItems
 
-	console.log("numselected=" + numberSelected());  //////
+	//console.log("numselected=" + numberSelected());  //////
 
 	ctx.drawImage(selectionPerson.image, selectionPerson.x, selectionPerson.y, selectionPerson.width, selectionPerson.height);
 	drawItems(selectionPerson, true);
