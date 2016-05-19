@@ -45,13 +45,18 @@ function drawResult(){
 	ctx.drawImage(mainMenuButtonImage, menuX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[1] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight, 
 			function (){
+				gamePaused = false; console.log(gamePaused); // unpause game
 				console.log("menu");
+				quitFromPause = false;
+				quitFromVictory = true;
+				setState(7);
+				/*console.log("menu");
 				setState(0);
 				levelScore = 0;
 				finalScore = 0;
 				extraLevelScore = 0;
 				// initTimeSetting() in timer.js file
-				initTimeSetting();
+				initTimeSetting();*/
 				console.log("Level: " + currentLevel)
 			});
 
@@ -102,6 +107,8 @@ function drawResult(){
 					console.log("Submit Score function here...");
 					//nextLevel();
 					setState(10);
+
+					finalScore = 0;
 					levelScore = 0;
 					extraLevelScore = 0;
 					console.log("Level: " + currentLevel)
