@@ -192,7 +192,7 @@ function loadScoreSubmission() {
    buttonImage.src = "images/submitButton.png";
 
    console.log("load once");
-   drawInputField();
+   drawInputField(); // canvasInput.js
 
 }
 
@@ -250,5 +250,5 @@ function drawScoreSubmission(){
 		});
 			
 
-	updateInputField();
+	updateInputField(); // canvasInput.js
 }
