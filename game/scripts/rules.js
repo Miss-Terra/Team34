@@ -311,8 +311,9 @@ function loadRules() {
 			function (){
 				extraLevelScore += 5;
 			});
-	*/
-			
+
+
+	// Remove game over button.
 	// button to end game (just for testing)
 	ctx.drawImage(addGameOverButtonImage, canvas.width*8/10, canvas.height*5/10, buttonWidth*2, buttonHeight);
 	uiObjects[2] = new uiObject(canvas.width*8/10, canvas.height*5/10, buttonWidth*2, buttonHeight, 
@@ -321,7 +322,7 @@ function loadRules() {
 				levelVictory = false;
 				setState(2);
 			});
-	
+	 */
 	
 	// button to generate rules
 	//ctx.fillText("Generate", canvas.width*9/10, canvas.height*5/20);
@@ -332,9 +333,10 @@ function loadRules() {
 	// Remove add score button.
 	// button to add score 
 	// ctx.fillText("Add score", canvas.width*9/10, canvas.height*9/20);
-	
+
+	// Remove game over button.
 	// button to end game
-	ctx.fillText("Game over", canvas.width*9/10, canvas.height*11/20);
+	// ctx.fillText("Game over", canvas.width*9/10, canvas.height*11/20);
 			
 			
 	// display item selected box
