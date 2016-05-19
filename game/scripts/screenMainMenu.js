@@ -10,6 +10,8 @@ function loadMainMenu() {
 	 menuAnimationImage.src = "images/lineMan.png"; //Change  me for easter egg.
 	 menuLogo.src = "images/logoct2.png";
 	 easterEggclick = 0;
+	 finalScore = 0;
+	 finalTime = 0;
 
 }
 

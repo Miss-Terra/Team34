@@ -190,9 +190,7 @@ function loadScoreSubmission() {
    mainMenuButtonImage.src = "images/mainMenuButton.png";
    scoreboardButtonImage.src = "images/scoreboardButton.png";
    buttonImage.src = "images/submitButton.png";
-   
 
-	
 }
 
 
@@ -215,11 +213,11 @@ function drawScoreSubmission(){
 	uiObjects[0] = new uiObject(submitX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 
-				finalScore = 1111;
+				//finalScore = 1111;
 				console.log("submit to server!!");
-				console.log(finalScore);
-				console.log(finalTime);
-				console.log(currentLevel);
+				console.log("final score:" + finalScore);
+				console.log("final time:" + finalTime);
+				console.log("current level:" + currentLevel);
 
 
 				//databaseConnect.js

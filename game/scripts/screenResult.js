@@ -103,9 +103,9 @@ function drawResult(){
 					//nextLevel();
 					setState(10);
 
-					finalScore = 0;
-					levelScore = 0;
-					extraLevelScore = 0;
+					//finalScore = 0;
+					//levelScore = 0;
+					//extraLevelScore = 0;
 					console.log("Level: " + currentLevel)
 				});
 	}
