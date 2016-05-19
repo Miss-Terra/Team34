@@ -78,22 +78,22 @@ function drawResult(){
 			// display rule box
 			if (currentLevel <= 10) {
 
-				ctx.fillStyle = "#33FFFF";
-				ctx.fillRect(canvas.width / 2 - canvas.width / 10, 10, canvas.width / 5, canvas.height / 5);
+				ctx.fillStyle = "#FFFFFF";
+				ctx.fillRect(canvas.width / 2 - canvas.width / 10, 0, canvas.width / 5, canvas.height / 7);
 			} else {
-				ctx.fillStyle = "#33FFFF";
-				ctx.fillRect(canvas.width / 2 - canvas.width / 5, 10, canvas.width * 2 / 5, canvas.height / 10);
+				ctx.fillStyle = "#FFFFFF";
+				ctx.fillRect(canvas.width / 2 - canvas.width / 5, 0, canvas.width * 2 / 5, canvas.height / 7);
 
 				ctx.fillStyle = "#FFFFFF";
 				ctx.fillRect(canvas.width / 2 - canvas.width / 10, 0, canvas.width / 5, canvas.height / 7);
 		//	} else {
-//Terra commented//		ctx.fillStyle = "#FFFFFF";
+				//Terra commented//		ctx.fillStyle = "#FFFFFF";
 		//		ctx.fillRect(canvas.width / 2 - canvas.width / 5, 0, canvas.width * 2 / 5, canvas.height / 10);
 
 			}
 			// display rule
 			ctx.fillStyle = "#000000";
-			ctx.fillText("Correct Rule:", canvas.width / 2, canvas.height / 10 - 30);
+			ctx.fillText("Correct Rule:", canvas.width / 2, canvas.height / 30);
 			drawRule();	
 		
 		// display "submit" button
