@@ -2,6 +2,8 @@
 var selectionPerson; // This variable is a person. It's defined in drawLine.js... Whenever a user clicks a person.
 var itemSelectedByPlayer; // Item seleted by player
 
+////////////////////////////
+
 var hatSelected = false;
 var shirtSelected = false;
 var pantsSelected = false;
