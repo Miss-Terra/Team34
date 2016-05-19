@@ -16,22 +16,22 @@ var itemType;
 
 function drawSelected() {
 	if (itemSelectedByPlayer == selectionPerson.itemf) {
-		ctx.drawImage(selectionPerson.itemf, canvas.width / 100 * 48, -canvas.height / 15);
+		ctx.drawImage(selectionPerson.itemf, canvas.width / 100 * 46, -canvas.height / 10, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.hat) {
-		ctx.drawImage(selectionPerson.hat, canvas.width / 100 * 46, canvas.height / 20);
+		ctx.drawImage(selectionPerson.hat, canvas.width / 100 * 46, canvas.height / 20, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.shirt) {
-		ctx.drawImage(selectionPerson.shirt, canvas.width / 100 * 46, -canvas.height / 50);
+		ctx.drawImage(selectionPerson.shirt, canvas.width / 100 * 46, -canvas.height / 50, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.pants) {
-		ctx.drawImage(selectionPerson.pants, canvas.width / 100 * 46, -canvas.height / 15);
+		ctx.drawImage(selectionPerson.pants, canvas.width / 100 * 46, -canvas.height / 12, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.shoes) {
-		ctx.drawImage(selectionPerson.shoes, canvas.width / 100 * 46, -canvas.height / 10);
+		ctx.drawImage(selectionPerson.shoes, canvas.width / 100 * 46, -canvas.height / 8, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.itemb) {
-		ctx.drawImage(selectionPerson.itemb, canvas.width / 100 * 43, -canvas.height / 15);
+		ctx.drawImage(selectionPerson.itemb, canvas.width / 100 * 43, -canvas.height / 10, canvas.width/10, canvas.height/4);
 	}
 }
 
