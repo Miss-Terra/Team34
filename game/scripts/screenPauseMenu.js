@@ -22,6 +22,8 @@ function drawPauseMenu() {
 	uiObjects[0] = new uiObject(buttonXmiddle, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("restart. go to confirm menu.");
+				quitFromPause = false;
+				quitFromVictory = false;
 				setState(7);
 				console.log("Level: " + currentLevel)
 			});
@@ -32,13 +34,15 @@ function drawPauseMenu() {
 			function () {
 				gamePaused = false; console.log(gamePaused); // unpause game
 				console.log("menu");
-				setState(0);
+				quitFromPause = true;
+				quitFromVictory = false;
+				setState(7);
 				// initTimeSetting() in timer.js file
-				initTimeSetting();
+				/*initTimeSetting();
                 finalTime = 0;
 				levelScore = 0;
 				finalScore = 0;
-				extraLevelScore = 0;
+				extraLevelScore = 0;*/
 				console.log("Level: " + currentLevel)
 			});
 
@@ -83,24 +87,55 @@ function drawConfirmMenu() {
 	ctx.drawImage(restartButtonImage, noX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(noX, buttonY, buttonWidth, buttonHeight, 
 			function (){
-			gamePaused = false; console.log(gamePaused); // unpause game
-				console.log("Restart game");
-				// initTimeSetting() in timer.js file
-				initTimeSetting();
-                finalTime = 0; 
-				levelScore = 0;
-				extraLevelScore = 0;
-				generateRule();
-				itemSelectedByPlayer = null;
-				setState(1);
+				// restart
+				if (!quitFromPause && !quitFromVictory) {
+					gamePaused = false; console.log(gamePaused); // unpause game
+					console.log("Restart game");
+					// initTimeSetting() in timer.js file
+					initTimeSetting();
+					finalTime = 0; 
+					levelScore = 0;
+					extraLevelScore = 0;
+					generateRule();
+					itemSelectedByPlayer = null;
+					setState(1);
+				}
+				// quit from pause
+				else if (quitFromPause && !quitFromVictory) {
+					initTimeSetting();
+					finalTime = 0;
+					levelScore = 0;
+					finalScore = 0;
+					extraLevelScore = 0;
+					setState(0);
+				}
+				// quit from victory
+				else if (!quitFromPause && quitFromVictory) {
+					initTimeSetting();
+					finalTime = 0;
+					levelScore = 0;
+					finalScore = 0;
+					extraLevelScore = 0;
+					setState(0);
+				}
 			});	
 	
     // left button
 	ctx.drawImage(resumeButtonImage, yesX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[1] = new uiObject(yesX, buttonY, buttonWidth, buttonHeight, 
 			function (){
-				console.log("Do not restart. Go back to pause menu");
-				setState(3);
-				console.log("Level: " + currentLevel)
+				// restart 
+				if (!quitFromPause && !quitFromVictory) {
+					console.log("Do not restart. Go back to pause menu");
+					setState(3);
+					console.log("Level: " + currentLevel)
+				}
+				// quit from pause 
+				else if (quitFromPause && !quitFromVictory) {
+					setState(3);
+				}
+				else if (!quitFromPause && quitFromVictory) {
+					setState(2);
+				}
 			});
 }

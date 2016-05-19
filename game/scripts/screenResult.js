@@ -73,6 +73,7 @@ function drawResult(){
 					setState(1);
 					console.log("Level: " + currentLevel)
 				});
+
 	} else { // if player lost
 	
 			// display rule box
@@ -107,6 +108,4 @@ function drawResult(){
 					console.log("Level: " + currentLevel)
 				});
 	}
-
-
 }
