@@ -265,10 +265,11 @@ function loadRules() {
 	ctx.drawImage(victoryButtonImage, canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight);
 	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight, 
 			function (){
-				
-				console.log(itemSelectedByPlayer.src);
-				
-				if (itemSelectedByPlayer.src.indexOf(ruleImage.src)!= -1)
+
+				if (itemSelectedByPlayer == null) {
+					// if no items selected, this button does nothing
+				}
+				else if (itemSelectedByPlayer.src.indexOf(ruleImage.src)!= -1)
 				{
 					// Score rule: pass level n in t seconds get ((100 * n) + (180 - t)) points 
 					levelScore = levelTime + 100;
