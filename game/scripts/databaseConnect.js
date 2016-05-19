@@ -8,8 +8,7 @@ function connectLeaderboard(rank, value) {
   else if (value == 'name' || value == 'Name'){value = 4;}
 
 
-  var url = 'http://localhost/connect.php?r='+rank+'&v='+value;                 //the script to call to get data  
-  console.log(url); 
+  var url = 'http://localhost/getLeaderboard.php?r='+rank+'&v='+value;                 //the script to call to get data  
     $.ajax({ 
       type: 'GET',                                  
       url: url,                           //you can insert url argumnets here to pass to api.php
@@ -18,24 +17,11 @@ function connectLeaderboard(rank, value) {
       cache: false,
       async: true,
       dataType: 'text',                //data format  
-      success: handleScoreboardData   
-   /*   success: function(data)          //on recieve of reply
-      {
-        //--------------------------------------------------------------------
-        // 3) Update html content
-        //--------------------------------------------------------------------
-      //  console.log("rank = " + rank + " name = " + name);
-      //  console.log("score = " + score + " time = " + time + " level = " + level);
-      someFunction(data);
-      return data;
-       // $('#output').html("<b>id: </b>"+id+"<b> name: </b>"+vname); //Set output element html
-        //recommend reading up on jquery selectors they are awesome 
-        // http://api.jquery.com/category/selectors/
-      } 
-      */
+      success: receiveScoreboardData   
+
     });
   //  return result;
-  function handleScoreboardData(data){
+  function receiveScoreboardData(data){
 
     if (value == 1){
       leaderboardScores[rank-1] = data;
@@ -55,6 +41,28 @@ function connectLeaderboard(rank, value) {
 
 }
 
+function updateDatabase(score, time, level, name){
+
+
+    var url = 'http://localhost/updateLeaderboard.php';                 //the script to call to get data   
+    $.ajax({ 
+      type: 'POST',                                  
+      url: url,                           
+      data: {score: score,
+      		 time: time,
+      		 level: level,
+      		 name: name},                            
+      crossDomain: true,
+      cache: false,
+      async: true,
+    //  dataType: 'text',                //data format  
+      success: function(response){
+      	console.log("Server Return: " + response);
+      }
+
+    });
+
+}
 
 
 

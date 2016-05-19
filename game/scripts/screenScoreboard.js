@@ -214,11 +214,16 @@ function drawScoreSubmission(){
 	ctx.drawImage(buttonImage, submitX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(submitX, buttonY, buttonWidth, buttonHeight, 
 			function (){
-				console.log("submit to server");
-				// userName
-				// currentLevel;
-				// finalScore;
-				// totalTime;
+
+				finalScore = 1111;
+				console.log("submit to server!!");
+				console.log(finalScore);
+				console.log(finalTime);
+				console.log(currentLevel);
+
+
+				updateDatabase(finalScore, finalTime, currentLevel, "Temp UserName");
+		
 				console.log("Level: " + currentLevel)
 			});
 		
