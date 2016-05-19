@@ -28,7 +28,6 @@ function drawGame(){
 	addMenuButton();
 	displayInLevel();  //display.js
 	drawLine();  //drawLine.js
- 
 }
 
 //adds the pause menu button to the screen

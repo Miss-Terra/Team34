@@ -36,3 +36,48 @@ function loadItems() {
 	}
 }
 loadItems();
+
+// Item interface. Contains methods for reading and drawing objects.
+var Itm = {
+	
+	//Draw item of type t, number n, and color c
+	drawItmtnc: function(t, n, c, x, y, wth, hgt) {
+
+		var w = 32; //default sizes
+		var h = 64;
+    if (typeof wth != "undefined")
+			w = wth;
+    if (typeof hgt != "undefined")
+			h = hgt;
+		//  console.log("inputs=" + t + n + c + w + h);
+			
+		  if (t==1) {
+				ctx.drawImage(itemfArray[((c-1)*NumberItems) + n], x, y, w, h);
+			} else if (t==2) {
+				ctx.drawImage(hatArray[((c-1)*NumberHats) + n], x, y, w, h);
+			} else if (t==3) {
+				ctx.drawImage(shirtArray[((c-1)*NumberShirts) + n], x, y, w, h);
+			} else if (t==4) {
+				ctx.drawImage(pantArray[((c-1)*NumberPants) + n], x, y, w, h);
+			} else if (t==5) {
+				ctx.drawImage(shoeArray[((c-1)*NumberShoes) + n], x, y, w, h);
+			} else if (t==6) {
+				ctx.drawImage(itembArray[((c-1)*NumberItems) + n], x, y, w, h);	
+			} else {
+				
+			}
+	}
+}
+
+
+//Itm.drawItmtnc(1,1,2,50,50); itemf
+//Itm.drawItmtnc(2,1,2,50,50); hat
+//Itm.drawItmtnc(3,1,2,50,50); shirt
+//Itm.drawItmtnc(4,1,2,50,50); pant
+//Itm.drawItmtnc(5,1,2,50,50); shoe
+//Itm.drawItmtnc(6,1,2,50,50); itemb
+
+//function(Itmtype, Itmnumber, Itmcolor)
+//	this.type = Itmtype;
+//	this.number = Itmnumber;
+//	this.color = Itmcolor;
