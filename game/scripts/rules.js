@@ -16,22 +16,22 @@ var itemType;
 
 function drawSelected() {
 	if (itemSelectedByPlayer == selectionPerson.itemf) {
-		ctx.drawImage(selectionPerson.itemf, canvas.width/2 - canvas.width/10, -canvas.height/10);
+		ctx.drawImage(selectionPerson.itemf, canvas.width / 9 * 4, -canvas.height/10);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.hat) {
-		ctx.drawImage(selectionPerson.hat, canvas.width/2 - canvas.width/10, canvas.height/40);
+		ctx.drawImage(selectionPerson.hat, canvas.width / 9 * 4, canvas.height / 25);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.shirt) {
-		ctx.drawImage(selectionPerson.shirt, canvas.width/2 - canvas.width/10, -canvas.height/20);
+		ctx.drawImage(selectionPerson.shirt, canvas.width / 9 * 4, -canvas.height / 25);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.pants) {
-		ctx.drawImage(selectionPerson.pants, canvas.width/2 - canvas.width/10, -canvas.height/10);
+		ctx.drawImage(selectionPerson.pants, canvas.width / 9 * 4, -canvas.height / 9);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.shoes) {
-		ctx.drawImage(selectionPerson.shoes, canvas.width/2 - canvas.width/10, -canvas.height*3/20);
+		ctx.drawImage(selectionPerson.shoes, canvas.width / 9 * 4, -canvas.height * 3 / 20);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.itemb) {
-		ctx.drawImage(selectionPerson.itemb, canvas.width/2 - canvas.width/10, -canvas.height/10);
+		ctx.drawImage(selectionPerson.itemb, canvas.width / 2, -canvas.height/10);
 	}
 }
 
