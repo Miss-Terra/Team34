@@ -16,7 +16,7 @@ var itemType;
 
 function drawSelected() {
 	if (itemSelectedByPlayer == selectionPerson.itemf) {
-		ctx.drawImage(selectionPerson.itemf, canvas.width / 100 * 46, -canvas.height / 10, canvas.width/10, canvas.height/4);
+		ctx.drawImage(selectionPerson.itemf, canvas.width / 100 * 43, -canvas.height / 10, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.hat) {
 		ctx.drawImage(selectionPerson.hat, canvas.width / 100 * 46, canvas.height / 20, canvas.width/10, canvas.height/4);
@@ -31,7 +31,7 @@ function drawSelected() {
 		ctx.drawImage(selectionPerson.shoes, canvas.width / 100 * 46, -canvas.height / 8, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.itemb) {
-		ctx.drawImage(selectionPerson.itemb, canvas.width / 100 * 43, -canvas.height / 10, canvas.width/10, canvas.height/4);
+		ctx.drawImage(selectionPerson.itemb, canvas.width / 100 * 49, -canvas.height / 10, canvas.width/10, canvas.height/4);
 	}
 }
 
@@ -66,22 +66,22 @@ function drawRule() {
 		
 		switch (rule[0]) {
 			case 1:
-				ctx.drawImage(ruleImage, canvas.width / 9 * 4, -canvas.height / 10);
+				ctx.drawImage(ruleImage, canvas.width / 100 * 43, -canvas.height / 10, canvas.width/10, canvas.height/4);
 				break;
 			case 2:
-				ctx.drawImage(ruleImage, canvas.width / 9 * 4, canvas.height / 25);
+				ctx.drawImage(ruleImage, canvas.width / 100 * 46, canvas.height / 20, canvas.width/10, canvas.height/4);
 				break;
 			case 3:
-				ctx.drawImage(ruleImage, canvas.width / 9 * 4, -canvas.height / 25);
+				ctx.drawImage(ruleImage, canvas.width / 100 * 46, -canvas.height / 50, canvas.width/10, canvas.height/4);
 				break;
 			case 4:
-				ctx.drawImage(ruleImage, canvas.width / 9 * 4, -canvas.height / 9);
+				ctx.drawImage(ruleImage, canvas.width / 100 * 46, -canvas.height / 12, canvas.width/10, canvas.height/4);
 				break;
 			case 5:
-				ctx.drawImage(ruleImage, canvas.width / 9 * 4, -canvas.height * 3 / 20);
+				ctx.drawImage(ruleImage, canvas.width / 100 * 46, -canvas.height / 8, canvas.width/10, canvas.height/4);
 				break;
 			case 6:
-				ctx.drawImage(ruleImage, canvas.width/2, -canvas.height / 10);
+				ctx.drawImage(ruleImage, canvas.width / 100 * 49, -canvas.height / 10, canvas.width/10, canvas.height/4);
 				break;
 		}
 	}
@@ -311,8 +311,9 @@ function loadRules() {
 			function (){
 				extraLevelScore += 5;
 			});
-	*/
-			
+
+
+	// Remove game over button.
 	// button to end game (just for testing)
 	ctx.drawImage(addGameOverButtonImage, canvas.width*8/10, canvas.height*5/10, buttonWidth*2, buttonHeight);
 	uiObjects[2] = new uiObject(canvas.width*8/10, canvas.height*5/10, buttonWidth*2, buttonHeight, 
@@ -321,7 +322,7 @@ function loadRules() {
 				levelVictory = false;
 				setState(2);
 			});
-	
+	 */
 	
 	// button to generate rules
 	//ctx.fillText("Generate", canvas.width*9/10, canvas.height*5/20);
@@ -332,9 +333,10 @@ function loadRules() {
 	// Remove add score button.
 	// button to add score 
 	// ctx.fillText("Add score", canvas.width*9/10, canvas.height*9/20);
-	
+
+	// Remove game over button.
 	// button to end game
-	ctx.fillText("Game over", canvas.width*9/10, canvas.height*11/20);
+	// ctx.fillText("Game over", canvas.width*9/10, canvas.height*11/20);
 			
 			
 	// display item selected box
