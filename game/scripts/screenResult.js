@@ -102,7 +102,6 @@ function drawResult(){
 					console.log("Submit Score function here...");
 					//nextLevel();
 					setState(10);
-
 					levelScore = 0;
 					extraLevelScore = 0;
 					console.log("Level: " + currentLevel)

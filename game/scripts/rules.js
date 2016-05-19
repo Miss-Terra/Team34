@@ -16,22 +16,22 @@ var itemType;
 
 function drawSelected() {
 	if (itemSelectedByPlayer == selectionPerson.itemf) {
-		ctx.drawImage(selectionPerson.itemf, canvas.width / 100 * 48, -canvas.height / 15);
+		ctx.drawImage(selectionPerson.itemf, canvas.width / 100 * 46, -canvas.height / 10, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.hat) {
-		ctx.drawImage(selectionPerson.hat, canvas.width / 100 * 46, canvas.height / 20);
+		ctx.drawImage(selectionPerson.hat, canvas.width / 100 * 46, canvas.height / 20, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.shirt) {
-		ctx.drawImage(selectionPerson.shirt, canvas.width / 100 * 46, -canvas.height / 50);
+		ctx.drawImage(selectionPerson.shirt, canvas.width / 100 * 46, -canvas.height / 50, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.pants) {
-		ctx.drawImage(selectionPerson.pants, canvas.width / 100 * 46, -canvas.height / 15);
+		ctx.drawImage(selectionPerson.pants, canvas.width / 100 * 46, -canvas.height / 12, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.shoes) {
-		ctx.drawImage(selectionPerson.shoes, canvas.width / 100 * 46, -canvas.height / 10);
+		ctx.drawImage(selectionPerson.shoes, canvas.width / 100 * 46, -canvas.height / 8, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.itemb) {
-		ctx.drawImage(selectionPerson.itemb, canvas.width / 100 * 43, -canvas.height / 15);
+		ctx.drawImage(selectionPerson.itemb, canvas.width / 100 * 43, -canvas.height / 10, canvas.width/10, canvas.height/4);
 	}
 }
 
@@ -274,16 +274,23 @@ function loadRules() {
 					// Score rule: pass level n in t seconds get ((100 * n) + (180 - t)) points 
 					levelScore = levelTime + 100;
 					// Set original "levelScore" to extraLevelScore for testing purpose
-					finalScore += levelScore + extraLevelScore;				
+					finalScore += levelScore + extraLevelScore;		
+					// Add finalTime
+					finalTime += levelTime;					
 					levelVictory = true;
 					setState(2); // Skip level screen
 					console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png");
+					console.log("final time: " + finalTime);
 				}
 				else {
-					finalScore += levelScore + extraLevelScore;
+					if (currentLevel > 1) {
+						currentLevel--;
+					}
+					
 					levelVictory = false;					
 					setState(2); // Game over sreen
 					console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png");
+					console.log("final time: " + finalTime);
 				}
 					
 				/* Commented out original code

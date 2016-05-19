@@ -68,3 +68,4 @@ function stopAllTimers() { // to be called when you want to stop the timer
   console.log("All timers stopped.");
 }
 
+
