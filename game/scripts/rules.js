@@ -16,29 +16,29 @@ var itemType;
 
 function drawSelected() {
 	if (itemSelectedByPlayer == selectionPerson.itemf) {
-		ctx.drawImage(selectionPerson.itemf, canvas.width / 9 * 4, -canvas.height / 10);
+		ctx.drawImage(selectionPerson.itemf, canvas.width / 100 * 48, -canvas.height / 15);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.hat) {
-		ctx.drawImage(selectionPerson.hat, canvas.width / 9 * 4, canvas.height / 25);
+		ctx.drawImage(selectionPerson.hat, canvas.width / 100 * 46, canvas.height / 20);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.shirt) {
-		ctx.drawImage(selectionPerson.shirt, canvas.width / 9 * 4, -canvas.height / 25);
+		ctx.drawImage(selectionPerson.shirt, canvas.width / 100 * 46, -canvas.height / 50);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.pants) {
-		ctx.drawImage(selectionPerson.pants, canvas.width / 9 * 4, -canvas.height / 9);
+		ctx.drawImage(selectionPerson.pants, canvas.width / 100 * 46, -canvas.height / 15);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.shoes) {
-		ctx.drawImage(selectionPerson.shoes, canvas.width / 9 * 4, -canvas.height * 3 / 20);
+		ctx.drawImage(selectionPerson.shoes, canvas.width / 100 * 46, -canvas.height / 10);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.itemb) {
-		ctx.drawImage(selectionPerson.itemb, canvas.width / 2, -canvas.height / 10);
+		ctx.drawImage(selectionPerson.itemb, canvas.width / 100 * 43, -canvas.height / 15);
 	}
 }
 
 function drawRule() {
 	// display selected item in top box
-	/* Comment out part of original code (moved to generateRule() )
-	switch (rule[0]) {
+	//Comment out part of original code (moved to generateRule() )
+	/*switch (rule[0]) {
 		case 1:
 			itemType = "itemf";
 			break;
@@ -59,8 +59,8 @@ function drawRule() {
 			break;
 	}
 
-	ruleImage.src = "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png";
-	*/
+	ruleImage.src = "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png";*/
+	
 	
 	if (ruleImage != null) {
 		
@@ -265,6 +265,9 @@ function loadRules() {
 	ctx.drawImage(victoryButtonImage, canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight);
 	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight, 
 			function (){
+				
+				console.log(itemSelectedByPlayer.src);
+				
 				if (itemSelectedByPlayer.src.indexOf(ruleImage.src)!= -1)
 				{
 					// Score rule: pass level n in t seconds get ((100 * n) + (180 - t)) points 
@@ -274,6 +277,9 @@ function loadRules() {
 					levelVictory = true;
 					setState(2); // Skip level screen
 					console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png");
+				}
+				else if (itemSelectedByPlayer == null) {
+					
 				}
 				else {
 					finalScore += levelScore + extraLevelScore;
@@ -316,7 +322,7 @@ function loadRules() {
 	//ctx.fillText("Generate", canvas.width*9/10, canvas.height*5/20);
 	
 	// button to skip level
-	ctx.fillText("Skip level", canvas.width*9/10, canvas.height*7/20);
+	ctx.fillText("Confirm Selection", canvas.width*9/10, canvas.height*7/20);
 	
 	// Remove add score button.
 	// button to add score 
