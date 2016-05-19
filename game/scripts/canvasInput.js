@@ -1,4 +1,5 @@
-var inputField;
+var inputField; // for player name
+var playerName = "";
 
 // player name input textbox. Use external js library from James Simpson and GoldFire Studios, Inc.
 // library/CanvasInput.js
@@ -14,12 +15,14 @@ function drawInputField() {
 					fontWeight: 'bold',
 					width: 200,
 					padding: 10,
-					borderWidth: 2
+					borderWidth: 2,
 			});
 	
 			inputField.focus();
 			console.log("inputField drawn");
 }
 function updateInputField(){
+	playerName = inputField.value();
 	inputField.render();
+
 }
