@@ -191,7 +191,6 @@ function renderGraphics(){
 		if (state == 10){
 			//screenScoreboard.js
 			drawScoreSubmission();	
-			// drawInputField(); // Judy: Display input textbox in screen submission screen --> Testing
 		}
 	}
 	

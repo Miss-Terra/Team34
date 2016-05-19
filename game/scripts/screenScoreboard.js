@@ -191,12 +191,16 @@ function loadScoreSubmission() {
    scoreboardButtonImage.src = "images/scoreboardButton.png";
    buttonImage.src = "images/submitButton.png";
 
+   console.log("load once");
+   drawInputField();
+
 }
 
 
 	
 	
 function drawScoreSubmission(){
+	
 	
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
  	
@@ -213,7 +217,6 @@ function drawScoreSubmission(){
 	uiObjects[0] = new uiObject(submitX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 
-				//finalScore = 1111;
 				console.log("submit to server!!");
 				console.log("final score:" + finalScore);
 				console.log("final time:" + finalTime);
@@ -246,36 +249,6 @@ function drawScoreSubmission(){
 			console.log("Level: " + currentLevel)
 		});
 			
-}
 
-
-// player name input textbox. Use external js library from James Simpson and GoldFire Studios, Inc.
-// library/CanvasInput.js
-// Judy: Still working on....
-function drawInputField() {
-	
-		   	var inputField = new CanvasInput({
-					canvas: document.getElementById('canvas'),
-					x: canvas.width / 2,
-					y: canvas.height / 2,
-					fontSize: 18,
-					fontColor: 'black',
-					fontWeight: 'bold',
-					width: 200,
-					padding: 10,
-					borderWidth: 2,
-			});
-	
-			inputField.focus();
-			console.log("inputField");
+	updateInputField();
 }
-
-/*
-function inputField() {
-	
-	var inputField = document.createElement('input');
-	inputField.setAttribute("type", "text");
-	inputField.setAttribute("size", "100");
-	document.body.appendChild(inputField);
-}
-*/
