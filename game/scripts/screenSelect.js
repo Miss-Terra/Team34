@@ -86,16 +86,6 @@ function drawSelectMenuButtons(){
 					itemSelectedByPlayer = selectionPerson.itemb 
 					console.log("PlayerSelection: itemBack");					
 				};
-				
-				//Judy Test: check if player selected the correct item
-				/*
-				if (itemSelectedByPlayer.src.indexOf(ruleImage.src)!= -1)
-				{
-					setState(2); // Skip level screen
-				}
-				else {
-					setState(4); // Game over sreen
-				*/
 								
 			});
 

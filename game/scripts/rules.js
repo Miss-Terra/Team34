@@ -63,6 +63,7 @@ function drawRule() {
 	
 	ruleImage.src = "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png";
 	
+	/*
 	if (ruleImage != null) {
 		
 		switch (rule[0]) {
@@ -87,6 +88,7 @@ function drawRule() {
 		}
 
 	}
+	*/
 
 }	
 
@@ -240,12 +242,31 @@ function loadRules() {
 	ctx.drawImage(victoryButtonImage, canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight);
 	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight, 
 			function (){
+				if (itemSelectedByPlayer.src.indexOf(ruleImage.src)!= -1)
+				{
+					// Score rule: pass level n in t seconds get ((100 * n) + (180 - t)) points 
+					levelScore = levelTime + 100;
+					// Set original "levelScore" to extraLevelScore for testing purpose
+					finalScore += levelScore + extraLevelScore;				
+					levelVictory = true;
+					setState(2); // Skip level screen
+					console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png");
+				}
+				else {
+					finalScore += levelScore + extraLevelScore;
+					levelVictory = false;					
+					setState(2); // Game over sreen
+					console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png");
+				}
+					
+				/* Commented out original code
 				// Score rule: pass level n in t seconds get ((100 * n) + (180 - t)) points 
 				levelScore = levelTime + 100;
 				// Set original "levelScore" to extraLevelScore for testing purpose
 				finalScore += levelScore + extraLevelScore;				
 				levelVictory = true;
 				setState(2);
+				*/
 			});
 		
 	// Remove add score button.		
@@ -288,6 +309,7 @@ function loadRules() {
 
 	if (itemSelectedByPlayer != null)
 		drawSelected();
+		drawRule(); // Testing if victory/fail mechanics work
 	
 	ctx.fillStyle = "#000000";
 	ctx.fillText("Selected", canvas.width/2, canvas.height/30);
