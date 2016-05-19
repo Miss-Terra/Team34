@@ -222,6 +222,7 @@ function drawScoreSubmission(){
 				console.log(currentLevel);
 
 
+				//databaseConnect.js
 				updateDatabase(finalScore, finalTime, currentLevel, "Temp UserName");
 		
 				console.log("Level: " + currentLevel)
