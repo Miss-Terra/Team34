@@ -274,16 +274,23 @@ function loadRules() {
 					// Score rule: pass level n in t seconds get ((100 * n) + (180 - t)) points 
 					levelScore = levelTime + 100;
 					// Set original "levelScore" to extraLevelScore for testing purpose
-					finalScore += levelScore + extraLevelScore;				
+					finalScore += levelScore + extraLevelScore;		
+					// Add finalTime
+					finalTime += levelTime;					
 					levelVictory = true;
 					setState(2); // Skip level screen
 					console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png");
+					console.log("final time: " + finalTime);
 				}
 				else {
-					finalScore += levelScore + extraLevelScore;
+					if (currentLevel > 1) {
+						currentLevel--;
+					}
+					
 					levelVictory = false;					
 					setState(2); // Game over sreen
 					console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png");
+					console.log("final time: " + finalTime);
 				}
 					
 				/* Commented out original code

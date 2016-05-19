@@ -43,8 +43,8 @@ var Itm = {
 	//Draw item of type t, number n, and color c
 	drawItmtnc: function(t, n, c, x, y, wth, hgt) {
 
-		var w = 32; //default sizes
-		var h = 64;
+		var w = canvas.width/16; //default sizes
+		var h = canvas.height/5.5;
     if (typeof wth != "undefined")
 			w = wth;
     if (typeof hgt != "undefined")

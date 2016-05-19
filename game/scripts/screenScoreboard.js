@@ -190,9 +190,15 @@ function loadScoreSubmission() {
    mainMenuButtonImage.src = "images/mainMenuButton.png";
    scoreboardButtonImage.src = "images/scoreboardButton.png";
    buttonImage.src = "images/submitButton.png";
+<<<<<<< HEAD
   
    console.log("load once");
    drawInputField(); // canvasInput.js	
+=======
+
+   console.log("load once");
+   drawInputField(); // canvasInput.js
+>>>>>>> c7f9ca604e993a542c5c4b41a02eddb5e89e2eb8
 
 }
 
@@ -217,9 +223,17 @@ function drawScoreSubmission(){
 	uiObjects[0] = new uiObject(submitX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 
+<<<<<<< HEAD
 
 				
 				console.log("submit to server!!");
+=======
+				console.log("submit to server!!");
+				console.log("final score:" + finalScore);
+				console.log("final time:" + finalTime);
+				console.log("current level:" + currentLevel);
+
+>>>>>>> c7f9ca604e993a542c5c4b41a02eddb5e89e2eb8
 
 				//databaseConnect.js
 				updateDatabase(finalScore, finalTime, currentLevel, playerName);
@@ -247,5 +261,9 @@ function drawScoreSubmission(){
 		});
 			
 
+<<<<<<< HEAD
 	updateInputField();
+=======
+	updateInputField(); // canvasInput.js
+>>>>>>> c7f9ca604e993a542c5c4b41a02eddb5e89e2eb8
 }
