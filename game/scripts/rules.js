@@ -278,9 +278,6 @@ function loadRules() {
 					setState(2); // Skip level screen
 					console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png");
 				}
-				else if (itemSelectedByPlayer == null) {
-					
-				}
 				else {
 					finalScore += levelScore + extraLevelScore;
 					levelVictory = false;					
