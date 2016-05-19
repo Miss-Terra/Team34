@@ -2,22 +2,38 @@
 var selectionPerson; // This variable is a person. It's defined in drawLine.js... Whenever a user clicks a person.
 var itemSelectedByPlayer; // Item seleted by player
 
-
 var hatSelected = false;
 var shirtSelected = false;
 var pantsSelected = false;
 var shoesSelected = false;
 var itemfSelected = false;
 var itembSelected = false;
+var allowed = true; // Define if number of items allowed exceeds maximum 
+//(defined in the function drawItemSelection)
+
+var selectedArray = new Array(6); //array of items selectable
+
+ //Function to return the number of items currently selected
+var numberSelected = function () {
+	selectedArray = [hatSelected, shirtSelected, pantsSelected, shoesSelected, itemfSelected, itembSelected];
+  var count = 0;
+	for (var i=0; i< selectedArray.length; i++) {
+		if (selectedArray[i] == true){
+			count++;
+		}
+	}	
+	return count;
+}
+
 
 function loadCharSelection(){
 
 	bgImage.src = "images/charSelection.png";
 	dude.src = "images/person.png";
 	resumeButtonImage.src = "images/yesButton.png";
-    restartButtonImage.src = "images/noButton.png";
-    borderImage.src = "images/itemSelect.png";
-    borderImage2.src = "images/itemDeSelect.png";
+  restartButtonImage.src = "images/noButton.png";
+  borderImage.src = "images/itemSelect.png";
+  borderImage2.src = "images/itemDeSelect.png";
 
 	initSelectionSetting();
 
@@ -105,7 +121,7 @@ function drawSelectionChar(){
 	selectionPerson.setSize(width,height); // needed for drawItems
 	selectionPerson.setPosition(x,y); // needed for drawItems
 
-
+	console.log("numselected=" + numberSelected());  //////
 
 	ctx.drawImage(selectionPerson.image, selectionPerson.x, selectionPerson.y, selectionPerson.width, selectionPerson.height);
 	drawItems(selectionPerson, true);
@@ -114,6 +130,12 @@ function drawSelectionChar(){
 
 // (Calls the functions required to enable users to select the item.)	
 function drawItemSelection(x,y,w,h,id){
+	
+	if (numberSelected() == 1) {
+		allowed = false;
+	} else if (numberSelected() == 0) {
+		allowed = true;
+	}
 	
 	//Depending on which item you draw... Do the following...
 	var img = borderImage2; // deselected
@@ -125,7 +147,7 @@ function drawItemSelection(x,y,w,h,id){
 			function (){
 				if (hatSelected){
 					hatSelected = false; // Hat selected
-				} else {hatSelected = true;}
+				} else if (allowed==true) {hatSelected = true;}
 				console.log("hat selected.")
 		});
 	}
@@ -138,7 +160,7 @@ function drawItemSelection(x,y,w,h,id){
 			function (){
 				if (shirtSelected){
 					shirtSelected = false; // shirt selected
-				}else{shirtSelected = true;}
+				}else if (allowed==true) {shirtSelected = true;}
 				console.log("shirt selected.")
 		});		
 	}
@@ -151,7 +173,7 @@ function drawItemSelection(x,y,w,h,id){
 			function (){
 				if (pantsSelected){
 					pantsSelected = false; // pants selected
-				}else{pantsSelected = true;}
+				}else if (allowed==true) {pantsSelected = true;}
 				console.log("pants selected.")
 		});
 	}
@@ -164,7 +186,7 @@ function drawItemSelection(x,y,w,h,id){
 			function (){
 				if (shoesSelected){
 					shoesSelected = false; // shoes selected
-				}else{shoesSelected = true;}
+				}else if (allowed==true) {shoesSelected = true;}
 				console.log("shoes selected.")
 		});
 	}
@@ -177,7 +199,7 @@ function drawItemSelection(x,y,w,h,id){
 			function (){
 				if (itemfSelected){
 					itemfSelected = false; // Hat selected
-				}else{itemfSelected = true;}
+				}else if (allowed==true) {itemfSelected = true;}
 				console.log("front item selected.")
 		});
 	}
@@ -190,7 +212,7 @@ function drawItemSelection(x,y,w,h,id){
 			function (){
 				if (itembSelected){
 					itembSelected = false; // Hat selected
-				}else{itembSelected = true;}
+				}else if (allowed==true) {itembSelected = true;}
 				console.log("back item selected.")
 		});
 	}
