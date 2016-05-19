@@ -11,11 +11,6 @@ function loadResult(){
 	}
 	mainMenuButtonImage.src = "images/mainMenuButton.png";
 	restartButtonImage.src = "images/restartButton.png";
-	
-<<<<<<< HEAD
-
-=======
->>>>>>> db39234faba76dbf6ee005a39f1b1217b403be31
 }
 
 function drawResult(){
@@ -82,21 +77,19 @@ function drawResult(){
 	
 			// display rule box
 			if (currentLevel <= 10) {
-<<<<<<< HEAD
+
 				ctx.fillStyle = "#33FFFF";
 				ctx.fillRect(canvas.width / 2 - canvas.width / 10, 10, canvas.width / 5, canvas.height / 5);
-			}
-			else {
+			} else {
 				ctx.fillStyle = "#33FFFF";
 				ctx.fillRect(canvas.width / 2 - canvas.width / 5, 10, canvas.width * 2 / 5, canvas.height / 10);
-=======
+
 				ctx.fillStyle = "#FFFFFF";
 				ctx.fillRect(canvas.width / 2 - canvas.width / 10, 0, canvas.width / 5, canvas.height / 7);
-			}
-			else {
-				ctx.fillStyle = "#FFFFFF";
-				ctx.fillRect(canvas.width / 2 - canvas.width / 5, 0, canvas.width * 2 / 5, canvas.height / 10);
->>>>>>> db39234faba76dbf6ee005a39f1b1217b403be31
+		//	} else {
+//Terra commented//		ctx.fillStyle = "#FFFFFF";
+		//		ctx.fillRect(canvas.width / 2 - canvas.width / 5, 0, canvas.width * 2 / 5, canvas.height / 10);
+
 			}
 			// display rule
 			ctx.fillStyle = "#000000";
@@ -109,13 +102,9 @@ function drawResult(){
 					console.log("Submit Score function here...");
 					//nextLevel();
 					setState(10);
-<<<<<<< HEAD
+
 					finalScore = 0;
 					levelScore = 0;
-=======
-					levelScore = 0;
-					finalScore = 0;
->>>>>>> db39234faba76dbf6ee005a39f1b1217b403be31
 					extraLevelScore = 0;
 					console.log("Level: " + currentLevel)
 				});
