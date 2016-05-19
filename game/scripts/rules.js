@@ -16,7 +16,7 @@ var itemType;
 
 function drawSelected() {
 	if (itemSelectedByPlayer == selectionPerson.itemf) {
-		ctx.drawImage(selectionPerson.itemf, canvas.width / 9 * 4, -canvas.height/10);
+		ctx.drawImage(selectionPerson.itemf, canvas.width / 9 * 4, -canvas.height / 10);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.hat) {
 		ctx.drawImage(selectionPerson.hat, canvas.width / 9 * 4, canvas.height / 25);
@@ -31,14 +31,13 @@ function drawSelected() {
 		ctx.drawImage(selectionPerson.shoes, canvas.width / 9 * 4, -canvas.height * 3 / 20);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.itemb) {
-		ctx.drawImage(selectionPerson.itemb, canvas.width / 2, -canvas.height/10);
+		ctx.drawImage(selectionPerson.itemb, canvas.width / 2, -canvas.height / 10);
 	}
 }
 
 function drawRule() {
 	// display selected item in top box
-	//ctx.fillText(rule, canvas.width/2, canvas.height/20);
-
+	/* Comment out part of original code (moved to generateRule() )
 	switch (rule[0]) {
 		case 1:
 			itemType = "itemf";
@@ -59,37 +58,33 @@ function drawRule() {
 			itemType = "itemb";
 			break;
 	}
-	
-	
+
 	ruleImage.src = "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png";
+	*/
 	
-	/*
 	if (ruleImage != null) {
 		
 		switch (rule[0]) {
 			case 1:
-				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, -canvas.height/10);
+				ctx.drawImage(ruleImage, canvas.width / 9 * 4, -canvas.height / 10);
 				break;
 			case 2:
-				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, canvas.height/40);
+				ctx.drawImage(ruleImage, canvas.width / 9 * 4, canvas.height / 25);
 				break;
 			case 3:
-				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, -canvas.height/20);
+				ctx.drawImage(ruleImage, canvas.width / 9 * 4, -canvas.height / 25);
 				break;
 			case 4:
-				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, -canvas.height/10);
+				ctx.drawImage(ruleImage, canvas.width / 9 * 4, -canvas.height / 9);
 				break;
 			case 5:
-				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, -canvas.height*3/20);
+				ctx.drawImage(ruleImage, canvas.width / 9 * 4, -canvas.height * 3 / 20);
 				break;
 			case 6:
-				ctx.drawImage(ruleImage, canvas.width/2 - canvas.width/10, -canvas.height/10);
+				ctx.drawImage(ruleImage, canvas.width/2, -canvas.height / 10);
 				break;
 		}
-
 	}
-	*/
-
 }	
 
 function generateRule() {			
@@ -128,6 +123,34 @@ function generateRule() {
 	}
 	
 	rule[2] = Math.floor(Math.random() * NumberColors + 1);
+	
+	
+	// Below code moved from original drawRule()
+	switch (rule[0]) {
+		case 1:
+			itemType = "itemf";
+			break;
+		case 2:
+			itemType = "hat";
+			break;
+		case 3:
+			itemType = "shirt";
+			break;
+		case 4:
+			itemType = "pant";
+			break;
+		case 5:
+			itemType = "shoe";
+			break;
+		case 6:
+			itemType = "itemb";
+			break;
+	}
+
+	ruleImage.src = "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png";
+
+	
+	
 
 	/*if (currentLevel <= 5) {
 		// color matrix 
@@ -305,11 +328,11 @@ function loadRules() {
 			
 	// display item selected box
 	ctx.fillStyle = "#FFFFFF";
-	ctx.fillRect(canvas.width/2 - canvas.width/10, 0, canvas.width/5, canvas.height/10);
+	ctx.fillRect(canvas.width/2 - canvas.width/10, 0, canvas.width/5, canvas.height/7);
 
 	if (itemSelectedByPlayer != null)
 		drawSelected();
-		drawRule(); // Testing if victory/fail mechanics work
+		//drawRule(); // For testing if victory/fail mechanics work
 	
 	ctx.fillStyle = "#000000";
 	ctx.fillText("Selected", canvas.width/2, canvas.height/30);
