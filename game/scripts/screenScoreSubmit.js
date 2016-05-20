@@ -1,4 +1,3 @@
-	
 //State 10 Score Submission Screen
 function loadScoreSubmission() {
 
@@ -12,8 +11,6 @@ function loadScoreSubmission() {
    drawInputField(); //  textBox.js	
 
 }
-
-
 	
 	// Draw the score submission Screen.
 function drawScoreSubmission(){
@@ -41,13 +38,6 @@ function drawScoreSubmission(){
 			setState(0);
 			console.log("Level: " + currentLevel)
 		});	
-	
-//	// middle button: scoreboard
-//	ctx.drawImage(scoreboardButtonImage, scoreboardX, buttonY, buttonWidth, buttonHeight);
-//	uiObjects[1] = new uiObject(scoreboardX, buttonY, buttonWidth, buttonHeight, 
-//			function (){
-//			});
-	
 	
 	// right button: submit
 	ctx.drawImage(buttonImage, submitX, buttonY, buttonWidth, buttonHeight);

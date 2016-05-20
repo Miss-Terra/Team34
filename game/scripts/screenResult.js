@@ -45,12 +45,18 @@ function drawResult(){
 	ctx.drawImage(mainMenuButtonImage, leftButtonX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[1] = new uiObject(leftButtonX, buttonY, buttonWidth, buttonHeight, 
 			function (){
+				gamePaused = false; console.log(gamePaused); // unpause game
 				console.log("menu");
+				quitFromPause = false;
+				quitFromVictory = true;
+				setState(7);
+				/*console.log("menu");
 				setState(0);
 				levelScore = 0;
 				finalScore = 0;
 				extraLevelScore = 0;
 				// initTimeSetting() in timer.js file
+				*/
 				initTimeSetting();
 				console.log("Level: " + currentLevel)
 			});
@@ -73,12 +79,10 @@ function drawResult(){
 					setState(1);
 					console.log("Level: " + currentLevel)
 				});
-
 	} else { // if player lost
 	
 			// display rule box
 			if (currentLevel <= 10) {
-
 				ctx.fillStyle = "#FFFFFF";
 				ctx.fillRect(canvas.width / 2 - canvas.width / 10, 0, canvas.width / 5, canvas.height / 7);
 			} else {
@@ -88,8 +92,10 @@ function drawResult(){
 				ctx.fillStyle = "#FFFFFF";
 				ctx.fillRect(canvas.width / 2 - canvas.width / 10, 0, canvas.width / 5, canvas.height / 7);
 		//	} else {
+
 				//Terra commented//		ctx.fillStyle = "#FFFFFF";
-		//		ctx.fillRect(canvas.width / 2 - canvas.width / 5, 0, canvas.width * 2 / 5, canvas.height / 10);
+
+				//		ctx.fillRect(canvas.width / 2 - canvas.width / 5, 0, canvas.width * 2 / 5, canvas.height / 10);
 
 			}
 			// display rule
@@ -108,4 +114,5 @@ function drawResult(){
 					console.log("Level: " + currentLevel)
 				});
 	}
+
 }

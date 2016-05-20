@@ -11,15 +11,16 @@ var leaderboardNames = [];
 
 function loadScoreboard() {
 
-   bgImage.src = "images/levelvictory.png";
-   mainMenuButtonImage.src = "images/mainMenuButton.png";
-	 scoreLogo.src = "images/logoct1.png";
+
+   	bgImage.src = "images/levelvictory.png";
+   	mainMenuButtonImage.src = "images/mainMenuButton.png";
+	scoreLogo.src = "images/logoct1.png";
   
    for (var i = 1; i <= 10; i++){
-   	/*	leaderboardScores[i] = */ connectLeaderboard(i,"Score");
-   	/*	leaderboardTimes[i] = */  connectLeaderboard(i,"Time");
-   	/*	leaderboardLevels[i] = */  connectLeaderboard(i,"Level");
-   	/*	leaderboardNames[i] = */  connectLeaderboard(i,"Name");
+   	 connectLeaderboard(i,"Score");
+   	 connectLeaderboard(i,"Time");
+     connectLeaderboard(i,"Level");
+     connectLeaderboard(i,"Name");
    }
 }
 
