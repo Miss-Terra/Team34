@@ -19,10 +19,15 @@ screenResult.js
 
 screenScoreboard.js
 
+screenScoreSubmit.js
+
 screenSelect.js
 
 screenTutorial.js
 
+
+-------------------------------------------------------------------------------------------------
+// Help files
 
 canvas.js 
 - runs the base canvas and it's settings...
@@ -49,7 +54,10 @@ graphicsBase.js
 - defines the structure to how/what images are loaded onscreen during a state setup.
 
 imageVariables.js
-- ?
+- An extention of graphicsBase.js... It holds the image variables.
+
+items.js
+- extension of imageVariables.js.. It shows the image of items.
 
 levels.js
 - holds rules and global variables defining how gameplay changes as the level increases.
@@ -62,6 +70,12 @@ rules.js
 
 levels.js
 - defines (how the level will be displayed) and the rules determined.
+
+score.js
+- keep it for future score function... Current score function code is combined in rules.js
+
+textBox.js
+- load and draw text input box in score submission screen.
 
 timer.js
 - defines function for creating, pausing and erasing timer object.
