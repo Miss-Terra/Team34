@@ -37,12 +37,11 @@ function displayInLevel() {
 	
 	// must be place here, does not work in global
 	ctx.font = canvas.width/50 + "px Arial";
-	ctx.fillStyle = "black";
+	ctx.fillStyle = "white";
 	ctx.textAlign = "center";
 	
 	
 	// display level
-	ctx.fillStyle = "#000000";
 	var levelDisplay = "Level " + currentLevel;
 	ctx.fillText(levelDisplay, canvas.width*9/10, canvas.height/10);
 	
