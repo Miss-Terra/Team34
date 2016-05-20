@@ -179,6 +179,7 @@ function renderGraphics(){
 			//7 back to main menu confirm screen
 		if (state == 7){
 			//screenPauseMenu.js
+            //back to main menu confirm menu
 			drawBackToMainMenuConfirmMenu();	
 		}
 		
@@ -203,6 +204,8 @@ function renderGraphics(){
         
             //11 restart confirm screen
         if (state == 11){
+            //screenPauseMenu.js
+            //restart confirm screen
             drawRestartConfirmMenu();
         }
 	}
