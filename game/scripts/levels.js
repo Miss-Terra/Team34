@@ -10,15 +10,15 @@ var itemTypes = 1;
 //(type/color) define a unique item.
 var itemVariety = 2;
 
-//How fast the line moves.
-var speed = 1.0;
+//How fast the line moves. in miliseconds. (updated in nextLevel())
+var lineSpeed = 1000;
 
 var MAXLEVEL = 34; 
 var MAXTYPES = 6; //Hat, shirt, pants, shoes, item1, item2
 
 //How large the line is. (How many people are in it).
-var lineSize = 40;
-var maxPeopleInLine = 40; // Only display this number of people at a time.
+var lineSize = 23;
+var maxPeopleInLine = 23; // Only display this number of people at a time.
 
 setSettings();
 
@@ -72,5 +72,7 @@ function setItemVariety(){
 
 function nextLevel(){
 	currentLevel++;
+	//We use lineSpeed in timer.js
+	lineSpeed = 1000*(1 - ((currentLevel-1)/68)); // Multiple this number by 5 to realise how often the line moves.
 	setSettings();
 }
