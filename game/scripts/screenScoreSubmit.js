@@ -37,12 +37,16 @@ function drawScoreSubmission(){
 	ctx.drawImage(buttonImage, submitX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(submitX, buttonY, buttonWidth, buttonHeight, 
 			function (){
-				console.log("Go to Scoreboard");
-				setState(4);
-				console.log("Level: " + currentLevel)
 
+				console.log("submit to server!!");
+				console.log("Time: " + finalTime);
+				console.log("Go to Scoreboard");
+				console.log("Level: " + currentLevel)
 				//databaseConnect.js
 				updateDatabase(finalScore, finalTime, currentLevel, playerName);
+
+
+				setState(4);
 			});
 		
 	
