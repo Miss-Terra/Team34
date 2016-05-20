@@ -25,8 +25,8 @@ function loadScoreboard() {
 
 function drawScoreboard(){
 	
-	var logowidth = 367/2;
-	var logoheight = 150/2;
+	var logowidth = canvas.width/4;
+	var logoheight = canvas.height/8;
 
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 	ctx.drawImage(scoreLogo, canvas.width/2 - logowidth/2, 0, logowidth, logoheight);
@@ -65,10 +65,11 @@ function drawScoreboard(){
 	leaderboardColumns[3] = canvas.width*11/20;
 	leaderboardColumns[4] = canvas.width*14/20;
 	
-
+	
 	ctx.font = canvas.width/20 + "px Arial";
 	ctx.fillStyle = "white";
-	ctx.fillText("Ranking", leaderboardColumns[0], canvas.height*2/20);
+	ctx.textAlign = "center";
+	ctx.fillText("Ranking", canvas.width*3/20, canvas.height*2/20);
 	
 	ctx.font = canvas.width/30 + "px Arial";
 	ctx.fillText("Rank", leaderboardColumns[0], leaderboardHeaderRow);

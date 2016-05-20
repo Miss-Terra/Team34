@@ -33,7 +33,6 @@ function drawScoreSubmission(){
 	var menuX = (scoreboardX / 2) - (buttonWidth / 2);
 	var submitX = (canvas.width / 2) - (buttonWidth / 2) + ((canvas.width / 2) - (buttonWidth / 2)) / 2 + (buttonWidth / 2);  
 
-<<<<<<< HEAD
 	// left button: main menu
 	ctx.drawImage(mainMenuButtonImage, menuX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight, 
