@@ -36,7 +36,7 @@ function drawScoreSubmission(){
 
 				
 				console.log("submit to server!!");
-
+				console.log("Time: " + finalTime);
 				//databaseConnect.js
 				updateDatabase(finalScore, finalTime, currentLevel, playerName);
 		
