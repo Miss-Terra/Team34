@@ -32,30 +32,25 @@ function drawScoreSubmission(){
 	ctx.drawImage(buttonImage, submitX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(submitX, buttonY, buttonWidth, buttonHeight, 
 			function (){
-
-
-				
-				console.log("submit to server!!");
+				console.log("Go to Scoreboard");
+				setState(4);
+				console.log("Level: " + currentLevel)
 
 				//databaseConnect.js
 				updateDatabase(finalScore, finalTime, currentLevel, playerName);
-		
 			});
 		
 	
-	// middle button: scoreboard
-	ctx.drawImage(scoreboardButtonImage, scoreboardX, buttonY, buttonWidth, buttonHeight);
-	uiObjects[1] = new uiObject(scoreboardX, buttonY, buttonWidth, buttonHeight, 
-			function (){
-				console.log("scoreboard");
-				setState(4);
-				console.log("Level: " + currentLevel)
-			});
+//	// middle button: scoreboard
+//	ctx.drawImage(scoreboardButtonImage, scoreboardX, buttonY, buttonWidth, buttonHeight);
+//	uiObjects[1] = new uiObject(scoreboardX, buttonY, buttonWidth, buttonHeight, 
+//			function (){
+//			});
 	
 	
 	// right button: main menu
 	ctx.drawImage(mainMenuButtonImage, menuX, buttonY, buttonWidth, buttonHeight);
-	uiObjects[2] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight, 
+	uiObjects[1] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight, 
 		function (){
 			console.log("menu");
 			setState(0);
