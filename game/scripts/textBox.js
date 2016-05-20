@@ -7,7 +7,7 @@ function drawInputField() {
 	
 		   	inputField = new CanvasInput({
 					canvas: document.getElementById('canvas'),
-					x:  canvas.width * 7 / 10,
+					x: canvas.width * 7 / 10,
 					y: canvas.height * 6 / 11,
 					fontSize: 18, 
 					fontColor: 'black',
@@ -22,9 +22,9 @@ function drawInputField() {
 }
 function updateInputField(){
 	
-	inputField.x(canvas.width/4);
-	inputField.y(canvas.height/2);
-	inputField.width(canvas.width/2);
+	inputField.x(canvas.width * 7 / 10);
+	inputField.y(canvas.height * 6 / 11);
+	inputField.width(canvas.width / 5);
 
 	playerName = inputField.value();
 	inputField.render();
