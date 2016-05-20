@@ -19,16 +19,16 @@ function drawResult(){
 	
 		displayResult();
 	
-	var buttonWidth = canvas.width / 6;
+	var buttonWidth = canvas.width / 10;
 	var buttonHeight = canvas.height / 10;	
 	var	buttonY = canvas.height - (buttonHeight * 2);
 	//Button x positions
-	var restartX = (canvas.width / 2) - (buttonWidth / 2);
-	var menuX = (restartX / 2) - (buttonWidth / 2);
-	var nextX = restartX + (restartX / 2) + (buttonWidth / 2);
+	var middleButtonX = (canvas.width / 2) - (buttonWidth / 2);
+	var leftButtonX = (middleButtonX / 2) - (buttonWidth / 2);
+	var rightButtonX = middleButtonX + (middleButtonX / 2) + (buttonWidth / 2);
 
-	ctx.drawImage(restartButtonImage, restartX, buttonY, buttonWidth, buttonHeight);
-	uiObjects[0] = new uiObject(restartX, buttonY, buttonWidth, buttonHeight, 
+	ctx.drawImage(restartButtonImage, middleButtonX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[0] = new uiObject(middleButtonX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("restart");
 				finalScore -= levelScore + extraLevelScore;
@@ -42,8 +42,8 @@ function drawResult(){
 				console.log("Level: " + currentLevel)
 			});
 	
-	ctx.drawImage(mainMenuButtonImage, menuX, buttonY, buttonWidth, buttonHeight);
-	uiObjects[1] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight, 
+	ctx.drawImage(mainMenuButtonImage, leftButtonX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[1] = new uiObject(leftButtonX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("menu");
 				setState(0);
@@ -58,9 +58,9 @@ function drawResult(){
 	
 
 	
-	ctx.drawImage(buttonImage, nextX, buttonY, buttonWidth, buttonHeight);
+	ctx.drawImage(buttonImage, rightButtonX, buttonY, buttonWidth, buttonHeight);
 	if (levelVictory){ //If player beat the level	
-		uiObjects[2] = new uiObject(nextX, buttonY, buttonWidth, buttonHeight, 
+		uiObjects[2] = new uiObject(rightButtonX, buttonY, buttonWidth, buttonHeight, 
 				function (){
 					console.log("next");
 					nextLevel();
@@ -98,7 +98,7 @@ function drawResult(){
 			drawRule();	
 		
 		// display "submit" button
-		uiObjects[2] = new uiObject(nextX, buttonY, buttonWidth, buttonHeight, 
+		uiObjects[2] = new uiObject(rightButtonX, buttonY, buttonWidth*2, buttonHeight, 
 				function (){
 					console.log("Submit Score function here...");
 					//nextLevel();

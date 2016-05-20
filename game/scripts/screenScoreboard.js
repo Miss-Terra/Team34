@@ -59,11 +59,11 @@ function drawScoreboard(){
 	var leaderboardColumns = [];
 
 	// These are not in a loop... For simple viewer understanding.
-	leaderboardColumns[0] = canvas.width*1/20;
-	leaderboardColumns[1] = canvas.width*4/20;
-	leaderboardColumns[2] = canvas.width*7/20;
-	leaderboardColumns[3] = canvas.width*10/20;
-	leaderboardColumns[4] = canvas.width*13/20;
+	leaderboardColumns[0] = canvas.width*2/20;
+	leaderboardColumns[1] = canvas.width*5/20;
+	leaderboardColumns[2] = canvas.width*8/20;
+	leaderboardColumns[3] = canvas.width*11/20;
+	leaderboardColumns[4] = canvas.width*14/20;
 	
 
 	ctx.font = canvas.width/20 + "px Arial";

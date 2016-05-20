@@ -20,25 +20,22 @@ function drawScoreSubmission(){
 	
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
  	
-	var buttonWidth = canvas.width / 6;
+	var buttonWidth = canvas.width / 10;
 	var buttonHeight = canvas.height / 10;	
 	var	buttonY = canvas.height - (buttonHeight * 2);
 	//Button x positions
 	var scoreboardX = (canvas.width / 2) - (buttonWidth / 2);
-	var submitX = (scoreboardX / 2) - (buttonWidth / 2);
-	var menuX = (canvas.width / 2) - (buttonWidth / 2) + ((canvas.width / 2) - (buttonWidth / 2)) / 2 + (buttonWidth / 2);  
+	var menuX = (scoreboardX / 2) - (buttonWidth / 2);
+	var submitX = (canvas.width / 2) - (buttonWidth / 2) + ((canvas.width / 2) - (buttonWidth / 2)) / 2 + (buttonWidth / 2);  
 
-	// left button: submit
-	ctx.drawImage(buttonImage, submitX, buttonY, buttonWidth, buttonHeight);
-	uiObjects[0] = new uiObject(submitX, buttonY, buttonWidth, buttonHeight, 
-			function (){
-				console.log("Go to Scoreboard");
-				setState(4);
-				console.log("Level: " + currentLevel)
-
-				//databaseConnect.js
-				updateDatabase(finalScore, finalTime, currentLevel, playerName);
-			});
+	// left button: main menu
+	ctx.drawImage(mainMenuButtonImage, menuX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[0] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight, 
+		function (){
+			console.log("menu");
+			setState(0);
+			console.log("Level: " + currentLevel)
+		});	
 		
 	
 //	// middle button: scoreboard
@@ -48,14 +45,17 @@ function drawScoreSubmission(){
 //			});
 	
 	
-	// right button: main menu
-	ctx.drawImage(mainMenuButtonImage, menuX, buttonY, buttonWidth, buttonHeight);
-	uiObjects[1] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight, 
-		function (){
-			console.log("menu");
-			setState(0);
-			console.log("Level: " + currentLevel)
-		});
+	// right button: submit
+	ctx.drawImage(buttonImage, submitX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[1] = new uiObject(submitX, buttonY, buttonWidth, buttonHeight, 
+			function (){
+				console.log("Go to Scoreboard");
+				setState(4);
+				console.log("Level: " + currentLevel)
+
+				//databaseConnect.js
+				updateDatabase(finalScore, finalTime, currentLevel, playerName);
+			});
 			
 
 	updateInputField();

@@ -2,10 +2,10 @@
 
 //function drawBackgroundImg(){
 ////		bgImage.src = "images/???.png";
-//}
+//};
 
 function drawEgg(){
-	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
+//	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 	
 //	var buttonWidth = canvas.width / 6;
 //	var buttonHeight = canvas.height / 10;	
@@ -22,5 +22,6 @@ function drawEgg(){
 //				setState(1);
 //				console.log("Level: " + currentLevel)
 //			});
+	
 
 }

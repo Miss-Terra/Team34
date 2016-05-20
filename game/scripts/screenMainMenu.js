@@ -44,6 +44,7 @@ function drawMainMenu(){
 					menuLogo.src = "images/logoct2.png";
 				} else if(easterEggclick == 1) {
 					menuLogo.src = "images/logoctBite1.png";
+					drawEgg();
 				} else if(easterEggclick == 2) {
 					menuLogo.src = "images/logoctBite2.png";	
 				} else if(easterEggclick == 3) {
