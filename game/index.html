@@ -19,26 +19,13 @@
 
 	<!-- js library from 2016 GoldFire Studios, Inc. for CanvasInput -->
 	<!-- "https://github.com/goldfire/CanvasInput/blob/master/CanvasInput.js" --> 
-	<script src="https://cdn.rawgit.com/goldfire/CanvasInput/master/CanvasInput.js"></script>
 
 	
 
 	<link rel="stylesheet" href="styles/base.css">
-
 </head>
 <body>
-
-<!--<div class="container-fluid">
-		<div class="row">
-			<div id="container">
-	-->			<canvas id="canvas"></canvas>
-		<!--	</div>
-
-		</div>
-	</div>
--->
-
-	
+		<canvas id="canvas"></canvas>
 </body>
 </html>
 
@@ -46,7 +33,6 @@
 	<script src="scripts/canvas.js"></script>
 	<script src="scripts/gameState.js"></script>
 	<script src="scripts/levels.js"></script>
-
 	<script src="scripts/imageVariables.js"></script> <!--Used to be part of graphicsBase.js-->
 	<script src="scripts/graphicsBase.js"></script>
 	<script src="scripts/globals.js"></script>
@@ -62,7 +48,7 @@
 	<script src="scripts/personGen.js"></script>
 	<script src="scripts/drawItems.js"></script>
 	<script src="scripts/drawLine.js"></script>
-	<script src="scripts/canvasInput.js"></script> 
+	<script src="scripts/textBox.js"></script> 
 	
 			<!--Specific States-->	
 	<script src="scripts/screenMainMenu.js"></script> 
@@ -77,6 +63,9 @@
 	<script src="scripts/screenTutorial.js"></script>
 	<script src="scripts/screenScoreSubmit.js"></script>
 
+				<!--Third Party-->
+	<script src="scripts/thirdParty/CanvasInput.js"></script>
+
 
 
 
@@ -84,11 +73,10 @@
 
 	setState(0);
 
-	levelVictory = true; // Assume victory for debugging ONLY
 
 // The main game loop
 	function main() {
-	
+	//console.log(ctx.font);
 
 		//Update and render graphics.
 		renderGraphics();

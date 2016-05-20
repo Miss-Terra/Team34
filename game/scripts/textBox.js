@@ -10,12 +10,12 @@ function drawInputField() {
 					canvas: document.getElementById('canvas'),
 					x: canvas.width / 2,
 					y: canvas.height / 2,
-					fontSize: 18,
+					fontSize: 18, 
 					fontColor: 'black',
 					fontWeight: 'bold',
 					width: 200,
 					padding: 10,
-					borderWidth: 2,
+					borderWidth: 2
 			});
 	
 			inputField.focus();
@@ -24,5 +24,6 @@ function drawInputField() {
 function updateInputField(){
 	playerName = inputField.value();
 	inputField.render();
+	console.log("inputField rendered");
 
 }
