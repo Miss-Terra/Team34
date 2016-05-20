@@ -21,6 +21,11 @@ function drawInputField() {
 			console.log("inputField drawn");
 }
 function updateInputField(){
+	
+	inputField.x(canvas.width/4);
+	inputField.y(canvas.height/2);
+	inputField.width(canvas.width/2);
+
 	playerName = inputField.value();
 	inputField.render();
 	console.log("inputField rendered");
