@@ -20,10 +20,11 @@
 //State 4 == Score screen
 //State 5 == Credits screen
 //State 6 == Extra screen
-//State 7 == Confirm screen
+//State 7 == back to main menu confirm screen
 //State 8 == Item Select screen
 //State 9 == Tutorial screen
 //State 10 == Score submission screen
+//State 11 == restart confirm screen 
 //	<script src="scripts/screenMainMenu.js"></script> 
 //	<script src="scripts/screenGame.js"></script>
 //	<script src="scripts/screenResult.js"></script>
@@ -78,10 +79,10 @@ function reloadGraphics(){
 	if (state == 6){
 			//screenEgg.js
 	}
-		//7 confirm screen
+		//7 back to main confirm screen
 	if (state == 7){
 		//screenPauseMenu.js
-		loadConfirmMenu();	
+		loadBackToMainMenuConfirmMenu();
 	}
 		//8 item select screen
 	if (state == 8){
@@ -98,6 +99,12 @@ function reloadGraphics(){
 		//screenScoreboard.js
 		loadScoreSubmission();	
 	}
+    
+        //11 restart confirm menu
+    if (state == 11){
+        //screenPauseMenu.js
+        loadRestartConfirmMenu();
+    }
 
 }
 
@@ -169,10 +176,11 @@ function renderGraphics(){
 		if (state == 6){
 				//screenEgg.js
 		}
-			//7 confirm screen
+			//7 back to main menu confirm screen
 		if (state == 7){
 			//screenPauseMenu.js
-			drawConfirmMenu();	
+            //back to main menu confirm menu
+			drawBackToMainMenuConfirmMenu();	
 		}
 		
 			//8 confirm screen
@@ -193,6 +201,13 @@ function renderGraphics(){
 			//screenScoreboard.js
 			drawScoreSubmission();	
 		}
+        
+            //11 restart confirm screen
+        if (state == 11){
+            //screenPauseMenu.js
+            //restart confirm screen
+            drawRestartConfirmMenu();
+        }
 	}
 	
 	
@@ -280,4 +295,5 @@ function graphicsStatus(){
 			return false;
 		}
 	}
+    
 }
