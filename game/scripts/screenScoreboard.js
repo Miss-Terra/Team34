@@ -9,38 +9,29 @@ var leaderboardTimes = [];
 var leaderboardLevels = [];
 var leaderboardNames = [];
 
-
-
-
-
-
-
 function loadScoreboard() {
 
    bgImage.src = "images/levelvictory.png";
    mainMenuButtonImage.src = "images/mainMenuButton.png";
+	 scoreLogo.src = "images/logoct1.png";
   
    for (var i = 1; i <= 10; i++){
-		
-
    	/*	leaderboardScores[i] = */ connectLeaderboard(i,"Score");
    	/*	leaderboardTimes[i] = */  connectLeaderboard(i,"Time");
    	/*	leaderboardLevels[i] = */  connectLeaderboard(i,"Level");
    	/*	leaderboardNames[i] = */  connectLeaderboard(i,"Name");
-
-
    }
-   
 }
 
-
 function drawScoreboard(){
-
-
+	
+	var logowidth = 367/2;
+	var logoheight = 150/2;
 
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
+	ctx.drawImage(scoreLogo, canvas.width/2 - logowidth/2, 0, logowidth, logoheight);
  	
- 	var buttonWidth = canvas.width / 6;
+ 	var buttonWidth = canvas.width / 10;
 	var buttonHeight = canvas.height / 10;	
 	var	buttonY = canvas.height - (buttonHeight * 2);
 	//Button x positions

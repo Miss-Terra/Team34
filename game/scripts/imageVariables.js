@@ -24,6 +24,13 @@
 		//logo is safe to load...
 		mlogoReady = true;
 	};		
+
+	var scoreLogo = new Image();
+	var slogoReady = false;
+	scoreLogo.onload = function () {
+		//logo is safe to load...
+		slogoReady = true;
+	};		
 	
 	var menuAnimationImage = new Image();
 	var menuAnimationReady = false;

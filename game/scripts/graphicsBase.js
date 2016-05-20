@@ -107,6 +107,7 @@ function clearLoadedImages(){
 	bgReady = false;
 	personReady = false;
 	mlogoReady = false;
+	slogoReady = false;
 	buttonReady = false;
 	playButtonReady = false;
 	scoreboardButtonReady = false;
@@ -248,6 +249,7 @@ function graphicsStatus(){
 	if (state == 4) {
 		//check state 4 img status
 		if (bgReady && mainMenuButtonImage
+				  && slogoReady
 					&& creditsButtonReady){
 			return true;
 		}else{
