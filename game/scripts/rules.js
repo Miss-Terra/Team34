@@ -273,8 +273,6 @@ function loadRules() {
 	
 endLevelButton();
 	
-
-	// Remove add score button.		
 	// button to add scores (just for testing)
 	/*
 	ctx.drawImage(addscoreButtonImage, canvas.width*8/10, canvas.height*4/10, buttonWidth*2, buttonHeight);

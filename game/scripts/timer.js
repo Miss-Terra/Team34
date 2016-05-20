@@ -1,14 +1,22 @@
 	//levelTimer determines how much time you have on each level.
 var levelTimer;
+var startLevelTime;
 var lineTimer;
 var lineAccuracyCounter = 0; //Used to help remember each second between timer ticks.
 
 
 //----------level timer funtions---------
 function initTimeSetting() {
+	setLineSpeed();
+}
+function setLineSpeed(){
+
 			  //lineSize and lineSpeed are defined in levels.js 
 	levelTime = Math.floor(lineSize * (5 * (lineSpeed/1000))); //Level time is based on line size and line speed.
+	startLevelTime = levelTime;
 }
+
+
 function startLevelTimer(){
 	// set interval and task
 	levelTimer = setInterval(levelTimerTick, 1000);
