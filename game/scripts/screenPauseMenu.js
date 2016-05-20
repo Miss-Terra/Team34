@@ -17,18 +17,7 @@ function drawPauseMenu() {
 	var buttonXleft = (buttonXmiddle / 2) - (buttonWidth / 2);            
 	var buttonXright = buttonXmiddle + (buttonXmiddle / 2) + (buttonWidth / 2); 
 
-    // middle button
-	ctx.drawImage(restartButtonImage, buttonXmiddle, buttonY, buttonWidth, buttonHeight);
-	uiObjects[0] = new uiObject(buttonXmiddle, buttonY, buttonWidth, buttonHeight, 
-			function (){
-				console.log("restart. go to confirm menu.");
-				quitFromPause = false;
-				quitFromVictory = false;
-				setState(7);
-				console.log("Level: " + currentLevel)
-			});
-	
-    // left button
+    // Left Button - Back to main menu button
 	ctx.drawImage(mainMenuButtonImage, buttonXleft, buttonY, buttonWidth, buttonHeight);
 	uiObjects[1] = new uiObject(buttonXleft, buttonY, buttonWidth, buttonHeight, 
 			function () {
@@ -46,8 +35,18 @@ function drawPauseMenu() {
 				console.log("Level: " + currentLevel)
 			});
 
+    // Middle Button - Restart button
+	ctx.drawImage(restartButtonImage, buttonXmiddle, buttonY, buttonWidth, buttonHeight);
+	uiObjects[0] = new uiObject(buttonXmiddle, buttonY, buttonWidth, buttonHeight, 
+			function (){
+				console.log("restart. go to confirm menu.");
+				quitFromPause = false;
+				quitFromVictory = false;
+				setState(11);
+				console.log("Level: " + currentLevel)
+			});
 	
-    // right button
+    // Right Button - Resume button
 	ctx.drawImage(resumeButtonImage, buttonXright, buttonY, buttonWidth, buttonHeight);
 	uiObjects[2] = new uiObject(buttonXright, buttonY, buttonWidth, buttonHeight,
 			function (){
@@ -62,17 +61,17 @@ function drawPauseMenu() {
 
 
 
-//--------------------Confirm Menu--------------------
-function loadConfirmMenu() {
+//-------------Back to main menu Confirm Menu-------------
+function loadBackToMainMenuConfirmMenu() {
 	
-    // Confirm menu background image		
-    bgImage.src = "images/confirmScreen.png"; 
+    // Back to main screen confirm background image		
+    bgImage.src = "images/backToMainScreenConfirm.png"; 
 	resumeButtonImage.src = "images/noButton.png";
-    restartButtonImage.src = "images/yesButton.png";	
+    restartButtonImage.src = "images/yesButton.png";		
 }
 
 
-function drawConfirmMenu() {
+function drawBackToMainMenuConfirmMenu() {
     ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
     var buttonWidth = canvas.width / 10;
@@ -83,7 +82,7 @@ function drawConfirmMenu() {
 	var yesX = (noX / 2) - (buttonWidth / 2);            
 
 
-    // middle button
+    // Left Button - No Button
 	ctx.drawImage(restartButtonImage, noX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(noX, buttonY, buttonWidth, buttonHeight, 
 			function (){
@@ -120,7 +119,84 @@ function drawConfirmMenu() {
 				}
 			});	
 	
-    // left button
+    // Right Button - Yes Button
+	ctx.drawImage(resumeButtonImage, yesX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[1] = new uiObject(yesX, buttonY, buttonWidth, buttonHeight, 
+			function (){
+				// restart 
+				if (!quitFromPause && !quitFromVictory) {
+					console.log("Do not restart. Go back to pause menu");
+					setState(3);
+					console.log("Level: " + currentLevel)
+				}
+				// quit from pause 
+				else if (quitFromPause && !quitFromVictory) {
+					setState(3);
+				}
+				else if (!quitFromPause && quitFromVictory) {
+					setState(2);
+				}
+			});
+}
+    //-----------------Restart Confirm Menu---------------
+function loadRestartConfirmMenu() {
+	
+    // Restart screen confirm menu background image		
+    bgImage.src = "images/restartScreenConfirm.png"; 
+	resumeButtonImage.src = "images/noButton.png";
+    restartButtonImage.src = "images/yesButton.png";	
+}
+
+
+function drawRestartConfirmMenu() {
+     ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
+
+    var buttonWidth = canvas.width / 10;
+	var buttonHeight = canvas.height / 10;	
+	var	buttonY = canvas.height - (buttonHeight * 2);
+	//Button x positions
+	var noX = (canvas.width / 2) - (buttonWidth / 2);
+	var yesX = (noX / 2) - (buttonWidth / 2);            
+
+
+    // Left Button - No Button
+	ctx.drawImage(restartButtonImage, noX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[0] = new uiObject(noX, buttonY, buttonWidth, buttonHeight, 
+			function (){
+				// restart
+				if (!quitFromPause && !quitFromVictory) {
+					gamePaused = false; console.log(gamePaused); // unpause game
+					console.log("Restart game");
+					// initTimeSetting() in timer.js file
+					initTimeSetting();
+					finalTime = 0; 
+					levelScore = 0;
+					extraLevelScore = 0;
+					generateRule();
+					itemSelectedByPlayer = null;
+					setState(1);
+				}
+				// quit from pause
+				else if (quitFromPause && !quitFromVictory) {
+					initTimeSetting();
+					finalTime = 0;
+					levelScore = 0;
+					finalScore = 0;
+					extraLevelScore = 0;
+					setState(0);
+				}
+				// quit from victory
+				else if (!quitFromPause && quitFromVictory) {
+					initTimeSetting();
+					finalTime = 0;
+					levelScore = 0;
+					finalScore = 0;
+					extraLevelScore = 0;
+					setState(0);
+				}
+			});	
+	
+    // Right Button - Yes Button
 	ctx.drawImage(resumeButtonImage, yesX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[1] = new uiObject(yesX, buttonY, buttonWidth, buttonHeight, 
 			function (){
