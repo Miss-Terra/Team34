@@ -1,12 +1,22 @@
+	//levelTimer determines how much time you have on each level.
 var levelTimer;
+var startLevelTime;
 var lineTimer;
 var lineAccuracyCounter = 0; //Used to help remember each second between timer ticks.
 
 
 //----------level timer funtions---------
 function initTimeSetting() {
-	levelTime = 3 * 60;
+	setLineSpeed();
 }
+function setLineSpeed(){
+
+			  //lineSize and lineSpeed are defined in levels.js 
+	levelTime = Math.floor(lineSize * (5 * (lineSpeed/1000))); //Level time is based on line size and line speed.
+	startLevelTime = levelTime;
+}
+
+
 function startLevelTimer(){
 	// set interval and task
 	levelTimer = setInterval(levelTimerTick, 1000);
@@ -28,7 +38,8 @@ function startLineTimer(){
 	if (gamePaused == false){
   		lineAccuracyCounter = 0;
   	}
-	lineTimer = setInterval(lineTimerTick, 1000);
+  											//defined in level.js
+	lineTimer = setInterval(lineTimerTick, lineSpeed);
 	console.log("Line timer started");
 }
 

@@ -14,6 +14,13 @@ var extraLevelScore = 0;
 var ruleImage = new Image();
 var itemType;
 
+// Type of item
+var ruleType;
+// Number of specific item
+var ruleNumber;
+// Color of item
+var ruleColor;
+
 function drawSelected() {
 	if (itemSelectedByPlayer == selectionPerson.itemf) {
 		ctx.drawImage(selectionPerson.itemf, canvas.width / 100 * 43, -canvas.height / 10, canvas.width/10, canvas.height/4);
@@ -38,7 +45,7 @@ function drawSelected() {
 function drawRule() {
 	// display selected item in top box
 	//Comment out part of original code (moved to generateRule() )
-	/*switch (rule[0]) {
+	/*switch (ruleType) {
 		case 1:
 			itemType = "itemf";
 			break;
@@ -59,12 +66,12 @@ function drawRule() {
 			break;
 	}
 
-	ruleImage.src = "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png";*/
+	ruleImage.src = "images/items/" + itemType + "/" + itemType + "_" + ruleNumber + ruleColor + ".png";*/
 	
 	
 	if (ruleImage != null) {
 		
-		switch (rule[0]) {
+		switch (ruleType) {
 			case 1:
 				ctx.drawImage(ruleImage, canvas.width / 100 * 43, -canvas.height / 10, canvas.width/10, canvas.height/4);
 				break;
@@ -89,9 +96,9 @@ function drawRule() {
 
 function generateRule() {			
 
-	rule[0] = 0; // item location
-	rule[1] = 0; // item type
-	rule[2] = 0; // color
+	ruleType = 0; // item location
+	ruleNumber = 0; // item type
+	ruleColor = 0; // color
 	
 	// 1 = itemf
 	// 2 = hat
@@ -99,34 +106,37 @@ function generateRule() {
 	// 4 = pant
 	// 5 = shoe
 	// 6 = itemb
-	rule[0] = Math.floor(Math.random() * 6 + 1);
+	ruleType = Math.floor(Math.random() * 6 + 1);
 	
-	switch (rule[0]) {
+	switch (ruleType) {
 		case 1:
-			rule[1] = Math.floor(Math.random() * NumberItems + 1);
+			ruleNumber = Math.floor(Math.random() * NumberItems + 1);
 			break;
 		case 2:
-			rule[1] = Math.floor(Math.random() * NumberHats + 1);
+			ruleNumber = Math.floor(Math.random() * NumberHats + 1);
 			break;
 		case 3:
-			rule[1] = Math.floor(Math.random() * NumberShirts + 1);
+			ruleNumber = Math.floor(Math.random() * NumberShirts + 1);
 			break;
 		case 4:
-			rule[1] = Math.floor(Math.random() * NumberPants + 1);
+			ruleNumber = Math.floor(Math.random() * NumberPants + 1);
 			break;
 		case 5:
-			rule[1] = Math.floor(Math.random() * NumberShoes + 1);
+			ruleNumber = Math.floor(Math.random() * NumberShoes + 1);
 			break;
 		case 6:
-			rule[1] = Math.floor(Math.random() * NumberItems + 1);
+			ruleNumber = Math.floor(Math.random() * NumberItems + 1);
 			break;
 	}
 	
-	rule[2] = Math.floor(Math.random() * NumberColors + 1);
+	ruleColor = Math.floor(Math.random() * NumberColors + 1);
 	
 	
 	// Below code moved from original drawRule()
-	switch (rule[0]) {
+	switch (ruleType) {
+		case 0:
+			itemType = "ANY"
+			break;
 		case 1:
 			itemType = "itemf";
 			break;
@@ -147,7 +157,10 @@ function generateRule() {
 			break;
 	}
 
-	ruleImage.src = "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png";
+	//prevent crashing page by loading non-existent image
+	if (ruleColor != 0 && ruleNumber != 0) {
+	ruleImage.src = "images/items/" + itemType + "/" + itemType + "_" + ruleNumber + ruleColor + ".png";
+	} 
 
 	
 	
@@ -250,9 +263,6 @@ function generateRule() {
 
 function loadRules() {
 		
-	var buttonWidth = canvas.width/10;
-	var buttonHeight = canvas.height/10;	
-
 	// button to generate rules
 	/*ctx.drawImage(generateButtonImage, canvas.width*8/10, canvas.height*2/10, buttonWidth*2, buttonHeight);
 	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*2/10, buttonWidth*2, buttonHeight, 
@@ -260,50 +270,9 @@ function loadRules() {
 				generateRule();
 				personArray = genPeople(lineSize, dude);
 			});*/
-			
-	// button to skip level (just for testing)
-	ctx.drawImage(victoryButtonImage, canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight);
-	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight, 
-			function (){
-
-				if (itemSelectedByPlayer == null) {
-					// if no items selected, this button does nothing
-				}
-				else if (itemSelectedByPlayer.src.indexOf(ruleImage.src)!= -1)
-				{
-					// Score rule: pass level n in t seconds get ((100 * n) + (180 - t)) points 
-					levelScore = levelTime + 100;
-					// Set original "levelScore" to extraLevelScore for testing purpose
-					finalScore += levelScore + extraLevelScore;		
-					// Add finalTime
-					finalTime += levelTime;					
-					levelVictory = true;
-					setState(2); // Skip level screen
-					console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png");
-					console.log("final time: " + finalTime);
-				}
-				else {
-					if (currentLevel > 1) {
-						currentLevel--;
-					}
-					
-					levelVictory = false;					
-					setState(2); // Game over sreen
-					console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png");
-					console.log("final time: " + finalTime);
-				}
-					
-				/* Commented out original code
-				// Score rule: pass level n in t seconds get ((100 * n) + (180 - t)) points 
-				levelScore = levelTime + 100;
-				// Set original "levelScore" to extraLevelScore for testing purpose
-				finalScore += levelScore + extraLevelScore;				
-				levelVictory = true;
-				setState(2);
-				*/
-			});
-		
-	// Remove add score button.		
+	
+endLevelButton();
+	
 	// button to add scores (just for testing)
 	/*
 	ctx.drawImage(addscoreButtonImage, canvas.width*8/10, canvas.height*4/10, buttonWidth*2, buttonHeight);
@@ -327,8 +296,6 @@ function loadRules() {
 	// button to generate rules
 	//ctx.fillText("Generate", canvas.width*9/10, canvas.height*5/20);
 	
-	// button to skip level
-	ctx.fillText("Confirm Selection", canvas.width*9/10, canvas.height*7/20);
 	
 	// Remove add score button.
 	// button to add score 
@@ -356,6 +323,62 @@ function loadRules() {
 		setState(2);
 	}
 }
+
+function endLevelButton() {
+	
+	var buttonWidth = canvas.width/10;
+	var buttonHeight = canvas.height/10;	
+
+	// button to end level 
+	ctx.drawImage(victoryButtonImage, canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight);
+	
+	// button to end level
+	ctx.fillText("Confirm Selection", canvas.width*9/10, canvas.height*7/20);
+	
+	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight, 
+			function (){
+
+				if (itemSelectedByPlayer == null) {
+					// if no items selected, this button does nothing
+				} else if (itemSelectedByPlayer != 0) {
+
+					if (ruleNumber == 0) {
+						//compare color and type of item
+						
+					} else if (ruleColor == 0) {
+						//compare number and type of item
+						
+					}	else if (itemSelectedByPlayer.src.indexOf(ruleImage.src)!= -1) {
+ 							levelComplete();   					
+							console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + ruleNumber + ruleColor + ".png");
+							
+						}	else { //lost level
+							if (currentLevel > 1) {
+								currentLevel--;
+							}
+
+							levelVictory = false;					
+							setState(2); // Game over sreen
+							console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + ruleNumber + ruleColor + ".png");
+							console.log("final time: " + finalTime);
+					 }
+				}// if item selected by player
+					
+			}); //uiObject
+	
+}
+
+function levelComplete() {
+			// Score rule: pass level n in t seconds get ((100 * n) + (180 - t)) points 
+	levelScore = levelTime + 100;
+	// Set original "levelScore" to extraLevelScore for testing purpose
+	finalScore += levelScore + extraLevelScore;		
+	// Add finalTime
+	finalTime += 180 - levelTime;
+	levelVictory = true;
+	setState(2); // Result screen
+	console.log("final time: " + finalTime);
+	}
 
 function pad2(number) {
     return (number < 10 ? '0' : '') + number

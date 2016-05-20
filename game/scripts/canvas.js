@@ -4,13 +4,19 @@
 	var
 	canvas,
 	ctx,
+	oldCanvas,
+	oldCtx,
 	canvasRatio = 3/4,
 	winWidth = $(window).width(),
 	winHeight = $(window).height();
 
 	canvas = document.getElementById("canvas")
 	ctx = canvas.getContext("2d");
-	
+	oldCtx = ctx;
+	oldCanvas = canvas;
+	//Refresh the canvas to defaults.... Needed because CanvasInput.js.....
+	function restoreCanvas(){ctx = oldCtx;canvas = oldCanvas;resizeCanvas();}
+
 	//resize canvas during initialization.
 	resizeCanvas();
 

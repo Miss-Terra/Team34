@@ -22,12 +22,12 @@ function drawLine(){
 
 		//maxPeopleInLine in levels.js
 		//Make sure only a specific number people can show at one time.
-		if (i < maxPeopleInLine && personArray.length != 0 && i < 22){
+		if (i < maxPeopleInLine && personArray.length != 0 && i < 23){
 			personArray[i].setSize(personWidth, personHeight); // assign size variables to each person.
 			
 			if (i == 12){direction = "north"; counter = 1; lineXStart = personArray[i-1].x;}
 			else if (i == 14){direction = "east"; counter = 1; lineYStart = personArray[i-1].y;}
-			else if (i == 21){direction = "north"; counter = 1; lineXStart = personArray[i-1].x;}
+			else if (i == 22){direction = "north"; counter = 1; lineXStart = personArray[i-1].x;}
 
 
 

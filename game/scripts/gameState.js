@@ -17,7 +17,6 @@ var state = -1; // -1 is only used to define that no state has been issued yet.
 
 function setState(n){
 	if (state != n){
-
 		//Erases all UIobjects (buttons & clickable stuff)
 		uiObjects = [];
 
@@ -29,8 +28,15 @@ function setState(n){
 			stopAllTimers();
 		}else{ //If current state is not 1. 
 			uiPeople = []; //reset uiPeople.
+			if (state == 10){
+				inputField.destroy();
+				inputField = null;
+				
+			}
 		}
 		
+
+
 		state = n;
         //reloadGraphics() is in graphicsBase.js file
 		reloadGraphics();
