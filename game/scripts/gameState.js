@@ -1,5 +1,3 @@
-
-
 var state = -1; // -1 is only used to define that no state has been issued yet.
 
 
