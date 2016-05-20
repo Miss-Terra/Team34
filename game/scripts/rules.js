@@ -276,7 +276,7 @@ function loadRules() {
 					// Set original "levelScore" to extraLevelScore for testing purpose
 					finalScore += levelScore + extraLevelScore;		
 					// Add finalTime
-					finalTime += levelTime;					
+					finalTime += 180 - levelTime;
 					levelVictory = true;
 					setState(2); // Skip level screen
 					console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + rule[1] + rule[2] + ".png");
