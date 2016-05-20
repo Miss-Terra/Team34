@@ -27,20 +27,29 @@ screenTutorial.js
 canvas.js 
 - runs the base canvas and it's settings...
 
-display.js
-- contains functions to display the score, level, and time on various screens.
+databaseConnect.js
+- call PHP files. Database manipulation functions.
+
+drawItems.js
+- draw items, like: short, hat, shoes, suitcase... in game play screen.
 
 drawLine.js
 - defines how the people are visually arranged on the screen.
 
+drawTextPlayerStats.js
+- contains functions to display the score, level, and time on various screens.
+
 gameState.js 
 - defines the state of the game, and what screen/window/menu you're on.
+
+globals.js
+- Defines some global variables here. Scoring might take place here.
 
 graphicsBase.js 
 - defines the structure to how/what images are loaded onscreen during a state setup.
 
-globals.js
-- Defines some global variables here. Scoring might take place here.
+imageVariables.js
+- ?
 
 levels.js
 - holds rules and global variables defining how gameplay changes as the level increases.
