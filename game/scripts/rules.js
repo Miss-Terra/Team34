@@ -270,9 +270,7 @@ function loadRules() {
 				generateRule();
 				personArray = genPeople(lineSize, dude);
 			});*/
-	
-endLevelButton();
-	
+
 	// button to add scores (just for testing)
 	/*
 	ctx.drawImage(addscoreButtonImage, canvas.width*8/10, canvas.height*4/10, buttonWidth*2, buttonHeight);
@@ -306,6 +304,8 @@ endLevelButton();
 	// ctx.fillText("Game over", canvas.width*9/10, canvas.height*11/20);
 			
 			
+	endLevelButton();		
+			
 	// display item selected box
 	ctx.fillStyle = "#FFFFFF";
 	ctx.fillRect(canvas.width/2 - canvas.width/10, 0, canvas.width/5, canvas.height/7);
@@ -336,49 +336,62 @@ function endLevelButton() {
 	ctx.fillText("Confirm Selection", canvas.width*9/10, canvas.height*7/20);
 	
 	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight, 
-			function (){
+		function (){
 
-				if (itemSelectedByPlayer == null) {
-					// if no items selected, this button does nothing
-				} else if (itemSelectedByPlayer != 0) {
+		if (itemSelectedByPlayer == null) {
+			
+			// if no items selected, this button does nothing
+			
+		} else if (itemSelectedByPlayer != 0) {
 
-					if (ruleNumber == 0) {
-						//compare color and type of item
+			if (ruleNumber == 0) {
+				
+				//compare color and type of item
 						
-					} else if (ruleColor == 0) {
-						//compare number and type of item
+			} else if (ruleColor == 0) {
+				
+				//compare number and type of item
 						
-					}	else if (itemSelectedByPlayer.src.indexOf(ruleImage.src)!= -1) {
- 							levelComplete();   					
-							console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + ruleNumber + ruleColor + ".png");
-							
-						}	else { //lost level
-							if (currentLevel > 1) {
-								currentLevel--;
-							}
+			} else if (itemSelectedByPlayer.src.indexOf(ruleImage.src)!= -1) {
+				
+ 				levelComplete();   					
+				console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + ruleNumber + ruleColor + ".png");
+			
+			} else { //lost level
+			
+				if (currentLevel > 1) 
+					currentLevel--;
 
-							levelVictory = false;					
-							setState(2); // Game over sreen
-							console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + ruleNumber + ruleColor + ".png");
-							console.log("final time: " + finalTime);
-					 }
-				}// if item selected by player
+				// defeat theme
+				music = new Audio('audio/haha.mp3');
+				music.play();
+
+				levelVictory = false;					
+				setState(2); // Game over sreen
+				console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + ruleNumber + ruleColor + ".png");
+				console.log("final time: " + finalTime);
+			}
+		}// if item selected by player
 					
-			}); //uiObject
+	}); //uiObject
 	
 }
 
 function levelComplete() {
-			// Score rule: pass level n in t seconds get ((100 * n) + (180 - t)) points 
+	// Score rule: pass level n in t seconds get ((100 * n) + (180 - t)) points 
 	levelScore = levelTime + 100;
 	// Set original "levelScore" to extraLevelScore for testing purpose
 	finalScore += levelScore + extraLevelScore;		
 	// Add finalTime
 	finalTime += 180 - levelTime;
 	levelVictory = true;
+	
+	// victory theme
+	music = new Audio('audio/applause2.mp3');
+	music.play();
 	setState(2); // Result screen
 	console.log("final time: " + finalTime);
-	}
+}
 
 function pad2(number) {
     return (number < 10 ? '0' : '') + number

@@ -16,8 +16,7 @@ function loadResult(){
 function drawResult(){
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
-	
-		displayResult();
+	displayResult();
 	
 	var buttonWidth = canvas.width / 10;
 	var buttonHeight = canvas.height / 10;	
@@ -66,6 +65,7 @@ function drawResult(){
 	
 	ctx.drawImage(buttonImage, rightButtonX, buttonY, buttonWidth, buttonHeight);
 	if (levelVictory){ //If player beat the level	
+
 		uiObjects[2] = new uiObject(rightButtonX, buttonY, buttonWidth, buttonHeight, 
 				function (){
 					console.log("next");
@@ -80,7 +80,7 @@ function drawResult(){
 					console.log("Level: " + currentLevel)
 				});
 	} else { // if player lost
-	
+
 			// display rule box
 			if (currentLevel <= 10) {
 				ctx.fillStyle = "#FFFFFF";
