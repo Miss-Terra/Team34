@@ -13,6 +13,7 @@ function loadMainMenu() {
 	 finalScore = 0;
 	 finalTime = 0;
 	 
+	 // main menu music, allow looping
 	 music = new Audio('audio/defense_line.mp3');
 	 musicOn = true;
 	 music.loop = true;
@@ -130,7 +131,7 @@ function drawMainMenu(){
 				setState(5);
 			});
 			
-	// sound button
+	// music button
 	ctx.fillStyle = "white";
 	ctx.fillRect(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
 	

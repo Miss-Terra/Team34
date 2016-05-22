@@ -83,13 +83,6 @@
 		//button image is safe to load...
 		buttonReady = true;
 	};
-	
-	/*var addGameOverButtonImage = new Image();
-	var buttonReady = false;
-	addGameOverButtonImage.onload = function () {
-		//button image is safe to load...
-		buttonReady = true;
-	};*/
 
 	var speakerOnButtonImage = new Image();
 	var buttonReady = false;
