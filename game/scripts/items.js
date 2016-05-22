@@ -129,7 +129,7 @@ var Itm = {
 
 //Generate n item objects and return an array of size n.
 function genItems(n) {
-	var genItemArray[];
+	var genItemArray=[];
 	
 	for (i=0; i<n; i++) {
 		genItemArray[i] = new item();
@@ -198,6 +198,6 @@ var item = {
 
 
 	
-}
+
 
 	//var x7 = function(){};

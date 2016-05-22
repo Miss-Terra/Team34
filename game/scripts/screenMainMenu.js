@@ -2,7 +2,7 @@
 
 function loadMainMenu() {
 		
-	 bgImage.src = "images/mainMenu.jpg";
+	 bgImage.src = "images/backgframe2_600.png";
 	 playButtonImage.src = "images/playButton.png";
 	 tutorialButtonImage.src = "images/tutorialButton.png";
 	 scoreboardButtonImage.src = "images/scoreboardButton.png";
