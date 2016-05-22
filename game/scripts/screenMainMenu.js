@@ -12,6 +12,14 @@ function loadMainMenu() {
 	 easterEggclick = 0;
 	 finalScore = 0;
 	 finalTime = 0;
+	 
+	 music = new Audio('audio/defense_line.mp3');
+	 musicOn = true;
+	 music.loop = true;
+	 music.play();
+	 
+	 speakerOnButtonImage.src = "images/on.png";
+	 speakerOffButtonImage.src = "images/off.png";
 
 }
 
@@ -121,5 +129,27 @@ function drawMainMenu(){
 				console.log("credits");
 				setState(5);
 			});
+			
+	// sound button
+	ctx.fillStyle = "white";
+	ctx.fillRect(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
+	
+	if (musicOn) {
+		ctx.drawImage(speakerOnButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
+		uiObjects[5] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
+			function () {
+				musicOn = false;
+				music.pause();
+			});
+	}
+	else {
+		ctx.drawImage(speakerOffButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
+		uiObjects[5] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
+			function () {
+				musicOn = true;
+				music.loop = true;
+				music.play();
+			});
+	}
 
 }

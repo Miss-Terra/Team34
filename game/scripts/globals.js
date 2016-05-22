@@ -21,5 +21,10 @@ var NumberShoes=3;
 var NumberItems=3;
 var NumberColors=3;
 
+// pause or quit
 var quitFromPause;
 var quitFromVictory = false;
+
+// game music 
+var music;
+var musicOn;
