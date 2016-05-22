@@ -101,6 +101,11 @@ function drawMainMenu(){
 				initTimeSetting();
 				generateRule();
 				itemSelectedByPlayer = null;
+				
+				// turn off main menu music
+				musicOn = false;
+				music.pause();
+				
 				setState(1);
 				console.log("Level: " + currentLevel);
 			});
@@ -110,6 +115,8 @@ function drawMainMenu(){
 	uiObjects[1] = new uiObject(buttonX, tutorialY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("tutorial");
+				musicOn = false;
+				music.pause();
 				setState(9);
 			});	
 
@@ -119,6 +126,8 @@ function drawMainMenu(){
 	uiObjects[2] = new uiObject(buttonX, scoreboardY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("scoreboard");
+				musicOn = false;
+				music.pause();
 				setState(4);
 			});
 	
@@ -128,6 +137,8 @@ function drawMainMenu(){
 	uiObjects[3] = new uiObject(buttonX, creditsY, buttonWidth, buttonHeight,
 			function () {
 				console.log("credits");
+				musicOn = false;
+				music.pause();
 				setState(5);
 			});
 			
