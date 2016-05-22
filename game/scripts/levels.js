@@ -20,7 +20,40 @@ var MAXTYPES = 6; //Hat, shirt, pants, shoes, item1, item2
 var lineSize = 23;
 var maxPeopleInLine = 23; // Only display this number of people at a time.
 
-setSettings();
+function nextLevel(){
+	currentLevel++;
+	//We use lineSpeed in timer.js
+	lineSpeed = 1000*(1 - ((currentLevel-1)/68)); // Multiple this number by 5 to realise how often the line moves.
+//	setSettings();
+}
+
+//Basically I want a function in levels.js that is used to tweak the difficulty
+//based on level, using the rule setting functions in rules.js
+function setLevelDifficulty() {
+	
+	if (currentLevel >= 1 && currentLevel <= 5){
+    setRuleDifficulty(1);
+	} else if (currentLevel >= 6 && currentLevel <= 10){
+    setRuleDifficulty(2);
+	} else if (currentLevel >= 11 && currentLevel <= 15){
+    setRuleDifficulty(3);
+	} else if (currentLevel >= 16 && currentLevel <= 20){
+    setRuleDifficulty(4);
+	} else if (currentLevel >= 21 && currentLevel <= 25){
+    setRuleDifficulty(5);
+	} else if (currentLevel >= 26 && currentLevel <= 30){
+    setRuleDifficulty(6);
+	} else if (currentLevel >= 31 && currentLevel <= 34){
+    setRuleDifficulty(7);
+	}
+}
+
+/*
+//This is how long the line is.
+//Unused right now.
+function setLineSize(n){
+	lineSize = n;
+}
 
 //When loading a level... This sets up the difficulty & level settings.
 function setSettings(){
@@ -28,11 +61,7 @@ function setSettings(){
 	setItemVariety();
 }
 
-//This is how long the line is.
-//Unused right now.
-function setLineSize(n){
-	lineSize = n;
-}
+setSettings();
 
 //Sets the number of item types allowed.
 //Basically this adds 1 item type per 5 levels. (except at the start).
@@ -69,10 +98,4 @@ function setItemVariety(){
 	}
 
 }
-
-function nextLevel(){
-	currentLevel++;
-	//We use lineSpeed in timer.js
-	lineSpeed = 1000*(1 - ((currentLevel-1)/68)); // Multiple this number by 5 to realise how often the line moves.
-	setSettings();
-}
+*/

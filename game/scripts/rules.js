@@ -1,18 +1,10 @@
-
-var level = 1;
-var person = 1;
-var colors;
-var items;
-//var rule;
-var rule = [];
-var color = [];
-var item = [];
-var randomRule1, randomRule2;
-var operators;
-var join;
 var extraLevelScore = 0;
 var ruleImage = new Image();
 var itemType;
+
+//This determines the number of items selectable and the number of 
+//UI objects allowed in the rulebox
+var numberRuleItems;
 
 // Type of item
 var ruleType;
@@ -42,32 +34,8 @@ function drawSelected() {
 	}
 }
 
+//Can be called to draw the correct rule image to the screen(OLD)
 function drawRule() {
-	// display selected item in top box
-	//Comment out part of original code (moved to generateRule() )
-	/*switch (ruleType) {
-		case 1:
-			itemType = "itemf";
-			break;
-		case 2:
-			itemType = "hat";
-			break;
-		case 3:
-			itemType = "shirt";
-			break;
-		case 4:
-			itemType = "pant";
-			break;
-		case 5:
-			itemType = "shoe";
-			break;
-		case 6:
-			itemType = "itemb";
-			break;
-	}
-
-	ruleImage.src = "images/items/" + itemType + "/" + itemType + "_" + ruleNumber + ruleColor + ".png";*/
-	
 	
 	if (ruleImage != null) {
 		
@@ -94,6 +62,40 @@ function drawRule() {
 	}
 }	
 
+function loadRules() {
+	
+	var ruleboxWidth = canvas.width/4;
+	var ruleboxHeight = canvas.height/7;
+	
+	ctx.fillStyle = "#FFFFFF";
+	ctx.fillRect(canvas.width/2 - ruleboxWidth/2, 0, ruleboxWidth, ruleboxHeight);
+	
+	if (itemSelectedByPlayer != null)
+		drawSelected();
+		//drawRule(); // For testing if victory/fail mechanics work
+	
+	ctx.fillStyle = "#000000";
+	ctx.fillText("Selected", canvas.width/2, canvas.height/30);
+	
+
+	
+	// When timer reaches zero, level ends
+	if (levelTime == 0) {
+		finalScore += levelScore;
+		setState(2);
+	}
+
+//	borderImage.src = "images/itemSelect.png";
+//  borderImage2.src = "images/itemDeSelect.png";
+//	
+//	ctx.drawImage(borderImage2, 250, 250);
+
+	
+}
+
+
+
+//Generates a single rule.
 function generateRule() {			
 
 	ruleType = 0; // item location
@@ -129,7 +131,7 @@ function generateRule() {
 			break;
 	}
 	
-	ruleColor = Math.floor(Math.random() * NumberColors + 1);
+	ruleColor = Math.floor(Math.random() * NumberColors + 1); ///adjust to 0
 	
 	
 	// Below code moved from original drawRule()
@@ -161,170 +163,10 @@ function generateRule() {
 	if (ruleColor != 0 && ruleNumber != 0) {
 	ruleImage.src = "images/items/" + itemType + "/" + itemType + "_" + ruleNumber + ruleColor + ".png";
 	} 
-
 	
-	
-
-	/*if (currentLevel <= 5) {
-		// color matrix 
-		colors = [ "red", "yellow", "green", "blue" ];
-		// item matrix 
-		items = [ [ "none" ],
-				  [ "shirt" ],
-				  [ "none" ],
-				  [ "none" ], 
-				  [ "pants" ],
-				  [ "shoes" ] ];
-	
-		// items each character possesses 
-		color[0] = colors[Math.floor(Math.random() * colors.length)];
-		item[0] = items[0][Math.floor(Math.random() * items[0].length)];
-		color[1] = colors[Math.floor(Math.random() * colors.length)];
-		item[1] = items[1][Math.floor(Math.random() * items[1].length)];
-		color[2] = colors[Math.floor(Math.random() * colors.length)];
-		item[2] = items[2][Math.floor(Math.random() * items[2].length)];
-		color[3] = colors[Math.floor(Math.random() * colors.length)];
-		item[3] = items[3][Math.floor(Math.random() * items[3].length)];
-		color[4] = colors[Math.floor(Math.random() * colors.length)];
-		item[4] = items[4][Math.floor(Math.random() * items[4].length)];
-		color[5] = colors[Math.floor(Math.random() * colors.length)];
-		item[5] = items[5][Math.floor(Math.random() * items[5].length)];
-	}
-	else if (currentLevel <= 10) {
-		colors = [ "red", "yellow", "green", "blue", "black", "white" ];
-		items = [ [ "none", "hats" ],
-				  [ "shirt", "t-shirt" ],
-				  [ "none", "bag" ],
-				  [ "none", "bag" ] ,
-				  [ "pants", "shorts" ],
-				  [ "shoes", "boots" ] ];
-							  
-		color[0] = colors[Math.floor(Math.random() * colors.length)];
-		item[0] = items[0][Math.floor(Math.random() * items[0].length)];
-		color[1] = colors[Math.floor(Math.random() * colors.length)];
-		item[1] = items[1][Math.floor(Math.random() * items[1].length)];
-		color[2] = colors[Math.floor(Math.random() * colors.length)];
-		item[2] = items[2][Math.floor(Math.random() * items[2].length)];
-		color[3] = colors[Math.floor(Math.random() * colors.length)];
-		item[3] = items[3][Math.floor(Math.random() * items[3].length)];
-		color[4] = colors[Math.floor(Math.random() * colors.length)];
-		item[4] = items[4][Math.floor(Math.random() * items[4].length)];
-		color[5] = colors[Math.floor(Math.random() * colors.length)];
-		item[5] = items[5][Math.floor(Math.random() * items[5].length)];
-	}
-	else if (currentLevel <= 15) {
-		colors = [ "red", "yellow", "green", "blue", "black", "white", "brown", "gray" ];
-		items = [ [ "none", "hats", "sunglasses" ],
-				  [ "shirt", "t-shirt", "sleeveless" ],
-				  [ "none", "bag", "umbrella" ],
-				  [ "none", "bag", "umbrella" ],
-				  [ "pants", "shorts", "skirt" ],
-				  [ "shoes", "boots", "sandals" ] ];
-							  
-		color[0] = colors[Math.floor(Math.random() * colors.length)];
-		item[0] = items[0][Math.floor(Math.random() * items[0].length)];
-		color[1] = colors[Math.floor(Math.random() * colors.length)];
-		item[1] = items[1][Math.floor(Math.random() * items[1].length)];
-		color[2] = colors[Math.floor(Math.random() * colors.length)];
-		item[2] = items[2][Math.floor(Math.random() * items[2].length)];
-		color[3] = colors[Math.floor(Math.random() * colors.length)];
-		item[3] = items[3][Math.floor(Math.random() * items[3].length)];
-		color[4] = colors[Math.floor(Math.random() * colors.length)];
-		item[4] = items[4][Math.floor(Math.random() * items[4].length)];
-		color[5] = colors[Math.floor(Math.random() * colors.length)];
-		item[5] = items[5][Math.floor(Math.random() * items[5].length)];
-	}
-				
-	// rule consists of two items for level > 10 
-	if (currentLevel <= 10) {
-		randomRule1 = Math.floor(Math.random() * 6);
-				
-		while (item[randomRule1] == "none") {
-			randomRule1 = Math.floor(Math.random() * 6);
-		}
-					
-		rule += color[randomRule1] + " " + item[randomRule1];
-	}
-	else {
-		randomRule1 = Math.floor(Math.random() * 6);
-		randomRule2 = Math.floor(Math.random() * 6);
-		operators = [ "AND", "OR" ];
-		join = Math.floor(Math.random() * 2);
-				
-		while (item[randomRule1] == "none" || item[randomRule2] == "none" || randomRule1 == randomRule2 ) {
-			randomRule1 = Math.floor(Math.random() * 6);
-			randomRule2 = Math.floor(Math.random() * 6);
-		}
-					
-		rule += color[randomRule1] + " " + item[randomRule1] + " " + operators[join] + " " +
-				color[randomRule2] + " " + item[randomRule2];
-	}*/
 }
 
-function loadRules() {
-		
-	// button to generate rules
-	/*ctx.drawImage(generateButtonImage, canvas.width*8/10, canvas.height*2/10, buttonWidth*2, buttonHeight);
-	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*2/10, buttonWidth*2, buttonHeight, 
-			function (){
-				generateRule();
-				personArray = genPeople(lineSize, dude);
-			});*/
-	
-endLevelButton();
-	
-	// button to add scores (just for testing)
-	/*
-	ctx.drawImage(addscoreButtonImage, canvas.width*8/10, canvas.height*4/10, buttonWidth*2, buttonHeight);
-	uiObjects[2] = new uiObject(canvas.width*8/10, canvas.height*4/10, buttonWidth*2, buttonHeight, 
-			function (){
-				extraLevelScore += 5;
-			});
-
-
-	// Remove game over button.
-	// button to end game (just for testing)
-	ctx.drawImage(addGameOverButtonImage, canvas.width*8/10, canvas.height*5/10, buttonWidth*2, buttonHeight);
-	uiObjects[2] = new uiObject(canvas.width*8/10, canvas.height*5/10, buttonWidth*2, buttonHeight, 
-			function (){
-				finalScore += levelScore + extraLevelScore;
-				levelVictory = false;
-				setState(2);
-			});
-	 */
-	
-	// button to generate rules
-	//ctx.fillText("Generate", canvas.width*9/10, canvas.height*5/20);
-	
-	
-	// Remove add score button.
-	// button to add score 
-	// ctx.fillText("Add score", canvas.width*9/10, canvas.height*9/20);
-
-	// Remove game over button.
-	// button to end game
-	// ctx.fillText("Game over", canvas.width*9/10, canvas.height*11/20);
-			
-			
-	// display item selected box
-	ctx.fillStyle = "#FFFFFF";
-	ctx.fillRect(canvas.width/2 - canvas.width/10, 0, canvas.width/5, canvas.height/7);
-
-	if (itemSelectedByPlayer != null)
-		drawSelected();
-		//drawRule(); // For testing if victory/fail mechanics work
-	
-	ctx.fillStyle = "#000000";
-	ctx.fillText("Selected", canvas.width/2, canvas.height/30);
-	
-	// When timer reaches zero, level ends
-	if (levelTime == 0) {
-		finalScore += levelScore;
-		setState(2);
-	}
-}
-
-function endLevelButton() {
+function drawEndLevelButton() {
 	
 	var buttonWidth = canvas.width/10;
 	var buttonHeight = canvas.height/10;	
@@ -368,21 +210,62 @@ function endLevelButton() {
 	
 }
 
-function levelComplete() {
+//Type is x , number of rules is n
+function setRuleType(x, n){
+	
+	switch (x) {
+		case 1:
+			createRule(n);
+			break;	
+		case 2:
+			createRule(n);
+			break;	
+		case 3:
+			createRule(n);
+			break;	
+		case 4:
+			createRule(n);
+			break;	
+		case 5:
+			createRule(n);
+			break;	
+		case 6:
+	}
+	
+}
+
+	
+	function genRule() {
+		
+		var rule = {
+			
+			rtype,
+			rnumb,
+			rColor,
+			
+		};
+		
+		
+	}
+	
+// Updates score when level completed.
+function updateScore() {
 			// Score rule: pass level n in t seconds get ((100 * n) + (180 - t)) points 
 	levelScore = levelTime + 100;
 	// Set original "levelScore" to extraLevelScore for testing purpose
 	finalScore += levelScore + extraLevelScore;		
 	// Add finalTime
 	finalTime += 180 - levelTime;
+}
+	
+	
+// Called when end level button is pushed.
+function levelComplete() {
+	updateScore();
 	levelVictory = true;
 	setState(2); // Result screen
 	console.log("final time: " + finalTime);
 	}
-
-function pad2(number) {
-    return (number < 10 ? '0' : '') + number
-}
 
 //Settings that need to run during setup for gameplay. (runs once).
 function initGameSetting(){
@@ -392,5 +275,3 @@ function initGameSetting(){
 		personArray = genPeople(lineSize, dude); // generate the personArray. (globals.js)
 	}
 }
-
-

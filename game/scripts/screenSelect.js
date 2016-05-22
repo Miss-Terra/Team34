@@ -50,6 +50,7 @@ function initSelectionSetting(){
 	itembSelected = false;
 }
 
+//Draws the selection screen
 function drawCharSelection(){
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 	drawSelectMenuButtons();
@@ -110,7 +111,7 @@ function drawSelectMenuButtons(){
 }
 
 
-
+// I need to know what this funciton does....
 function drawSelectionChar(){
 
 	var x = canvas.width * 0.55;

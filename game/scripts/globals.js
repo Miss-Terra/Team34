@@ -1,6 +1,5 @@
 // This document holds global variables.
 // Scoring can also take place here.
-var currentLevel;
 var levelScore = 0; //The score unique to a specific level.
 var finalScore = 0; //The overall score between levels.
 var levelVictory = false; //Defines when a user is victorious or not.

@@ -56,3 +56,8 @@ function displayInLevel() {
 	ctx.fillText(levelTimeDisplay, canvas.width*9/10, canvas.height/5);
 	
 }
+
+//Used for displaying the correct time.
+function pad2(number) {
+    return (number < 10 ? '0' : '') + number
+}

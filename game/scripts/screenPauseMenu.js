@@ -74,17 +74,16 @@ function loadBackToMainMenuConfirmMenu() {
 function drawBackToMainMenuConfirmMenu() {
     ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
-    var buttonWidth = canvas.width / 10;
+  var buttonWidth = canvas.width / 10;
 	var buttonHeight = canvas.height / 10;	
-	var	buttonY = canvas.height - (buttonHeight * 2);
+	var	buttonY = canvas.height/2 - (buttonHeight / 2);
 	//Button x positions
-	var noX = (canvas.width / 2) - (buttonWidth / 2);
-	var yesX = (noX / 2) - (buttonWidth / 2);            
-
+	var buttonXleft = (buttonWidth);
+	var buttonXright = canvas.width - (buttonWidth *2);            
 
     // Left Button - No Button
-	ctx.drawImage(restartButtonImage, noX, buttonY, buttonWidth, buttonHeight);
-	uiObjects[0] = new uiObject(noX, buttonY, buttonWidth, buttonHeight, 
+	ctx.drawImage(restartButtonImage, buttonXright, buttonY, buttonWidth, buttonHeight);
+	uiObjects[0] = new uiObject(buttonXright, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				// restart
 				if (!quitFromPause && !quitFromVictory) {
@@ -120,8 +119,8 @@ function drawBackToMainMenuConfirmMenu() {
 			});	
 	
     // Right Button - Yes Button
-	ctx.drawImage(resumeButtonImage, yesX, buttonY, buttonWidth, buttonHeight);
-	uiObjects[1] = new uiObject(yesX, buttonY, buttonWidth, buttonHeight, 
+	ctx.drawImage(resumeButtonImage, buttonXleft, buttonY, buttonWidth, buttonHeight);
+	uiObjects[1] = new uiObject(buttonXleft, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				// restart 
 				if (!quitFromPause && !quitFromVictory) {
@@ -151,17 +150,17 @@ function loadRestartConfirmMenu() {
 function drawRestartConfirmMenu() {
      ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
-    var buttonWidth = canvas.width / 10;
+  var buttonWidth = canvas.width / 10;
 	var buttonHeight = canvas.height / 10;	
-	var	buttonY = canvas.height - (buttonHeight * 2);
+	var	buttonY = canvas.height/2 - (buttonHeight / 2);
 	//Button x positions
-	var noX = (canvas.width / 2) - (buttonWidth / 2);
-	var yesX = (noX / 2) - (buttonWidth / 2);            
+	var buttonXleft = (buttonWidth);
+	var buttonXright = canvas.width - (buttonWidth *2);            
 
 
     // Left Button - No Button
-	ctx.drawImage(restartButtonImage, noX, buttonY, buttonWidth, buttonHeight);
-	uiObjects[0] = new uiObject(noX, buttonY, buttonWidth, buttonHeight, 
+	ctx.drawImage(restartButtonImage, buttonXright, buttonY, buttonWidth, buttonHeight);
+	uiObjects[0] = new uiObject(buttonXright, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				// restart
 				if (!quitFromPause && !quitFromVictory) {
@@ -197,8 +196,8 @@ function drawRestartConfirmMenu() {
 			});	
 	
     // Right Button - Yes Button
-	ctx.drawImage(resumeButtonImage, yesX, buttonY, buttonWidth, buttonHeight);
-	uiObjects[1] = new uiObject(yesX, buttonY, buttonWidth, buttonHeight, 
+	ctx.drawImage(resumeButtonImage, buttonXleft, buttonY, buttonWidth, buttonHeight);
+	uiObjects[1] = new uiObject(buttonXleft, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				// restart 
 				if (!quitFromPause && !quitFromVictory) {
