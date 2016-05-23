@@ -78,16 +78,16 @@ function drawBackToMainMenuConfirmMenu() {
 	var buttonHeight = canvas.height / 10;	
 	var	buttonY = canvas.height - (buttonHeight * 2);
 	//Button x positions
-	var noX = (canvas.width / 2) - (buttonWidth / 2);
-	var yesX = (noX / 2) - (buttonWidth / 2);            
+	var yesX = (canvas.width / 2) - (buttonWidth / 2);
+	var noX = (yesX / 2) - (buttonWidth / 2);            
 
 
-    // Left Button - No Button
-	ctx.drawImage(restartButtonImage, noX, buttonY, buttonWidth, buttonHeight);
-	uiObjects[0] = new uiObject(noX, buttonY, buttonWidth, buttonHeight, 
+    // Right Button - Yes Button
+	ctx.drawImage(restartButtonImage, yesX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[0] = new uiObject(yesX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				// restart
-				if (!quitFromPause && !quitFromVictory) {
+				/*if (!quitFromPause && !quitFromVictory) {
 					gamePaused = false; console.log(gamePaused); // unpause game
 					console.log("Restart game");
 					// initTimeSetting() in timer.js file
@@ -98,14 +98,19 @@ function drawBackToMainMenuConfirmMenu() {
 					generateRule();
 					itemSelectedByPlayer = null;
 					setState(1);
-				}
+				}*/
 				// quit from pause
-				else if (quitFromPause && !quitFromVictory) {
+				 if (quitFromPause && !quitFromVictory) {
 					initTimeSetting();
 					finalTime = 0;
 					levelScore = 0;
 					finalScore = 0;
 					extraLevelScore = 0;
+					
+					// turn off gameplay music
+					musicOn = false;
+					music.pause();
+					
 					setState(0);
 				}
 				// quit from victory
@@ -115,24 +120,30 @@ function drawBackToMainMenuConfirmMenu() {
 					levelScore = 0;
 					finalScore = 0;
 					extraLevelScore = 0;
+					
+					// turn off victory music
+					musicOn = false;
+					music.pause();
+					
 					setState(0);
 				}
 			});	
 	
-    // Right Button - Yes Button
-	ctx.drawImage(resumeButtonImage, yesX, buttonY, buttonWidth, buttonHeight);
-	uiObjects[1] = new uiObject(yesX, buttonY, buttonWidth, buttonHeight, 
+    // Left Button - No Button
+	ctx.drawImage(resumeButtonImage, noX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[1] = new uiObject(noX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				// restart 
-				if (!quitFromPause && !quitFromVictory) {
+				/*if (!quitFromPause && !quitFromVictory) {
 					console.log("Do not restart. Go back to pause menu");
 					setState(3);
 					console.log("Level: " + currentLevel)
-				}
-				// quit from pause 
-				else if (quitFromPause && !quitFromVictory) {
+				}*/
+				// do not quit from pause 
+				 if (quitFromPause && !quitFromVictory) {
 					setState(3);
 				}
+				// do not quit from victory
 				else if (!quitFromPause && quitFromVictory) {
 					setState(2);
 				}
@@ -155,16 +166,16 @@ function drawRestartConfirmMenu() {
 	var buttonHeight = canvas.height / 10;	
 	var	buttonY = canvas.height - (buttonHeight * 2);
 	//Button x positions
-	var noX = (canvas.width / 2) - (buttonWidth / 2);
-	var yesX = (noX / 2) - (buttonWidth / 2);            
+	var yesX = (canvas.width / 2) - (buttonWidth / 2);
+	var noX = (yesX / 2) - (buttonWidth / 2);            
 
 
-    // Left Button - No Button
-	ctx.drawImage(restartButtonImage, noX, buttonY, buttonWidth, buttonHeight);
-	uiObjects[0] = new uiObject(noX, buttonY, buttonWidth, buttonHeight, 
+    // Right Button - Yes Button
+	ctx.drawImage(restartButtonImage, yesX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[0] = new uiObject(yesX, buttonY, buttonWidth, buttonHeight, 
 			function (){
-				// restart
-				if (!quitFromPause && !quitFromVictory) {
+				// restart level from pause
+				//if (!quitFromPause && !quitFromVictory) {
 					gamePaused = false; console.log(gamePaused); // unpause game
 					console.log("Restart game");
 					// initTimeSetting() in timer.js file
@@ -174,42 +185,56 @@ function drawRestartConfirmMenu() {
 					extraLevelScore = 0;
 					generateRule();
 					itemSelectedByPlayer = null;
+					
+					// turn off gameplay/victory music
+					musicOn = false;
+					music.pause();
+					
+					// gameplay music, allow looping
+					music = new Audio('audio/Pirates.mp3');
+					musicOn = true;
+					music.loop = true;
+					music.play();
+					
 					setState(1);
-				}
+				//}
 				// quit from pause
-				else if (quitFromPause && !quitFromVictory) {
+				/*else if (quitFromPause && !quitFromVictory) {
 					initTimeSetting();
 					finalTime = 0;
 					levelScore = 0;
 					finalScore = 0;
 					extraLevelScore = 0;
 					setState(0);
-				}
+				}*/
 				// quit from victory
-				else if (!quitFromPause && quitFromVictory) {
+				/*else if (!quitFromPause && quitFromVictory) {
 					initTimeSetting();
 					finalTime = 0;
 					levelScore = 0;
 					finalScore = 0;
 					extraLevelScore = 0;
 					setState(0);
-				}
+				}*/
 			});	
 	
-    // Right Button - Yes Button
-	ctx.drawImage(resumeButtonImage, yesX, buttonY, buttonWidth, buttonHeight);
-	uiObjects[1] = new uiObject(yesX, buttonY, buttonWidth, buttonHeight, 
+    // Left Button - No Button
+	ctx.drawImage(resumeButtonImage, noX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[1] = new uiObject(noX, buttonY, buttonWidth, buttonHeight, 
 			function (){
-				// restart 
+				// do not restart from pause
+				//if (quitFromPause) {
 				if (!quitFromPause && !quitFromVictory) {
 					console.log("Do not restart. Go back to pause menu");
 					setState(3);
 					console.log("Level: " + currentLevel)
 				}
-				// quit from pause 
+				/*// quit from pause 
 				else if (quitFromPause && !quitFromVictory) {
 					setState(3);
-				}
+				}*/
+				// do not restart from victory
+				//else if (quitFromVictory) {
 				else if (!quitFromPause && quitFromVictory) {
 					setState(2);
 				}

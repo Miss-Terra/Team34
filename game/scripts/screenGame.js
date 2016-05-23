@@ -16,10 +16,6 @@ function loadGame(){
 	victoryButtonImage.src = "images/button.png";
 	addscoreButtonImage.src = "images/button.png";
 	addGameOverButtonImage.src = "images/button.png";
-  	
-	// turn off main menu music
-	musicOn = false;
-	music.pause();
 	
 	initGameSetting(); //rules.js
 }

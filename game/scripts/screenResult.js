@@ -26,6 +26,8 @@ function drawResult(){
 	var leftButtonX = (middleButtonX / 2) - (buttonWidth / 2);
 	var rightButtonX = middleButtonX + (middleButtonX / 2) + (buttonWidth / 2);
 
+	
+	// middle button, restart
 	ctx.drawImage(restartButtonImage, middleButtonX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(middleButtonX, buttonY, buttonWidth, buttonHeight, 
 			function (){
@@ -37,7 +39,7 @@ function drawResult(){
 				initTimeSetting();
 				generateRule();
 				itemSelectedByPlayer = null;
-				setState(1);
+				setState(11);
 				console.log("Level: " + currentLevel)
 			});
 	
@@ -76,6 +78,17 @@ function drawResult(){
 					initTimeSetting();
 					generateRule();
 					itemSelectedByPlayer = null;
+					
+					// turn off victory music
+					musicOn = false;
+					music.pause();
+					
+					// gameplay music, allow looping
+					music = new Audio('audio/Pirates.mp3');
+					musicOn = true;
+					music.loop = true;
+					music.play();
+					
 					setState(1);
 					console.log("Level: " + currentLevel)
 				});

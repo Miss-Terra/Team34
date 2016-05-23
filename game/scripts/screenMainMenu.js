@@ -106,6 +106,12 @@ function drawMainMenu(){
 				musicOn = false;
 				music.pause();
 				
+				// gameplay music, allow looping
+				music = new Audio('audio/Pirates.mp3');
+				musicOn = true;
+				music.loop = true;
+				music.play();
+				
 				setState(1);
 				console.log("Level: " + currentLevel);
 			});
