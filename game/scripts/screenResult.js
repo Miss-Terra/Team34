@@ -121,9 +121,11 @@ function drawResult(){
 				function (){
 					console.log("Submit Score function here...");
 					//nextLevel();
-					setState(10);
+					
 					levelScore = 0;
 					extraLevelScore = 0;
+
+					setState(10);
 					console.log("Level: " + currentLevel)
 				});
 	}
