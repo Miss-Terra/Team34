@@ -363,14 +363,14 @@ function endLevelButton() {
 					currentLevel--;
 
 				// turn off gameplay music
-				musicOn = false;
 				music.pause();
 				
 				// defeat theme, allow looping
 				music = new Audio('audio/smw_gameover.mp3');
-				musicOn = true;
-				music.loop = true;
-				music.play();
+				if (musicOn) {
+					music.loop = true;
+					music.play();
+				}
 				
 				levelVictory = false;					
 				setState(2); // Game over sreen
@@ -393,14 +393,14 @@ function levelComplete() {
 	levelVictory = true;
 	
 	// turn off gameplay music
-	musicOn = false;
 	music.pause();
 	
 	// victory theme, allow looping
 	music = new Audio('audio/smw_bossvict.mp3');
-	musicOn = true;
-	music.loop = true;
-	music.play();
+	if (musicOn) {
+		music.loop = true;
+		music.play();
+	}
 
 	setState(2); // Result screen
 	console.log("final time: " + finalTime);

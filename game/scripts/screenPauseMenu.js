@@ -56,6 +56,28 @@ function drawPauseMenu() {
 				console.log("Level: " + currentLevel)
 			});
 			
+	// music button
+	ctx.fillStyle = "white";
+	ctx.fillRect(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
+	
+	if (musicOn) {
+		ctx.drawImage(speakerOnButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
+		uiObjects[3] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
+			function () {
+				musicOn = false;
+				music.pause();
+			});
+	}
+	else {
+		ctx.drawImage(speakerOffButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
+		uiObjects[3] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
+			function () {
+				musicOn = true;
+				music.loop = true;
+				music.play();
+			});
+	}
+			
 			displayPaused();
 }
 
@@ -108,7 +130,6 @@ function drawBackToMainMenuConfirmMenu() {
 					extraLevelScore = 0;
 					
 					// turn off gameplay music
-					musicOn = false;
 					music.pause();
 					
 					setState(0);
@@ -122,7 +143,6 @@ function drawBackToMainMenuConfirmMenu() {
 					extraLevelScore = 0;
 					
 					// turn off victory music
-					musicOn = false;
 					music.pause();
 					
 					setState(0);
@@ -187,14 +207,14 @@ function drawRestartConfirmMenu() {
 					itemSelectedByPlayer = null;
 					
 					// turn off gameplay/victory music
-					musicOn = false;
 					music.pause();
 					
 					// gameplay music, allow looping
 					music = new Audio('audio/Pirates.mp3');
-					musicOn = true;
-					music.loop = true;
-					music.play();
+					if (musicOn) {
+						music.loop = true;
+						music.play();
+					}
 					
 					setState(1);
 				//}

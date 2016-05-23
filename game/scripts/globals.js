@@ -27,4 +27,4 @@ var quitFromVictory = false;
 
 // game music 
 var music;
-var musicOn;
+var musicOn = true;

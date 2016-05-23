@@ -9,6 +9,9 @@ function loadScoreSubmission() {
   
    console.log("load once");
    drawInputField(); //  textBox.js	
+   
+   // turn off game over music
+	music.pause();
 
 }
 	
