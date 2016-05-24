@@ -104,7 +104,7 @@ function drawResult(){
 					music.pause();
 					
 					// gameplay music, allow looping
-					music = new Audio('audio/Pirates.mp3');
+					music = new Audio('audio/07-thor.mp3');
 					if (musicOn) {
 						music.loop = true;
 						music.play();
