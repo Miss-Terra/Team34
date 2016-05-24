@@ -310,9 +310,10 @@ function loadRules() {
 	ctx.fillStyle = "#FFFFFF";
 	ctx.fillRect(canvas.width/2 - canvas.width/10, 0, canvas.width/5, canvas.height/7);
 
-	if (itemSelectedByPlayer != null)
+	if (itemSelectedByPlayer != null) {
 		drawSelected();
 		//drawRule(); // For testing if victory/fail mechanics work
+	}
 	
 	ctx.fillStyle = "#000000";
 	ctx.fillText("Selected", canvas.width/2, canvas.height/30);
@@ -332,14 +333,20 @@ function endLevelButton() {
 	// button to end level 
 	ctx.drawImage(victoryButtonImage, canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight);
 	
-	// button to end level
-	ctx.fillText("Go", canvas.width*9/10, canvas.height*7/20);
+	// display text on end level button
+	if (itemSelectedByPlayer == null) {
+		ctx.fillText("Select an item", canvas.width*9/10, canvas.height*7/20);
+	}
+	else {
+		ctx.fillText("Go", canvas.width*9/10, canvas.height*7/20);
+	}
 	
+
 	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight, 
 		function (){
 
 		if (itemSelectedByPlayer == null) {
-			
+		
 			// if no items selected, this button does nothing
 			
 		} else if (itemSelectedByPlayer != 0) {
