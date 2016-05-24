@@ -111,7 +111,7 @@ function drawSelectMenuButtons(){
 }
 
 
-// I need to know what this funciton does....
+// I need to know what this function does....
 function drawSelectionChar(){
 
 	var x = canvas.width * 0.55;
@@ -134,9 +134,9 @@ function drawSelectionChar(){
 // (Calls the functions required to enable users to select the item.)	
 function drawItemSelection(x,y,w,h,id){
 	
-	if (numberSelected() == 1) {
+	if (numberSelected() == 1) { //Change to == numberRuleItems
 		allowed = false;
-	} else if (numberSelected() == 0) {
+	} else if (numberSelected() == 0) { // < numberRuleItems
 		allowed = true;
 	}
 	

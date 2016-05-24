@@ -13,6 +13,7 @@ var ruleNumber;
 // Color of item
 var ruleColor;
 
+// Draws one item selected by player (OLD)
 function drawSelected() {
 	if (itemSelectedByPlayer == selectionPerson.itemf) {
 		ctx.drawImage(selectionPerson.itemf, canvas.width / 100 * 43, -canvas.height / 10, canvas.width/10, canvas.height/4);
@@ -76,9 +77,7 @@ function loadRules() {
 	
 	ctx.fillStyle = "#000000";
 	ctx.fillText("Selected", canvas.width/2, canvas.height/30);
-	
 
-	
 	// When timer reaches zero, level ends
 	if (levelTime == 0) {
 		finalScore += levelScore;
@@ -89,13 +88,10 @@ function loadRules() {
 //  borderImage2.src = "images/itemDeSelect.png";
 //	
 //	ctx.drawImage(borderImage2, 250, 250);
-
-	
 }
 
 
-
-//Generates a single rule.
+//Generates a single rule. (OLD + new)
 function generateRule() {			
 
 	ruleType = 0; // item location
@@ -164,7 +160,7 @@ function generateRule() {
 	ruleImage.src = "images/items/" + itemType + "/" + itemType + "_" + ruleNumber + ruleColor + ".png";
 	} 
 	
-}
+} //End generateRule()
 
 function drawEndLevelButton() {
 	
@@ -210,43 +206,86 @@ function drawEndLevelButton() {
 	
 }
 
+function setRuleDifficulty(x) {
+ 
+	switch(x) {
+			case 0:
+
+			break;
+		case 1:
+numberRuleItems = 1;
+			break;
+		case 2:
+numberRuleItems = 2;
+			break;
+		case 3:
+numberRuleItems = 3;
+			break;
+	}
+}
+
 //Type is x , number of rules is n
 function setRuleType(x, n){
 	
 	switch (x) {
 		case 1:
-			createRule(n);
+			createRules(n);
 			break;	
 		case 2:
-			createRule(n);
+			createRules(n);
 			break;	
 		case 3:
-			createRule(n);
+			createRules(n);
 			break;	
 		case 4:
-			createRule(n);
+			createRules(n);
 			break;	
 		case 5:
-			createRule(n);
+			createRules(n);
 			break;	
 		case 6:
 	}
 	
 }
 
+
+function createRules(n) {
+	var ruleArray = [];
+	var selectArray = [];
 	
-	function genRule() {
-		
-		var rule = {
-			
-			rtype,
-			rnumb,
-			rColor,
-			
-		};
-		
-		
+	selectArray = genItems(n);
+	for (i = 0; i < n; i++){
+		ruleArray[i] = genRule();
 	}
+	return ruleArray;
+}
+
+//Function to make and return one rule object.
+function genRule() {
+	//Rule is an object storing these three properties.
+	var rule = {
+		rType,
+		rNumber,
+		rColor,
+		compareColor: function(item) {
+				return ((rColor == item.color) || (rColor == 0));
+		},
+		compareNumber: function(item) {
+				return ((rNumber == item.number) || (rNumber == 0));
+		},
+	};
+
+	generateRule();
+
+	this.rType=ruleType;
+	this.rNumber=ruleNumber;
+	this.rColor=ruleColor;
+	
+	return rule;
+}
+
+
+
 	
 // Updates score when level completed.
 function updateScore() {
@@ -257,7 +296,6 @@ function updateScore() {
 	// Add finalTime
 	finalTime += 180 - levelTime;
 }
-	
 	
 // Called when end level button is pushed.
 function levelComplete() {
