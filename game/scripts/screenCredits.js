@@ -3,7 +3,7 @@
 function loadCreditsMenu() {
 	
     // credits menu background image		
-    bgImage.src = "images/levelvictory.png";   
+    bgImage.src = "images/creditScreen.png";   
     mainMenuButtonImage.src = "images/mainMenuButton.png"; 
 	scoreLogo.src = "images/logoct2.png";	
 }
