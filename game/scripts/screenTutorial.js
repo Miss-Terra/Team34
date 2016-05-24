@@ -24,5 +24,5 @@ function drawTutorial(){
 				console.log("Go to main menu.");
                 levelTime = 0;
 				setState(0);
-			});
+			}, null, function() {});
 }

@@ -333,7 +333,7 @@ function endLevelButton() {
 	ctx.drawImage(victoryButtonImage, canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight);
 	
 	// button to end level
-	ctx.fillText("Confirm Selection", canvas.width*9/10, canvas.height*7/20);
+	ctx.fillText("Go", canvas.width*9/10, canvas.height*7/20);
 	
 	uiObjects[1] = new uiObject(canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight, 
 		function (){
@@ -379,7 +379,7 @@ function endLevelButton() {
 			}
 		}// if item selected by player
 					
-	}); //uiObject
+	}, null, function() {}); //uiObject
 	
 }
 

@@ -74,7 +74,7 @@ function drawSelectMenuButtons(){
 			function (){
 				console.log("Canceled Selecton...");
 				setState(1);
-			});	
+			}, null, function() {});	
 	
     // Yes button
 	ctx.drawImage(resumeButtonImage, yesX, yesY, buttonWidth, buttonHeight);
@@ -105,7 +105,7 @@ function drawSelectMenuButtons(){
 					console.log("PlayerSelection: itemBack");					
 				};
 								
-			});
+			}, null, function() {});
 
 }
 
@@ -151,7 +151,7 @@ function drawItemSelection(x,y,w,h,id){
 					hatSelected = false; // Hat selected
 				} else if (allowed==true) {hatSelected = true;}
 				console.log("hat selected.")
-		});
+		}, null, function() {});
 	}
 
 	if (id == "shirt"){
@@ -164,7 +164,7 @@ function drawItemSelection(x,y,w,h,id){
 					shirtSelected = false; // shirt selected
 				}else if (allowed==true) {shirtSelected = true;}
 				console.log("shirt selected.")
-		});		
+		}, null, function() {});		
 	}
 
 	if (id == "pants"){
@@ -177,7 +177,7 @@ function drawItemSelection(x,y,w,h,id){
 					pantsSelected = false; // pants selected
 				}else if (allowed==true) {pantsSelected = true;}
 				console.log("pants selected.")
-		});
+		}, null, function() {});
 	}
 
 	if (id == "shoes"){
@@ -190,7 +190,7 @@ function drawItemSelection(x,y,w,h,id){
 					shoesSelected = false; // shoes selected
 				}else if (allowed==true) {shoesSelected = true;}
 				console.log("shoes selected.")
-		});
+		}, null, function() {});
 	}
 	
 		if (id == "itemFront"){
@@ -203,7 +203,7 @@ function drawItemSelection(x,y,w,h,id){
 					itemfSelected = false; // Hat selected
 				}else if (allowed==true) {itemfSelected = true;}
 				console.log("front item selected.")
-		});
+		}, null, function() {});
 	}
 	
 		if (id == "itemBack"){
@@ -216,7 +216,7 @@ function drawItemSelection(x,y,w,h,id){
 					itembSelected = false; // Hat selected
 				}else if (allowed==true) {itembSelected = true;}
 				console.log("back item selected.")
-		});
+		}, null, function() {});
 	}
 
 	//create a box around each item.

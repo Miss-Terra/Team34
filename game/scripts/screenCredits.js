@@ -45,5 +45,5 @@ function drawCredits(){
                 levelTime = 0;
 				setState(0);
 				console.log("Level: " + currentLevel)
-			});
+			}, null, function() {});
 }

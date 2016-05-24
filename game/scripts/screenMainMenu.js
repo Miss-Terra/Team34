@@ -1,4 +1,3 @@
-
 //State 0
 
 function loadMainMenu() {
@@ -63,7 +62,7 @@ function drawMainMenu(){
 					menuLogo.src = "images/logoctBite3.png";		
 				} else
 					menuLogo.src = "images/logoctBite3.png";
-			});
+			}, null, function() {});
 	// Keep original Easter Egg code in case use another animation in future
 	/**	
 	var animationWidth = canvas.width / 6;
@@ -117,6 +116,9 @@ function drawMainMenu(){
 
 				setState(1);
 				console.log("Level: " + currentLevel);
+			}, null,
+			function() {
+				playButtonImage.src = "images/playButton3.png";
 			});
 			
     // top-middle button
@@ -126,7 +128,10 @@ function drawMainMenu(){
 				console.log("tutorial");
 				music.pause();
 				setState(9);
-			});	
+			}, null,
+			function() {
+				tutorialButtonImage.src = "images/tutorialButton3.png";
+			});
 
 	
     // middle-bottom button
@@ -136,6 +141,9 @@ function drawMainMenu(){
 				console.log("scoreboard");
 				music.pause();
 				setState(4);
+			}, null,
+			function() {
+				scoreboardButtonImage.src = "images/scoreboardButton3.png";
 			});
 	
 	
@@ -146,6 +154,9 @@ function drawMainMenu(){
 				console.log("credits");
 				music.pause();
 				setState(5);
+			}, null,
+			function() {
+				creditsButtonImage.src = "images/creditsButton3.png";
 			});
 			
 	// music button
@@ -158,7 +169,7 @@ function drawMainMenu(){
 			function () {
 				musicOn = false;
 				music.pause();
-			});
+			}, null, function() {});
 	}
 	else {
 		ctx.drawImage(speakerOffButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
@@ -167,7 +178,7 @@ function drawMainMenu(){
 				musicOn = true;
 				music.loop = true;
 				music.play();
-			});
+			}, null, function() {});
 	}
 
 }

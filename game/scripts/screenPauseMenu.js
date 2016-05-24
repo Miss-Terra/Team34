@@ -33,7 +33,7 @@ function drawPauseMenu() {
 				finalScore = 0;
 				extraLevelScore = 0;*/
 				console.log("Level: " + currentLevel)
-			});
+			}, null, function() {});
 
     // Middle Button - Restart button
 	ctx.drawImage(restartButtonImage, buttonXmiddle, buttonY, buttonWidth, buttonHeight);
@@ -44,7 +44,7 @@ function drawPauseMenu() {
 				quitFromVictory = false;
 				setState(11);
 				console.log("Level: " + currentLevel)
-			});
+			}, null, function() {});
 	
     // Right Button - Resume button
 	ctx.drawImage(resumeButtonImage, buttonXright, buttonY, buttonWidth, buttonHeight);
@@ -54,7 +54,7 @@ function drawPauseMenu() {
                 //Judy: will update State value when we have resume function
 				setState(1);
 				console.log("Level: " + currentLevel)
-			});
+			}, null, function() {});
 			
 	// music button
 	ctx.fillStyle = "white";
@@ -66,7 +66,7 @@ function drawPauseMenu() {
 			function () {
 				musicOn = false;
 				music.pause();
-			});
+			}, null, function() {});
 	}
 	else {
 		ctx.drawImage(speakerOffButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
@@ -75,7 +75,7 @@ function drawPauseMenu() {
 				musicOn = true;
 				music.loop = true;
 				music.play();
-			});
+			}, null, function() {});
 	}
 			
 			displayPaused();
@@ -147,7 +147,7 @@ function drawBackToMainMenuConfirmMenu() {
 					
 					setState(0);
 				}
-			});	
+			}, null, function() {});	
 	
     // Left Button - No Button
 	ctx.drawImage(resumeButtonImage, noX, buttonY, buttonWidth, buttonHeight);
@@ -167,7 +167,7 @@ function drawBackToMainMenuConfirmMenu() {
 				else if (!quitFromPause && quitFromVictory) {
 					setState(2);
 				}
-			});
+			}, null, function() {});
 }
     //-----------------Restart Confirm Menu---------------
 function loadRestartConfirmMenu() {
@@ -236,7 +236,7 @@ function drawRestartConfirmMenu() {
 					extraLevelScore = 0;
 					setState(0);
 				}*/
-			});	
+			}, null, function() {});	
 	
     // Left Button - No Button
 	ctx.drawImage(resumeButtonImage, noX, buttonY, buttonWidth, buttonHeight);
@@ -258,5 +258,5 @@ function drawRestartConfirmMenu() {
 				else if (!quitFromPause && quitFromVictory) {
 					setState(2);
 				}
-			});
+			}, null, function() {} );
 }
