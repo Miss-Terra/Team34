@@ -14,7 +14,7 @@ function loadScoreboard() {
 
    	bgImage.src = "images/levelvictory.png";
    	mainMenuButtonImage.src = "images/mainMenuButton.png";
-	scoreLogo.src = "images/logoct1.png";
+	scoreLogo.src = "images/logoct2.png";
   
    for (var i = 1; i <= 10; i++){
    	 connectLeaderboard(i,"Score");
@@ -26,6 +26,7 @@ function loadScoreboard() {
 
 function drawScoreboard(){
 	
+	// logo position
 	var logowidth = canvas.width/4;
 	var logoheight = canvas.height/8;
 
