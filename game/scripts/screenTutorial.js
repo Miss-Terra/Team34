@@ -11,7 +11,7 @@ function loadTutorialMenu() {
 function drawTutorial(){
     ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
-    var buttonWidth = canvas.width / 6;
+    var buttonWidth = canvas.width / 10;
 	var buttonHeight = canvas.height / 10;	
 	var	buttonY = canvas.height - (buttonHeight * 2);
 	//Button x positions

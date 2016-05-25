@@ -20,6 +20,7 @@ function displayResult() {
 //called in the Pause menu to display the level, score etc
 function displayPaused() {
 	
+	ctx.font = canvas.width/50 + "px Arial";
 	
 	// display level
 	var levelDisplay = "Level: " + currentLevel;
