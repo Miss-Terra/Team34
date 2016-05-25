@@ -111,37 +111,58 @@ function generateRule() {
 	// 5 = shoe
 	// 6 = itemb
 	ruleType = Math.floor(Math.random() * 6 + 1); //1-6
-	
-	switch (ruleType) {
+
+		switch (ruleType) { // 1+
 		case 1:
-			ruleNumber = Math.floor(Math.random() * (NumberItems + 1));
+			ruleNumber = Math.floor(1+ Math.random() * (NumberItems));
 			break;
 		case 2:
-			ruleNumber = Math.floor(Math.random() * (NumberHats + 1));
+			ruleNumber = Math.floor(1+ Math.random() * (NumberHats));
 			break;
 		case 3:
-			ruleNumber = Math.floor(Math.random() * (NumberShirts + 1));
+			ruleNumber = Math.floor(1+ Math.random() * (NumberShirts));
 			break;
 		case 4:
-			ruleNumber = Math.floor(Math.random() * (NumberPants + 1));
+			ruleNumber = Math.floor(1+ Math.random() * (NumberPants));
 			break;
 		case 5:
-			ruleNumber = Math.floor(Math.random() * (NumberShoes + 1));
+			ruleNumber = Math.floor(1+ Math.random() * (NumberShoes));
 			break;
 		case 6:
-			ruleNumber = Math.floor(Math.random() * (NumberItems + 1));
+			ruleNumber = Math.floor(1+ Math.random() * (NumberItems));
 			break;
 	}
 	
+//	switch (ruleType) { // 0+
+//		case 1:
+//			ruleNumber = Math.floor(Math.random() * (NumberItems + 1));
+//			break;
+//		case 2:
+//			ruleNumber = Math.floor(Math.random() * (NumberHats + 1));
+//			break;
+//		case 3:
+//			ruleNumber = Math.floor(Math.random() * (NumberShirts + 1));
+//			break;
+//		case 4:
+//			ruleNumber = Math.floor(Math.random() * (NumberPants + 1));
+//			break;
+//		case 5:
+//			ruleNumber = Math.floor(Math.random() * (NumberShoes + 1));
+//			break;
+//		case 6:
+//			ruleNumber = Math.floor(Math.random() * (NumberItems + 1));
+//			break;
+//	}
 	
-	if (ruleNumber != 0){
-	ruleColor = 0;
-	}
+	
+//	if (ruleNumber != 0){
+//	ruleColor = 0;
+//	}
 //	
 //	if (ruleNumber == 0) {
-//	ruleColor = Math.floor(1+Math.random() * (NumberColors)); ///1-3
+    	ruleColor = Math.floor(1+Math.random() * (NumberColors)); ///1-3
 //	} else {
-//	ruleColor = Math.floor(Math.random() * (NumberColors + 1)); ///0-3
+//	  ruleColor = Math.floor(Math.random() * (NumberColors + 1)); ///0-3
 //	}
 	
 	// Below code moved from original drawRule()
