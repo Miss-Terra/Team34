@@ -17,7 +17,7 @@ $result = 0; // holds the result of queries
 $row = array("","","","","","","","","",""); // Will hold each row of the 10.
  
 
-$con = mysqli_connect('sql3.freemysqlhosting.net','sql3119862','RPBZu79X53','sql3119862');
+$con = mysqli_connect('sql3.freemysqlhosting.net','sql3120944','9vHA8KKeQP','sql3120944');
 if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }

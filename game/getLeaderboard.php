@@ -13,7 +13,7 @@ $v = intval($_GET['v']);
   else if ($v == '4'){$v = 'Name';}
 
 //$con = mysqli_connect('sql300.byethost3.com','b3_18089762','Ekarc3000','b3_18089762_Leaderboard');
-$con = mysqli_connect('sql3.freemysqlhosting.net','sql3119862','RPBZu79X53','sql3119862');
+$con = mysqli_connect('sql3.freemysqlhosting.net','sql3120944','9vHA8KKeQP','sql3120944');
 if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
