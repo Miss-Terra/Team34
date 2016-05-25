@@ -118,7 +118,7 @@ function drawMainMenu(){
 				console.log("Level: " + currentLevel);
 			}, null,
 			function() {
-				playButtonImage.src = "images/playButton3.png";
+				playButtonImage.src = "images/playButton2.png";
 			});
 			
     // top-middle button
@@ -130,7 +130,7 @@ function drawMainMenu(){
 				setState(9);
 			}, null,
 			function() {
-				tutorialButtonImage.src = "images/tutorialButton3.png";
+				tutorialButtonImage.src = "images/tutorialButton2.png";
 			});
 
 	
@@ -143,7 +143,7 @@ function drawMainMenu(){
 				setState(4);
 			}, null,
 			function() {
-				scoreboardButtonImage.src = "images/scoreboardButton3.png";
+				scoreboardButtonImage.src = "images/scoreboardButton2.png";
 			});
 	
 	
@@ -156,7 +156,7 @@ function drawMainMenu(){
 				setState(5);
 			}, null,
 			function() {
-				creditsButtonImage.src = "images/creditsButton3.png";
+				creditsButtonImage.src = "images/creditsButton2.png";
 			});
 			
 	// music button
