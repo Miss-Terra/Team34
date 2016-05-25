@@ -20,6 +20,7 @@ function drawTutorial(){
     // right button
 	ctx.drawImage(mainMenuButtonImage, menuX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight, 
+			function() {
 				console.log("Go to main menu.");
                 levelTime = 0;
 				setState(0);
