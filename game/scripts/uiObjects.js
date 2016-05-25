@@ -1,5 +1,6 @@
 //A mouse listener for the canvas.
 canvas.addEventListener("click", mouseClick, false);
+canvas.addEventListener("mousedown", mouseDown, false);
 
 
 //Whenever user clicks the screen.
@@ -24,26 +25,43 @@ function mouseClick(e){
 			}
 		}
 	}
-	
-
 }
 
+//Whenever user clicks down the screen.
+function mouseDown(e){
+	
+	//Check all uiObjects, if you've clicked any of them...
+	for (var i = 0; i < uiObjects.length; i++){
+		//Compares mouse x&y to the object in question.
+		if (e.pageX > uiObjects[i].x && e.pageX < (uiObjects[i].x + uiObjects[i].width)
+			&& e.pageY > uiObjects[i].y && e.pageY < (uiObjects[i].y + uiObjects[i].height)){
+
+			uiObjects[i].down();
+		}
+	}
+}
+
+
+
+
 // Each object has a point & size... PLUS a unique function. :)
-var uiObject = function(x, y, width, height, funcClick, funcHover) {
+/*var uiObject = function(x, y, width, height, funcClick, funcHover) {
 	this.x = x;
     this.y = y;
     this.width = width;
     this.height = height; 
     this.clicked = funcClick; //Takes in a function. Therefore each uiObject can be unique.
     this.hover = funcHover; 
-}
+}*/
 
 // Each object has a point & size... PLUS a unique function. :)
-var uiObject = function(x, y, width, height, func, person) {
+var uiObject = function(x, y, width, height, clicked, person, down) {
 	this.x = x;
     this.y = y;
     this.width = width;
     this.height = height; 
-    this.clicked = func; //Takes in a function. Therefore each uiObject can be unique.
+    //this.clicked = func; //Takes in a function. Therefore each uiObject can be unique.
+	this.clicked = clicked;
     this.person = person;
+	this.down = down;
 }

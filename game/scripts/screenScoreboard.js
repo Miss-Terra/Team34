@@ -45,7 +45,7 @@ function drawScoreboard(){
 			console.log("menu");
 			setState(0);
 			console.log("Level: " + currentLevel)
-		});
+		}, null, function() {});
 		
 
 

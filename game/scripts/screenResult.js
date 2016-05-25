@@ -41,7 +41,7 @@ function drawResult(){
 				itemSelectedByPlayer = null;
 				setState(11);
 				console.log("Level: " + currentLevel)
-			});
+			}, null, function() {});
 	
 	ctx.drawImage(mainMenuButtonImage, leftButtonX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[1] = new uiObject(leftButtonX, buttonY, buttonWidth, buttonHeight, 
@@ -60,7 +60,7 @@ function drawResult(){
 				*/
 				initTimeSetting();
 				console.log("Level: " + currentLevel)
-			});
+			}, null, function() {});
 
 			
 	// music button
@@ -73,7 +73,7 @@ function drawResult(){
 			function () {
 				musicOn = false;
 				music.pause();
-			});
+			}, null, function() {});
 	}
 	else {
 		ctx.drawImage(speakerOffButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
@@ -82,7 +82,7 @@ function drawResult(){
 				musicOn = true;
 				music.loop = true;
 				music.play();
-			});
+			}, null, function() {});
 	}
 
 	
@@ -112,6 +112,9 @@ function drawResult(){
 					
 					setState(1);
 					console.log("Level: " + currentLevel)
+				}, null, 
+				function() {
+					buttonImage.src = "images/nextLevelButton3.png";
 				});
 	} else { // if player lost
 
@@ -146,6 +149,9 @@ function drawResult(){
 					levelScore = 0;
 					extraLevelScore = 0;
 					console.log("Level: " + currentLevel)
+				}, null, 
+				function() {
+					buttonImage.src = "images/submitButton3.png";
 				});
 	}
 
