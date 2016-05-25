@@ -88,6 +88,7 @@ function drawSelectMenuButtons(){
 				setState(1);
 				
 				// Assign item selected by player to itemSelectedByPlayer
+
 				
 				if (itemfSelected == true){
 					itemSelectedByPlayer = selectionPerson.itemf; 
@@ -142,7 +143,6 @@ function drawSelectMenuButtons(){
 }
 
 
-// I need to know what this function does....
 function drawSelectionChar(){
 
 	var x = canvas.width * 0.55;

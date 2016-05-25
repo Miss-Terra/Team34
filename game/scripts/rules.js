@@ -5,7 +5,6 @@ var itemType;
 var ruleArray = [];
 var selectArray = [];
 
-
 //This determines the number of items selectable and the number of 
 //UI objects allowed in the rulebox
 var numberRuleItems;
@@ -96,8 +95,8 @@ function loadRules() {
 //	ctx.drawImage(borderImage2, 250, 250);
 }
 
-
 //Generates a single rule. (OLD + new)
+
 function generateRule() {			
 
 	ruleType = 0; // item location
@@ -110,6 +109,7 @@ function generateRule() {
 	// 4 = pant
 	// 5 = shoe
 	// 6 = itemb
+
 	ruleType = Math.floor(Math.random() * 6 + 1); //1-6
 
 		switch (ruleType) { // 1+
@@ -258,7 +258,6 @@ function drawEndLevelButton() {
 							if (currentLevel > 1) {
 								currentLevel--;
 							}
-
 				// turn off gameplay music
 				music.pause();
 				

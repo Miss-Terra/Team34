@@ -189,7 +189,6 @@ function drawRestartConfirmMenu() {
 	var buttonXleft = (buttonWidth);
 	var buttonXright = canvas.width - (buttonWidth *2);            
 
-
     // Left Button - No Button
 	ctx.drawImage(restartButtonImage, buttonXright, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(buttonXright, buttonY, buttonWidth, buttonHeight, 

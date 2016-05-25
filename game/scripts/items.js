@@ -1,4 +1,4 @@
-var itemfArray = []; // = new Array();
+var itemfArray = new Array();
 var hatArray = new Array();
 var shirtArray = new Array();
 var pantArray = new Array();
@@ -35,6 +35,7 @@ function loadItems() {
 			itembArray[((f-1)*NumberItems) + i].src = ("images/items/itemb/itemb_" + i + f + ".png");
 		}
 	}
+
 	///////////////////////newItemArray//////////////////////
 	for (g=0; g<5; g++) {
 
@@ -107,6 +108,7 @@ var Itm = {
 	},
 	drawItmIndex: function(index, x, y) {
 		ctx.drawImage(newItemArray[index], x, y);
+
 	}
 }
 
@@ -201,8 +203,4 @@ var item = {
 	
 return item;
 }
-
-	
-
-
 	//var x7 = function(){};
