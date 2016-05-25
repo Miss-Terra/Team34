@@ -1,4 +1,4 @@
-var itemfArray = new Array();
+var itemfArray = []; // = new Array();
 var hatArray = new Array();
 var shirtArray = new Array();
 var pantArray = new Array();
@@ -129,15 +129,17 @@ var Itm = {
 
 //Generate n item objects and return an array of size n.
 function genItems(n) {
-	var genItemArray=[];
+	var item = [];
 	
-	for (i=0; i<n; i++) {
-		genItemArray[i] = new item();
+	for (i = 0; i < n; i++) {
+		item[i] = itemCon();
 	}
-	return genItemArray;
+	return item;
 }
 
 ////////New item Object
+function itemCon(){
+	
 var item = {
 	//CONSTANTS
 	ITEMWIDTH:62,
@@ -195,7 +197,10 @@ var item = {
 		// have the same number of variations
 	}
 };
-
+	
+	
+return item;
+}
 
 	
 

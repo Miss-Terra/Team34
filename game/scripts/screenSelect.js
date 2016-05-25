@@ -1,6 +1,7 @@
 //state 8
 var selectionPerson; // This variable is a person. It's defined in drawLine.js... Whenever a user clicks a person.
 var itemSelectedByPlayer; // Item seleted by player
+var ruleTypeSelected;
 
 ////////////////////////////
 
@@ -55,6 +56,7 @@ function drawCharSelection(){
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 	drawSelectMenuButtons();
 	drawSelectionChar();
+	console.log(ruleType, ruleNumber, ruleColor)
 }
 
 
@@ -86,26 +88,52 @@ function drawSelectMenuButtons(){
 				setState(1);
 				
 				// Assign item selected by player to itemSelectedByPlayer
-				if (hatSelected == true){
-					itemSelectedByPlayer = selectionPerson.hat 
-					console.log("PlayerSelection: hat");
+				
+				if (itemfSelected == true){
+					itemSelectedByPlayer = selectionPerson.itemf; 
+					console.log("PlayerSelection: itemFront")
+				} else if (hatSelected == true){
+					itemSelectedByPlayer = selectionPerson.hat; 
+					console.log("PlayerSelection: hat")
 				} else if (shirtSelected == true){
-					itemSelectedByPlayer = selectionPerson.shirt 
-					console.log("PlayerSelection: shirt");
+					itemSelectedByPlayer = selectionPerson.shirt; 
+					console.log("PlayerSelection: shirt")
 				} else if (pantsSelected == true){
-					itemSelectedByPlayer = selectionPerson.pants 
-					console.log("PlayerSelection: pants");
+					itemSelectedByPlayer = selectionPerson.pants; 
+					console.log("PlayerSelection: pants")
 				} else if (shoesSelected == true){
-					itemSelectedByPlayer = selectionPerson.shoes 
-					console.log("PlayerSelection: shoes");
-				} else if (itemfSelected == true){
-					itemSelectedByPlayer = selectionPerson.itemf 
-					console.log("PlayerSelection: itemFront");
+					itemSelectedByPlayer = selectionPerson.shoes; 
+					console.log("PlayerSelection: shoes")
 				} else if (itembSelected == true){
-					itemSelectedByPlayer = selectionPerson.itemb 
-					console.log("PlayerSelection: itemBack");					
+					itemSelectedByPlayer = selectionPerson.itemb; 
+					console.log("PlayerSelection: itemBack")					
 				};
-								
+//				if (itemfSelected == true){
+//					itemSelectedByPlayer = selectionPerson.itemf; 
+//					console.log("PlayerSelection: itemFront")
+//					ruleTypeSelected = 1;
+//				} else if (hatSelected == true){
+//					itemSelectedByPlayer = selectionPerson.hat; 
+//					console.log("PlayerSelection: hat")
+//					ruleTypeSelected = 2;
+//				} else if (shirtSelected == true){
+//					itemSelectedByPlayer = selectionPerson.shirt; 
+//					console.log("PlayerSelection: shirt")
+//					ruleTypeSelected = 3;
+//				} else if (pantsSelected == true){
+//					itemSelectedByPlayer = selectionPerson.pants; 
+//					console.log("PlayerSelection: pants")
+//					ruleTypeSelected = 4;
+//				} else if (shoesSelected == true){
+//					itemSelectedByPlayer = selectionPerson.shoes; 
+//					console.log("PlayerSelection: shoes")
+//					ruleTypeSelected = 5;
+//				} else if (itembSelected == true){
+//					itemSelectedByPlayer = selectionPerson.itemb; 
+//					console.log("PlayerSelection: itemBack")					
+//					ruleTypeSelected = 6;
+//				};
+//								
 			});
 
 }

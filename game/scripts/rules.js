@@ -2,6 +2,10 @@ var extraLevelScore = 0;
 var ruleImage = new Image();
 var itemType;
 
+var ruleArray = [];
+var selectArray = [];
+
+
 //This determines the number of items selectable and the number of 
 //UI objects allowed in the rulebox
 var numberRuleItems;
@@ -33,6 +37,8 @@ function drawSelected() {
 	else if (itemSelectedByPlayer == selectionPerson.itemb) {
 		ctx.drawImage(selectionPerson.itemb, canvas.width / 100 * 49, -canvas.height / 10, canvas.width/10, canvas.height/4);
 	}
+	
+//	selectArray[0].draw();
 }
 
 //Can be called to draw the correct rule image to the screen(OLD)
@@ -104,31 +110,39 @@ function generateRule() {
 	// 4 = pant
 	// 5 = shoe
 	// 6 = itemb
-	ruleType = Math.floor(Math.random() * 6 + 1);
+	ruleType = Math.floor(Math.random() * 6 + 1); //1-6
 	
 	switch (ruleType) {
 		case 1:
-			ruleNumber = Math.floor(Math.random() * NumberItems + 1);
+			ruleNumber = Math.floor(Math.random() * (NumberItems + 1));
 			break;
 		case 2:
-			ruleNumber = Math.floor(Math.random() * NumberHats + 1);
+			ruleNumber = Math.floor(Math.random() * (NumberHats + 1));
 			break;
 		case 3:
-			ruleNumber = Math.floor(Math.random() * NumberShirts + 1);
+			ruleNumber = Math.floor(Math.random() * (NumberShirts + 1));
 			break;
 		case 4:
-			ruleNumber = Math.floor(Math.random() * NumberPants + 1);
+			ruleNumber = Math.floor(Math.random() * (NumberPants + 1));
 			break;
 		case 5:
-			ruleNumber = Math.floor(Math.random() * NumberShoes + 1);
+			ruleNumber = Math.floor(Math.random() * (NumberShoes + 1));
 			break;
 		case 6:
-			ruleNumber = Math.floor(Math.random() * NumberItems + 1);
+			ruleNumber = Math.floor(Math.random() * (NumberItems + 1));
 			break;
 	}
 	
-	ruleColor = Math.floor(Math.random() * NumberColors + 1); ///adjust to 0
 	
+	if (ruleNumber != 0){
+	ruleColor = 0;
+	}
+//	
+//	if (ruleNumber == 0) {
+//	ruleColor = Math.floor(1+Math.random() * (NumberColors)); ///1-3
+//	} else {
+//	ruleColor = Math.floor(Math.random() * (NumberColors + 1)); ///0-3
+//	}
 	
 	// Below code moved from original drawRule()
 	switch (ruleType) {
@@ -179,14 +193,15 @@ function drawEndLevelButton() {
 				if (itemSelectedByPlayer == null) {
 					// if no items selected, this button does nothing
 				} else if (itemSelectedByPlayer != 0) {
-
+					
 					if (ruleNumber == 0) {
 						//compare color and type of item
 						
 					} else if (ruleColor == 0) {
 						//compare number and type of item
 						
-					}	else if (itemSelectedByPlayer.src.indexOf(ruleImage.src)!= -1) {
+					}	else if ((itemSelectedByPlayer.src.indexOf(ruleImage.src)!= -1) || 
+					(ruleTypeSelected == ruleType)){
  							levelComplete();   					
 							console.log("Correct rule:" + "images/items/" + itemType + "/" + itemType + "_" + ruleNumber + ruleColor + ".png");
 							
@@ -250,8 +265,6 @@ function setRuleType(x, n){
 
 
 function createRules(n) {
-	var ruleArray = [];
-	var selectArray = [];
 	
 	selectArray = genItems(n);
 	for (i = 0; i < n; i++){
@@ -298,7 +311,7 @@ function updateScore() {
 }
 	
 // Called when end level button is pushed.
-function levelComplete() {
+function levelComplete() { 
 	updateScore();
 	levelVictory = true;
 	setState(2); // Result screen
