@@ -57,8 +57,6 @@ function drawPauseMenu() {
 			}, null, function() {});
 			
 	// music button
-	ctx.fillStyle = "white";
-	ctx.fillRect(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
 	
 	if (musicOn) {
 		ctx.drawImage(speakerOnButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
