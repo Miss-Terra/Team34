@@ -16,6 +16,7 @@ function loadResult(){
 function drawResult(){
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
+	ctx.fillStyle = "white";
 	displayResult();
 	
 	var buttonWidth = canvas.width / 10;
