@@ -39,7 +39,7 @@ Escape District 34.
 			State 3 == Pause menu screen //screenPauseMenu.js
 			State 4 == Score screen  //screenScoreboard.js
 			State 5 == Credits screen //screenCredits.js
-			State 6 == Extra screen //
+			State 6 == Achievements screen // screenAchievements.js
 			State 7 == Confirm screen //screenPauseMenu.js (halfway down the screen)
 			State 8 == Item Select screen //screenSelect.js
 			State 9 == Tutorial screen //screenTutorial.js
