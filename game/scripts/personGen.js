@@ -46,14 +46,14 @@ function genPerson(num, personImg){
 				} else {
 					this.itemf = itemfArray[NumberItems*(ruleColor-1) + ruleNumber];
 					
-					if (this.number == correctPerson) {
-						//
-					} else {
-							this.itemf = itemfArray[NumberItems*(ruleColor-1) + ruleNumber];
-//						while (this.itemf === person[correctPerson].itemf) {
+//					if (this.number == correctPerson) {
+//						//
+//					} else {
 //							this.itemf = itemfArray[NumberItems*(ruleColor-1) + ruleNumber];
-//						}
-					}
+////						while (this.itemf === person[correctPerson].itemf) {
+////							this.itemf = itemfArray[NumberItems*(ruleColor-1) + ruleNumber];
+////						}
+//					}
 				}
 
 				this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
@@ -70,14 +70,14 @@ function genPerson(num, personImg){
 				} else {
 					this.hat = hatArray[NumberItems*(ruleColor-1) + ruleNumber];
 					
-					if (this.number == correctPerson) {
-						//
-					} else {
-							this.hat = hatArray[NumberItems*(ruleColor-1) + ruleNumber];
-//						while (this.hat === person[correctPerson].hat) {
+//					if (this.number == correctPerson) {
+//						//
+//					} else {
 //							this.hat = hatArray[NumberItems*(ruleColor-1) + ruleNumber];
-//						}
-					}
+////						while (this.hat === person[correctPerson].hat) {
+////							this.hat = hatArray[NumberItems*(ruleColor-1) + ruleNumber];
+////						}
+//					}
 				}
 
 				this.shirt = shirtArray[Math.floor((Math.random() * 12) + 1)];
@@ -95,14 +95,14 @@ function genPerson(num, personImg){
 				} else {
 					this.shirt = shirtArray[NumberItems*(ruleColor-1) + ruleNumber];
 					
-					if (this.number == correctPerson) {
-						//
-					} else {
-							this.shirt = shirtArray[NumberItems*(ruleColor-1) + ruleNumber];
-//						while (this.shirt === person[correctPerson].shirt) {
+//					if (this.number == correctPerson) {
+//						//
+//					} else {
 //							this.shirt = shirtArray[NumberItems*(ruleColor-1) + ruleNumber];
-//						}
-					}
+////						while (this.shirt === person[correctPerson].shirt) {
+////							this.shirt = shirtArray[NumberItems*(ruleColor-1) + ruleNumber];
+////						}
+//					}
 				}
 
 				this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
@@ -123,12 +123,12 @@ function genPerson(num, personImg){
 					
 					if (this.number == correctPerson) {
 						//
-					} else {
-							this.pants = pantArray[NumberItems*(ruleColor-1) + ruleNumber];
-//						while (this.pants === person[correctPerson].pants) {
+//					} else {
 //							this.pants = pantArray[NumberItems*(ruleColor-1) + ruleNumber];
-//						}
-					}
+////						while (this.pants === person[correctPerson].pants) {
+////							this.pants = pantArray[NumberItems*(ruleColor-1) + ruleNumber];
+////						}
+//					}
 				}
 
 				this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
@@ -150,11 +150,11 @@ function genPerson(num, personImg){
 					if (this.number == correctPerson) {
 						//
 					} else {
-							this.shoes = shoeArray[NumberItems*(ruleColor-1) + ruleNumber];
-//						while (this.shoes === person[correctPerson].shoes) {
-//							this.shoes = shoesArray[NumberItems*(ruleColor-1) + ruleNumber];
-//						}
-					}
+//							this.shoes = shoeArray[NumberItems*(ruleColor-1) + ruleNumber];
+////						while (this.shoes === person[correctPerson].shoes) {
+////							this.shoes = shoesArray[NumberItems*(ruleColor-1) + ruleNumber];
+////						}
+//					}
 				}
 
 				this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
@@ -175,11 +175,11 @@ function genPerson(num, personImg){
 					
 					if (this.number == correctPerson) {
 						//
-					} else {
-							this.itemb = itembArray[NumberItems*(ruleColor-1) + ruleNumber];
-//						while (this.itemb === person[correctPerson].itemb) {
+//					} else {
 //							this.itemb = itembArray[NumberItems*(ruleColor-1) + ruleNumber];
-//						}
+////						while (this.itemb === person[correctPerson].itemb) {
+////							this.itemb = itembArray[NumberItems*(ruleColor-1) + ruleNumber];
+////						}
 					}
 				}
 	
