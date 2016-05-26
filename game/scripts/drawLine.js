@@ -1,8 +1,5 @@
-
-	
 //Draw the line of people.
 function drawLine(){
-
 
 	var personWidth = canvas.width/16;
 	var personHeight = canvas.height/5.5;
