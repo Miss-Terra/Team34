@@ -156,7 +156,10 @@ function drawBackToMainMenuConfirmMenu() {
 					
 					setState(0);
 				}
-			}, null, function() {});	
+			}, null,
+			function() {
+				restartButtonImage.src = "images/yesButton2.png";
+			});	
 	
     // Right Button - Yes Button
 	ctx.drawImage(resumeButtonImage, buttonXleft, buttonY, buttonWidth, buttonHeight);
@@ -177,7 +180,10 @@ function drawBackToMainMenuConfirmMenu() {
 				else if (!quitFromPause && quitFromVictory) {
 					setState(2);
 				}
-			}, null, function() {});
+			}, null,
+			function() {
+				resumeButtonImage.src = "images/noButton2.png";
+			});	
 }
     //-----------------Restart Confirm Menu---------------
 function loadRestartConfirmMenu() {
@@ -246,7 +252,10 @@ function drawRestartConfirmMenu() {
 					extraLevelScore = 0;
 					setState(0);
 				}*/
-			}, null, function() {});	
+			}, null,
+			function() {
+				restartButtonImage.src = "images/yesButton2.png";
+			});		
 	
     // Right Button - Yes Button
 	ctx.drawImage(resumeButtonImage, buttonXleft, buttonY, buttonWidth, buttonHeight);
@@ -269,5 +278,8 @@ function drawRestartConfirmMenu() {
 				else if (!quitFromPause && quitFromVictory) {
 					setState(2);
 				}
-			}, null, function() {} );
+			}, null,
+			function() {
+				resumeButtonImage.src = "images/yesButton2.png";
+			});	
 }
