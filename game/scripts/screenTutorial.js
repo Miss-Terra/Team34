@@ -24,7 +24,9 @@ function drawTutorial(){
 	var buttonXleft = (buttonXmiddle / 2) - (buttonWidth / 2);            
 	
 	// Left Button - Back to previous page
-	ctx.drawImage(backButtonImage, buttonXleft, buttonY, buttonWidth, buttonHeight);
+	if (tutorialImageNum > 1) {
+		ctx.drawImage(backButtonImage, buttonXleft, buttonY, buttonWidth, buttonHeight);
+	}
 	uiObjects[0] = new uiObject(buttonXleft, buttonY, buttonWidth, buttonHeight, 
 			function () {
 				if (tutorialImageNum <= 1) {
@@ -37,7 +39,9 @@ function drawTutorial(){
 			}, null, function() {});
 
     // Middle Button - Go to next page
-	ctx.drawImage(nextButtonImage, buttonXmiddle, buttonY, buttonWidth, buttonHeight);
+	if (tutorialImageNum < 6) {
+		ctx.drawImage(nextButtonImage, buttonXmiddle, buttonY, buttonWidth, buttonHeight);
+	}
 	uiObjects[1] = new uiObject(buttonXmiddle, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				if (tutorialImageNum >= 6) {
