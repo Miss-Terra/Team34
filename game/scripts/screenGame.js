@@ -5,6 +5,7 @@ function loadGame(){
 	// images
 	bgImage.src = "images/backgframe_480.jpg";
 	dude.src = "images/person.png";
+	scrollImage.src = "images/scroll.png";
 	
 	// required buttons
  	pauseButtonImage.src = "images/gmenub1.png";
@@ -17,9 +18,9 @@ function loadGame(){
 	addscoreButtonImage.src = "images/button.png";
 	addGameOverButtonImage.src = "images/button.png";
 
-	// turn off main menu music
+	/*// turn off main menu music
 	musicOn = false;
-	music.pause();
+	music.pause();*/
 	
 	initGameSetting(); //rules.js
 }
@@ -50,5 +51,9 @@ function addMenuButton() {
 				gamePaused = true; console.log(gamePaused); // pause game
 				setState(3);
 				console.log("Level: " + currentLevel)
+<<<<<<< HEAD
 			}, null, function(){});
+=======
+			}, null, function() {});
+>>>>>>> c34991254d39fb44a5bf9f77fe2d638d976f3a96
 	}	

@@ -27,7 +27,7 @@ var quitFromVictory = false;
 
 // game music 
 var music;
-var musicOn;
+var musicOn = true;
 
 // tutorial screen: display tutorial image based on users click 
 var tutorialImageNum = 1;
