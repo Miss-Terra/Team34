@@ -67,30 +67,12 @@ function drawResult(){
 	// music button
 	ctx.fillStyle = "white";
 	ctx.fillRect(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
-	
-	if (musicOn) {
-		ctx.drawImage(speakerOnButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
-		uiObjects[2] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
-			function () {
-				musicOn = false;
-				music.pause();
-			}, null, function() {});
-	}
-	else {
-		ctx.drawImage(speakerOffButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
-		uiObjects[3] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
-			function () {
-				musicOn = true;
-				music.loop = true;
-				music.play();
-			}, null, function() {});
-	}
 
 	
 	ctx.drawImage(buttonImage, rightButtonX, buttonY, buttonWidth, buttonHeight);
 	if (levelVictory){ //If player beat the level	
 
-		uiObjects[4] = new uiObject(rightButtonX, buttonY, buttonWidth, buttonHeight, 
+		uiObjects[2] = new uiObject(rightButtonX, buttonY, buttonWidth, buttonHeight, 
 				function (){
 					console.log("next");
 					nextLevel();
@@ -118,7 +100,6 @@ function drawResult(){
 					buttonImage.src = "images/nextButton.png";
 				});
 	} else { // if player lost
-
 			// display rule box
 			if (currentLevel <= 10) {
 				ctx.fillStyle = "#FFFFFF";
@@ -142,7 +123,7 @@ function drawResult(){
 			drawRule();	
 		
 		// display "submit" button
-		uiObjects[5] = new uiObject(rightButtonX, buttonY, buttonWidth*2, buttonHeight, 
+		uiObjects[2] = new uiObject(rightButtonX, buttonY, buttonWidth*2, buttonHeight, 
 				function (){
 					console.log("Submit Score function here...");
 					//nextLevel();
@@ -155,5 +136,24 @@ function drawResult(){
 					buttonImage.src = "images/submitButton3.png";
 				});
 	}
+
+	if (musicOn) {
+		ctx.drawImage(speakerOnButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
+		uiObjects[3] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
+			function () {
+				musicOn = false;
+				music.pause();
+			}, null, function() {});
+	}
+	else {
+		ctx.drawImage(speakerOffButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
+		uiObjects[3] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
+			function () {
+				musicOn = true;
+				music.loop = true;
+				music.play();
+			}, null, function() {});
+	}
+	
 
 }
