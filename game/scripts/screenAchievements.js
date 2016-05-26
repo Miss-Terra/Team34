@@ -35,11 +35,11 @@ var achiEasterEggFlag = false;
 function achievementsFlag(testLevel, testScore, testEasterEggClick){
 	
 	// level flag
-	if (testLevel >= 2) 
+	if (testLevel >= 5) 
 		achiLevelFlag = true;
 	
 	// score flag
-	if (testScore >= 400)
+	if (testScore >= 1000)
 		achiScoreFlag = true;
 	
 	// ester egg flag
@@ -68,9 +68,9 @@ function loadAchievements() {
 	
 
 	if (achiEasterEggFlag) {
-		achiEasterEggImage.src = "images/score.png";
+		achiEasterEggImage.src = "images/easterEgg.png";
 	} else {
-		achiEasterEggImage.src = "images/scoreUnlocked.png";
+		achiEasterEggImage.src = "images/easterEggUnlocked.png";
 	};	
 	
 	bgImage.src = "images/creditScreen.png"; 
