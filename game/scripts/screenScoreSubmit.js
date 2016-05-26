@@ -40,6 +40,7 @@ function drawScoreSubmission(){
 			console.log("menu");
 			setState(0);
 			console.log("Level: " + currentLevel)
+			tutorialImageNum = 1;
 		}, null, function() {});	
 	
 	// right button: submit
@@ -53,7 +54,7 @@ function drawScoreSubmission(){
 				//databaseConnect.js
 				updateDatabase(finalScore, finalTime, currentLevel, playerName);
 			}, null, function() {
-				buttonImage.src = "images/submitButton3.png";
+				buttonImage.src = "images/submitButton.png";
 			});
 			
 

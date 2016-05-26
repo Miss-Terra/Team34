@@ -33,7 +33,10 @@ function drawPauseMenu() {
 				finalScore = 0;
 				extraLevelScore = 0;*/
 				console.log("Level: " + currentLevel)
-			}, null, function() {});
+			}, null,
+			function() {
+				mainMenuButtonImage.src = "images/mainMenuButton2.png";
+			});
 
     // Middle Button - Restart button
 	ctx.drawImage(restartButtonImage, buttonXmiddle, buttonY, buttonWidth, buttonHeight);
@@ -44,7 +47,11 @@ function drawPauseMenu() {
 				quitFromVictory = false;
 				setState(11);
 				console.log("Level: " + currentLevel)
-			}, null, function() {});
+			}, null,
+			function() {
+				restartButtonImage.src = "images/restartButton2.png";
+			});
+
 	
     // Right Button - Resume button
 	ctx.drawImage(resumeButtonImage, buttonXright, buttonY, buttonWidth, buttonHeight);
@@ -54,7 +61,10 @@ function drawPauseMenu() {
                 //Judy: will update State value when we have resume function
 				setState(1);
 				console.log("Level: " + currentLevel)
-			}, null, function() {});
+			}, null,
+			function() {
+				resumeButtonImage.src = "images/resumeButton2.png";
+			});
 			
 	// music button
 	
@@ -94,8 +104,8 @@ function loadBackToMainMenuConfirmMenu() {
 function drawBackToMainMenuConfirmMenu() {
     ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
-	var buttonWidth = canvas.width / 10;
-	var buttonHeight = canvas.height / 10;	
+	var buttonWidth = canvas.width / 6;
+	var buttonHeight = canvas.height / 6;	
 	var	buttonY = canvas.height/2 - (buttonHeight / 2);
 	//Button x positions
 
@@ -146,7 +156,10 @@ function drawBackToMainMenuConfirmMenu() {
 					
 					setState(0);
 				}
-			}, null, function() {});	
+			}, null,
+			function() {
+				restartButtonImage.src = "images/yesButton2.png";
+			});	
 	
     // Right Button - Yes Button
 	ctx.drawImage(resumeButtonImage, buttonXleft, buttonY, buttonWidth, buttonHeight);
@@ -167,7 +180,10 @@ function drawBackToMainMenuConfirmMenu() {
 				else if (!quitFromPause && quitFromVictory) {
 					setState(2);
 				}
-			}, null, function() {});
+			}, null,
+			function() {
+				resumeButtonImage.src = "images/noButton2.png";
+			});	
 }
     //-----------------Restart Confirm Menu---------------
 function loadRestartConfirmMenu() {
@@ -182,8 +198,8 @@ function loadRestartConfirmMenu() {
 function drawRestartConfirmMenu() {
      ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
-  var buttonWidth = canvas.width / 10;
-	var buttonHeight = canvas.height / 10;	
+  var buttonWidth = canvas.width / 6;
+	var buttonHeight = canvas.height / 6;	
 	var	buttonY = canvas.height/2 - (buttonHeight / 2);
 	//Button x positions
 	var buttonXleft = (buttonWidth);
@@ -236,7 +252,10 @@ function drawRestartConfirmMenu() {
 					extraLevelScore = 0;
 					setState(0);
 				}*/
-			}, null, function() {});	
+			}, null,
+			function() {
+				restartButtonImage.src = "images/yesButton2.png";
+			});		
 	
     // Right Button - Yes Button
 	ctx.drawImage(resumeButtonImage, buttonXleft, buttonY, buttonWidth, buttonHeight);
@@ -259,5 +278,8 @@ function drawRestartConfirmMenu() {
 				else if (!quitFromPause && quitFromVictory) {
 					setState(2);
 				}
-			}, null, function() {} );
+			}, null,
+			function() {
+				resumeButtonImage.src = "images/noButton2.png";
+			});	
 }

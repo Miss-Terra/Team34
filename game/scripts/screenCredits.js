@@ -3,7 +3,7 @@
 function loadCreditsMenu() {
 	
     // credits menu background image		
-    bgImage.src = "images/creditScreen.png";   
+    bgImage.src = "images/mainMenu.png";   
     mainMenuButtonImage.src = "images/mainMenuButton.png"; 
 	scoreLogo.src = "images/logoct2.png";	
 }
@@ -17,13 +17,13 @@ function drawCredits(){
 	logowidth = canvas.width * 3 / 10;
 	logoheight = canvas.height / 4;
 
-	ctx.drawImage(scoreLogo, canvas.width / 2 - logowidth / 2, canvas.height / 20, logowidth, logoheight);
+	ctx.drawImage(scoreLogo, canvas.width / 2 - logowidth / 2, canvas.height / 13, logowidth, logoheight);
 	
 	// draw names
-	ctx.font = canvas.width / 25 + "px Arial";
+	ctx.font = canvas.width / 23 + "px Arial";
 	ctx.fillStyle = "white";
 	ctx.textAlign = "center";
-	ctx.fillText("Developers", canvas.width / 2, logoheight + canvas.height / 20 * 3);
+	ctx.fillText("Developers", canvas.width / 2, logoheight + canvas.height / 18 * 3);
 	ctx.font = canvas.width / 35 + "px Arial";
 	ctx.fillText("Hyunsoo Yoo", canvas.width / 2, logoheight + canvas.height / 20 * 5);
 	ctx.fillText("Judy(Dan) Zhu", canvas.width / 2, logoheight + canvas.height / 20 * 6);
@@ -45,5 +45,9 @@ function drawCredits(){
                 levelTime = 0;
 				setState(0);
 				console.log("Level: " + currentLevel)
-			}, null, function() {});
+				tutorialImageNum = 1;
+			}, null,
+			function() {
+				mainMenuButtonImage.src = "images/mainMenuButton2.png";
+			});	
 }

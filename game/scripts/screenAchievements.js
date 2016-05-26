@@ -1,28 +1,5 @@
 //State 6
 
-function drawEgg(){
-//	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
-	
-//	var buttonWidth = canvas.width / 6;
-//	var buttonHeight = canvas.height / 10;	
-//	var	buttonY = canvas.height - (buttonHeight * 2);
-//	//Button x positions
-//	var restartX = (canvas.width / 2) - (buttonWidth / 2);
-//	var menuX = (restartX / 2) - (buttonWidth / 2);
-//	var nextX = restartX + (restartX / 2) + (buttonWidth / 2);
-
-//	ctx.drawImage(buttonImage, restartX, buttonY, buttonWidth, buttonHeight);
-//	uiObjects[0] = new uiObject(restartX, buttonY, buttonWidth, buttonHeight, 
-//			function (){
-//				console.log("restart");
-//				setState(1);
-//				console.log("Level: " + currentLevel)
-//			});
-	
-
-}
-
-
 var achiLevelImage = new Image();
 var achiScoreImage = new Image();
 var achiEasterEggImage = new Image();
@@ -35,11 +12,11 @@ var achiEasterEggFlag = false;
 function achievementsFlag(testLevel, testScore, testEasterEggClick){
 	
 	// level flag
-	if (testLevel >= 2) 
+	if (testLevel >= 5) 
 		achiLevelFlag = true;
 	
 	// score flag
-	if (testScore >= 400)
+	if (testScore >= 1000)
 		achiScoreFlag = true;
 	
 	// ester egg flag
@@ -68,12 +45,12 @@ function loadAchievements() {
 	
 
 	if (achiEasterEggFlag) {
-		achiEasterEggImage.src = "images/score.png";
+		achiEasterEggImage.src = "images/easterEgg.png";
 	} else {
-		achiEasterEggImage.src = "images/scoreUnlocked.png";
+		achiEasterEggImage.src = "images/easterEggUnlocked.png";
 	};	
 	
-	bgImage.src = "images/creditScreen.png"; 
+	bgImage.src = "images/mainMenu.png"; 
 } 
  
  
@@ -118,5 +95,6 @@ function drawAchievements() {
 		function (){
 			console.log("menu");
 			setState(0);
+			tutorialImageNum = 1;
 		}, null, function() {});
 }

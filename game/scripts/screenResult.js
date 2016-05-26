@@ -153,7 +153,7 @@ function drawResult(){
 					console.log("Level: " + currentLevel)
 				}, null, 
 				function() {
-					buttonImage.src = "images/submitButton3.png";
+					buttonImage.src = "images/submitButton.png";
 				});
 	}
 	

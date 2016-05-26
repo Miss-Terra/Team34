@@ -63,8 +63,8 @@ function drawCharSelection(){
 function drawSelectMenuButtons(){
 
   var buttonWidth = canvas.width / 6;
-	var buttonHeight = canvas.height / 10;	
-	var	noY = canvas.height * 0.8;
+	var buttonHeight = canvas.height / 6;	
+	var	noY = canvas.height * 0.6;
 	var	yesY = canvas.height * 0.2;
 	//Button x positions
 	var noX =  buttonWidth * 0.5;
@@ -77,7 +77,10 @@ function drawSelectMenuButtons(){
 			function (){
 				console.log("Canceled Selecton...");
 				setState(1);
-			}, null, function() {});	
+			}, null,
+			function() {
+				restartButtonImage.src = "images/noButton2.png";
+			});	
 	
     // Yes button
 	ctx.drawImage(resumeButtonImage, yesX, yesY, buttonWidth, buttonHeight);
@@ -137,7 +140,10 @@ function drawSelectMenuButtons(){
 //				};
 //								
 								
-			}, null, function() {});
+			}, null,
+			function() {
+				resumeButtonImage.src = "images/yesButton2.png";
+			});	
 
 
 }

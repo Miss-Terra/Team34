@@ -24,7 +24,9 @@ function drawTutorial(){
 	var buttonXleft = (buttonXmiddle / 2) - (buttonWidth / 2);            
 	
 	// Left Button - Back to previous page
-	ctx.drawImage(backButtonImage, buttonXleft, buttonY, buttonWidth, buttonHeight);
+	if (tutorialImageNum > 1) {
+		ctx.drawImage(backButtonImage, buttonXleft, buttonY, buttonWidth, buttonHeight);
+	}
 	uiObjects[0] = new uiObject(buttonXleft, buttonY, buttonWidth, buttonHeight, 
 			function () {
 				if (tutorialImageNum <= 1) {
@@ -34,10 +36,15 @@ function drawTutorial(){
 				}
 				loadTutorialMenu();	
 				console.log("Tutorial picture: " + tutorialImageNum)
-			}, null, function() {});
+			}, null,
+			function() {
+				backButtonImage.src = "images/backButton2.png";
+			});	
 
     // Middle Button - Go to next page
-	ctx.drawImage(nextButtonImage, buttonXmiddle, buttonY, buttonWidth, buttonHeight);
+	if (tutorialImageNum < 6) {
+		ctx.drawImage(nextButtonImage, buttonXmiddle, buttonY, buttonWidth, buttonHeight);
+	}
 	uiObjects[1] = new uiObject(buttonXmiddle, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				if (tutorialImageNum >= 6) {
@@ -47,7 +54,10 @@ function drawTutorial(){
 				}				
 				loadTutorialMenu();						
 				console.log("Tutorial picture: " + tutorialImageNum)
-			}, null, function() {});
+			}, null,
+			function() {
+				nextButtonImage.src = "images/nextButton2.png";
+			});	
 	
 	
     // right button
@@ -58,6 +68,9 @@ function drawTutorial(){
                 levelTime = 0;
 				setState(0);
 				tutorialImageNum = 0;
-			}, null, function() {});
+			}, null,
+			function() {
+				mainMenuButtonImage.src = "images/mainMenuButton2.png";
+			});	
 				
 }

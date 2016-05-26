@@ -12,7 +12,7 @@ var leaderboardNames = [];
 function loadScoreboard() {
 
 
-   	bgImage.src = "images/levelvictory.png";
+   	bgImage.src = "images/scoreboardBackground.png";
    	mainMenuButtonImage.src = "images/mainMenuButton.png";
 	achievementsButtonImage.src = "images/achievementsButton.png";
 	//scoreLogo.src = "images/logoct2.png";
@@ -51,7 +51,11 @@ function drawScoreboard(){
 			console.log("menu");
 			setState(0);
 			console.log("Level: " + currentLevel)
-		}, null, function() {});
+			tutorialImageNum = 1;
+		}, null,
+			function() {
+				mainMenuButtonImage.src = "images/mainMenuButton2.png";
+			});	
 		
 	// left button: achievements
 	ctx.drawImage(achievementsButtonImage, achievementX, buttonY, buttonWidth, buttonHeight);
@@ -62,7 +66,10 @@ function drawScoreboard(){
 			console.log("Level: " + currentLevel)
 			console.log("Score: " + finalScore)
 			console.log("EasterEggClick: " + easterEggclick)
-		}, null, function() {});
+		}, null,
+			function() {
+				achievementsButtonImage.src = "images/achievementsButton2.png";
+			});	
 		
 
 
@@ -73,7 +80,7 @@ function drawScoreboard(){
 	// -----columns of scoreboard ----
 
 	//This variable is the Y position of the header texts.
-	var leaderboardHeaderRow = canvas.height*4/20;
+	var leaderboardHeaderRow = canvas.height/5;
 	//This is basically the x value of each column like rank, scores, names, times....
 	var leaderboardColumns = [];
 
@@ -88,7 +95,7 @@ function drawScoreboard(){
 	ctx.font = canvas.width/20 + "px Arial";
 	ctx.fillStyle = "white";
 	ctx.textAlign = "center";
-	ctx.fillText("Ranking", canvas.width*3/20, canvas.height*2/20);
+	ctx.fillText("Ranking", canvas.width*3/20, canvas.height/8);
 	
 	ctx.font = canvas.width/30 + "px Arial";
 	ctx.fillText("Rank", leaderboardColumns[0], leaderboardHeaderRow);
@@ -119,7 +126,7 @@ function drawLeaderboardArray(array, xPos){
 
 
 	for (var i = 0; i < 10; i++){
-		var yPos = canvas.height*(5+i)/20;
+		var yPos = canvas.height*(6+i)/20;
 
 		if (array[i] == null)
 			ctx.fillText("", xPos, yPos);

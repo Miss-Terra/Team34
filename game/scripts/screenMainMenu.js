@@ -2,12 +2,11 @@
 
 function loadMainMenu() {
 		
-	 bgImage.src = "images/mainMenu.jpg";
+	 bgImage.src = "images/mainMenu.png";
 	 playButtonImage.src = "images/playButton.png";
 	 tutorialButtonImage.src = "images/tutorialButton.png";
 	 scoreboardButtonImage.src = "images/scoreboardButton.png";
 	 creditsButtonImage.src = "images/creditsButton.png";
-	 menuAnimationImage.src = "images/lineMan.png"; //Change  me for easter egg.
 	 menuLogo.src = "images/logoct2.png";
 	 easterEggclick = 0;
 	 finalScore = 0;
@@ -65,26 +64,7 @@ function drawMainMenu(){
 			}, null,
 			function() {
 				menuLogo.src = "images/logoct2.png";
-			});
-
-	// Keep original Easter Egg code in case use another animation in future
-	/**	
-	var animationWidth = canvas.width / 6;
-	var animationHeight = canvas.height / 6;	
-	var	animationY = canvas.height - (canvas.height / 6);
-	ctx.drawImage(menuAnimationImage, 0, animationY, animationWidth, animationHeight);
-	uiObjects[4] = new uiObject(0, animationY, animationWidth, animationHeight, 
-			function (){
-				console.log("easter Egg!!!");
-				
-				
-				
-				
-				//menuAnimationImage.src = "images/yesButton.png";
-			});
-	**/
-
-		
+			});	
 		
 			
 	// Main menu buttons		
@@ -131,6 +111,7 @@ function drawMainMenu(){
 			function (){
 				console.log("tutorial");
 				music.pause();
+				tutorialImageNum = 1;
 				setState(9);
 			}, null,
 			function() {
@@ -166,16 +147,16 @@ function drawMainMenu(){
 	// music button
 	
 	if (musicOn) {
-		ctx.drawImage(speakerOnButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
-		uiObjects[5] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
+		ctx.drawImage(speakerOnButtonImage, canvas.width/16, canvas.height/16, canvas.width/16, canvas.height/16);
+		uiObjects[5] = new uiObject(canvas.width/16, canvas.height/16, canvas.width/16, canvas.height/16,
 			function () {
 				musicOn = false;
 				music.pause();
 			}, null, function(){});
 	}
 	else {
-		ctx.drawImage(speakerOffButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
-		uiObjects[5] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
+		ctx.drawImage(speakerOffButtonImage, canvas.width/16, canvas.height/16, canvas.width/16, canvas.height/16);
+		uiObjects[5] = new uiObject(canvas.width/16, canvas.height/16, canvas.width/16, canvas.height/16,
 			function () {
 				musicOn = true;
 				music.loop = true;
