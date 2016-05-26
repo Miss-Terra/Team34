@@ -145,12 +145,12 @@ function genPerson(num, personImg){
 				} else if (ruleColor == 0) {
 			  	this.shoes = shoeArray[Math.floor(1+(Math.random() * NumberColors) + (NumberColors* (ruleNumber -1)))]; // Item will be a specific type
 				} else {
-					this.shoes = shoesArray[NumberItems*(ruleColor-1) + ruleNumber];
+					this.shoes = shoeArray[NumberItems*(ruleColor-1) + ruleNumber];
 					
 					if (this.number == correctPerson) {
 						//
 					} else {
-							this.shoes = shoesArray[NumberItems*(ruleColor-1) + ruleNumber];
+							this.shoes = shoeArray[NumberItems*(ruleColor-1) + ruleNumber];
 //						while (this.shoes === person[correctPerson].shoes) {
 //							this.shoes = shoesArray[NumberItems*(ruleColor-1) + ruleNumber];
 //						}
