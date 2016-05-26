@@ -111,6 +111,7 @@ function drawMainMenu(){
 			function (){
 				console.log("tutorial");
 				music.pause();
+				tutorialImageNum = 1;
 				setState(9);
 			}, null,
 			function() {
