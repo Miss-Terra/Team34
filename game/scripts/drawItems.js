@@ -3,7 +3,6 @@
 
 function drawItems(person, selectable){
 
-	drawFace(person, selectable);
 	drawFrontItem(person, selectable);
 	drawShirt(person, selectable);
 	drawHat(person, selectable);
@@ -11,17 +10,6 @@ function drawItems(person, selectable){
 	drawPants(person, selectable);
 	drawBackItem(person, selectable);
 		
-}
-
-//Draw the front item (behind the character)
-function drawFace(person, selectable){
-	
-	var x = person.x;	
-	var y = person.y;
-	var w = person.width;
-	var h = person.height;
-	
-	ctx.drawImage(person.face, x, y, w, h);	
 }
 
 //Draw the front item (behind the character)

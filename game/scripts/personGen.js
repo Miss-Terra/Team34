@@ -1,17 +1,14 @@
 //This file generates the list of people and assigns clothing numbers.
 //For the graphical side of things... Check out drawLine.js
 
+
 //Generate a list of people
 function genPeople(n, personImg){
 
-	correctPerson = Math.floor(1+ Math.random() * lineSize);
 	var person = [];
-//	person[correctPerson] = genPerson[correctPerson, personImg];
-	
+
 	for (i = 0; i < n; i++){
-//		if (i!=correctPerson) {
 		person[i] = genPerson(i, personImg);
-//		}
 	}
 	return person;
 }
@@ -27,7 +24,6 @@ function genPerson(num, personImg){
 		shoes: 0,
 		image: 0,
 		number: 0,
-		face: 0,
 		x: 0,
 		y: 0,
 		width: 0,
@@ -43,9 +39,9 @@ function genPerson(num, personImg){
 			  	this.itemf = itemfArray[Math.floor(1+(Math.random() * NumberItems) * NumberColors + ruleColor)]; // Item will be a specific color
 				} else if (ruleColor == 0) {
 			  	this.itemf = itemfArray[Math.floor(1+(Math.random() * NumberColors) + (NumberColors* (ruleNumber -1)))]; // Item will be a specific type
+
 				} else {
-//					this.itemf = itemfArray[NumberItems*(ruleColor-1) + ruleNumber];
-  					this.itemf = itemfArray[NumberItems*(ruleNumber-1) + ruleColor];
+					this.itemf = itemfArray[NumberItems*(ruleColor-1) + ruleNumber];
 					
 //					if (this.number == correctPerson) {
 //						//
@@ -68,8 +64,9 @@ function genPerson(num, personImg){
 			  	this.hat = hatArray[Math.floor(1+(Math.random() * NumberHats) * NumberColors + ruleColor)]; // Item will be a specific color
 				} else if (ruleColor == 0) {
 					this.hat = hatArray[Math.floor(1+(Math.random() * NumberColors) + (NumberColors* (ruleNumber -1)))]; // Item will be a specific type
+
 				} else {
-					this.hat = hatArray[NumberItems*(ruleNumber-1) + ruleColor];
+					this.hat = hatArray[NumberHats*(ruleColor-1) + ruleNumber];
 					
 //					if (this.number == correctPerson) {
 //						//
@@ -94,7 +91,7 @@ function genPerson(num, personImg){
 				} else if (ruleColor == 0) {
 			  	this.shirt = shirtArray[Math.floor(1+(Math.random() * NumberColors) + (NumberColors* (ruleNumber -1)))]; // Item will be a specific type
 				} else {
-					this.shirt = shirtArray[NumberItems*(ruleNumber-1) + ruleColor];
+					this.shirt = shirtArray[NumberShirts*(ruleColor-1) + ruleNumber];
 					
 //					if (this.number == correctPerson) {
 //						//
@@ -119,8 +116,9 @@ function genPerson(num, personImg){
 			  	this.pants = pantArray[Math.floor(1+(Math.random() * NumberPants) * NumberColors + ruleColor)]; // Item will be a specific color
 				} else if (ruleColor == 0) {
 			  	this.pants = pantArray[Math.floor(1+(Math.random() * NumberColors) + (NumberColors* (ruleNumber -1)))]; // Item will be a specific type
+
 				} else {
-					this.pants = pantArray[NumberItems*(ruleNumber-1) + ruleColor];
+					this.pants = pantArray[NumberPants*(ruleColor-1) + ruleNumber];
 					
 //					if (this.number == correctPerson) {
 //						//
@@ -145,8 +143,9 @@ function genPerson(num, personImg){
 			  	this.shoes = shoeArray[Math.floor(1+(Math.random() * NumberShoes) * NumberColors + ruleColor)]; // Item will be a specific color
 				} else if (ruleColor == 0) {
 			  	this.shoes = shoeArray[Math.floor(1+(Math.random() * NumberColors) + (NumberColors* (ruleNumber -1)))]; // Item will be a specific type
+
 				} else {
-					this.shoes = shoeArray[NumberItems*(ruleNumber-1) + ruleColor];
+					this.shoes = shoeArray[NumberShoes*(ruleColor-1) + ruleNumber];
 					
 //					if (this.number == correctPerson) {
 //						//
@@ -172,7 +171,7 @@ function genPerson(num, personImg){
 				} else if (ruleColor == 0) {
 			  	this.itemb = itembArray[Math.floor(1+(Math.random() * NumberColors) + (NumberColors* (ruleNumber -1)))]; // Item will be a specific type
 				} else {
-					this.itemb = itembArray[NumberItems*(ruleNumber-1) + ruleColor];
+					this.itemb = itembArray[NumberItems*(ruleColor-1) + ruleNumber];
 					
 //					if (this.number == correctPerson) {
 //						//
@@ -200,7 +199,6 @@ function genPerson(num, personImg){
 			}
 			
 			this.image = personImg;
-			this.face = faceArray[Math.floor(1+ Math.random() * NumberFaces)];
 		},
 		setNumber: function(n){
 			this.number = n;

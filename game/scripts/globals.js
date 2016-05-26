@@ -12,9 +12,6 @@ var uiPeople = []; // Just like uiObjects... But ONLY for people in the line.
 var personArray = [];
 var gamePaused = false; // A variable used to check if the game is paused.
 
-//Keep track of correct person
-var correctPerson;
-
 
 // number of items in the item matrix
 var NumberHats=5;
@@ -23,7 +20,6 @@ var NumberPants=4;
 var NumberShoes=3;
 var NumberItems=3;
 var NumberColors=3;
-var NumberFaces=8;
 
 // pause or quit
 var quitFromPause;
