@@ -126,6 +126,8 @@ function clearLoadedImages(){
 	pauseButtonReady2 = false;
 	borderReady = false;
 	borderReady2 = false;
+	backButtonReady = false;
+	nextButtonReady = false;
 }
 
 

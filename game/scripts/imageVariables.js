@@ -84,6 +84,7 @@
 		buttonReady = true;
 	};
 
+	// for music
 	var speakerOnButtonImage = new Image();
 	var buttonReady = false;
 	speakerOnButtonImage.onload = function () {
@@ -96,6 +97,21 @@
 	speakerOffButtonImage.onload = function () {
 		//button image is safe to load...
 		buttonReady = true;
+	};
+	
+	// for tutorial screen
+	var backButtonImage = new Image();
+	var backButtonReady = false;
+	backButtonImage.onload = function () {
+		//button image is safe to load...
+		backButtonReady = true;
+	};
+	
+	var nextButtonImage = new Image();
+	var nextButtonReady = false;
+	nextButtonImage.onload = function () {
+		//button image is safe to load...
+		nextButtonReady = true;
 	};
 
 
