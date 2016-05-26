@@ -36,7 +36,10 @@ function drawTutorial(){
 				}
 				loadTutorialMenu();	
 				console.log("Tutorial picture: " + tutorialImageNum)
-			}, null, function() {});
+			}, null,
+			function() {
+				backButtonImage.src = "images/backButton2.png";
+			});	
 
     // Middle Button - Go to next page
 	if (tutorialImageNum < 6) {
@@ -51,7 +54,10 @@ function drawTutorial(){
 				}				
 				loadTutorialMenu();						
 				console.log("Tutorial picture: " + tutorialImageNum)
-			}, null, function() {});
+			}, null,
+			function() {
+				nextButtonImage.src = "images/nextButton2.png";
+			});	
 	
 	
     // right button
@@ -62,6 +68,9 @@ function drawTutorial(){
                 levelTime = 0;
 				setState(0);
 				tutorialImageNum = 0;
-			}, null, function() {});
+			}, null,
+			function() {
+				mainMenuButtonImage.src = "images/mainMenuButton2.png";
+			});	
 				
 }
