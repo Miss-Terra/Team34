@@ -15,11 +15,9 @@ function loadMainMenu() {
 	 
 	 // main menu music, allow looping
 	 music = new Audio('audio/defense_line.mp3');
-	 if (musicOn) {
-		music.loop = true;
-		music.play();
-	 }
-	 
+	 musicOn = true;
+	 music.loop = true;
+	 music.play();
 	 
 	 speakerOnButtonImage.src = "images/on.png";
 	 speakerOffButtonImage.src = "images/off.png";
@@ -62,7 +60,8 @@ function drawMainMenu(){
 					menuLogo.src = "images/logoctBite3.png";		
 				} else
 					menuLogo.src = "images/logoctBite3.png";
-			}, null, function() {});
+			});
+
 	// Keep original Easter Egg code in case use another animation in future
 	/**	
 	var animationWidth = canvas.width / 6;
@@ -105,20 +104,18 @@ function drawMainMenu(){
 				itemSelectedByPlayer = null;
 				
 				// turn off main menu music
+				musicOn = false;
 				music.pause();
 				
-				// gameplay music, allow looping
-				music = new Audio('audio/07-thor.mp3');
-				if (musicOn) {
-					music.loop = true;
-					music.play();
-				}
-
 				setState(1);
 				console.log("Level: " + currentLevel);
+<<<<<<< HEAD
 			}, null,
 			function() {
 				playButtonImage.src = "images/playButton2.png";
+=======
+
+>>>>>>> 65d5282fcf6a4c3ccd6138c5d1463e196e9556a9
 			});
 			
     // top-middle button
@@ -126,12 +123,18 @@ function drawMainMenu(){
 	uiObjects[1] = new uiObject(buttonX, tutorialY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("tutorial");
+				musicOn = false;
 				music.pause();
 				setState(9);
+<<<<<<< HEAD
 			}, null,
 			function() {
 				tutorialButtonImage.src = "images/tutorialButton2.png";
 			});
+=======
+			});	
+
+>>>>>>> 65d5282fcf6a4c3ccd6138c5d1463e196e9556a9
 
 	
     // middle-bottom button
@@ -139,11 +142,16 @@ function drawMainMenu(){
 	uiObjects[2] = new uiObject(buttonX, scoreboardY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("scoreboard");
+				musicOn = false;
 				music.pause();
 				setState(4);
+<<<<<<< HEAD
 			}, null,
 			function() {
 				scoreboardButtonImage.src = "images/scoreboardButton2.png";
+=======
+
+>>>>>>> 65d5282fcf6a4c3ccd6138c5d1463e196e9556a9
 			});
 	
 	
@@ -152,11 +160,16 @@ function drawMainMenu(){
 	uiObjects[3] = new uiObject(buttonX, creditsY, buttonWidth, buttonHeight,
 			function () {
 				console.log("credits");
+				musicOn = false;
 				music.pause();
 				setState(5);
+<<<<<<< HEAD
 			}, null,
 			function() {
 				creditsButtonImage.src = "images/creditsButton2.png";
+=======
+
+>>>>>>> 65d5282fcf6a4c3ccd6138c5d1463e196e9556a9
 			});
 			
 	// music button
@@ -167,7 +180,9 @@ function drawMainMenu(){
 			function () {
 				musicOn = false;
 				music.pause();
-			}, null, function() {});
+
+			});
+
 	}
 	else {
 		ctx.drawImage(speakerOffButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
@@ -176,7 +191,7 @@ function drawMainMenu(){
 				musicOn = true;
 				music.loop = true;
 				music.play();
-			}, null, function() {});
+			});
 	}
 
 }

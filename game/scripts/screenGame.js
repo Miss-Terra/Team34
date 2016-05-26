@@ -16,6 +16,10 @@ function loadGame(){
 	victoryButtonImage.src = "images/button.png";
 	addscoreButtonImage.src = "images/button.png";
 	addGameOverButtonImage.src = "images/button.png";
+
+	// turn off main menu music
+	musicOn = false;
+	music.pause();
 	
 	initGameSetting(); //rules.js
 }
@@ -46,5 +50,5 @@ function addMenuButton() {
 				gamePaused = true; console.log(gamePaused); // pause game
 				setState(3);
 				console.log("Level: " + currentLevel)
-			}, null, function() {});
+			});
 	}	
