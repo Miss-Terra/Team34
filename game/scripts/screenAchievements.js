@@ -68,9 +68,9 @@ function loadAchievements() {
 	
 
 	if (achiEasterEggFlag) {
-		achiEasterEggImage.src = "images/score.png";
+		achiEasterEggImage.src = "images/easterEgg.png";
 	} else {
-		achiEasterEggImage.src = "images/scoreUnlocked.png";
+		achiEasterEggImage.src = "images/easterEggUnlocked.png";
 	};	
 	
 	bgImage.src = "images/creditScreen.png"; 
