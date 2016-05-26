@@ -4,27 +4,34 @@ screen<name>.js files are for specific screen states such as main menu, gamee sc
 The rest are helper files.
 
 screenCredits.js
+- loads and renders the credit screen (not implemented 100%)
 
-screenEgg.js
-- Code for rendering the easter egg.
+screenAchievements.js
+- Code for rendering the achievements.
 
 screenGame.js
+- Loads & renders game settings, images, characters & stuff.
 
 screenMainMenu.js
+- Loads & renders main menu screen... Menu buttons & stuff
 
 screenPauseMenu.js
+- Loads & renders the pause menu. Users can pause during gameplay.
 
 screenResult.js
 - When a level ends... Display the screen to show whether a user won or lost. Also calls the necessary functions that should happen.
 
 screenScoreboard.js
+- Display the scoreboard screen! Calls databaseConnect.js
 
 screenScoreSubmit.js
+- Loads & renders the score submission screen. Calls databaseConnect.js to update server.
 
 screenSelect.js
+- Loads & renders the item selection screen, after clicking a person in line.
 
 screenTutorial.js
-
+- Loads & renders the tutorial screen. (Not 100% working)
 
 -------------------------------------------------------------------------------------------------
 // Help files

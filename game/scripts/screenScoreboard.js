@@ -73,7 +73,7 @@ function drawScoreboard(){
 	// -----columns of scoreboard ----
 
 	//This variable is the Y position of the header texts.
-	var leaderboardHeaderRow = canvas.height*4/20;
+	var leaderboardHeaderRow = canvas.height/5;
 	//This is basically the x value of each column like rank, scores, names, times....
 	var leaderboardColumns = [];
 
@@ -88,7 +88,7 @@ function drawScoreboard(){
 	ctx.font = canvas.width/20 + "px Arial";
 	ctx.fillStyle = "white";
 	ctx.textAlign = "center";
-	ctx.fillText("Ranking", canvas.width*3/20, canvas.height*2/20);
+	ctx.fillText("Ranking", canvas.width*3/20, canvas.height/8);
 	
 	ctx.font = canvas.width/30 + "px Arial";
 	ctx.fillText("Rank", leaderboardColumns[0], leaderboardHeaderRow);
@@ -119,7 +119,7 @@ function drawLeaderboardArray(array, xPos){
 
 
 	for (var i = 0; i < 10; i++){
-		var yPos = canvas.height*(5+i)/20;
+		var yPos = canvas.height*(6+i)/20;
 
 		if (array[i] == null)
 			ctx.fillText("", xPos, yPos);
