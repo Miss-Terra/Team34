@@ -52,5 +52,8 @@ function addMenuButton() {
 				setState(3);
 				console.log("Level: " + currentLevel)
 
-			}, null, function() {});
+			}, null,
+			function() {
+				pauseButtonImage2.src = "images/gpauseButton2.png";
+			});
 	}	
