@@ -52,6 +52,13 @@
 		//Stickman is safe to load...
 		borderReady2 = true;
 	};	
+	
+	var scrollImage = new Image();
+	var scrollReady = false;
+	scrollImage.onload = function () {
+		//Stickman is safe to load...
+		scrollReady = true;
+	};
 
 
 //----------------Buttons Image----------------

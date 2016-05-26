@@ -16,71 +16,72 @@ var ruleNumber;
 // Color of item
 var ruleColor;
 
-// Draws one item selected by player (OLD)
+// Draws one item selected by player onto game screen
 function drawSelected() {
 	if (itemSelectedByPlayer == selectionPerson.itemf) {
-		ctx.drawImage(selectionPerson.itemf, canvas.width / 100 * 43, -canvas.height / 10, canvas.width/10, canvas.height/4);
+		ctx.drawImage(selectionPerson.itemf, canvas.width / 100 * 45, -canvas.height/9 + canvas.height/40, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.hat) {
-		ctx.drawImage(selectionPerson.hat, canvas.width / 100 * 46, canvas.height / 20, canvas.width/10, canvas.height/4);
+		ctx.drawImage(selectionPerson.hat, canvas.width / 100 * 45, canvas.height/20 + canvas.height/40, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.shirt) {
-		ctx.drawImage(selectionPerson.shirt, canvas.width / 100 * 46, -canvas.height / 50, canvas.width/10, canvas.height/4);
+		ctx.drawImage(selectionPerson.shirt, canvas.width / 100 * 45, -canvas.height/30 + canvas.height/40, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.pants) {
-		ctx.drawImage(selectionPerson.pants, canvas.width / 100 * 46, -canvas.height / 12, canvas.width/10, canvas.height/4);
+		ctx.drawImage(selectionPerson.pants, canvas.width / 100 * 45, -canvas.height/10 + canvas.height/40, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.shoes) {
-		ctx.drawImage(selectionPerson.shoes, canvas.width / 100 * 46, -canvas.height / 8, canvas.width/10, canvas.height/4);
+		ctx.drawImage(selectionPerson.shoes, canvas.width / 100 * 45, -canvas.height/6 + canvas.height/40, canvas.width/10, canvas.height/4);
 	}
 	else if (itemSelectedByPlayer == selectionPerson.itemb) {
-		ctx.drawImage(selectionPerson.itemb, canvas.width / 100 * 49, -canvas.height / 10, canvas.width/10, canvas.height/4);
+		ctx.drawImage(selectionPerson.itemb, canvas.width / 100 * 45, -canvas.height/9 + canvas.height/40, canvas.width/10, canvas.height/4);
 	}
 	
 //	selectArray[0].draw();
 }
 
-//Can be called to draw the correct rule image to the screen(OLD)
+// Draws the correct rule image to the game over screen
 function drawRule() {
 	
 	if (ruleImage != null) {
 		
 		switch (ruleType) {
 			case 1:
-				ctx.drawImage(ruleImage, canvas.width / 100 * 43, -canvas.height / 10, canvas.width/10, canvas.height/4);
+				ctx.drawImage(ruleImage, canvas.width / 100 * 45, -canvas.height/9 + canvas.height/20, canvas.width/10, canvas.height/4);
 				break;
 			case 2:
-				ctx.drawImage(ruleImage, canvas.width / 100 * 46, canvas.height / 20, canvas.width/10, canvas.height/4);
+				ctx.drawImage(ruleImage, canvas.width / 100 * 45, canvas.height/20 + canvas.height/20, canvas.width/10, canvas.height/4);
 				break;
 			case 3:
-				ctx.drawImage(ruleImage, canvas.width / 100 * 46, -canvas.height / 50, canvas.width/10, canvas.height/4);
+				ctx.drawImage(ruleImage, canvas.width / 100 * 45, -canvas.height/30 + canvas.height/20, canvas.width/10, canvas.height/4);
 				break;
 			case 4:
-				ctx.drawImage(ruleImage, canvas.width / 100 * 46, -canvas.height / 12, canvas.width/10, canvas.height/4);
+				ctx.drawImage(ruleImage, canvas.width / 100 * 45, -canvas.height/10 + canvas.height/20, canvas.width/10, canvas.height/4);
 				break;
 			case 5:
-				ctx.drawImage(ruleImage, canvas.width / 100 * 46, -canvas.height / 8, canvas.width/10, canvas.height/4);
+				ctx.drawImage(ruleImage, canvas.width / 100 * 45, -canvas.height/6 + canvas.height/20, canvas.width/10, canvas.height/4);
 				break;
 			case 6:
-				ctx.drawImage(ruleImage, canvas.width / 100 * 49, -canvas.height / 10, canvas.width/10, canvas.height/4);
+				ctx.drawImage(ruleImage, canvas.width / 100 * 45, -canvas.height/9 + canvas.height/20, canvas.width/10, canvas.height/4);
 				break;
 		}
 	}
-}	
+}
 
 function loadRules() {
 	
 	var ruleboxWidth = canvas.width/4;
 	var ruleboxHeight = canvas.height/7;
 	
-	ctx.fillStyle = "#FFFFFF";
-	ctx.fillRect(canvas.width/2 - ruleboxWidth/2, 0, ruleboxWidth, ruleboxHeight);
+	//ctx.fillStyle = "#FFFFFF";
+	//ctx.fillRect(canvas.width/2 - ruleboxWidth/2, 0, ruleboxWidth, ruleboxHeight);
 	
 	if (itemSelectedByPlayer != null)
 		drawSelected();
+		//drawRule(); // For testing if victory/fail mechanics work
 	
-	ctx.fillStyle = "#000000";
-	ctx.fillText("Selected", canvas.width/2, canvas.height/30);
+	//ctx.fillStyle = "#000000";
+	//ctx.fillText("Selected", canvas.width/2, canvas.height/30);
 
 	// When timer reaches zero, level ends
 	if (levelTime == 0) {
@@ -200,16 +201,25 @@ function loadRules() {
 	drawEndLevelButton();		
 			
 	// display item selected box
-	ctx.fillStyle = "#FFFFFF";
-	ctx.fillRect(canvas.width/2 - canvas.width/10, 0, canvas.width/5, canvas.height/7);
+	
+	//ctx.drawImage(ruleDisplayImage, canvas.width/2 - canvas.width/10, 0, canvas.width/5, canvas.height/7);
+	//ctx.fillStyle = "#FFFFFF";
+	//ctx.fillRect(canvas.width/2 - canvas.width/10, 0, canvas.width/5, canvas.height/7);
+
+	var cornerRadius = 10; // rounded border
+	ctx.lineJoin = "round"; 
+	ctx.lineWidth = cornerRadius;
+
+	ctx.strokeRect(canvas.width/2-canvas.width/10+(cornerRadius/2), canvas.height/40+(cornerRadius/2), canvas.width/5-cornerRadius, canvas.height/7-cornerRadius);
+	ctx.fillRect(canvas.width/2-canvas.width/10+(cornerRadius/2), canvas.height/40+(cornerRadius/2), canvas.width/5-cornerRadius, canvas.height/7-cornerRadius);
 
 	if (itemSelectedByPlayer != null) {
 		drawSelected();
 		//drawRule(); // For testing if victory/fail mechanics work
 	}
 	
-	ctx.fillStyle = "#000000";
-	ctx.fillText("Selected", canvas.width/2, canvas.height/30);
+	//ctx.fillStyle = "#000000";
+	//ctx.fillText("Selected", canvas.width/2, canvas.height/30);
 	
 	// When timer reaches zero, level ends
 	if (levelTime == 0) {
@@ -224,14 +234,16 @@ function drawEndLevelButton() {
 	var buttonHeight = canvas.height/10;	
 
 	// button to end level 
-	ctx.drawImage(victoryButtonImage, canvas.width*8/10, canvas.height*3/10, buttonWidth*2, buttonHeight);
+	ctx.drawImage(victoryButtonImage, canvas.width*39/50, canvas.height*15/50, buttonWidth*2, buttonHeight);
+	
+	ctx.font = canvas.width/40 + "px Arial";
 	
 	// display text on end level button
 	if (itemSelectedByPlayer == null) {
-		ctx.fillText("Select an item", canvas.width*9/10, canvas.height*7/20);
+		ctx.fillText("Select an item", canvas.width*44/50, canvas.height*18/50);
 	}
 	else {
-		ctx.fillText("Go", canvas.width*9/10, canvas.height*7/20);
+		ctx.fillText("Go", canvas.width*44/50, canvas.height*18/50);
 	}
 	
 

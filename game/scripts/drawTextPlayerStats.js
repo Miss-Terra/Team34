@@ -1,26 +1,53 @@
 
 function displayResult() {
 	
-	// display level
-	var levelDisplay = "Level: " + currentLevel;
-	ctx.fillText(levelDisplay, (canvas.width * 0.8), (canvas.height * 0.1));
+	// displays results at the center for the victory screen
 	
-	// display score
-	var scoreDisplay = "Score: " + (levelScore + extraLevelScore);
-	ctx.fillText(scoreDisplay, (canvas.width * 0.8), (canvas.height * 0.15));
+	if (levelVictory) {
+		
+		ctx.fillStyle = "black";
+		ctx.textAlign = "center";
+		ctx.font = canvas.width/30 + "px Arial";
+	
+		// display level
+		var levelDisplay = "Level: " + currentLevel;
+		ctx.fillText(levelDisplay, canvas.width/2 + canvas.width/100, canvas.height * 4 / 10);
+		
+		// display score
+		var scoreDisplay = "Score: " + (levelScore + extraLevelScore);
+		ctx.fillText(scoreDisplay, canvas.width/2 + canvas.width/100, canvas.height * 5 / 10);
 
-	// display total score
-	var scoreDisplay = "Total Score: " + finalScore;
-	ctx.fillText(scoreDisplay, (canvas.width * 0.8), (canvas.height * 0.2));
+		// display total score
+		var scoreDisplay = "Total Score: " + finalScore;
+		ctx.fillText(scoreDisplay, canvas.width/2 + canvas.width/100, canvas.height * 6 / 10);
+		
+	}
+	else {
+		
+		ctx.font = canvas.width/50 + "px Arial";
 	
-	
-	
+		// display level
+		var levelDisplay = "Level: " + currentLevel;
+		ctx.fillText(levelDisplay, (canvas.width * 0.8), (canvas.height * 0.1));
+		
+		// display score
+		var scoreDisplay = "Score: " + (levelScore + extraLevelScore);
+		ctx.fillText(scoreDisplay, (canvas.width * 0.8), (canvas.height * 0.15));
+
+		// display total score
+		var scoreDisplay = "Total Score: " + finalScore;
+		ctx.fillText(scoreDisplay, (canvas.width * 0.8), (canvas.height * 0.2));
+		
+	}
+
 }
 
 //called in the Pause menu to display the level, score etc
 function displayPaused() {
 	
 	ctx.font = canvas.width/50 + "px Arial";
+	ctx.fillStyle = "white";
+	ctx.textAlign = "center";
 	
 	// display level
 	var levelDisplay = "Level: " + currentLevel;

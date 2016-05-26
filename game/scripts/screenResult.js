@@ -3,7 +3,7 @@ function loadResult(){
 
 	if (levelVictory){
 		bgImage.src = "images/levelvictory.png";
-		buttonImage.src = "images/nextButton.png";
+		buttonImage.src = "images/nextLevelButton.png";
 	}else{
 		bgImage.src = "images/gameover.png";
 		buttonImage.src = "images/submitButton.png";
@@ -16,8 +16,8 @@ function loadResult(){
 function drawResult(){
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
-	ctx.fillStyle = "white";
-	displayResult();
+	//ctx.fillStyle = "white";
+	//displayResult();
 	
 	var buttonWidth = canvas.width / 10;
 	var buttonHeight = canvas.height / 10;	
@@ -65,12 +65,12 @@ function drawResult(){
 
 			
 	// music button
-	ctx.fillStyle = "white";
-	ctx.fillRect(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
+	//ctx.fillStyle = "white";
+	//ctx.fillRect(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
 	
 	if (musicOn) {
 		ctx.drawImage(speakerOnButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
-		uiObjects[2] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
+		uiObjects[3] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
 			function () {
 				musicOn = false;
 				music.pause();
@@ -90,7 +90,10 @@ function drawResult(){
 	ctx.drawImage(buttonImage, rightButtonX, buttonY, buttonWidth, buttonHeight);
 	if (levelVictory){ //If player beat the level	
 
-		uiObjects[4] = new uiObject(rightButtonX, buttonY, buttonWidth, buttonHeight, 
+		// displays level and scores along with scroll
+		//ctx.drawImage(scrollImage, canvas.width/4, canvas.height/4, canvas.width/2, canvas.height/2);
+	
+		uiObjects[2] = new uiObject(rightButtonX, buttonY, buttonWidth, buttonHeight, 
 				function (){
 					console.log("next");
 					nextLevel();
@@ -120,7 +123,7 @@ function drawResult(){
 	} else { // if player lost
 
 			// display rule box
-			if (currentLevel <= 10) {
+			/*if (currentLevel <= 10) {
 				ctx.fillStyle = "#FFFFFF";
 				ctx.fillRect(canvas.width / 2 - canvas.width / 10, 0, canvas.width / 5, canvas.height / 7);
 			} else {
@@ -135,14 +138,24 @@ function drawResult(){
 
 				//		ctx.fillRect(canvas.width / 2 - canvas.width / 5, 0, canvas.width * 2 / 5, canvas.height / 10);
 
-			}
+			}*/
+			
 			// display rule
-			ctx.fillStyle = "#000000";
-			ctx.fillText("Correct Rule:", canvas.width / 2, canvas.height / 30);
-			drawRule();	
+			ctx.fillStyle = "white";
+			ctx.textAlign = "center";
+			ctx.fillText("Correct Rule", canvas.width / 2, canvas.height / 30);
+			
+			var cornerRadius = 10; // rounded border
+			ctx.lineJoin = "round"; 
+			ctx.lineWidth = cornerRadius;
+
+			ctx.strokeRect(canvas.width/2-canvas.width/10+(cornerRadius/2), canvas.height/20+(cornerRadius/2), canvas.width/5-cornerRadius, canvas.height/7-cornerRadius);
+			ctx.fillRect(canvas.width/2-canvas.width/10+(cornerRadius/2), canvas.height/20+(cornerRadius/2), canvas.width/5-cornerRadius, canvas.height/7-cornerRadius);
+			
+			drawRule();
 		
 		// display "submit" button
-		uiObjects[5] = new uiObject(rightButtonX, buttonY, buttonWidth*2, buttonHeight, 
+		uiObjects[2] = new uiObject(rightButtonX, buttonY, buttonWidth*2, buttonHeight, 
 				function (){
 					console.log("Submit Score function here...");
 					//nextLevel();
@@ -155,5 +168,7 @@ function drawResult(){
 					buttonImage.src = "images/submitButton3.png";
 				});
 	}
+	
+	displayResult();
 
 }

@@ -15,9 +15,11 @@ function loadMainMenu() {
 	 
 	 // main menu music, allow looping
 	 music = new Audio('audio/defense_line.mp3');
-	 musicOn = true;
-	 music.loop = true;
-	 music.play();
+	 if (musicOn) {
+		music.loop = true;
+		music.play();
+	 }
+	 
 	 
 	 speakerOnButtonImage.src = "images/on.png";
 	 speakerOffButtonImage.src = "images/off.png";
@@ -107,12 +109,17 @@ function drawMainMenu(){
 				itemSelectedByPlayer = null;
 				
 				// turn off main menu music
-				musicOn = false;
 				music.pause();
+				
+				// gameplay music, allow looping
+				music = new Audio('audio/07-thor.mp3');
+				if (musicOn) {
+					music.loop = true;
+					music.play();
+				}
 				
 				setState(1);
 				console.log("Level: " + currentLevel);
-
 			}, null,
 			function() {
 				playButtonImage.src = "images/playButton2.png";
@@ -123,28 +130,24 @@ function drawMainMenu(){
 	uiObjects[1] = new uiObject(buttonX, tutorialY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("tutorial");
-				musicOn = false;
 				music.pause();
 				setState(9);
-
 			}, null,
 			function() {
 				tutorialButtonImage.src = "images/tutorialButton2.png";
 			});
+	
 	
     // middle-bottom button
 	ctx.drawImage(scoreboardButtonImage, buttonX, scoreboardY, buttonWidth, buttonHeight);
 	uiObjects[2] = new uiObject(buttonX, scoreboardY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("scoreboard");
-				musicOn = false;
 				music.pause();
 				setState(4);
-
 			}, null,
 			function() {
 				scoreboardButtonImage.src = "images/scoreboardButton2.png";
-
 			});
 	
 	
@@ -153,15 +156,11 @@ function drawMainMenu(){
 	uiObjects[3] = new uiObject(buttonX, creditsY, buttonWidth, buttonHeight,
 			function () {
 				console.log("credits");
-				musicOn = false;
 				music.pause();
 				setState(5);
-
 			}, null,
 			function() {
 				creditsButtonImage.src = "images/creditsButton2.png";
-
-
 			});
 			
 	// music button
@@ -172,9 +171,7 @@ function drawMainMenu(){
 			function () {
 				musicOn = false;
 				music.pause();
-
 			}, null, function(){});
-
 	}
 	else {
 		ctx.drawImage(speakerOffButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
