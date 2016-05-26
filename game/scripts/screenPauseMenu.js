@@ -280,6 +280,6 @@ function drawRestartConfirmMenu() {
 				}
 			}, null,
 			function() {
-				resumeButtonImage.src = "images/yesButton2.png";
+				resumeButtonImage.src = "images/noButton2.png";
 			});	
 }
