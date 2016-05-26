@@ -402,9 +402,4 @@ function initGameSetting(){
 	if (gamePaused == false){
 		personArray = genPeople(lineSize, dude); // generate the personArray. (globals.js)
 	}
-	
-	// reset achievements flags
-	var achiLevelFlag = false;
-	var achiScoreFlag = false;
-	var achiEasterEggFlag = false;
 }
