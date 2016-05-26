@@ -40,6 +40,7 @@ function drawScoreSubmission(){
 			console.log("menu");
 			setState(0);
 			console.log("Level: " + currentLevel)
+			tutorialImageNum = 1;
 		}, null, function() {});	
 	
 	// right button: submit
