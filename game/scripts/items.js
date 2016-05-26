@@ -5,6 +5,7 @@ var pantArray = new Array();
 var shoeArray = new Array();
 var itembArray = new Array();
 var newItemArray = new Array();
+var faceArray = [];
 
 //Loads items into appropriate arrays, based on Number(type) in globals.js
 function loadItems() {
@@ -33,8 +34,14 @@ function loadItems() {
 		for (i=1; i<=NumberItems; i++) {
 			itembArray[((f-1)*NumberItems) + i] = new Image();
 			itembArray[((f-1)*NumberItems) + i].src = ("images/items/itemb/itemb_" + i + f + ".png");
-		}
+		}		
 	}
+	//load faces
+	for (i=1; i<=NumberFaces; i++) {
+		faceArray[i] = new Image();
+		faceArray[i].src = ("images/items/faces/face_" + i + ".png");
+	}
+
 
 	///////////////////////newItemArray//////////////////////
 	for (g=0; g<5; g++) {
