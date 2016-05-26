@@ -24,6 +24,7 @@ function genPerson(num, personImg){
 		shoes: 0,
 		image: 0,
 		number: 0,
+		face: 0,
 		x: 0,
 		y: 0,
 		width: 0,
@@ -199,6 +200,7 @@ function genPerson(num, personImg){
 			}
 			
 			this.image = personImg;
+			this.face = faceArray[Math.floor(1+ Math.random() * NumberFaces)];
 		},
 		setNumber: function(n){
 			this.number = n;
