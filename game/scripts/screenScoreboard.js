@@ -52,7 +52,10 @@ function drawScoreboard(){
 			setState(0);
 			console.log("Level: " + currentLevel)
 			tutorialImageNum = 1;
-		}, null, function() {});
+		}, null,
+			function() {
+				mainMenuButtonImage.src = "images/mainMenuButton2.png";
+			});	
 		
 	// left button: achievements
 	ctx.drawImage(achievementsButtonImage, achievementX, buttonY, buttonWidth, buttonHeight);
@@ -63,7 +66,10 @@ function drawScoreboard(){
 			console.log("Level: " + currentLevel)
 			console.log("Score: " + finalScore)
 			console.log("EasterEggClick: " + easterEggclick)
-		}, null, function() {});
+		}, null,
+			function() {
+				achievementsButtonImage.src = "images/achievementsButton2.png";
+			});	
 		
 
 
