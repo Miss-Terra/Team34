@@ -170,7 +170,7 @@ function drawMainMenu(){
 				musicOn = false;
 				music.pause();
 
-			});
+			}, null, function(){});
 
 	}
 	else {
@@ -180,7 +180,7 @@ function drawMainMenu(){
 				musicOn = true;
 				music.loop = true;
 				music.play();
-			});
+			}, null, function(){});
 	}
 
 }
