@@ -129,6 +129,7 @@ function clearLoadedImages(){
 	borderReady2 = false;
 	backButtonReady = false;
 	nextButtonReady = false;
+	achievementsButtonReady = false;
 }
 
 
@@ -275,6 +276,8 @@ function graphicsStatus(){
 			return false;
 		}
 	}
+	
+
 
 	if (state == 8) {
 		//check state 8 img status
@@ -289,9 +292,22 @@ function graphicsStatus(){
 		}
 	}
 	
+	
+	if (state == 9) {
+		//check state 9 img status
+		if (bgReady && mainMenuButtonReady
+					&& nextButtonReady
+					&& backButtonReady){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	
 	if (state == 10) {
 		//check state 10 img status
-		if (bgReady && mainMenuButtonImage
+		if (bgReady && mainMenuButtonReady
 					&& scoreboardButtonReady
 					&& buttonImage){
 			return true;
