@@ -54,7 +54,7 @@ function drawScoreSubmission(){
 				//databaseConnect.js
 				updateDatabase(finalScore, finalTime, currentLevel, playerName);
 			}, null, function() {
-				buttonImage.src = "images/submitButton3.png";
+				buttonImage.src = "images/submitButton.png";
 			});
 			
 
