@@ -104,8 +104,8 @@ function loadBackToMainMenuConfirmMenu() {
 function drawBackToMainMenuConfirmMenu() {
     ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
-	var buttonWidth = canvas.width / 10;
-	var buttonHeight = canvas.height / 10;	
+	var buttonWidth = canvas.width / 6;
+	var buttonHeight = canvas.height / 6;	
 	var	buttonY = canvas.height/2 - (buttonHeight / 2);
 	//Button x positions
 
@@ -198,8 +198,8 @@ function loadRestartConfirmMenu() {
 function drawRestartConfirmMenu() {
      ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
-  var buttonWidth = canvas.width / 10;
-	var buttonHeight = canvas.height / 10;	
+  var buttonWidth = canvas.width / 6;
+	var buttonHeight = canvas.height / 6;	
 	var	buttonY = canvas.height/2 - (buttonHeight / 2);
 	//Button x positions
 	var buttonXleft = (buttonWidth);
