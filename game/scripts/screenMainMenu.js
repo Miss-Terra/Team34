@@ -146,16 +146,16 @@ function drawMainMenu(){
 	// music button
 	
 	if (musicOn) {
-		ctx.drawImage(speakerOnButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
-		uiObjects[5] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
+		ctx.drawImage(speakerOnButtonImage, canvas.width/16, canvas.height/16, canvas.width/16, canvas.height/16);
+		uiObjects[5] = new uiObject(canvas.width/16, canvas.height/16, canvas.width/16, canvas.height/16,
 			function () {
 				musicOn = false;
 				music.pause();
 			}, null, function(){});
 	}
 	else {
-		ctx.drawImage(speakerOffButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
-		uiObjects[5] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
+		ctx.drawImage(speakerOffButtonImage, canvas.width/16, canvas.height/16, canvas.width/16, canvas.height/16);
+		uiObjects[5] = new uiObject(canvas.width/16, canvas.height/16, canvas.width/16, canvas.height/16,
 			function () {
 				musicOn = true;
 				music.loop = true;
