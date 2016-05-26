@@ -65,10 +65,10 @@ function drawResult(){
 
 			
 	// music button
-<<<<<<< HEAD
+
 	ctx.fillStyle = "white";
 	ctx.fillRect(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
-=======
+
 	//ctx.fillStyle = "white";
 	//ctx.fillRect(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
 	
@@ -89,18 +89,13 @@ function drawResult(){
 				music.play();
 			}, null, function() {});
 	}
->>>>>>> c34991254d39fb44a5bf9f77fe2d638d976f3a96
 
-	
 	ctx.drawImage(buttonImage, rightButtonX, buttonY, buttonWidth, buttonHeight);
 	if (levelVictory){ //If player beat the level	
 
-<<<<<<< HEAD
-=======
 		// displays level and scores along with scroll
 		//ctx.drawImage(scrollImage, canvas.width/4, canvas.height/4, canvas.width/2, canvas.height/2);
-	
->>>>>>> c34991254d39fb44a5bf9f77fe2d638d976f3a96
+
 		uiObjects[2] = new uiObject(rightButtonX, buttonY, buttonWidth, buttonHeight, 
 				function (){
 					console.log("next");
@@ -178,23 +173,5 @@ function drawResult(){
 	
 	displayResult();
 
-	if (musicOn) {
-		ctx.drawImage(speakerOnButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
-		uiObjects[3] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
-			function () {
-				musicOn = false;
-				music.pause();
-			}, null, function() {});
-	}
-	else {
-		ctx.drawImage(speakerOffButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
-		uiObjects[3] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
-			function () {
-				musicOn = true;
-				music.loop = true;
-				music.play();
-			}, null, function() {});
-	}
-	
 
 }

@@ -51,9 +51,6 @@ function addMenuButton() {
 				gamePaused = true; console.log(gamePaused); // pause game
 				setState(3);
 				console.log("Level: " + currentLevel)
-<<<<<<< HEAD
-			}, null, function(){});
-=======
+
 			}, null, function() {});
->>>>>>> c34991254d39fb44a5bf9f77fe2d638d976f3a96
 	}	
