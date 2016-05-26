@@ -1,10 +1,8 @@
 //State 9
-var i = 1; // count users click
-
 function loadTutorialMenu() {
 	
-    // credits menu background image changed based on how many time user click buttons		
-    bgImage.src = "images/tutorial" + i + ".png";  
+    // credits menu background image changed based on tutorialImageNum		
+    bgImage.src = "images/tutorial" + tutorialImageNum + ".png";  
     mainMenuButtonImage.src = "images/mainMenuButton.png";   
 	backButtonImage.src = "images/backButton.png";
 	nextButtonImage.src = "images/nextButton.png";	
@@ -29,26 +27,26 @@ function drawTutorial(){
 	ctx.drawImage(backButtonImage, buttonXleft, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(buttonXleft, buttonY, buttonWidth, buttonHeight, 
 			function () {
-				if (i <= 1) {
+				if (tutorialImageNum <= 1) {
 					bgImage.src = "images/tutorial1.png"; 
 				} else {
-					i--;
+					tutorialImageNum--;
 				}
 				loadTutorialMenu();	
-				console.log("Tutorial picture: " + i)
+				console.log("Tutorial picture: " + tutorialImageNum)
 			}, null, function() {});
 
     // Middle Button - Go to next page
 	ctx.drawImage(nextButtonImage, buttonXmiddle, buttonY, buttonWidth, buttonHeight);
 	uiObjects[1] = new uiObject(buttonXmiddle, buttonY, buttonWidth, buttonHeight, 
 			function (){
-				if (i >= 6) {
+				if (tutorialImageNum >= 6) {
 					bgImage.src = "images/tutorial6.png"; 
 				} else {
-					i++;
+					tutorialImageNum++;
 				}				
 				loadTutorialMenu();						
-				console.log("Tutorial picture: " + i)
+				console.log("Tutorial picture: " + tutorialImageNum)
 			}, null, function() {});
 	
 	
@@ -59,7 +57,7 @@ function drawTutorial(){
 				console.log("Go to main menu.");
                 levelTime = 0;
 				setState(0);
-				i = 0;
+				tutorialImageNum = 0;
 			}, null, function() {});
 				
 }
