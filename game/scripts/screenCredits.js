@@ -46,5 +46,8 @@ function drawCredits(){
 				setState(0);
 				console.log("Level: " + currentLevel)
 				tutorialImageNum = 1;
-			}, null, function() {});
+			}, null,
+			function() {
+				mainMenuButtonImage.src = "images/mainMenuButton2.png";
+			});	
 }
