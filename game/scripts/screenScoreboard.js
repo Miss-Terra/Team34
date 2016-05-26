@@ -12,7 +12,7 @@ var leaderboardNames = [];
 function loadScoreboard() {
 
 
-   	bgImage.src = "images/levelvictory.png";
+   	bgImage.src = "images/mainMenu.png";
    	mainMenuButtonImage.src = "images/mainMenuButton.png";
 	achievementsButtonImage.src = "images/achievementsButton.png";
 	//scoreLogo.src = "images/logoct2.png";
