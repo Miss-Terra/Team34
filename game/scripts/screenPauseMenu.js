@@ -33,7 +33,10 @@ function drawPauseMenu() {
 				finalScore = 0;
 				extraLevelScore = 0;*/
 				console.log("Level: " + currentLevel)
-			}, null, function() {});
+			}, null,
+			function() {
+				mainMenuButtonImage.src = "images/mainMenuButton2.png";
+			});
 
     // Middle Button - Restart button
 	ctx.drawImage(restartButtonImage, buttonXmiddle, buttonY, buttonWidth, buttonHeight);
@@ -44,7 +47,11 @@ function drawPauseMenu() {
 				quitFromVictory = false;
 				setState(11);
 				console.log("Level: " + currentLevel)
-			}, null, function() {});
+			}, null,
+			function() {
+				restartButtonImage.src = "images/restartButton2.png";
+			});
+
 	
     // Right Button - Resume button
 	ctx.drawImage(resumeButtonImage, buttonXright, buttonY, buttonWidth, buttonHeight);
@@ -54,7 +61,10 @@ function drawPauseMenu() {
                 //Judy: will update State value when we have resume function
 				setState(1);
 				console.log("Level: " + currentLevel)
-			}, null, function() {});
+			}, null,
+			function() {
+				resumeButtonImage.src = "images/resumeButton2.png";
+			});
 			
 	// music button
 	
