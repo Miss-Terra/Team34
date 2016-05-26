@@ -1,7 +1,7 @@
 //State 10 Score Submission Screen
 function loadScoreSubmission() {
 
-   bgImage.src = "images/levelvictory.png";
+   bgImage.src = "images/mainMenu.png";
    mainMenuButtonImage.src = "images/mainMenuButton.png";
    scoreboardButtonImage.src = "images/scoreboardButton.png";
    buttonImage.src = "images/submitButton.png";
