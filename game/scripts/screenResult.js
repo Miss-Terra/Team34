@@ -9,6 +9,9 @@ function loadResult(){
 		buttonImage.src = "images/submitButton.png";
 		
 	}	
+
+	speakerOnButtonImage.src = "images/on.png";
+	speakerOffButtonImage.src = "images/off.png";
 	mainMenuButtonImage.src = "images/mainMenuButton.png";
 	restartButtonImage.src = "images/restartButton.png";
 }
@@ -66,15 +69,15 @@ function drawResult(){
 			
 	// music button
 
-	ctx.fillStyle = "white";
-	ctx.fillRect(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
+//	ctx.fillStyle = "white";
+//	ctx.fillRect(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
 
 	//ctx.fillStyle = "white";
 	//ctx.fillRect(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
 	
 	if (musicOn) {
 		ctx.drawImage(speakerOnButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
-		uiObjects[3] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
+		uiObjects[2] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
 			function () {
 				musicOn = false;
 				music.pause();
@@ -82,7 +85,7 @@ function drawResult(){
 	}
 	else {
 		ctx.drawImage(speakerOffButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
-		uiObjects[3] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
+		uiObjects[2] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
 			function () {
 				musicOn = true;
 				music.loop = true;
@@ -96,7 +99,7 @@ function drawResult(){
 		// displays level and scores along with scroll
 		//ctx.drawImage(scrollImage, canvas.width/4, canvas.height/4, canvas.width/2, canvas.height/2);
 
-		uiObjects[2] = new uiObject(rightButtonX, buttonY, buttonWidth, buttonHeight, 
+		uiObjects[3] = new uiObject(rightButtonX, buttonY, buttonWidth, buttonHeight, 
 				function (){
 					console.log("next");
 					nextLevel();
@@ -124,23 +127,6 @@ function drawResult(){
 					buttonImage.src = "images/nextButton.png";
 				});
 	} else { // if player lost
-			// display rule box
-			/*if (currentLevel <= 10) {
-				ctx.fillStyle = "#FFFFFF";
-				ctx.fillRect(canvas.width / 2 - canvas.width / 10, 0, canvas.width / 5, canvas.height / 7);
-			} else {
-				ctx.fillStyle = "#FFFFFF";
-				ctx.fillRect(canvas.width / 2 - canvas.width / 5, 0, canvas.width * 2 / 5, canvas.height / 7);
-
-				ctx.fillStyle = "#FFFFFF";
-				ctx.fillRect(canvas.width / 2 - canvas.width / 10, 0, canvas.width / 5, canvas.height / 7);
-		//	} else {
-
-				//Terra commented//		ctx.fillStyle = "#FFFFFF";
-
-				//		ctx.fillRect(canvas.width / 2 - canvas.width / 5, 0, canvas.width * 2 / 5, canvas.height / 10);
-
-			}*/
 			
 			// display rule
 			ctx.fillStyle = "white";
@@ -157,7 +143,7 @@ function drawResult(){
 			drawRule();
 		
 		// display "submit" button
-		uiObjects[2] = new uiObject(rightButtonX, buttonY, buttonWidth*2, buttonHeight, 
+		uiObjects[3] = new uiObject(rightButtonX, buttonY, buttonWidth*2, buttonHeight, 
 				function (){
 					console.log("Submit Score function here...");
 					//nextLevel();
