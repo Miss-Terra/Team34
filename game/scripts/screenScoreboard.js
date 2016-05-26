@@ -39,10 +39,10 @@ function drawScoreboard(){
 	
  	var buttonWidth = canvas.width / 10;
 	var buttonHeight = canvas.height / 10;	
-	var	buttonY = canvas.height - (buttonHeight * 2);
+	var	buttonY = canvas.height - (buttonHeight * (1.67));
 	//Button x positions
-	var menuX = (canvas.width / 2) - (buttonWidth / 2) + ((canvas.width / 2) - (buttonWidth / 2)) / 2 + (buttonWidth / 2);  
-	var achievementX = menuX - (canvas.width / 2);
+	var menuX = (canvas.width / 2) - (buttonWidth / 2) + ((canvas.width / 2) - (buttonWidth)) / 2;  
+	var achievementX = menuX - (canvas.width * (2 / 5));
 	
 	// right button: main menu
 	ctx.drawImage(mainMenuButtonImage, menuX, buttonY, buttonWidth, buttonHeight);
@@ -80,24 +80,23 @@ function drawScoreboard(){
 	// -----columns of scoreboard ----
 
 	//This variable is the Y position of the header texts.
-	var leaderboardHeaderRow = canvas.height/5;
+	var leaderboardHeaderRow = canvas.height*(2/9);
 	//This is basically the x value of each column like rank, scores, names, times....
 	var leaderboardColumns = [];
 
 	// These are not in a loop... For simple viewer understanding.
-	leaderboardColumns[0] = canvas.width*2/20;
-	leaderboardColumns[1] = canvas.width*5/20;
-	leaderboardColumns[2] = canvas.width*8/20;
+	leaderboardColumns[0] = canvas.width*5/20;
+	leaderboardColumns[1] = canvas.width*7/20;
+	leaderboardColumns[2] = canvas.width*9/20;
 	leaderboardColumns[3] = canvas.width*11/20;
 	leaderboardColumns[4] = canvas.width*14/20;
 	
-	
-	ctx.font = canvas.width/20 + "px Arial";
+	//ctx.font = canvas.width/30 + "px Arial";
 	ctx.fillStyle = "white";
 	ctx.textAlign = "center";
-	ctx.fillText("Ranking", canvas.width*3/20, canvas.height/8);
+	// ctx.fillText("Ranking", canvas.width/4, canvas.height*(2/9));
 	
-	ctx.font = canvas.width/30 + "px Arial";
+	ctx.font = canvas.width/35 + "px Arial";
 	ctx.fillText("Rank", leaderboardColumns[0], leaderboardHeaderRow);
 	ctx.fillText("Score", leaderboardColumns[1], leaderboardHeaderRow);
 	ctx.fillText("Time", leaderboardColumns[2], leaderboardHeaderRow);
