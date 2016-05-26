@@ -60,6 +60,9 @@ function drawMainMenu(){
 					menuLogo.src = "images/logoctBite3.png";		
 				} else
 					menuLogo.src = "images/logoctBite3.png";
+			}, null,
+			function() {
+				menuLogo.src = "images/logoct2.png";
 			});
 
 	// Keep original Easter Egg code in case use another animation in future

@@ -19,7 +19,7 @@
 //State 3 == Pause menu screen
 //State 4 == Score screen
 //State 5 == Credits screen
-//State 6 == Extra screen
+//State 6 == Achievements screen
 //State 7 == back to main menu confirm screen
 //State 8 == Item Select screen
 //State 9 == Tutorial screen
@@ -31,7 +31,7 @@
 //	<script src="scripts/screenPauseMenu.js"></script>
 //	<script src="scripts/screenScoreboard.js"></script>
 //	<script src="scripts/screenCredits.js"></script>
-//	<script src="scripts/screenEgg.js"></script>
+//	<script src="scripts/screenAchievements.js"></script>            
 //	<script src="scripts/screenTutorial.js"></script>
 // no confirmation menu source file?
 
@@ -75,9 +75,10 @@ function reloadGraphics(){
 		//screenCredits.js
 		loadCreditsMenu();
 	}
-		//6 easter egg screen
+		//6 achievements screen
 	if (state == 6){
-			//screenEgg.js
+		loadAchievements();
+		//screenAchievements.js
 	}
 		//7 back to main confirm screen
 	if (state == 7){
@@ -176,7 +177,8 @@ function renderGraphics(){
 		}
 			//6 easter egg screen
 		if (state == 6){
-				//screenEgg.js
+			drawAchievements();
+			//screenAchievements.js
 		}
 			//7 back to main menu confirm screen
 		if (state == 7){

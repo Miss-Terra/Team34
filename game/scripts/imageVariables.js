@@ -115,6 +115,14 @@
 		//button image is safe to load...
 		nextButtonReady = true;
 	};
+	
+	
+	var achievementsButtonImage = new Image();
+	var achievementsButtonReady = false;
+	achievementsButtonImage.onload = function () {
+		//button image is safe to load...
+		achievementsButtonReady = true;
+	};
 
 
 

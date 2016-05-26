@@ -3,12 +3,12 @@ function loadResult(){
 
 	if (levelVictory){
 		bgImage.src = "images/levelvictory.png";
-		buttonImage.src = "images/nextLevelButton.png";
+		buttonImage.src = "images/nextButton.png";
 	}else{
 		bgImage.src = "images/gameover.png";
 		buttonImage.src = "images/submitButton.png";
 		
-	}
+	}	
 	mainMenuButtonImage.src = "images/mainMenuButton.png";
 	restartButtonImage.src = "images/restartButton.png";
 }
@@ -70,7 +70,7 @@ function drawResult(){
 	
 	if (musicOn) {
 		ctx.drawImage(speakerOnButtonImage, canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16);
-		uiObjects[3] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
+		uiObjects[2] = new uiObject(canvas.width/32, canvas.height/32, canvas.width/16, canvas.height/16,
 			function () {
 				musicOn = false;
 				music.pause();
@@ -90,7 +90,7 @@ function drawResult(){
 	ctx.drawImage(buttonImage, rightButtonX, buttonY, buttonWidth, buttonHeight);
 	if (levelVictory){ //If player beat the level	
 
-		uiObjects[2] = new uiObject(rightButtonX, buttonY, buttonWidth, buttonHeight, 
+		uiObjects[4] = new uiObject(rightButtonX, buttonY, buttonWidth, buttonHeight, 
 				function (){
 					console.log("next");
 					nextLevel();
@@ -115,7 +115,7 @@ function drawResult(){
 					console.log("Level: " + currentLevel)
 				}, null, 
 				function() {
-					buttonImage.src = "images/nextLevelButton3.png";
+					buttonImage.src = "images/nextButton.png";
 				});
 	} else { // if player lost
 
@@ -142,7 +142,7 @@ function drawResult(){
 			drawRule();	
 		
 		// display "submit" button
-		uiObjects[2] = new uiObject(rightButtonX, buttonY, buttonWidth*2, buttonHeight, 
+		uiObjects[5] = new uiObject(rightButtonX, buttonY, buttonWidth*2, buttonHeight, 
 				function (){
 					console.log("Submit Score function here...");
 					//nextLevel();

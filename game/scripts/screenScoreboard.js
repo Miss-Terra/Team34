@@ -14,7 +14,8 @@ function loadScoreboard() {
 
    	bgImage.src = "images/levelvictory.png";
    	mainMenuButtonImage.src = "images/mainMenuButton.png";
-	scoreLogo.src = "images/logoct2.png";
+	achievementsButtonImage.src = "images/achievementsButton.png";
+	//scoreLogo.src = "images/logoct2.png";
   
    for (var i = 1; i <= 10; i++){
    	 connectLeaderboard(i,"Score");
@@ -25,26 +26,42 @@ function loadScoreboard() {
 }
 
 function drawScoreboard(){
-	
+	// remove logo
+	/*
 	// logo position
 	var logowidth = canvas.width/4;
 	var logoheight = canvas.height/8;
 
+	ctx.drawImage(scoreLogo, canvas.width/2 - logowidth/2, 0, logowidth, logoheight); */
+
+	
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
-	ctx.drawImage(scoreLogo, canvas.width/2 - logowidth/2, 0, logowidth, logoheight);
- 	
+	
  	var buttonWidth = canvas.width / 10;
 	var buttonHeight = canvas.height / 10;	
 	var	buttonY = canvas.height - (buttonHeight * 2);
 	//Button x positions
 	var menuX = (canvas.width / 2) - (buttonWidth / 2) + ((canvas.width / 2) - (buttonWidth / 2)) / 2 + (buttonWidth / 2);  
-
+	var achievementX = menuX - (canvas.width / 2);
+	
+	// right button: main menu
 	ctx.drawImage(mainMenuButtonImage, menuX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[0] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight, 
 		function (){
 			console.log("menu");
 			setState(0);
 			console.log("Level: " + currentLevel)
+		}, null, function() {});
+		
+	// left button: achievements
+	ctx.drawImage(achievementsButtonImage, achievementX, buttonY, buttonWidth, buttonHeight);
+	uiObjects[1] = new uiObject(achievementX, buttonY, buttonWidth, buttonHeight, 
+		function (){
+			console.log("achievement");
+			setState(6);
+			console.log("Level: " + currentLevel)
+			console.log("Score: " + finalScore)
+			console.log("EasterEggClick: " + easterEggclick)
 		}, null, function() {});
 		
 

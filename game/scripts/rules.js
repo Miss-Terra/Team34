@@ -78,7 +78,6 @@ function loadRules() {
 	
 	if (itemSelectedByPlayer != null)
 		drawSelected();
-		//drawRule(); // For testing if victory/fail mechanics work
 	
 	ctx.fillStyle = "#000000";
 	ctx.fillText("Selected", canvas.width/2, canvas.height/30);
@@ -391,4 +390,9 @@ function initGameSetting(){
 	if (gamePaused == false){
 		personArray = genPeople(lineSize, dude); // generate the personArray. (globals.js)
 	}
+	
+	// reset achievements flags
+	var achiLevelFlag = false;
+	var achiScoreFlag = false;
+	var achiEasterEggFlag = false;
 }
