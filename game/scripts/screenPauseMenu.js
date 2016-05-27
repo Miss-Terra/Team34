@@ -104,13 +104,13 @@ function loadBackToMainMenuConfirmMenu() {
 function drawBackToMainMenuConfirmMenu() {
     ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
-	var buttonWidth = canvas.width / 6;
+	var buttonWidth = canvas.width / 8;
 	var buttonHeight = canvas.height / 6;	
-	var	buttonY = canvas.height/2 - (buttonHeight / 2);
+	var	buttonY = canvas.height/2 + (buttonHeight*1.5);
 	//Button x positions
 
-	var buttonXleft = (buttonWidth);
-	var buttonXright = canvas.width - (buttonWidth *2);            
+	var buttonXleft = (buttonWidth*2);
+	var buttonXright = canvas.width - (buttonWidth *3);            
 
     // Left Button - No Button
 	ctx.drawImage(restartButtonImage, buttonXright, buttonY, buttonWidth, buttonHeight);
