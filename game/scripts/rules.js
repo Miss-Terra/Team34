@@ -68,33 +68,6 @@ function drawRule() {
 	}
 }
 
-function loadRules() {
-	
-	var ruleboxWidth = canvas.width/4;
-	var ruleboxHeight = canvas.height/7;
-	
-	//ctx.fillStyle = "#FFFFFF";
-	//ctx.fillRect(canvas.width/2 - ruleboxWidth/2, 0, ruleboxWidth, ruleboxHeight);
-	
-	if (itemSelectedByPlayer != null)
-		drawSelected();
-		//drawRule(); // For testing if victory/fail mechanics work
-	
-	//ctx.fillStyle = "#000000";
-	//ctx.fillText("Selected", canvas.width/2, canvas.height/30);
-
-	// When timer reaches zero, level ends
-	if (levelTime == 0) {
-		finalScore += levelScore;
-		setState(2);
-	}
-
-//	borderImage.src = "images/itemSelect.png";
-//  borderImage2.src = "images/itemDeSelect.png";
-//	
-//	ctx.drawImage(borderImage2, 250, 250);
-}
-
 //Generates a single rule. (OLD + new)
 
 function generateRule() {			
@@ -224,6 +197,18 @@ function loadRules() {
 	// When timer reaches zero, level ends
 	if (levelTime == 0) {
 		finalScore += levelScore;
+		levelVictory = false;
+		
+		// turn off gameplay music
+		music.pause();
+				
+		// defeat theme, allow looping
+		music = new Audio('audio/smw_gameover.mp3');
+		if (musicOn) {
+			music.loop = true;
+			music.play();
+		}
+		
 		setState(2);
 	}
 }

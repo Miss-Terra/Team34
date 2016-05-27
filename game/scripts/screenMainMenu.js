@@ -82,12 +82,17 @@ function drawMainMenu(){
 	uiObjects[0] = new uiObject(buttonX, restartY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("restart");
+				
+				// difficulty settings reset at the very beginning of the game
+				lineSize = 23;
 				currentLevel = 1;
+				lineSpeed = gamespeed;
+				
 				// initTimeSetting() in timer.js file
 				initTimeSetting();
 				generateRule();
 				itemSelectedByPlayer = null;
-				
+
 				// turn off main menu music
 				music.pause();
 				
