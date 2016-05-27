@@ -1,13 +1,17 @@
 Index.html - main page, calls the canvas rendering function, lists all of the resource javascript files used.
 
+thirdParty folder - hold the third party js code we used for score input textbox
+- CanvasInput.js 
+
 screen<name>.js files are for specific screen states such as main menu, gamee screen, pause menu
 The rest are helper files.
 
-screenCredits.js
-- loads and renders the credit screen (not implemented 100%)
 
 screenAchievements.js
 - Code for rendering the achievements.
+
+screenCredits.js
+- loads and renders the credit screen (not implemented 100%)
 
 screenGame.js
 - Loads & renders game settings, images, characters & stuff.
