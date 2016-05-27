@@ -26,8 +26,6 @@ function drawLine(){
 			else if (i == 14){direction = "east"; counter = 1; lineYStart = personArray[i-1].y;}
 			else if (i == 22){direction = "north"; counter = 1; lineXStart = personArray[i-1].x;}
 
-
-
 			if (direction == "west"){
 				xMove = -1;
 				yMove = 0;
@@ -42,11 +40,7 @@ function drawLine(){
 				xMove = 0;
 			}
 
-
-
 			personArray[i].setPosition(lineXStart + ((counter*xMove)*(lineSpacingX)), lineYStart + ((counter*yMove)*(lineSpacingY))); // assign x and y variables to each person.
-			
-
 
 				ctx.drawImage(personArray[i].image, personArray[i].x, personArray[i].y, personArray[i].width, personArray[i].height);
 				// Draws uiObjects for people.
@@ -58,7 +52,6 @@ function drawLine(){
 						selectionPerson = this.person; // Variable used in screenSelect.js
 						setState(8);				
 					}, personArray[i]);
-
 
 			 	//drawItems.js
 			 	//Draw the items for person

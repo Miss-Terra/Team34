@@ -110,7 +110,7 @@ function generateRule() {
 	// 5 = shoe
 	// 6 = itemb
 
-	ruleType = Math.floor(Math.random() * 6 + 1); //1-6
+	ruleType = Math.floor(1+Math.random() * 6); //1-6
 
 		switch (ruleType) { // 1+
 		case 1:

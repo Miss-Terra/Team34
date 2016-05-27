@@ -13,7 +13,7 @@ function drawItems(person, selectable){
 		
 }
 
-//Draw the front item (behind the character)
+//Draw face on character
 function drawFace(person, selectable){
 	
 	var x = person.x;	
