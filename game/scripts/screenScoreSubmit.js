@@ -5,7 +5,7 @@ function loadScoreSubmission() {
    mainMenuButtonImage.src = "images/mainMenuButton.png";
    scoreboardButtonImage.src = "images/scoreboardButton.png";
    buttonImage.src = "images/submitButton.png";
-   scoreLogo.src = "images/logoct1.png";
+   scoreLogo.src = "images/scoreSubmitBackground.png";
   
    console.log("load once");
    drawInputField(); //  textBox.js	
@@ -19,14 +19,14 @@ function loadScoreSubmission() {
 function drawScoreSubmission(){
 	
 	//Logo
-	logowidth = canvas.width * 3 / 10;
+	logowidth = canvas.width * 5 / 10;
 	logoheight = canvas.height / 5;
 	
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 	ctx.drawImage(scoreLogo, canvas.width/2 - logowidth/2, 0, logowidth, logoheight);
  	
 	var buttonWidth = canvas.width / 10;
-	var buttonHeight = canvas.height / 10;	
+	var buttonHeight = canvas.height / 8;	
 	var	buttonY = canvas.height - (buttonHeight * 2);
 	//Button x positions
 	var scoreboardX = (canvas.width / 2) - (buttonWidth / 2);
@@ -41,7 +41,9 @@ function drawScoreSubmission(){
 			setState(0);
 			console.log("Level: " + currentLevel)
 			tutorialImageNum = 1;
-		}, null, function() {});	
+		}, null, function() {
+        mainMenuButtonImage.src = "images/mainMenuButton2.png";
+    });	
 	
 	// right button: submit
 	ctx.drawImage(buttonImage, submitX, buttonY, buttonWidth, buttonHeight);
@@ -54,7 +56,7 @@ function drawScoreSubmission(){
 				//databaseConnect.js
 				updateDatabase(finalScore, finalTime, currentLevel, playerName);
 			}, null, function() {
-				buttonImage.src = "images/submitButton.png";
+				buttonImage.src = "images/submitButton2.png";
 			});
 			
 

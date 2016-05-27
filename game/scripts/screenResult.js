@@ -45,7 +45,10 @@ function drawResult(){
 				itemSelectedByPlayer = null;
 				setState(11);
 				console.log("Level: " + currentLevel)
-			}, null, function() {});
+			}, null, 
+				function() {
+					restartButtonImage.src = "images/restartButton2.png";
+				});
 	
 	ctx.drawImage(mainMenuButtonImage, leftButtonX, buttonY, buttonWidth, buttonHeight);
 	uiObjects[1] = new uiObject(leftButtonX, buttonY, buttonWidth, buttonHeight, 
@@ -64,7 +67,10 @@ function drawResult(){
 				*/
 				initTimeSetting();
 				console.log("Level: " + currentLevel)
-			}, null, function() {});
+			}, null, 
+				function() {
+					mainMenuButtonImage.src = "images/mainMenuButton2.png";
+				});
 
 			
 	// music button
@@ -124,7 +130,7 @@ function drawResult(){
 					console.log("Level: " + currentLevel)
 				}, null, 
 				function() {
-					buttonImage.src = "images/nextButton.png";
+					buttonImage.src = "images/nextButton2.png";
 				});
 	} else { // if player lost
 			
@@ -153,7 +159,7 @@ function drawResult(){
 					console.log("Level: " + currentLevel)
 				}, null, 
 				function() {
-					buttonImage.src = "images/submitButton.png";
+					buttonImage.src = "images/submitButton2.png";
 				});
 	}
 	
