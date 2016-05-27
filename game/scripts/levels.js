@@ -10,7 +10,6 @@ var itemTypes = 1;
 //(type/color) define a unique item.
 var itemVariety = 2;
 
-var lineinc=0;
 
 var gamespeed = 300; //Edit me for faster gameplay.
 //How fast the line moves. in miliseconds. (updated in nextLevel())
@@ -24,96 +23,35 @@ var maxPeopleInLine = 23; // Only display this number of people at a time.
 
 function nextLevel(){
 	currentLevel++;
-	setDifficulty();
-}
 
-//Set the diff
-function setLevelDifficulty(d) {
-	
-	switch(d) {
-		case 0:
-
-			break;
-		case 1:
-setLineSpeed();
-setlineSize(23);
-			break;
-		case 2:
-setLineSpeed();
-setlineSize(20);
-			break;
-		case 3:
-setLineSpeed();
-setlineSize(17);
-			break;
-		case 4:
-setLineSpeed();
-setlineSize(14);
-			break;
-		case 5:
-setLineSpeed();
-setlineSize(11);
-			break;
-		case 6:
-setLineSpeed();
-setlineSize(8);
-			break;
-		case 7:
-setLineSpeed();
-setlineSize(5);
-			break;
-}
-}
-
-function setLineSpeed(){
-	
+	//We use lineSpeed in timer.js
 	if (currentLevel <= 15){
 		lineSpeed = gamespeed*(1 - ((currentLevel-1)/20)); // Multiple this number by 5 to realise how often the line moves.
 	}else{
 		lineSpeed = gamespeed*(1 - ((14)/20));
 	
+			
+	
 	}
-	
-}
-
-function setlineSize(size){
-
-if (size!=5) {
-	lineSize = size - lineinc;
-} else {
-	lineSize = 5;
-}
-	
-lineinc++;
-if (lineinc==5){
-	lineinc=0;
-}
 }
 
 //Basically I want a function in levels.js that is used to tweak the difficulty
 //based on level, using the rule setting functions in rules.js
-function setDifficulty() {
+function setLevelDifficulty() {
 	
 	if (currentLevel >= 1 && currentLevel <= 5){
- //   setRuleDifficulty(1);
-		setLevelDifficulty(1);
+    setRuleDifficulty(1);
 	} else if (currentLevel >= 6 && currentLevel <= 10){
- //   setRuleDifficulty(2);
-		setLevelDifficulty(2);
+    setRuleDifficulty(2);
 	} else if (currentLevel >= 11 && currentLevel <= 15){
- //   setRuleDifficulty(3);
-		setLevelDifficulty(3);
+    setRuleDifficulty(3);
 	} else if (currentLevel >= 16 && currentLevel <= 20){
-//    setRuleDifficulty(4);
-		setLevelDifficulty(4);
+    setRuleDifficulty(4);
 	} else if (currentLevel >= 21 && currentLevel <= 25){
-//    setRuleDifficulty(5);
-		setLevelDifficulty(5);
+    setRuleDifficulty(5);
 	} else if (currentLevel >= 26 && currentLevel <= 30){
-//    setRuleDifficulty(6);
-		setLevelDifficulty(6);
+    setRuleDifficulty(6);
 	} else if (currentLevel >= 31 && currentLevel <= 34){
-//    setRuleDifficulty(7);
-		setLevelDifficulty(7);
+    setRuleDifficulty(7);
 	}
 }
