@@ -87,7 +87,7 @@ function generateRule() {
 
 		switch (ruleType) { // 1+
 		case 1:
-			ruleNumber = Math.floor(1+ Math.random() * (NumberItems));
+			ruleNumber = Math.floor(1+ Math.random() * (NumberItems-1));
 			break;
 		case 2:
 			ruleNumber = Math.floor(1+ Math.random() * (NumberHats));
@@ -102,7 +102,7 @@ function generateRule() {
 			ruleNumber = Math.floor(1+ Math.random() * (NumberShoes));
 			break;
 		case 6:
-			ruleNumber = Math.floor(1+ Math.random() * (NumberItems));
+			ruleNumber = Math.floor(1+ Math.random() * (NumberItems-1));
 			break;
 	}
 	

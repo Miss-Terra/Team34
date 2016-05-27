@@ -56,7 +56,6 @@ function drawCharSelection(){
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 	drawSelectMenuButtons();
 	drawSelectionChar();
-	console.log(ruleType, ruleNumber, ruleColor)
 }
 
 
@@ -176,6 +175,7 @@ function drawItemSelection(x,y,w,h,id){
 	} else if (numberSelected() == 0) { // < numberRuleItems
 		allowed = true;
 	}
+		console.log(ruleType, ruleNumber, ruleColor)
 	
 	//Depending on which item you draw... Do the following...
 	var img = borderImage2; // deselected
