@@ -369,11 +369,11 @@ function genRule() {
 // Updates score when level completed.
 function updateScore() {
 			// Score rule: pass level n in t seconds get ((100 * n) + (180 - t)) points 
-	levelScore = levelTime + 100;
+	levelScore = (levelTime + 100) + Math.floor(levelTime * (currentLevel-1));
 	// Set original "levelScore" to extraLevelScore for testing purpose
 	finalScore += levelScore + extraLevelScore;		
 	// Add finalTime
-	finalTime += 180 - levelTime;
+	finalTime += startLevelTime - levelTime;
 }
 	
 // Called when end level button is pushed.

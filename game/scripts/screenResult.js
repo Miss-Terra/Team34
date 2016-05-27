@@ -36,7 +36,7 @@ function drawResult(){
 	uiObjects[0] = new uiObject(middleButtonX, buttonY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("restart");
-				finalScore -= levelScore + extraLevelScore;
+				finalScore -= currentLevel*50;
 				levelScore = 0;
 				extraLevelScore = 0;
 				// initTimeSetting() in timer.js file
