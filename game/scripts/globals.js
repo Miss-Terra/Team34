@@ -14,12 +14,12 @@ var gamePaused = false; // A variable used to check if the game is paused.
 
 
 // number of items in the item matrix
-var NumberHats=5;
-var NumberShirts=4;
-var NumberPants=4;
-var NumberShoes=3;
-var NumberItems=3;
-var NumberColors=3;
+var NumberHats=7;
+var NumberShirts=7;
+var NumberPants=7;
+var NumberShoes=7;
+var NumberItems=8;
+var NumberColors=7;
 var NumberFaces=8;
 
 // pause or quit

@@ -40,25 +40,14 @@ function genPerson(num, personImg){
 			  	this.itemf = itemfArray[Math.floor(1+(Math.random() * NumberItems) * NumberColors + ruleColor)]; // Item will be a specific color
 				} else if (ruleColor == 0) {
 			  	this.itemf = itemfArray[Math.floor(1+(Math.random() * NumberColors) + (NumberColors* (ruleNumber -1)))]; // Item will be a specific type
-
 				} else {
 					this.itemf = itemfArray[NumberItems*(ruleColor-1) + ruleNumber];
-					
-//					if (this.number == correctPerson) {
-//						//
-//					} else {
-//							this.itemf = itemfArray[NumberItems*(ruleColor-1) + ruleNumber];
-////						while (this.itemf === person[correctPerson].itemf) {
-////							this.itemf = itemfArray[NumberItems*(ruleColor-1) + ruleNumber];
-////						}
-//					}
 				}
-
-				this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
-				this.shirt = shirtArray[Math.floor((Math.random() * 12) + 1)];
-				this.itemb = itembArray[Math.floor((Math.random() * 9) + 1)];
-				this.pants = pantArray[Math.floor((Math.random() * 12) + 1)];
-				this.shoes = shoeArray[Math.floor((Math.random() * 9) + 1)];
+				this.hat = hatArray[Math.floor((Math.random() *  NumberHats * NumberColors) + 1)];
+				this.shirt = shirtArray[Math.floor((Math.random() * NumberShirts * NumberColors) + 1)];
+				this.itemb = itembArray[Math.floor((Math.random() * NumberItems * NumberColors) + 1)];
+				this.pants = pantArray[Math.floor((Math.random() * NumberPants * NumberColors) + 1)];
+				this.shoes = shoeArray[Math.floor((Math.random() * NumberShoes * NumberColors) + 1)];
 			}
 			else if (ruleType == 2) {
 				if (ruleNumber == 0) { //specific color but any type (1,4,7,10,13)
@@ -68,22 +57,12 @@ function genPerson(num, personImg){
 
 				} else {
 					this.hat = hatArray[NumberHats*(ruleColor-1) + ruleNumber];
-					
-//					if (this.number == correctPerson) {
-//						//
-//					} else {
-//							this.hat = hatArray[NumberItems*(ruleColor-1) + ruleNumber];
-////						while (this.hat === person[correctPerson].hat) {
-////							this.hat = hatArray[NumberItems*(ruleColor-1) + ruleNumber];
-////						}
-//					}
 				}
-
-				this.shirt = shirtArray[Math.floor((Math.random() * 12) + 1)];
-				this.itemf = itemfArray[Math.floor((Math.random() * 9) + 1)];
-				this.itemb = itembArray[Math.floor((Math.random() * 9) + 1)];
-				this.pants = pantArray[Math.floor((Math.random() * 12) + 1)];
-				this.shoes = shoeArray[Math.floor((Math.random() * 9) + 1)];
+				this.shirt = shirtArray[Math.floor((Math.random() * NumberShirts * NumberColors) + 1)];
+				this.itemf = itemfArray[Math.floor((Math.random() * NumberItems * NumberColors) + 1)];
+				this.itemb = itembArray[Math.floor((Math.random() * NumberItems * NumberColors) + 1)];
+				this.pants = pantArray[Math.floor((Math.random() * NumberPants * NumberColors) + 1)];
+				this.shoes = shoeArray[Math.floor((Math.random() * NumberShoes * NumberColors) + 1)];
 			}
 			else if (ruleType == 3) {
 
@@ -93,22 +72,12 @@ function genPerson(num, personImg){
 			  	this.shirt = shirtArray[Math.floor(1+(Math.random() * NumberColors) + (NumberColors* (ruleNumber -1)))]; // Item will be a specific type
 				} else {
 					this.shirt = shirtArray[NumberShirts*(ruleColor-1) + ruleNumber];
-					
-//					if (this.number == correctPerson) {
-//						//
-//					} else {
-//							this.shirt = shirtArray[NumberItems*(ruleColor-1) + ruleNumber];
-////						while (this.shirt === person[correctPerson].shirt) {
-////							this.shirt = shirtArray[NumberItems*(ruleColor-1) + ruleNumber];
-////						}
-//					}
 				}
-
-				this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
-				this.itemf = itemfArray[Math.floor((Math.random() * 9) + 1)];
-				this.itemb = itembArray[Math.floor((Math.random() * 9) + 1)];
-				this.pants = pantArray[Math.floor((Math.random() * 12) + 1)];
-				this.shoes = shoeArray[Math.floor((Math.random() * 9) + 1)];
+				this.hat = hatArray[Math.floor((Math.random() *  NumberHats * NumberColors) + 1)];
+				this.itemf = itemfArray[Math.floor((Math.random() * NumberItems * NumberColors) + 1)];
+				this.itemb = itembArray[Math.floor((Math.random() * NumberItems * NumberColors) + 1)];
+				this.pants = pantArray[Math.floor((Math.random() * NumberPants * NumberColors) + 1)];
+				this.shoes = shoeArray[Math.floor((Math.random() * NumberShoes * NumberColors) + 1)];
 			}
 			else if (ruleType == 4) {
 				
@@ -117,25 +86,14 @@ function genPerson(num, personImg){
 			  	this.pants = pantArray[Math.floor(1+(Math.random() * NumberPants) * NumberColors + ruleColor)]; // Item will be a specific color
 				} else if (ruleColor == 0) {
 			  	this.pants = pantArray[Math.floor(1+(Math.random() * NumberColors) + (NumberColors* (ruleNumber -1)))]; // Item will be a specific type
-
 				} else {
 					this.pants = pantArray[NumberPants*(ruleColor-1) + ruleNumber];
-					
-//					if (this.number == correctPerson) {
-//						//
-//					} else {
-//							this.pants = pantArray[NumberItems*(ruleColor-1) + ruleNumber];
-////						while (this.pants === person[correctPerson].pants) {
-////							this.pants = pantArray[NumberItems*(ruleColor-1) + ruleNumber];
-////						}
-//					}
 				}
-
-				this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
-				this.shirt = shirtArray[Math.floor((Math.random() * 12) + 1)];
-				this.itemf = itemfArray[Math.floor((Math.random() * 9) + 1)];
-				this.itemb = itembArray[Math.floor((Math.random() * 9) + 1)];
-				this.shoes = shoeArray[Math.floor((Math.random() * 9) + 1)];
+				this.hat = hatArray[Math.floor((Math.random() *  NumberHats * NumberColors) + 1)];
+				this.shirt = shirtArray[Math.floor((Math.random() * NumberShirts * NumberColors) + 1)];
+				this.itemf = itemfArray[Math.floor((Math.random() * NumberItems * NumberColors) + 1)];
+				this.itemb = itembArray[Math.floor((Math.random() * NumberItems * NumberColors) + 1)];
+				this.shoes = shoeArray[Math.floor((Math.random() * NumberShoes * NumberColors) + 1)];
 			}
 			else if (ruleType == 5) {
 				
@@ -144,25 +102,14 @@ function genPerson(num, personImg){
 			  	this.shoes = shoeArray[Math.floor(1+(Math.random() * NumberShoes) * NumberColors + ruleColor)]; // Item will be a specific color
 				} else if (ruleColor == 0) {
 			  	this.shoes = shoeArray[Math.floor(1+(Math.random() * NumberColors) + (NumberColors* (ruleNumber -1)))]; // Item will be a specific type
-
 				} else {
 					this.shoes = shoeArray[NumberShoes*(ruleColor-1) + ruleNumber];
-					
-//					if (this.number == correctPerson) {
-//						//
-//					} else {
-//							this.shoes = shoeArray[NumberItems*(ruleColor-1) + ruleNumber];
-////						while (this.shoes === person[correctPerson].shoes) {
-////							this.shoes = shoesArray[NumberItems*(ruleColor-1) + ruleNumber];
-////						}
-//					}
 				}
-
-				this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
-				this.shirt = shirtArray[Math.floor((Math.random() * 12) + 1)];
-				this.itemf = itemfArray[Math.floor((Math.random() * 9) + 1)];
-				this.itemb = itembArray[Math.floor((Math.random() * 9) + 1)];
-				this.pants = pantArray[Math.floor((Math.random() * 12) + 1)];
+				this.hat = hatArray[Math.floor((Math.random() *  NumberHats * NumberColors) + 1)];
+				this.shirt = shirtArray[Math.floor((Math.random() * NumberShirts * NumberColors) + 1)];
+				this.itemf = itemfArray[Math.floor((Math.random() * NumberItems * NumberColors) + 1)];
+				this.itemb = itembArray[Math.floor((Math.random() * NumberItems * NumberColors) + 1)];
+				this.pants = pantArray[Math.floor((Math.random() * NumberPants * NumberColors) + 1)];
 			}
 			else if (ruleType == 6) {
 				
@@ -173,30 +120,20 @@ function genPerson(num, personImg){
 			  	this.itemb = itembArray[Math.floor(1+(Math.random() * NumberColors) + (NumberColors* (ruleNumber -1)))]; // Item will be a specific type
 				} else {
 					this.itemb = itembArray[NumberItems*(ruleColor-1) + ruleNumber];
-					
-//					if (this.number == correctPerson) {
-//						//
-//					} else {
-//							this.itemb = itembArray[NumberItems*(ruleColor-1) + ruleNumber];
-////						while (this.itemb === person[correctPerson].itemb) {
-////							this.itemb = itembArray[NumberItems*(ruleColor-1) + ruleNumber];
-////						}
-//					}
 				}
-	
-				this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
-				this.shirt = shirtArray[Math.floor((Math.random() * 12) + 1)];
-				this.itemf = itemfArray[Math.floor((Math.random() * 9) + 1)];
-				this.pants = pantArray[Math.floor((Math.random() * 12) + 1)];
-				this.shoes = shoeArray[Math.floor((Math.random() * 9) + 1)];
+				this.hat = hatArray[Math.floor((Math.random() *  NumberHats * NumberColors) + 1)];
+				this.shirt = shirtArray[Math.floor((Math.random() * NumberShirts * NumberColors) + 1)];
+				this.itemf = itemfArray[Math.floor((Math.random() * NumberItems * NumberColors) + 1)];
+				this.pants = pantArray[Math.floor((Math.random() * NumberPants * NumberColors) + 1)];
+				this.shoes = shoeArray[Math.floor((Math.random() * NumberShoes * NumberColors) + 1)];
 			}
 			else {
-				this.hat = hatArray[Math.floor((Math.random() * 15) + 1)];
-				this.shirt = shirtArray[Math.floor((Math.random() * 12) + 1)];
-				this.itemf = itemfArray[Math.floor((Math.random() * 9) + 1)];
-				this.itemb = itembArray[Math.floor((Math.random() * 9) + 1)];
-				this.pants = pantArray[Math.floor((Math.random() * 12) + 1)];
-				this.shoes = shoeArray[Math.floor((Math.random() * 9) + 1)];
+				this.hat = hatArray[Math.floor((Math.random() *  NumberHats * NumberColors) + 1)];
+				this.shirt = shirtArray[Math.floor((Math.random() * NumberShirts * NumberColors) + 1)];
+				this.itemf = itemfArray[Math.floor((Math.random() * NumberItems * NumberColors) + 1)];
+				this.itemb = itembArray[Math.floor((Math.random() * NumberItems * NumberColors) + 1)];
+				this.pants = pantArray[Math.floor((Math.random() * NumberPants * NumberColors) + 1)];
+				this.shoes = shoeArray[Math.floor((Math.random() * NumberShoes * NumberColors) + 1)];
 			}
 			
 			this.image = personImg;
