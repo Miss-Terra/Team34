@@ -50,7 +50,7 @@ function loadAchievements() {
 		achiEasterEggImage.src = "images/easterEggUnlocked.png";
 	};	
 	
-	bgImage.src = "images/mainMenu.png"; 
+	bgImage.src = "images/creditScreen.png"; 
 } 
  
  
