@@ -38,8 +38,8 @@ function drawScoreboard(){
 	ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 	
  	var buttonWidth = canvas.width / 10;
-	var buttonHeight = canvas.height / 10;	
-	var	buttonY = canvas.height - (buttonHeight * (1.67));
+	var buttonHeight = canvas.height / 8;	
+	var	buttonY = canvas.height - (buttonHeight * (1.5));
 	//Button x positions
 	var menuX = (canvas.width / 2) - (buttonWidth / 2) + ((canvas.width / 2) - (buttonWidth)) / 2;  
 	var achievementX = menuX - (canvas.width * (2 / 5));

@@ -23,7 +23,7 @@ function drawResult(){
 	//displayResult();
 	
 	var buttonWidth = canvas.width / 10;
-	var buttonHeight = canvas.height / 10;	
+	var buttonHeight = canvas.height / 8;	
 	var	buttonY = canvas.height - (buttonHeight * 2);
 	//Button x positions
 	var middleButtonX = (canvas.width / 2) - (buttonWidth / 2);

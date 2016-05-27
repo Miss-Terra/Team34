@@ -84,10 +84,10 @@ function drawAchievements() {
 
 		// draw main menu button
 		var buttonWidth = canvas.width / 10;
-		var buttonHeight = canvas.height / 10;	
-		var	buttonY = canvas.height - (buttonHeight * 2);
+		var buttonHeight = canvas.height / 8;	
+		var	buttonY = canvas.height - (buttonHeight * (1.5));
 		//Button x positions
-		var menuX = (canvas.width / 2) - (buttonWidth / 2) + ((canvas.width / 2) - (buttonWidth / 2)) / 2 + (buttonWidth / 2);  
+		var menuX = (canvas.width / 2) - (buttonWidth / 2) + ((canvas.width / 2) - (buttonWidth)) / 2;   
 		
 		// right button: main menu
 		ctx.drawImage(mainMenuButtonImage, menuX, buttonY, buttonWidth, buttonHeight);

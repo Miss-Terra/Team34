@@ -40,7 +40,7 @@ function drawGame(){
 
 function addMenuButton() {
 	var buttonWidth = canvas.width/10;
-	var buttonHeight = canvas.height/10;	
+	var buttonHeight = canvas.height/8;	
 	var buttonX = (buttonWidth *(3/16)); 
 	var	buttonY = (buttonHeight / 4); 
 

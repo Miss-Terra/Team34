@@ -16,7 +16,7 @@ function drawTutorial(){
     ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
     var buttonWidth = canvas.width / 10;
-	var buttonHeight = canvas.height / 10;	
+	var buttonHeight = canvas.height / 8.5;	
 	var	buttonY = canvas.height * 7 / 8;
 	//Button x positions
 	var buttonXright = (canvas.width / 2) - (buttonWidth / 2) + ((canvas.width / 2) - (buttonWidth / 2)) / 2 + (buttonWidth / 2);    

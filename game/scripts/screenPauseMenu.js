@@ -9,13 +9,14 @@ function loadPauseMenu() {
 
 function drawPauseMenu() {
   ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
-  var buttonWidth = canvas.width / 7;
-	var buttonHeight = canvas.height / 7;	
+  var buttonWidth = canvas.width / 8;
+	var buttonHeight = canvas.height / 6;	
 	var	buttonY = (canvas.height /2) - (buttonHeight/2);
 	//Button x positions
 	var buttonXmiddle = (canvas.width / 2) - (buttonWidth / 2);
-	var buttonXleft = (buttonXmiddle / 2) - (buttonWidth / 2);            
-	var buttonXright = buttonXmiddle + (buttonXmiddle / 2) + (buttonWidth / 2); 
+	var buttonXleft = (buttonWidth*2);            
+//	var buttonXright = buttonXmiddle + (buttonXmiddle / 2) + (buttonWidth / 2);
+    var buttonXright = canvas.width - (buttonWidth *3);
 
     // Left Button - Back to main menu button
 	ctx.drawImage(mainMenuButtonImage, buttonXleft, buttonY, buttonWidth, buttonHeight);
@@ -198,12 +199,14 @@ function loadRestartConfirmMenu() {
 function drawRestartConfirmMenu() {
      ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
 
-  var buttonWidth = canvas.width / 6;
+  
+	var buttonWidth = canvas.width / 8;
 	var buttonHeight = canvas.height / 6;	
-	var	buttonY = canvas.height/2 - (buttonHeight / 2);
+	var	buttonY = canvas.height/2 + (buttonHeight*1.5);
+
 	//Button x positions
-	var buttonXleft = (buttonWidth);
-	var buttonXright = canvas.width - (buttonWidth *2);            
+	var buttonXleft = (buttonWidth*2);
+	var buttonXright = canvas.width - (buttonWidth *3);            
 
     // Left Button - No Button
 	ctx.drawImage(restartButtonImage, buttonXright, buttonY, buttonWidth, buttonHeight);
