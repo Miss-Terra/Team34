@@ -13,7 +13,7 @@ function loadMainMenu() {
 	 finalTime = 0;
 	 
 	 // main menu music, allow looping
-	 music = new Audio('audio/defense_line.mp3');
+	 //music = new Audio('audio/defense_line.mp3');
 	 if (musicOn) {
 		music.loop = true;
 		music.play();
@@ -110,7 +110,7 @@ function drawMainMenu(){
 	uiObjects[1] = new uiObject(buttonX, tutorialY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("tutorial");
-				music.pause();
+				//music.pause();
 				tutorialImageNum = 1;
 				setState(9);
 			}, null,
@@ -124,7 +124,7 @@ function drawMainMenu(){
 	uiObjects[2] = new uiObject(buttonX, scoreboardY, buttonWidth, buttonHeight, 
 			function (){
 				console.log("scoreboard");
-				music.pause();
+				//music.pause();
 				setState(4);
 			}, null,
 			function() {
@@ -137,7 +137,7 @@ function drawMainMenu(){
 	uiObjects[3] = new uiObject(buttonX, creditsY, buttonWidth, buttonHeight,
 			function () {
 				console.log("credits");
-				music.pause();
+				//music.pause();
 				setState(5);
 			}, null,
 			function() {

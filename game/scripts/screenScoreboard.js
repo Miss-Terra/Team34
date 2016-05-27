@@ -49,6 +49,20 @@ function drawScoreboard(){
 	uiObjects[0] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight, 
 		function (){
 			console.log("menu");
+			
+			// turn off game over music
+			if (gameOver) {
+				music.pause();
+				
+				music = new Audio('audio/defense_line.mp3');
+				if (musicOn) {
+					music.loop = true;
+					music.play();
+				}
+				
+				gameOver = false;
+			}
+			
 			setState(0);
 			console.log("Level: " + currentLevel)
 			tutorialImageNum = 1;

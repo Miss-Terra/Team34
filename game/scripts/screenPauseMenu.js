@@ -139,8 +139,15 @@ function drawBackToMainMenuConfirmMenu() {
 					finalScore = 0;
 					extraLevelScore = 0;
 					
-					// turn off gameplay music
+					// turn off main menu music
 					music.pause();
+					
+					// gameplay music, allow looping
+					music = new Audio('audio/defense_line.mp3');
+					if (musicOn) {
+						music.loop = true;
+						music.play();
+					}
 					
 					setState(0);
 				}
@@ -152,8 +159,15 @@ function drawBackToMainMenuConfirmMenu() {
 					finalScore = 0;
 					extraLevelScore = 0;
 					
-					// turn off victory music
+					// turn off main menu music
 					music.pause();
+					
+					// gameplay music, allow looping
+					music = new Audio('audio/defense_line.mp3');
+					if (musicOn) {
+						music.loop = true;
+						music.play();
+					}
 					
 					setState(0);
 				}

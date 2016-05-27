@@ -9,9 +9,7 @@ function loadScoreSubmission() {
   
    console.log("load once");
    drawInputField(); //  textBox.js	
-   
-   // turn off game over music
-	music.pause();
+
 
 }
 	
@@ -38,6 +36,17 @@ function drawScoreSubmission(){
 	uiObjects[0] = new uiObject(menuX, buttonY, buttonWidth, buttonHeight, 
 		function (){
 			console.log("menu");
+			
+			// turn off game over music
+			music.pause();
+				
+			// gameplay music, allow looping
+			music = new Audio('audio/defense_line.mp3');
+			if (musicOn) {
+				music.loop = true;
+				music.play();
+			}
+			
 			setState(0);
 			console.log("Level: " + currentLevel)
 			tutorialImageNum = 1;

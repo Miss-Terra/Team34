@@ -27,8 +27,11 @@ var quitFromPause;
 var quitFromVictory = false;
 
 // game music 
-var music;
+var music = new Audio('audio/defense_line.mp3');
 var musicOn = true;
 
 // tutorial screen: display tutorial image based on users click 
 var tutorialImageNum = 1;
+
+// music control after game over
+var gameOver = false;

@@ -153,6 +153,7 @@ function drawResult(){
 				function (){
 					console.log("Submit Score function here...");
 					//nextLevel();
+					gameOver = true;
 					setState(10);
 					levelScore = 0;
 					extraLevelScore = 0;
